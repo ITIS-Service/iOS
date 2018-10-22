@@ -12,9 +12,11 @@
 
 import UIKit
 
-class LoginWorker
-{
-  func doSomeWork()
-  {
-  }
+class LoginWorker {
+    
+    func signIn(with email: String, password: String) -> Bool {
+        
+        return false
+    }
+    
 }

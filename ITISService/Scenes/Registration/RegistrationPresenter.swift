@@ -13,17 +13,23 @@
 import UIKit
 
 protocol RegistrationPresentationLogic {
-    func presentSomething(response: Registration.Something.Response)
+    func signUp(response: Registration.SignUp.Response)
 }
 
 class RegistrationPresenter: RegistrationPresentationLogic {
     
-    weak var viewController: RegistrationDisplayLogic?
-
-    // MARK: Do something
-
-    func presentSomething(response: Registration.Something.Response) {
-        let viewModel = Registration.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    weak var viewController: RegistrationDisplayLogic!
+    
+    func signUp(response: Registration.SignUp.Response) {
+        if (response.success) {
+            self.viewController.showCourses()
+        } else {
+            let viewModel = Registration.SignUp.ViewModel(
+                errorMessage: response.message!,
+                emailTextColor: response.errorType == .email ? Common.Autorization.errorColor : .white,
+                passwordsTextColor: response.errorType == .password ? Common.Autorization.errorColor : .white)
+            self.viewController.showError(with: viewModel)
+        }
     }
+    
 }

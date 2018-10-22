@@ -13,9 +13,7 @@
 import UIKit
 
 protocol LoginBusinessLogic {
-    
-  func doSomething(request: Login.Something.Request)
-    
+    func signIn(with request: Login.SignIn.Request)
 }
 
 protocol LoginDataStore {
@@ -24,13 +22,25 @@ protocol LoginDataStore {
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     
-    var presenter: LoginPresentationLogic?
-    var worker: LoginWorker?
+    var presenter: LoginPresentationLogic!
+    var worker: LoginWorker!
   
     // MARK: Do something
     
-    func doSomething(request: Login.Something.Request) {
-        worker = LoginWorker()
+    init() {
+        self.worker = LoginWorker()
+    }
+    
+    func signIn(with request: Login.SignIn.Request) {
+        guard Validator.validate(studEmail: request.email) else {
+            let response = Login.SignIn.Response(success: false, message: Common.Messages.invalidEmail)
+            self.presenter.signIn(response: response)
+            return
+        }
+        
+        let success = self.worker.signIn(with: request.email, password: request.password)
+        let errorMessage = "Пользователь с данным e-mail и паролем не найден"
+        self.presenter.signIn(response: Login.SignIn.Response(success: success, message: errorMessage))
     }
 
 }

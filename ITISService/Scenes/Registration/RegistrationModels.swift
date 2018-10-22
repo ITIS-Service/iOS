@@ -15,15 +15,27 @@ import UIKit
 enum Registration {
   // MARK: Use cases
   
-    enum Something {
+    enum SignUp {
         struct Request {
-            
+            let email: String
+            let password: String
+            let confirmPassword: String
         }
         struct Response {
+            enum ErrorType {
+                case email
+                case password
+                case network
+            }
             
+            let success: Bool
+            let errorType: ErrorType?
+            let message: String?
         }
         struct ViewModel {
-            
+            let errorMessage: String
+            let emailTextColor: UIColor
+            let passwordsTextColor: UIColor
         }
     }
     

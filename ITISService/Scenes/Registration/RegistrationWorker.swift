@@ -14,7 +14,7 @@ import UIKit
 
 class RegistrationWorker {
     
-    func doSomeWork() {
+    func signUp(with email: String, password: String) {
         
     }
     

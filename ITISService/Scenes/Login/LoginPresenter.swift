@@ -14,10 +14,21 @@ import UIKit
 
 protocol LoginPresentationLogic {
     
+    func signIn(response: Login.SignIn.Response)
+    
 }
 
 class LoginPresenter: LoginPresentationLogic {
     
-    weak var viewController: LoginDisplayLogic?
+    weak var viewController: LoginDisplayLogic!
+    
+    func signIn(response: Login.SignIn.Response) {
+        if (response.success) {
+            viewController.openCoursesScreen()
+        } else {
+            let viewModel = Login.SignIn.ViewModel(errorMessage: response.message)
+            viewController.showError(with: viewModel)
+        }
+    }
     
 }

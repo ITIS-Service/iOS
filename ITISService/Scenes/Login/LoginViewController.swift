@@ -14,6 +14,9 @@ import UIKit
 
 protocol LoginDisplayLogic: class {
     
+    func openCoursesScreen()
+    func showError(with viewModel: Login.SignIn.ViewModel)
+    
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic {
@@ -26,6 +29,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     
     //MARK: - Instance Properties
     
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -71,22 +76,12 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
           }
         }
     }
-  
-    // MARK: - View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureDesign()
-    }
     
     //MARK: - Instance Methods
     
     @IBAction func onSignInButtonClick(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func onSignUpButtonClick(_ sender: UIButton) {
-        
+        let request = Login.SignIn.Request(email: self.emailTextField.text!, password: self.passwordTextField.text!)
+        self.interactor?.signIn(with: request)
     }
     
     //MARK: -
@@ -100,6 +95,34 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
             .font: UIFont(name: "HelveticaNeue-Light", size: 17)!
         ]
         self.navigationController?.transparent()
+        
+        self.emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        self.emailTextField.textColor = UIColor.white
+        self.passwordTextField.textColor = UIColor.white
+    }
+  
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.configureDesign()
+    }
+    
+    //MARK: - LoginDisplayLogic
+    
+    func openCoursesScreen() {
+        
+    }
+    
+    func showError(with viewModel: Login.SignIn.ViewModel) {
+        self.errorView.isHidden = false
+        self.errorLabel.text = viewModel.errorMessage
+        self.emailTextField.textColor = Common.Autorization.errorColor
+        self.passwordTextField.textColor = Common.Autorization.errorColor
     }
     
 }

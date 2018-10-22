@@ -15,18 +15,20 @@ import UIKit
 enum Login {
   // MARK: Use cases
   
-  enum Something {
+  enum SignIn {
     
     struct Request {
-        
+        let email: String
+        let password: String
     }
     
     struct Response {
-        
+        let success: Bool
+        let message: String
     }
     
     struct ViewModel {
-        
+        let errorMessage: String
     }
     
   }

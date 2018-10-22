@@ -99,19 +99,40 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignUpButtonClick:" destination="72p-96-TlV" eventType="touchUpInside" id="F8S-Bw-lPP"/>
                                     <segue destination="w8m-LZ-UWE" kind="show" id="pSW-4F-iGb"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYY-p2-IrE">
+                                <rect key="frame" x="16" y="80" width="343" height="91.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользователь с данным Email и паролем не найден" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-DE-jWd">
+                                        <rect key="frame" x="16" y="16" width="311" height="59.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75294117650000003" green="0.2156862745" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZLg-DE-jWd" firstAttribute="leading" secondItem="FYY-p2-IrE" secondAttribute="leading" constant="16" id="1W8-Y2-Zzt"/>
+                                    <constraint firstItem="ZLg-DE-jWd" firstAttribute="top" secondItem="FYY-p2-IrE" secondAttribute="top" constant="16" id="1fV-fo-7sO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZLg-DE-jWd" secondAttribute="trailing" constant="16" id="ZRq-gE-53g"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZLg-DE-jWd" secondAttribute="bottom" constant="16" id="hVG-Tb-SNB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2f1-gb-4Qs" firstAttribute="centerX" secondItem="q8O-uG-4tW" secondAttribute="centerX" id="435-Ac-Vah"/>
+                            <constraint firstItem="2f1-gb-4Qs" firstAttribute="top" secondItem="FYY-p2-IrE" secondAttribute="bottom" constant="16" id="4f1-da-q2s"/>
                             <constraint firstItem="taF-Cw-MqQ" firstAttribute="trailing" secondItem="2f1-gb-4Qs" secondAttribute="trailing" constant="16" id="5sk-u9-klg"/>
                             <constraint firstItem="2f1-gb-4Qs" firstAttribute="leading" secondItem="taF-Cw-MqQ" secondAttribute="leading" constant="16" id="LMF-xJ-gOn"/>
                             <constraint firstItem="v6U-5L-0g6" firstAttribute="centerX" secondItem="q8O-uG-4tW" secondAttribute="centerX" id="TOw-2J-ES7"/>
+                            <constraint firstItem="FYY-p2-IrE" firstAttribute="top" secondItem="taF-Cw-MqQ" secondAttribute="top" constant="16" id="V97-el-vlx"/>
+                            <constraint firstItem="FYY-p2-IrE" firstAttribute="leading" secondItem="taF-Cw-MqQ" secondAttribute="leading" constant="16" id="Vsb-LF-33h"/>
                             <constraint firstItem="aUy-cH-OEe" firstAttribute="top" secondItem="2f1-gb-4Qs" secondAttribute="bottom" constant="84.5" id="fPa-wd-AiU"/>
                             <constraint firstItem="v6U-5L-0g6" firstAttribute="top" secondItem="aUy-cH-OEe" secondAttribute="bottom" constant="16" id="hLV-Xi-dwG"/>
+                            <constraint firstItem="taF-Cw-MqQ" firstAttribute="trailing" secondItem="FYY-p2-IrE" secondAttribute="trailing" constant="16" id="kfG-ma-LuH"/>
                             <constraint firstItem="aUy-cH-OEe" firstAttribute="centerX" secondItem="q8O-uG-4tW" secondAttribute="centerX" id="qRg-jx-00z"/>
                             <constraint firstItem="2f1-gb-4Qs" firstAttribute="centerY" secondItem="q8O-uG-4tW" secondAttribute="centerY" constant="-100" id="u2B-N2-1nP"/>
                         </constraints>
@@ -120,6 +141,8 @@
                     <navigationItem key="navigationItem" title="Войти" id="4zj-lU-Ilo"/>
                     <connections>
                         <outlet property="emailTextField" destination="E1n-nJ-Zpx" id="8ba-Rr-Cbh"/>
+                        <outlet property="errorLabel" destination="ZLg-DE-jWd" id="pZu-8j-kow"/>
+                        <outlet property="errorView" destination="FYY-p2-IrE" id="Znr-NI-wqj"/>
                         <outlet property="passwordTextField" destination="GFi-EN-KZC" id="nuG-Vc-v6z"/>
                     </connections>
                 </viewController>

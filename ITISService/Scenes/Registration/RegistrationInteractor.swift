@@ -13,7 +13,7 @@
 import UIKit
 
 protocol RegistrationBusinessLogic {
-    func doSomething(request: Registration.Something.Request)
+    func signUp(with request: Registration.SignUp.Request)
 }
 
 protocol RegistrationDataStore {
@@ -22,17 +22,25 @@ protocol RegistrationDataStore {
 
 class RegistrationInteractor: RegistrationBusinessLogic, RegistrationDataStore {
     
-    var presenter: RegistrationPresentationLogic?
-    var worker: RegistrationWorker?
-    //var name: String = ""
-
-    // MARK: Do something
-
-    func doSomething(request: Registration.Something.Request) {
-        worker = RegistrationWorker()
-        worker?.doSomeWork()
-
-        let response = Registration.Something.Response()
-        presenter?.presentSomething(response: response)
+    var presenter: RegistrationPresentationLogic!
+    var worker: RegistrationWorker!
+    
+    init() {
+        self.worker = RegistrationWorker()
     }
+    
+    func signUp(with request: Registration.SignUp.Request) {
+        guard Validator.validate(studEmail: request.email) else {
+            self.presenter.signUp(response: Registration.SignUp.Response(success: false, errorType: .email, message: Common.Messages.invalidEmail))
+            return
+        }
+        
+        guard request.password == request.confirmPassword else {
+            self.presenter.signUp(response: Registration.SignUp.Response(success: false, errorType: .password, message: "Пароли не совпадают"))
+            return
+        }
+        
+        self.presenter.signUp(response: Registration.SignUp.Response(success: true, errorType: nil, message: nil))
+    }
+    
 }

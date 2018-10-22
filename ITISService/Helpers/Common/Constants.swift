@@ -16,6 +16,11 @@ public enum Common {
             .foregroundColor: placeholderColor,
             .font: UIFont(name: "HelveticaNeue-Light", size: 14)!
         ]
+        static let errorColor = UIColor(red: 192 / 255.0, green: 55 / 255.0, blue: 46 / 255.0, alpha: 1)
+    }
+    
+    struct Messages {
+        static let invalidEmail = "Неверный формат e-mail адреса. Используйте почту от КФУ с доменом @stud.kpfu.ru"
     }
     
 }

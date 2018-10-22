@@ -13,7 +13,8 @@
 import UIKit
 
 protocol RegistrationDisplayLogic: class {
-    func displaySomething(viewModel: Registration.Something.ViewModel)
+    func showError(with viewModel: Registration.SignUp.ViewModel)
+    func showCourses()
 }
 
 class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
@@ -34,8 +35,8 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
     
     //MARK: -
     
-    var interactor: RegistrationBusinessLogic?
-    var router: (NSObjectProtocol & RegistrationRoutingLogic & RegistrationDataPassing)?
+    var interactor: RegistrationBusinessLogic!
+    var router: (NSObjectProtocol & RegistrationRoutingLogic & RegistrationDataPassing)!
     
     //MARK: - Object lifecycle
     
@@ -75,17 +76,12 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
         }
     }
     
-    //MARK: - View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureDesign()
-        doSomething()
-    }
-    
     //MARK: - Instance Methods
     
-    //Add otlets methods here
+    @IBAction func onSignUpButtonClick(_ sender: Any) {
+        let request = Registration.SignUp.Request(email: emailTextField.text!, password: passwordTextField.text!, confirmPassword: confirmPasswordTextField.text!)
+        self.interactor.signUp(with: request)
+    }
     
     //MARK: -
     
@@ -94,14 +90,37 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
         self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Ваш e-mail", attributes: Common.Autorization.placeholderAttributes)
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Создать пароль", attributes: Common.Autorization.placeholderAttributes)
         self.confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: "Повторить пароль", attributes: Common.Autorization.placeholderAttributes)
+        
+        self.emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.confirmPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
-    func doSomething() {
-        let request = Registration.Something.Request()
-        interactor?.doSomething(request: request)
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        self.emailTextField.textColor = UIColor.white
+        self.passwordTextField.textColor = UIColor.white
+        self.confirmPasswordTextField.textColor = UIColor.white
     }
     
-    func displaySomething(viewModel: Registration.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    //MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.configureDesign()
     }
+    
+    //MARK: - RegistrationDisplayLogic Methods
+    
+    func showError(with viewModel: Registration.SignUp.ViewModel) {
+        self.errorView.isHidden = false
+        self.errorLabel.text = viewModel.errorMessage
+        self.emailTextField.textColor = viewModel.emailTextColor
+        self.passwordTextField.textColor = viewModel.passwordsTextColor
+        self.confirmPasswordTextField.textColor = viewModel.passwordsTextColor
+    }
+    
+    func showCourses() {
+        
+    }
+    
 }
