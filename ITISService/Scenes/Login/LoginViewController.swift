@@ -21,7 +21,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     //MARK: - Constants
     
     fileprivate struct Constants {
-        static let placeholderColor = UIColor(red: 100 / 255.0, green: 100 / 255.0, blue: 100 / 255.0, alpha: 1)
         static let titleColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 149 / 255.0, alpha: 1)
     }
     
@@ -93,23 +92,14 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     //MARK: -
     
     private func configureDesign() {
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: Constants.placeholderColor,
-            .font: UIFont(name: "HelveticaNeue-Light", size: 14)!
-        ]
-        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Ваша почта КФУ", attributes: attributes)
-        self.emailTextField.tintColor = Constants.placeholderColor
-        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Ваш пароль", attributes: attributes)
-        self.passwordTextField.tintColor = Constants.placeholderColor
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Ваша почта КФУ", attributes: Common.Autorization.placeholderAttributes)
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Ваш пароль", attributes: Common.Autorization.placeholderAttributes)
         
         self.navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: Constants.titleColor,
             .font: UIFont(name: "HelveticaNeue-Light", size: 17)!
         ]
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.transparent()
     }
     
 }

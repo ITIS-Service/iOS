@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		CB19D440217DA3E800B4586F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB19D43F217DA3E800B4586F /* Login.storyboard */; };
+		CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D446217DC44900B4586F /* RegistrationPresenter.swift */; };
+		CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D447217DC44900B4586F /* RegistrationWorker.swift */; };
+		CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D448217DC44900B4586F /* RegistrationRouter.swift */; };
+		CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D449217DC44900B4586F /* RegistrationModels.swift */; };
+		CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D44A217DC44900B4586F /* RegistrationViewController.swift */; };
+		CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D44B217DC44900B4586F /* RegistrationInteractor.swift */; };
+		CB19D454217DC47200B4586F /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB19D453217DC47200B4586F /* Registration.storyboard */; };
+		CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */; };
+		CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDBA217E008A00BF35C6 /* Constants.swift */; };
 		CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F41382179A00C0058293F /* AppDelegate.swift */; };
 		CB5F41402179A00D0058293F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB5F413F2179A00D0058293F /* Assets.xcassets */; };
 		CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5F41412179A00D0058293F /* LaunchScreen.storyboard */; };
@@ -21,6 +30,15 @@
 
 /* Begin PBXFileReference section */
 		CB19D43F217DA3E800B4586F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CB19D446217DC44900B4586F /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		CB19D447217DC44900B4586F /* RegistrationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationWorker.swift; sourceTree = "<group>"; };
+		CB19D448217DC44900B4586F /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		CB19D449217DC44900B4586F /* RegistrationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModels.swift; sourceTree = "<group>"; };
+		CB19D44A217DC44900B4586F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CB19D44B217DC44900B4586F /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
+		CB19D453217DC47200B4586F /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
+		CB49FDBA217E008A00BF35C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB5F41352179A00C0058293F /* ITISService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITISService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5F41382179A00C0058293F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB5F413F2179A00D0058293F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +104,53 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CB19D445217DC41700B4586F /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				CB19D452217DC46500B4586F /* Storyboard */,
+				CB19D446217DC44900B4586F /* RegistrationPresenter.swift */,
+				CB19D447217DC44900B4586F /* RegistrationWorker.swift */,
+				CB19D448217DC44900B4586F /* RegistrationRouter.swift */,
+				CB19D449217DC44900B4586F /* RegistrationModels.swift */,
+				CB19D44A217DC44900B4586F /* RegistrationViewController.swift */,
+				CB19D44B217DC44900B4586F /* RegistrationInteractor.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		CB19D452217DC46500B4586F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB19D453217DC47200B4586F /* Registration.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CB49FDB3217DFBDA00BF35C6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CB49FDB9217E008100BF35C6 /* Common */,
+				CB49FDB4217DFBE100BF35C6 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CB49FDB4217DFBE100BF35C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CB49FDB9217E008100BF35C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB49FDBA217E008A00BF35C6 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CB5F412C2179A00C0058293F = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +170,7 @@
 		CB5F41372179A00C0058293F /* ITISService */ = {
 			isa = PBXGroup;
 			children = (
+				CB49FDB3217DFBDA00BF35C6 /* Helpers */,
 				CB5F414A2179A1510058293F /* Scenes */,
 				CB19D441217DB13D00B4586F /* Resources */,
 				CB19D444217DB15F00B4586F /* Supporting Files */,
@@ -115,6 +181,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB19D445217DC41700B4586F /* Registration */,
 				CB5F414B2179A15A0058293F /* Login */,
 				CB19D442217DB14800B4586F /* LaunchScreen */,
 			);
@@ -194,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
+				CB19D454217DC47200B4586F /* Registration.storyboard in Resources */,
 				CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */,
 				CB5F41402179A00D0058293F /* Assets.xcassets in Resources */,
 			);
@@ -207,12 +275,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
+				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
+				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
+				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
+				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
+				CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */,
 				CB5F41552179A53B0058293F /* LoginModels.swift in Sources */,
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
 				CB5F41532179A53B0058293F /* LoginWorker.swift in Sources */,
+				CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */,
+				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
+				CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

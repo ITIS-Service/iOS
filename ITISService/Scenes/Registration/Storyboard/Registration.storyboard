@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration View Controller-->
+        <scene sceneID="Zdr-23-tTM">
+            <objects>
+                <viewController storyboardIdentifier="registrationViewController" id="Nm9-Nu-7RB" customClass="RegistrationViewController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X2i-9e-Can">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="F6C-zf-hFt">
+                                <rect key="frame" x="16" y="164" width="343" height="139"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPe-Vi-rcv">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACL-y7-Osb">
+                                                <rect key="frame" x="16" y="14" width="32.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваша почта ФУ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9b-3G-YeS">
+                                                <rect key="frame" x="118" y="14" width="209" height="17"/>
+                                                <color key="tintColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="0pe-vX-91b"/>
+                                            <constraint firstItem="ACL-y7-Osb" firstAttribute="centerY" secondItem="wPe-Vi-rcv" secondAttribute="centerY" id="8NK-4y-lac"/>
+                                            <constraint firstItem="B9b-3G-YeS" firstAttribute="leading" secondItem="ACL-y7-Osb" secondAttribute="trailing" constant="69.5" id="BVB-Vn-Ywn"/>
+                                            <constraint firstAttribute="trailing" secondItem="B9b-3G-YeS" secondAttribute="trailing" constant="16" id="W5i-C5-QRv"/>
+                                            <constraint firstItem="B9b-3G-YeS" firstAttribute="centerY" secondItem="ACL-y7-Osb" secondAttribute="centerY" id="bs3-qg-SBN"/>
+                                            <constraint firstItem="ACL-y7-Osb" firstAttribute="leading" secondItem="wPe-Vi-rcv" secondAttribute="leading" constant="16" id="xhb-dn-X7d"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGR-Uo-8hl">
+                                        <rect key="frame" x="0.0" y="47" width="343" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydU-U6-MyC">
+                                                <rect key="frame" x="16" y="14" width="48" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваш пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8e-gy-MRh">
+                                                <rect key="frame" x="118" y="14" width="209" height="17"/>
+                                                <color key="tintColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3XF-7d-uBI"/>
+                                            <constraint firstAttribute="trailing" secondItem="A8e-gy-MRh" secondAttribute="trailing" constant="16" id="N5P-GE-gXx"/>
+                                            <constraint firstItem="ydU-U6-MyC" firstAttribute="leading" secondItem="BGR-Uo-8hl" secondAttribute="leading" constant="16" id="U6B-9w-p70"/>
+                                            <constraint firstItem="ydU-U6-MyC" firstAttribute="centerY" secondItem="BGR-Uo-8hl" secondAttribute="centerY" id="Zz2-30-cXX"/>
+                                            <constraint firstItem="A8e-gy-MRh" firstAttribute="centerY" secondItem="ydU-U6-MyC" secondAttribute="centerY" id="u1u-rR-bLU"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4O4-73-b6i">
+                                        <rect key="frame" x="0.0" y="94" width="343" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подтвердить пароль" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJn-WE-rL4">
+                                                <rect key="frame" x="16" y="16.5" width="95" height="12"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Подтвердить пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8t-0y-9T0">
+                                                <rect key="frame" x="118" y="14" width="209" height="17"/>
+                                                <color key="tintColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="DJn-WE-rL4" firstAttribute="leading" secondItem="4O4-73-b6i" secondAttribute="leading" constant="16" id="HK9-dl-bKM"/>
+                                            <constraint firstAttribute="trailing" secondItem="h8t-0y-9T0" secondAttribute="trailing" constant="16" id="WJJ-sM-287"/>
+                                            <constraint firstItem="h8t-0y-9T0" firstAttribute="centerY" secondItem="DJn-WE-rL4" secondAttribute="centerY" id="hkq-na-Bks"/>
+                                            <constraint firstItem="DJn-WE-rL4" firstAttribute="centerY" secondItem="4O4-73-b6i" secondAttribute="centerY" id="nIu-1o-BKF"/>
+                                            <constraint firstAttribute="height" constant="45" id="vmk-yN-ShK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="B9b-3G-YeS" firstAttribute="width" secondItem="A8e-gy-MRh" secondAttribute="width" id="HAe-bC-o4G"/>
+                                    <constraint firstItem="h8t-0y-9T0" firstAttribute="width" secondItem="A8e-gy-MRh" secondAttribute="width" id="gAK-dA-2fa"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-xa-1E4">
+                                <rect key="frame" x="126" y="387" width="123" height="45"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" title="ОТРПАВИТЬ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQS-ud-duL">
+                                <rect key="frame" x="16" y="36" width="343" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email не найден. Используйте почту от КФУ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZK-x5-OJH">
+                                        <rect key="frame" x="16" y="16" width="311" height="80"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75294117647058822" green="0.21568627450980393" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GZK-x5-OJH" firstAttribute="leading" secondItem="uQS-ud-duL" secondAttribute="leading" constant="16" id="5uX-UB-P5l"/>
+                                    <constraint firstAttribute="trailing" secondItem="GZK-x5-OJH" secondAttribute="trailing" constant="16" id="jsV-9S-PTT"/>
+                                    <constraint firstItem="GZK-x5-OJH" firstAttribute="top" secondItem="uQS-ud-duL" secondAttribute="top" constant="16" id="mjH-Cs-SQZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="GZK-x5-OJH" secondAttribute="bottom" constant="16" id="pQO-Dw-Hkl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aVm-xa-1E4" firstAttribute="centerX" secondItem="F6C-zf-hFt" secondAttribute="centerX" id="2qJ-FE-LMD"/>
+                            <constraint firstItem="F6C-zf-hFt" firstAttribute="top" secondItem="uQS-ud-duL" secondAttribute="bottom" constant="16" id="6hY-3q-Nb4"/>
+                            <constraint firstItem="aVm-xa-1E4" firstAttribute="top" secondItem="4O4-73-b6i" secondAttribute="bottom" constant="84" id="Ait-GQ-mHE"/>
+                            <constraint firstItem="F6C-zf-hFt" firstAttribute="leading" secondItem="gp2-Rg-mlJ" secondAttribute="leading" constant="16" id="F39-qd-U9k"/>
+                            <constraint firstItem="gp2-Rg-mlJ" firstAttribute="trailing" secondItem="F6C-zf-hFt" secondAttribute="trailing" constant="16" id="Iff-jb-aBG"/>
+                            <constraint firstItem="uQS-ud-duL" firstAttribute="top" secondItem="gp2-Rg-mlJ" secondAttribute="top" constant="16" id="QJm-lm-2az"/>
+                            <constraint firstItem="F6C-zf-hFt" firstAttribute="centerX" secondItem="X2i-9e-Can" secondAttribute="centerX" id="Qxd-OF-tf7"/>
+                            <constraint firstItem="F6C-zf-hFt" firstAttribute="centerY" secondItem="X2i-9e-Can" secondAttribute="centerY" constant="-100" id="US5-79-p7g"/>
+                            <constraint firstItem="gp2-Rg-mlJ" firstAttribute="trailing" secondItem="uQS-ud-duL" secondAttribute="trailing" constant="16" id="h2C-RT-fSC"/>
+                            <constraint firstItem="uQS-ud-duL" firstAttribute="leading" secondItem="gp2-Rg-mlJ" secondAttribute="leading" constant="16" id="n2f-YH-HtH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gp2-Rg-mlJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="h8t-0y-9T0" id="6ur-fv-fFl"/>
+                        <outlet property="emailTextField" destination="B9b-3G-YeS" id="SHr-y7-Xdv"/>
+                        <outlet property="errorLabel" destination="GZK-x5-OJH" id="M9B-1X-nH0"/>
+                        <outlet property="errorView" destination="uQS-ud-duL" id="whe-ZP-jpA"/>
+                        <outlet property="passwordTextField" destination="A8e-gy-MRh" id="Ug5-bU-c13"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-Ic-PrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>

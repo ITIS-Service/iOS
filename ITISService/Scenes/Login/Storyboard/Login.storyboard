@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2f1-gb-4Qs">
-                                <rect key="frame" x="16" y="287.5" width="343" height="92"/>
+                                <rect key="frame" x="16" y="187.5" width="343" height="92"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJK-9e-1JP">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -31,6 +31,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваша почта ФУ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1n-nJ-Zpx">
                                                 <rect key="frame" x="118" y="14" width="209" height="17"/>
+                                                <color key="tintColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -57,6 +58,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ваш пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GFi-EN-KZC">
                                                 <rect key="frame" x="118" y="14" width="209" height="17"/>
+                                                <color key="tintColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -77,7 +79,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUy-cH-OEe">
-                                <rect key="frame" x="146.5" y="464" width="82" height="45"/>
+                                <rect key="frame" x="146.5" y="364" width="82" height="45"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
@@ -89,7 +91,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6U-5L-0g6">
-                                <rect key="frame" x="115.5" y="525" width="144" height="45"/>
+                                <rect key="frame" x="115.5" y="425" width="144" height="45"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.32941176470588235" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
@@ -98,6 +100,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignUpButtonClick:" destination="72p-96-TlV" eventType="touchUpInside" id="F8S-Bw-lPP"/>
+                                    <segue destination="w8m-LZ-UWE" kind="show" id="pSW-4F-iGb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,7 +113,7 @@
                             <constraint firstItem="aUy-cH-OEe" firstAttribute="top" secondItem="2f1-gb-4Qs" secondAttribute="bottom" constant="84.5" id="fPa-wd-AiU"/>
                             <constraint firstItem="v6U-5L-0g6" firstAttribute="top" secondItem="aUy-cH-OEe" secondAttribute="bottom" constant="16" id="hLV-Xi-dwG"/>
                             <constraint firstItem="aUy-cH-OEe" firstAttribute="centerX" secondItem="q8O-uG-4tW" secondAttribute="centerX" id="qRg-jx-00z"/>
-                            <constraint firstItem="2f1-gb-4Qs" firstAttribute="centerY" secondItem="q8O-uG-4tW" secondAttribute="centerY" id="u2B-N2-1nP"/>
+                            <constraint firstItem="2f1-gb-4Qs" firstAttribute="centerY" secondItem="q8O-uG-4tW" secondAttribute="centerY" constant="-100" id="u2B-N2-1nP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="taF-Cw-MqQ"/>
                     </view>
@@ -124,6 +127,14 @@
             </objects>
             <point key="canvasLocation" x="1052" y="134.48275862068968"/>
         </scene>
+        <!--registrationViewController-->
+        <scene sceneID="aOD-bN-7rM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Registration" referencedIdentifier="registrationViewController" id="w8m-LZ-UWE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4V1-9E-TE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="109"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rjY-5L-VLx">
             <objects>
@@ -132,6 +143,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nMf-IF-5YD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
