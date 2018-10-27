@@ -23,4 +23,8 @@ public enum Common {
         static let invalidEmail = "Неверный формат e-mail адреса. Используйте почту от КФУ с доменом @stud.kpfu.ru"
     }
     
+    struct Scene {
+        static let navTitleColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 149 / 255.0, alpha: 1)
+    }
+    
 }

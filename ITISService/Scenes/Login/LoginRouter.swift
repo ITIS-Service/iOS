@@ -17,15 +17,13 @@ import UIKit
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol LoginDataPassing
-{
+protocol LoginDataPassing {
   var dataStore: LoginDataStore? { get }
 }
 
-class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
-{
-  weak var viewController: LoginViewController?
-  var dataStore: LoginDataStore?
+class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
+    weak var viewController: LoginViewController?
+    var dataStore: LoginDataStore?
   
   // MARK: Routing
   

@@ -115,7 +115,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     //MARK: - LoginDisplayLogic
     
     func openCoursesScreen() {
-        
+        self.performSegue(withIdentifier: "coursesNavigationController", sender: nil)
     }
     
     func showError(with viewModel: Login.SignIn.ViewModel) {

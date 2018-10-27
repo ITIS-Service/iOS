@@ -144,11 +144,20 @@
                         <outlet property="errorLabel" destination="ZLg-DE-jWd" id="pZu-8j-kow"/>
                         <outlet property="errorView" destination="FYY-p2-IrE" id="Znr-NI-wqj"/>
                         <outlet property="passwordTextField" destination="GFi-EN-KZC" id="nuG-Vc-v6z"/>
+                        <segue destination="hY8-oO-20n" kind="presentation" identifier="coursesNavigationController" id="h9A-ni-0Ud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hA7-CZ-yvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052" y="134.48275862068968"/>
+        </scene>
+        <!--coursesNavigationController-->
+        <scene sceneID="q3u-eK-8ih">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Courses" referencedIdentifier="coursesNavigationController" id="hY8-oO-20n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0m-9i-0tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701" y="25"/>
         </scene>
         <!--registrationViewController-->
         <scene sceneID="aOD-bN-7rM">

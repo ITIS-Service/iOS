@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC105DA719415203FE3468B3 /* Pods_ITISService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */; };
+		CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D21921843F300072EB07 /* CoursesPresenter.swift */; };
+		CB07D22021843F300072EB07 /* CoursesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D21A21843F300072EB07 /* CoursesWorker.swift */; };
+		CB07D22121843F300072EB07 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D21B21843F300072EB07 /* CoursesRouter.swift */; };
+		CB07D22221843F300072EB07 /* CoursesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D21C21843F300072EB07 /* CoursesModels.swift */; };
+		CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D21D21843F300072EB07 /* CoursesViewController.swift */; };
+		CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D21E21843F300072EB07 /* CoursesInteractor.swift */; };
+		CB07D22721843F610072EB07 /* Courses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB07D22621843F610072EB07 /* Courses.storyboard */; };
+		CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D22B218442640072EB07 /* CourseTableViewCell.swift */; };
+		CB07D22E218442640072EB07 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07D22C218442640072EB07 /* CourseTableViewCell.xib */; };
+		CB07D231218444630072EB07 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D230218444630072EB07 /* Course.swift */; };
+		CB07D2332184453E0072EB07 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2322184453E0072EB07 /* Teacher.swift */; };
+		CB07D2352184455B0072EB07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2342184455B0072EB07 /* User.swift */; };
+		CB07D237218445E90072EB07 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D236218445E90072EB07 /* Point.swift */; };
+		CB07D23921844AE50072EB07 /* CoursePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D23821844AE50072EB07 /* CoursePreview.swift */; };
+		CB07D23B21844BBD0072EB07 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D23A21844BBD0072EB07 /* UIView + Extension.swift */; };
+		CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D23D21844F6B0072EB07 /* TableViewCompatible.swift */; };
+		CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D240218451890072EB07 /* CoursesDatasource.swift */; };
+		CB07D243218453B70072EB07 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D242218453B70072EB07 /* Configurable.swift */; };
+		CB07D245218454ED0072EB07 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D244218454ED0072EB07 /* TableViewSection.swift */; };
 		CB19D440217DA3E800B4586F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB19D43F217DA3E800B4586F /* Login.storyboard */; };
 		CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D446217DC44900B4586F /* RegistrationPresenter.swift */; };
 		CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D447217DC44900B4586F /* RegistrationWorker.swift */; };
@@ -30,6 +50,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280EE32B6111CBF215AD255F /* Pods-ITISService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISService.release.xcconfig"; path = "Pods/Target Support Files/Pods-ITISService/Pods-ITISService.release.xcconfig"; sourceTree = "<group>"; };
+		5CA3A7A3B11A94EE430B72A7 /* Pods-ITISService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ITISService/Pods-ITISService.debug.xcconfig"; sourceTree = "<group>"; };
+		CB07D21921843F300072EB07 /* CoursesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesPresenter.swift; sourceTree = "<group>"; };
+		CB07D21A21843F300072EB07 /* CoursesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesWorker.swift; sourceTree = "<group>"; };
+		CB07D21B21843F300072EB07 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
+		CB07D21C21843F300072EB07 /* CoursesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModels.swift; sourceTree = "<group>"; };
+		CB07D21D21843F300072EB07 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		CB07D21E21843F300072EB07 /* CoursesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesInteractor.swift; sourceTree = "<group>"; };
+		CB07D22621843F610072EB07 /* Courses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Courses.storyboard; sourceTree = "<group>"; };
+		CB07D22B218442640072EB07 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		CB07D22C218442640072EB07 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
+		CB07D230218444630072EB07 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		CB07D2322184453E0072EB07 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		CB07D2342184455B0072EB07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB07D236218445E90072EB07 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		CB07D23821844AE50072EB07 /* CoursePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePreview.swift; sourceTree = "<group>"; };
+		CB07D23A21844BBD0072EB07 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		CB07D23D21844F6B0072EB07 /* TableViewCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCompatible.swift; sourceTree = "<group>"; };
+		CB07D240218451890072EB07 /* CoursesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDatasource.swift; sourceTree = "<group>"; };
+		CB07D242218453B70072EB07 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		CB07D244218454ED0072EB07 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
 		CB19D43F217DA3E800B4586F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CB19D446217DC44900B4586F /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		CB19D447217DC44900B4586F /* RegistrationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationWorker.swift; sourceTree = "<group>"; };
@@ -52,6 +93,7 @@
 		CB5F414F2179A53B0058293F /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		CB5F41502179A53B0058293F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB5F41512179A53B0058293F /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +101,108 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC105DA719415203FE3468B3 /* Pods_ITISService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		389369C1FCF465B1955FB67A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A88C15CD0BEF3D7EBD0DFBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CA3A7A3B11A94EE430B72A7 /* Pods-ITISService.debug.xcconfig */,
+				280EE32B6111CBF215AD255F /* Pods-ITISService.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB07D21821843EF40072EB07 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D23F218451740072EB07 /* TableView Datasource */,
+				CB07D22521843F340072EB07 /* Storyboard */,
+				CB07D21921843F300072EB07 /* CoursesPresenter.swift */,
+				CB07D21A21843F300072EB07 /* CoursesWorker.swift */,
+				CB07D21B21843F300072EB07 /* CoursesRouter.swift */,
+				CB07D21C21843F300072EB07 /* CoursesModels.swift */,
+				CB07D21D21843F300072EB07 /* CoursesViewController.swift */,
+				CB07D21E21843F300072EB07 /* CoursesInteractor.swift */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		CB07D22521843F340072EB07 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D22621843F610072EB07 /* Courses.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CB07D2282184423B0072EB07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D229218442470072EB07 /* TableView Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB07D229218442470072EB07 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D22A218442530072EB07 /* Course */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		CB07D22A218442530072EB07 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D22B218442640072EB07 /* CourseTableViewCell.swift */,
+				CB07D22C218442640072EB07 /* CourseTableViewCell.xib */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		CB07D22F2184445A0072EB07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D230218444630072EB07 /* Course.swift */,
+				CB07D2322184453E0072EB07 /* Teacher.swift */,
+				CB07D2342184455B0072EB07 /* User.swift */,
+				CB07D236218445E90072EB07 /* Point.swift */,
+				CB07D23821844AE50072EB07 /* CoursePreview.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB07D23C21844F210072EB07 /* TableViewCompatible */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D23D21844F6B0072EB07 /* TableViewCompatible.swift */,
+				CB07D242218453B70072EB07 /* Configurable.swift */,
+				CB07D244218454ED0072EB07 /* TableViewSection.swift */,
+			);
+			path = TableViewCompatible;
+			sourceTree = "<group>";
+		};
+		CB07D23F218451740072EB07 /* TableView Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D240218451890072EB07 /* CoursesDatasource.swift */,
+			);
+			path = "TableView Datasource";
+			sourceTree = "<group>";
+		};
 		CB19D43E217DA3DD00B4586F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +269,7 @@
 		CB49FDB3217DFBDA00BF35C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB07D23C21844F210072EB07 /* TableViewCompatible */,
 				CB49FDB9217E008100BF35C6 /* Common */,
 				CB49FDB4217DFBE100BF35C6 /* Extensions */,
 			);
@@ -141,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */,
+				CB07D23A21844BBD0072EB07 /* UIView + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +299,8 @@
 			children = (
 				CB5F41372179A00C0058293F /* ITISService */,
 				CB5F41362179A00C0058293F /* Products */,
+				6A88C15CD0BEF3D7EBD0DFBE /* Pods */,
+				389369C1FCF465B1955FB67A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +315,8 @@
 		CB5F41372179A00C0058293F /* ITISService */ = {
 			isa = PBXGroup;
 			children = (
+				CB07D22F2184445A0072EB07 /* Models */,
+				CB07D2282184423B0072EB07 /* Views */,
 				CB49FDB3217DFBDA00BF35C6 /* Helpers */,
 				CB5F414A2179A1510058293F /* Scenes */,
 				CB19D441217DB13D00B4586F /* Resources */,
@@ -184,6 +328,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB07D21821843EF40072EB07 /* Courses */,
 				CB19D445217DC41700B4586F /* Registration */,
 				CB5F414B2179A15A0058293F /* Login */,
 				CB19D442217DB14800B4586F /* LaunchScreen */,
@@ -212,6 +357,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB5F41472179A00D0058293F /* Build configuration list for PBXNativeTarget "ITISService" */;
 			buildPhases = (
+				A0344ED4CC3460DAC7524424 /* [CP] Check Pods Manifest.lock */,
 				CB5F41312179A00C0058293F /* Sources */,
 				CB5F41322179A00C0058293F /* Frameworks */,
 				CB5F41332179A00C0058293F /* Resources */,
@@ -263,6 +409,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB07D22E218442640072EB07 /* CourseTableViewCell.xib in Resources */,
+				CB07D22721843F610072EB07 /* Courses.storyboard in Resources */,
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
 				CB19D454217DC47200B4586F /* Registration.storyboard in Resources */,
 				CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */,
@@ -272,27 +420,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A0344ED4CC3460DAC7524424 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITISService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB5F41312179A00C0058293F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB07D2352184455B0072EB07 /* User.swift in Sources */,
+				CB07D231218444630072EB07 /* Course.swift in Sources */,
 				CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
+				CB07D22121843F300072EB07 /* CoursesRouter.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
+				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
 				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
+				CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
+				CB07D23921844AE50072EB07 /* CoursePreview.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
 				CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */,
 				CB5F41552179A53B0058293F /* LoginModels.swift in Sources */,
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
+				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
+				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
+				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
+				CB07D245218454ED0072EB07 /* TableViewSection.swift in Sources */,
+				CB07D23B21844BBD0072EB07 /* UIView + Extension.swift in Sources */,
 				CB5F41532179A53B0058293F /* LoginWorker.swift in Sources */,
+				CB07D22021843F300072EB07 /* CoursesWorker.swift in Sources */,
 				CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
+				CB07D237218445E90072EB07 /* Point.swift in Sources */,
+				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
+				CB07D22221843F300072EB07 /* CoursesModels.swift in Sources */,
 				CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */,
+				CB07D243218453B70072EB07 /* Configurable.swift in Sources */,
+				CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,15 +614,13 @@
 		};
 		CB5F41482179A00D0058293F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CA3A7A3B11A94EE430B72A7 /* Pods-ITISService.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W56K4E4L5F;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -446,15 +630,13 @@
 		};
 		CB5F41492179A00D0058293F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280EE32B6111CBF215AD255F /* Pods-ITISService.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W56K4E4L5F;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
