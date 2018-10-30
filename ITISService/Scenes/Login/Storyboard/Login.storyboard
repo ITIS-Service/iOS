@@ -145,6 +145,7 @@
                         <outlet property="errorView" destination="FYY-p2-IrE" id="Znr-NI-wqj"/>
                         <outlet property="passwordTextField" destination="GFi-EN-KZC" id="nuG-Vc-v6z"/>
                         <segue destination="hY8-oO-20n" kind="presentation" identifier="coursesNavigationController" id="h9A-ni-0Ud"/>
+                        <segue destination="QMM-Bu-Xeb" kind="presentation" identifier="startQuizNavigationController" id="wy0-NH-lAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hA7-CZ-yvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,6 +167,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4V1-9E-TE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1726" y="109"/>
+        </scene>
+        <!--startQuizNavigationController-->
+        <scene sceneID="06R-4F-YnV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quiz" referencedIdentifier="startQuizNavigationController" id="QMM-Bu-Xeb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x0K-e4-6fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708" y="244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rjY-5L-VLx">

@@ -15,6 +15,7 @@ import UIKit
 protocol LoginDisplayLogic: class {
     
     func openCoursesScreen()
+    func openStartQuizScreen()
     func showError(with viewModel: Login.SignIn.ViewModel)
     
 }
@@ -116,6 +117,10 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     
     func openCoursesScreen() {
         self.performSegue(withIdentifier: "coursesNavigationController", sender: nil)
+    }
+    
+    func openStartQuizScreen() {
+        self.performSegue(withIdentifier: "startQuizNavigationController", sender: nil)
     }
     
     func showError(with viewModel: Login.SignIn.ViewModel) {

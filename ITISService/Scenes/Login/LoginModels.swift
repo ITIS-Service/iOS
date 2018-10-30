@@ -25,6 +25,7 @@ enum Login {
     struct Response {
         let success: Bool
         let message: String
+        let shouldShowQuiz: Bool
     }
     
     struct ViewModel {

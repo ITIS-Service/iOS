@@ -27,6 +27,17 @@
 		CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D240218451890072EB07 /* CoursesDatasource.swift */; };
 		CB07D243218453B70072EB07 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D242218453B70072EB07 /* Configurable.swift */; };
 		CB07D245218454ED0072EB07 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D244218454ED0072EB07 /* TableViewSection.swift */; };
+		CB07D2552184C1CC0072EB07 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB07D2542184C1CC0072EB07 /* Quiz.storyboard */; };
+		CB07D2582184D6710072EB07 /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2572184D6710072EB07 /* QuizManager.swift */; };
+		CB07D25A2184D6A40072EB07 /* Qustion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2592184D6A40072EB07 /* Qustion.swift */; };
+		CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D25B2184D6C50072EB07 /* Answer.swift */; };
+		CB07D2642184DD820072EB07 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D25E2184DD820072EB07 /* QuestionPresenter.swift */; };
+		CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D25F2184DD820072EB07 /* QuestionWorker.swift */; };
+		CB07D2662184DD820072EB07 /* QuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2602184DD820072EB07 /* QuestionRouter.swift */; };
+		CB07D2672184DD820072EB07 /* QuestionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2612184DD820072EB07 /* QuestionModels.swift */; };
+		CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2622184DD820072EB07 /* QuestionViewController.swift */; };
+		CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2632184DD820072EB07 /* QuestionInteractor.swift */; };
+		CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D26B2184DED20072EB07 /* StartQuizViewController.swift */; };
 		CB19D440217DA3E800B4586F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB19D43F217DA3E800B4586F /* Login.storyboard */; };
 		CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D446217DC44900B4586F /* RegistrationPresenter.swift */; };
 		CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D447217DC44900B4586F /* RegistrationWorker.swift */; };
@@ -35,6 +46,9 @@
 		CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D44A217DC44900B4586F /* RegistrationViewController.swift */; };
 		CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D44B217DC44900B4586F /* RegistrationInteractor.swift */; };
 		CB19D454217DC47200B4586F /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB19D453217DC47200B4586F /* Registration.storyboard */; };
+		CB39DC362185C70400DA04D0 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39DC342185C70400DA04D0 /* AnswerTableViewCell.swift */; };
+		CB39DC372185C70400DA04D0 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB39DC352185C70400DA04D0 /* AnswerTableViewCell.xib */; };
+		CB39DC3A2185CA4B00DA04D0 /* AnswersDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39DC392185CA4B00DA04D0 /* AnswersDatasource.swift */; };
 		CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */; };
 		CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDBA217E008A00BF35C6 /* Constants.swift */; };
 		CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDD7217E62DB00BF35C6 /* Validator.swift */; };
@@ -71,6 +85,17 @@
 		CB07D240218451890072EB07 /* CoursesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesDatasource.swift; sourceTree = "<group>"; };
 		CB07D242218453B70072EB07 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		CB07D244218454ED0072EB07 /* TableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
+		CB07D2542184C1CC0072EB07 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		CB07D2572184D6710072EB07 /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
+		CB07D2592184D6A40072EB07 /* Qustion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qustion.swift; sourceTree = "<group>"; };
+		CB07D25B2184D6C50072EB07 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		CB07D25E2184DD820072EB07 /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
+		CB07D25F2184DD820072EB07 /* QuestionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionWorker.swift; sourceTree = "<group>"; };
+		CB07D2602184DD820072EB07 /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
+		CB07D2612184DD820072EB07 /* QuestionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModels.swift; sourceTree = "<group>"; };
+		CB07D2622184DD820072EB07 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		CB07D2632184DD820072EB07 /* QuestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionInteractor.swift; sourceTree = "<group>"; };
+		CB07D26B2184DED20072EB07 /* StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewController.swift; sourceTree = "<group>"; };
 		CB19D43F217DA3E800B4586F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CB19D446217DC44900B4586F /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		CB19D447217DC44900B4586F /* RegistrationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationWorker.swift; sourceTree = "<group>"; };
@@ -79,6 +104,9 @@
 		CB19D44A217DC44900B4586F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CB19D44B217DC44900B4586F /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		CB19D453217DC47200B4586F /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		CB39DC342185C70400DA04D0 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		CB39DC352185C70400DA04D0 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		CB39DC392185CA4B00DA04D0 /* AnswersDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersDatasource.swift; sourceTree = "<group>"; };
 		CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
 		CB49FDBA217E008A00BF35C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB49FDD7217E62DB00BF35C6 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -159,6 +187,7 @@
 		CB07D229218442470072EB07 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CB39DC332185C6F000DA04D0 /* Answer */,
 				CB07D22A218442530072EB07 /* Course */,
 			);
 			path = "TableView Cells";
@@ -181,6 +210,8 @@
 				CB07D2342184455B0072EB07 /* User.swift */,
 				CB07D236218445E90072EB07 /* Point.swift */,
 				CB07D23821844AE50072EB07 /* CoursePreview.swift */,
+				CB07D2592184D6A40072EB07 /* Qustion.swift */,
+				CB07D25B2184D6C50072EB07 /* Answer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +232,54 @@
 				CB07D240218451890072EB07 /* CoursesDatasource.swift */,
 			);
 			path = "TableView Datasource";
+			sourceTree = "<group>";
+		};
+		CB07D2462184BE130072EB07 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D26A2184DEA80072EB07 /* StartQuiz */,
+				CB07D25D2184DD360072EB07 /* Question */,
+				CB07D2532184C1B90072EB07 /* Storyboard */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		CB07D2532184C1B90072EB07 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D2542184C1CC0072EB07 /* Quiz.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CB07D2562184D6670072EB07 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D2572184D6710072EB07 /* QuizManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CB07D25D2184DD360072EB07 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				CB39DC382185CA1900DA04D0 /* TableView Datasource */,
+				CB07D25E2184DD820072EB07 /* QuestionPresenter.swift */,
+				CB07D25F2184DD820072EB07 /* QuestionWorker.swift */,
+				CB07D2602184DD820072EB07 /* QuestionRouter.swift */,
+				CB07D2612184DD820072EB07 /* QuestionModels.swift */,
+				CB07D2622184DD820072EB07 /* QuestionViewController.swift */,
+				CB07D2632184DD820072EB07 /* QuestionInteractor.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		CB07D26A2184DEA80072EB07 /* StartQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				CB07D26B2184DED20072EB07 /* StartQuizViewController.swift */,
+			);
+			path = StartQuiz;
 			sourceTree = "<group>";
 		};
 		CB19D43E217DA3DD00B4586F /* Storyboard */ = {
@@ -266,6 +345,23 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		CB39DC332185C6F000DA04D0 /* Answer */ = {
+			isa = PBXGroup;
+			children = (
+				CB39DC342185C70400DA04D0 /* AnswerTableViewCell.swift */,
+				CB39DC352185C70400DA04D0 /* AnswerTableViewCell.xib */,
+			);
+			path = Answer;
+			sourceTree = "<group>";
+		};
+		CB39DC382185CA1900DA04D0 /* TableView Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CB39DC392185CA4B00DA04D0 /* AnswersDatasource.swift */,
+			);
+			path = "TableView Datasource";
+			sourceTree = "<group>";
+		};
 		CB49FDB3217DFBDA00BF35C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +411,7 @@
 		CB5F41372179A00C0058293F /* ITISService */ = {
 			isa = PBXGroup;
 			children = (
+				CB07D2562184D6670072EB07 /* Managers */,
 				CB07D22F2184445A0072EB07 /* Models */,
 				CB07D2282184423B0072EB07 /* Views */,
 				CB49FDB3217DFBDA00BF35C6 /* Helpers */,
@@ -328,6 +425,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB07D2462184BE130072EB07 /* Quiz */,
 				CB07D21821843EF40072EB07 /* Courses */,
 				CB19D445217DC41700B4586F /* Registration */,
 				CB5F414B2179A15A0058293F /* Login */,
@@ -411,6 +509,8 @@
 			files = (
 				CB07D22E218442640072EB07 /* CourseTableViewCell.xib in Resources */,
 				CB07D22721843F610072EB07 /* Courses.storyboard in Resources */,
+				CB07D2552184C1CC0072EB07 /* Quiz.storyboard in Resources */,
+				CB39DC372185C70400DA04D0 /* AnswerTableViewCell.xib in Resources */,
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
 				CB19D454217DC47200B4586F /* Registration.storyboard in Resources */,
 				CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */,
@@ -449,6 +549,7 @@
 				CB07D2352184455B0072EB07 /* User.swift in Sources */,
 				CB07D231218444630072EB07 /* Course.swift in Sources */,
 				CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */,
+				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
 				CB07D22121843F300072EB07 /* CoursesRouter.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
@@ -457,26 +558,37 @@
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
 				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
+				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,
 				CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB07D23921844AE50072EB07 /* CoursePreview.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
 				CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */,
+				CB39DC3A2185CA4B00DA04D0 /* AnswersDatasource.swift in Sources */,
 				CB5F41552179A53B0058293F /* LoginModels.swift in Sources */,
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
+				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,
 				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
+				CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */,
+				CB07D25A2184D6A40072EB07 /* Qustion.swift in Sources */,
 				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
+				CB07D2642184DD820072EB07 /* QuestionPresenter.swift in Sources */,
 				CB07D245218454ED0072EB07 /* TableViewSection.swift in Sources */,
 				CB07D23B21844BBD0072EB07 /* UIView + Extension.swift in Sources */,
+				CB07D2672184DD820072EB07 /* QuestionModels.swift in Sources */,
 				CB5F41532179A53B0058293F /* LoginWorker.swift in Sources */,
+				CB39DC362185C70400DA04D0 /* AnswerTableViewCell.swift in Sources */,
 				CB07D22021843F300072EB07 /* CoursesWorker.swift in Sources */,
 				CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */,
+				CB07D2582184D6710072EB07 /* QuizManager.swift in Sources */,
+				CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
 				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
 				CB07D22221843F300072EB07 /* CoursesModels.swift in Sources */,
 				CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */,
+				CB07D2662184DD820072EB07 /* QuestionRouter.swift in Sources */,
 				CB07D243218453B70072EB07 /* Configurable.swift in Sources */,
 				CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */,
 			);
@@ -620,7 +732,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W56K4E4L5F;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -636,7 +751,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W56K4E4L5F;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

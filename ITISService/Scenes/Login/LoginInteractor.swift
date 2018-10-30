@@ -33,14 +33,14 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     
     func signIn(with request: Login.SignIn.Request) {
         guard Validator.validate(studEmail: request.email) else {
-            let response = Login.SignIn.Response(success: false, message: Common.Messages.invalidEmail)
+            let response = Login.SignIn.Response(success: false, message: Common.Messages.invalidEmail, shouldShowQuiz: false)
             self.presenter.signIn(response: response)
             return
         }
         
         let success = self.worker.signIn(with: request.email, password: request.password)
         let errorMessage = "Пользователь с данным e-mail и паролем не найден"
-        self.presenter.signIn(response: Login.SignIn.Response(success: success, message: errorMessage))
+        self.presenter.signIn(response: Login.SignIn.Response(success: success, message: errorMessage, shouldShowQuiz: true))
     }
 
 }

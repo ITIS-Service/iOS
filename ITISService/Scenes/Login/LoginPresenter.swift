@@ -24,7 +24,11 @@ class LoginPresenter: LoginPresentationLogic {
     
     func signIn(response: Login.SignIn.Response) {
         if (response.success) {
-            viewController.openCoursesScreen()
+            if (response.shouldShowQuiz) {
+                viewController.openStartQuizScreen()
+            } else {
+                viewController.openCoursesScreen()
+            }
         } else {
             let viewModel = Login.SignIn.ViewModel(errorMessage: response.message)
             viewController.showError(with: viewModel)

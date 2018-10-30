@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start Quiz View Controller-->
+        <scene sceneID="Gsb-b0-Aub">
+            <objects>
+                <viewController id="osb-Ja-0K8" customClass="StartQuizViewController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxE-Pc-VLT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы поможем подобрать интересный для вас курс" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsO-U1-tbP">
+                                <rect key="frame" x="16" y="80" width="343" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для того, чтобы подобрать интересный для вас курс по выбору, требуется только ответить на несколько вопросов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-Xu-T95">
+                                <rect key="frame" x="16" y="144" width="343" height="60.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUo-VS-iT7">
+                                <rect key="frame" x="120" y="542" width="135" height="45"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" title="ПРОПУСТИТЬ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SRt-2D-ri2" kind="presentation" id="FyU-qQ-tmx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-im-gTh">
+                                <rect key="frame" x="108.5" y="481" width="158" height="45"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" title="ПРОЙТИ ОПРОС">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStartQuizButtonClick:" destination="osb-Ja-0K8" eventType="touchUpInside" id="rMS-G6-6nU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lkc-Xu-T95" firstAttribute="leading" secondItem="Gks-P8-C5o" secondAttribute="leading" constant="16" id="4g7-uA-Si5"/>
+                            <constraint firstItem="MUo-VS-iT7" firstAttribute="centerX" secondItem="zxE-Pc-VLT" secondAttribute="centerX" id="95p-iw-PVM"/>
+                            <constraint firstItem="vsO-U1-tbP" firstAttribute="leading" secondItem="Gks-P8-C5o" secondAttribute="leading" constant="16" id="El7-KQ-ib0"/>
+                            <constraint firstItem="Gks-P8-C5o" firstAttribute="trailing" secondItem="vsO-U1-tbP" secondAttribute="trailing" constant="16" id="M9g-Pl-jfq"/>
+                            <constraint firstItem="NEC-im-gTh" firstAttribute="centerX" secondItem="MUo-VS-iT7" secondAttribute="centerX" id="MYs-0o-rIP"/>
+                            <constraint firstItem="Gks-P8-C5o" firstAttribute="trailing" secondItem="lkc-Xu-T95" secondAttribute="trailing" constant="16" id="Nif-1M-2jh"/>
+                            <constraint firstItem="MUo-VS-iT7" firstAttribute="top" secondItem="NEC-im-gTh" secondAttribute="bottom" constant="16" id="QEQ-ye-ddo"/>
+                            <constraint firstItem="lkc-Xu-T95" firstAttribute="top" secondItem="vsO-U1-tbP" secondAttribute="bottom" constant="16" id="REu-3h-m14"/>
+                            <constraint firstItem="Gks-P8-C5o" firstAttribute="bottom" secondItem="MUo-VS-iT7" secondAttribute="bottom" constant="80" id="USC-JH-u8p"/>
+                            <constraint firstItem="vsO-U1-tbP" firstAttribute="top" secondItem="Gks-P8-C5o" secondAttribute="top" constant="16" id="vgX-WX-KR8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gks-P8-C5o"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gaG-rC-e8f"/>
+                    <connections>
+                        <segue destination="Xii-HQ-hzk" kind="show" identifier="questionViewController" id="bMg-j0-huv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdh-zC-2Zi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="174.96251874062969"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="uVF-ht-V7q">
+            <objects>
+                <viewController storyboardIdentifier="questionViewController" id="Xii-HQ-hzk" customClass="QuestionViewController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Txo-eh-2e6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос 1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-pK-bFa">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Какой язык программирования вы предпочитаете или хотели бы изучить?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-ai-KX6">
+                                <rect key="frame" x="16" y="138" width="343" height="72"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ybZ-gY-ugR">
+                                <rect key="frame" x="25" y="260" width="325" height="391"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="sfc-ai-KX6" firstAttribute="leading" secondItem="scl-mZ-hKF" secondAttribute="leading" constant="16" id="8hl-3F-j1H"/>
+                            <constraint firstItem="scl-mZ-hKF" firstAttribute="trailing" secondItem="ybZ-gY-ugR" secondAttribute="trailing" constant="25" id="8zY-xU-2gT"/>
+                            <constraint firstItem="R3W-pK-bFa" firstAttribute="top" secondItem="scl-mZ-hKF" secondAttribute="top" constant="8" id="9bQ-uJ-SM8"/>
+                            <constraint firstItem="ybZ-gY-ugR" firstAttribute="leading" secondItem="scl-mZ-hKF" secondAttribute="leading" constant="25" id="ICX-ja-QuP"/>
+                            <constraint firstItem="R3W-pK-bFa" firstAttribute="leading" secondItem="scl-mZ-hKF" secondAttribute="leading" constant="16" id="cws-Xq-FRI"/>
+                            <constraint firstItem="sfc-ai-KX6" firstAttribute="top" secondItem="R3W-pK-bFa" secondAttribute="bottom" constant="45" id="eBz-fI-a3A"/>
+                            <constraint firstItem="scl-mZ-hKF" firstAttribute="trailing" secondItem="sfc-ai-KX6" secondAttribute="trailing" constant="16" id="hCD-X8-J9W"/>
+                            <constraint firstItem="scl-mZ-hKF" firstAttribute="trailing" secondItem="R3W-pK-bFa" secondAttribute="trailing" constant="16" id="k6S-A8-awl"/>
+                            <constraint firstItem="ybZ-gY-ugR" firstAttribute="top" secondItem="sfc-ai-KX6" secondAttribute="bottom" constant="50" id="u51-v4-xyH"/>
+                            <constraint firstItem="scl-mZ-hKF" firstAttribute="bottom" secondItem="ybZ-gY-ugR" secondAttribute="bottom" constant="16" id="ywX-Dr-8WN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="scl-mZ-hKF"/>
+                    </view>
+                    <connections>
+                        <outlet property="answersTableView" destination="ybZ-gY-ugR" id="B0m-1M-YFs"/>
+                        <outlet property="questionNumberLabel" destination="R3W-pK-bFa" id="jqS-F5-1of"/>
+                        <outlet property="questionTitleLabel" destination="sfc-ai-KX6" id="aVl-bn-cGf"/>
+                        <segue destination="SRt-2D-ri2" kind="presentation" identifier="coursesNavigationController" id="yhy-Ha-Hs0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iq6-st-cam" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818" y="175"/>
+        </scene>
+        <!--coursesNavigationController-->
+        <scene sceneID="weT-92-aLJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Courses" referencedIdentifier="coursesNavigationController" id="SRt-2D-ri2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uea-MJ-UTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="629"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bLc-P7-Mk2">
+            <objects>
+                <navigationController storyboardIdentifier="startQuizNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="kci-59-bQh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZNn-o0-HaF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="osb-Ja-0K8" kind="relationship" relationship="rootViewController" id="udF-03-rB6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bG5-s9-gor" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16.800000000000001" y="174.96251874062969"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yhy-Ha-Hs0"/>
+    </inferredMetricsTieBreakers>
+</document>
