@@ -459,6 +459,7 @@
 				CB5F41312179A00C0058293F /* Sources */,
 				CB5F41322179A00C0058293F /* Frameworks */,
 				CB5F41332179A00C0058293F /* Resources */,
+				CB5A32832189ADA3002B4273 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -538,6 +539,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CB5A32832189ADA3002B4273 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 81c234a8769c0d8c6c53c1e66313d1e3c58c5bc2 1f3a7845af81be70d777d1b2cb95291f24734cc6a2147cff557ea300e20ccedd\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -730,7 +749,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W56K4E4L5F;
+				DEVELOPMENT_TEAM = PQHSF52J78;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -749,7 +768,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W56K4E4L5F;
+				DEVELOPMENT_TEAM = PQHSF52J78;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

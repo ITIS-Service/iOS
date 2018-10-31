@@ -6,5 +6,7 @@ target 'ITISService' do
   use_frameworks!
 
   # Pods for ITISService
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end
