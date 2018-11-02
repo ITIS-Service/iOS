@@ -8,5 +8,6 @@ target 'ITISService' do
   # Pods for ITISService
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'SwiftKeychainWrapper'
 
 end

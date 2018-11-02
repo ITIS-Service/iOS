@@ -38,6 +38,8 @@
 		CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2622184DD820072EB07 /* QuestionViewController.swift */; };
 		CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D2632184DD820072EB07 /* QuestionInteractor.swift */; };
 		CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07D26B2184DED20072EB07 /* StartQuizViewController.swift */; };
+		CB14059B218C365D0068D880 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14059A218C365D0068D880 /* UIColor + Extension.swift */; };
+		CB14059E218C38DB0068D880 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14059D218C38DB0068D880 /* Log.swift */; };
 		CB19D440217DA3E800B4586F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB19D43F217DA3E800B4586F /* Login.storyboard */; };
 		CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D446217DC44900B4586F /* RegistrationPresenter.swift */; };
 		CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19D447217DC44900B4586F /* RegistrationWorker.swift */; };
@@ -61,6 +63,21 @@
 		CB5F41552179A53B0058293F /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F414F2179A53B0058293F /* LoginModels.swift */; };
 		CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F41502179A53B0058293F /* LoginViewController.swift */; };
 		CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F41512179A53B0058293F /* LoginInteractor.swift */; };
+		CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF903218B815D00B63286 /* EndPointType.swift */; };
+		CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF905218B821B00B63286 /* HTTPMethod.swift */; };
+		CBEFF908218B827600B63286 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF907218B827600B63286 /* HTTPTask.swift */; };
+		CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF909218B82C500B63286 /* ParameterEncoding.swift */; };
+		CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF90B218B850300B63286 /* URLParameterEncoder.swift */; };
+		CBEFF90E218B868D00B63286 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF90D218B868D00B63286 /* JSONParameterEncoder.swift */; };
+		CBEFF910218B874700B63286 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF90F218B874700B63286 /* NetworkRouter.swift */; };
+		CBEFF912218B881800B63286 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF911218B881800B63286 /* Router.swift */; };
+		CBEFF914218B8C6400B63286 /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF913218B8C6400B63286 /* UserEndPoint.swift */; };
+		CBEFF916218B8D2900B63286 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF915218B8D2900B63286 /* NetworkManager.swift */; };
+		CBEFF918218B8F7800B63286 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF917218B8F7800B63286 /* Response.swift */; };
+		CBEFF91A218B935300B63286 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF919218B935300B63286 /* UserNetworkManager.swift */; };
+		CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */; };
+		CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF91D218BA23200B63286 /* KeychainManager.swift */; };
+		CBEFF920218BA35100B63286 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF91F218BA35100B63286 /* NetworkLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +113,8 @@
 		CB07D2622184DD820072EB07 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		CB07D2632184DD820072EB07 /* QuestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionInteractor.swift; sourceTree = "<group>"; };
 		CB07D26B2184DED20072EB07 /* StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewController.swift; sourceTree = "<group>"; };
+		CB14059A218C365D0068D880 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		CB14059D218C38DB0068D880 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		CB19D43F217DA3E800B4586F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CB19D446217DC44900B4586F /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		CB19D447217DC44900B4586F /* RegistrationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationWorker.swift; sourceTree = "<group>"; };
@@ -121,6 +140,21 @@
 		CB5F414F2179A53B0058293F /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		CB5F41502179A53B0058293F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB5F41512179A53B0058293F /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		CBEFF903218B815D00B63286 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		CBEFF905218B821B00B63286 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		CBEFF907218B827600B63286 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		CBEFF909218B82C500B63286 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		CBEFF90B218B850300B63286 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		CBEFF90D218B868D00B63286 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		CBEFF90F218B874700B63286 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		CBEFF911218B881800B63286 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CBEFF913218B8C6400B63286 /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
+		CBEFF915218B8D2900B63286 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CBEFF917218B8F7800B63286 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		CBEFF919218B935300B63286 /* UserNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
+		CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionResponse.swift; sourceTree = "<group>"; };
+		CBEFF91D218BA23200B63286 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		CBEFF91F218BA35100B63286 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -212,6 +246,8 @@
 				CB07D23821844AE50072EB07 /* CoursePreview.swift */,
 				CB07D2592184D6A40072EB07 /* Qustion.swift */,
 				CB07D25B2184D6C50072EB07 /* Answer.swift */,
+				CBEFF917218B8F7800B63286 /* Response.swift */,
+				CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				CB07D2572184D6710072EB07 /* QuizManager.swift */,
+				CBEFF91D218BA23200B63286 /* KeychainManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -280,6 +317,14 @@
 				CB07D26B2184DED20072EB07 /* StartQuizViewController.swift */,
 			);
 			path = StartQuiz;
+			sourceTree = "<group>";
+		};
+		CB14059C218C38D40068D880 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				CB14059D218C38DB0068D880 /* Log.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		CB19D43E217DA3DD00B4586F /* Storyboard */ = {
@@ -365,6 +410,7 @@
 		CB49FDB3217DFBDA00BF35C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB14059C218C38D40068D880 /* Logger */,
 				CB07D23C21844F210072EB07 /* TableViewCompatible */,
 				CB49FDB9217E008100BF35C6 /* Common */,
 				CB49FDB4217DFBE100BF35C6 /* Extensions */,
@@ -377,6 +423,7 @@
 			children = (
 				CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */,
 				CB07D23A21844BBD0072EB07 /* UIView + Extension.swift */,
+				CB14059A218C365D0068D880 /* UIColor + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +458,7 @@
 		CB5F41372179A00C0058293F /* ITISService */ = {
 			isa = PBXGroup;
 			children = (
+				CBEFF8FE218B80FD00B63286 /* Networking */,
 				CB07D2562184D6670072EB07 /* Managers */,
 				CB07D22F2184445A0072EB07 /* Models */,
 				CB07D2282184423B0072EB07 /* Views */,
@@ -448,6 +496,57 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		CBEFF8FE218B80FD00B63286 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFF902218B812E00B63286 /* Encoding */,
+				CBEFF901218B812900B63286 /* Service */,
+				CBEFF900218B812300B63286 /* Manager */,
+				CBEFF8FF218B811C00B63286 /* EndPoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CBEFF8FF218B811C00B63286 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFF913218B8C6400B63286 /* UserEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		CBEFF900218B812300B63286 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFF915218B8D2900B63286 /* NetworkManager.swift */,
+				CBEFF919218B935300B63286 /* UserNetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CBEFF901218B812900B63286 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFF903218B815D00B63286 /* EndPointType.swift */,
+				CBEFF905218B821B00B63286 /* HTTPMethod.swift */,
+				CBEFF907218B827600B63286 /* HTTPTask.swift */,
+				CBEFF90F218B874700B63286 /* NetworkRouter.swift */,
+				CBEFF911218B881800B63286 /* Router.swift */,
+				CBEFF91F218BA35100B63286 /* NetworkLogger.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CBEFF902218B812E00B63286 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFF909218B82C500B63286 /* ParameterEncoding.swift */,
+				CBEFF90B218B850300B63286 /* URLParameterEncoder.swift */,
+				CBEFF90D218B868D00B63286 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,6 +559,7 @@
 				CB5F41322179A00C0058293F /* Frameworks */,
 				CB5F41332179A00C0058293F /* Resources */,
 				CB5A32832189ADA3002B4273 /* ShellScript */,
+				479B1EB207709BA51DF23074 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -522,6 +622,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		479B1EB207709BA51DF23074 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ITISService/Pods-ITISService-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ITISService/Pods-ITISService-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A0344ED4CC3460DAC7524424 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,23 +687,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBEFF920218BA35100B63286 /* NetworkLogger.swift in Sources */,
 				CB07D2352184455B0072EB07 /* User.swift in Sources */,
 				CB07D231218444630072EB07 /* Course.swift in Sources */,
 				CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */,
 				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
+				CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
+				CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */,
 				CB07D22121843F300072EB07 /* CoursesRouter.swift in Sources */,
+				CBEFF912218B881800B63286 /* Router.swift in Sources */,
+				CBEFF914218B8C6400B63286 /* UserEndPoint.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
+				CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
+				CBEFF91A218B935300B63286 /* UserNetworkManager.swift in Sources */,
+				CBEFF908218B827600B63286 /* HTTPTask.swift in Sources */,
+				CBEFF90E218B868D00B63286 /* JSONParameterEncoder.swift in Sources */,
 				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
 				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,
 				CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB07D23921844AE50072EB07 /* CoursePreview.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
+				CBEFF910218B874700B63286 /* NetworkRouter.swift in Sources */,
 				CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */,
 				CB39DC3A2185CA4B00DA04D0 /* AnswersDatasource.swift in Sources */,
 				CB5F41552179A53B0058293F /* LoginModels.swift in Sources */,
@@ -589,11 +721,14 @@
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
 				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,
 				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
+				CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */,
 				CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */,
 				CB07D25A2184D6A40072EB07 /* Qustion.swift in Sources */,
+				CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */,
 				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
 				CB07D2642184DD820072EB07 /* QuestionPresenter.swift in Sources */,
 				CB07D245218454ED0072EB07 /* TableViewSection.swift in Sources */,
+				CBEFF916218B8D2900B63286 /* NetworkManager.swift in Sources */,
 				CB07D23B21844BBD0072EB07 /* UIView + Extension.swift in Sources */,
 				CB07D2672184DD820072EB07 /* QuestionModels.swift in Sources */,
 				CB5F41532179A53B0058293F /* LoginWorker.swift in Sources */,
@@ -604,12 +739,16 @@
 				CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
+				CBEFF918218B8F7800B63286 /* Response.swift in Sources */,
 				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
 				CB07D22221843F300072EB07 /* CoursesModels.swift in Sources */,
 				CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */,
 				CB07D2662184DD820072EB07 /* QuestionRouter.swift in Sources */,
 				CB07D243218453B70072EB07 /* Configurable.swift in Sources */,
+				CB14059E218C38DB0068D880 /* Log.swift in Sources */,
+				CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */,
 				CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */,
+				CB14059B218C365D0068D880 /* UIColor + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

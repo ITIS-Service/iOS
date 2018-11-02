@@ -2,20 +2,24 @@ PODS:
   - Crashlytics (3.10.9):
     - Fabric (~> 1.7.13)
   - Fabric (1.7.13)
+  - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Fabric
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 32c9825e1eda19fa2b41bc2935e93cbb47e9728e
+PODFILE CHECKSUM: 9f52c22a6664e9e1d52992c95b0298d356d3392b
 
 COCOAPODS: 1.5.3

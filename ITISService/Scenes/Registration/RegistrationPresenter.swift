@@ -14,6 +14,7 @@ import UIKit
 
 protocol RegistrationPresentationLogic {
     func signUp(response: Registration.SignUp.Response)
+    func showActivityIndicator(_ show: Bool)
 }
 
 class RegistrationPresenter: RegistrationPresentationLogic {
@@ -22,7 +23,7 @@ class RegistrationPresenter: RegistrationPresentationLogic {
     
     func signUp(response: Registration.SignUp.Response) {
         if (response.success) {
-            self.viewController.showCourses()
+            self.viewController.showQuestionsScreen()
         } else {
             let viewModel = Registration.SignUp.ViewModel(
                 errorMessage: response.message!,
@@ -30,6 +31,10 @@ class RegistrationPresenter: RegistrationPresentationLogic {
                 passwordsTextColor: response.errorType == .password ? Common.Autorization.errorColor : .white)
             self.viewController.showError(with: viewModel)
         }
+    }
+    
+    func showActivityIndicator(_ show: Bool) {
+        self.viewController.showActivityIndicator(show)
     }
     
 }

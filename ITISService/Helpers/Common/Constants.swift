@@ -27,4 +27,9 @@ public enum Common {
         static let navTitleColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 149 / 255.0, alpha: 1)
     }
     
+    struct Token {
+        static let prefix = "Bearer "
+        static let headerString = "Authorization"
+    }
+    
 }

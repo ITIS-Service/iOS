@@ -157,11 +157,20 @@
                         <outlet property="errorLabel" destination="GZK-x5-OJH" id="M9B-1X-nH0"/>
                         <outlet property="errorView" destination="uQS-ud-duL" id="whe-ZP-jpA"/>
                         <outlet property="passwordTextField" destination="A8e-gy-MRh" id="Ug5-bU-c13"/>
+                        <segue destination="Y7X-j4-MG4" kind="presentation" identifier="startQuizNavigationController" id="hB7-60-73O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-Ic-PrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124" y="26.53673163418291"/>
+        </scene>
+        <!--startQuizNavigationController-->
+        <scene sceneID="jyG-5E-oBx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quiz" referencedIdentifier="startQuizNavigationController" id="Y7X-j4-MG4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKG-1A-n4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="-18"/>
         </scene>
     </scenes>
 </document>

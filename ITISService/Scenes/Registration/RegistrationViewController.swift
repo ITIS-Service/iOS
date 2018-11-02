@@ -14,7 +14,8 @@ import UIKit
 
 protocol RegistrationDisplayLogic: class {
     func showError(with viewModel: Registration.SignUp.ViewModel)
-    func showCourses()
+    func showQuestionsScreen()
+    func showActivityIndicator(_ show: Bool)
 }
 
 class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
@@ -119,8 +120,16 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
         self.confirmPasswordTextField.textColor = viewModel.passwordsTextColor
     }
     
-    func showCourses() {
-        
+    func showQuestionsScreen() {
+        self.performSegue(withIdentifier: "startQuizNavigationController", sender: nil)
+    }
+    
+    func showActivityIndicator(_ show: Bool) {
+        if (show) {
+            self.view.showActivityIndicator()
+        } else {
+            self.view.hideActivityIndicator()
+        }
     }
     
 }

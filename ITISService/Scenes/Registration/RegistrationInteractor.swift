@@ -24,9 +24,11 @@ class RegistrationInteractor: RegistrationBusinessLogic, RegistrationDataStore {
     
     var presenter: RegistrationPresentationLogic!
     var worker: RegistrationWorker!
+    var userNetworkManager: UserNetworkManager!
     
     init() {
         self.worker = RegistrationWorker()
+        self.userNetworkManager = UserNetworkManager()
     }
     
     func signUp(with request: Registration.SignUp.Request) {
@@ -40,7 +42,14 @@ class RegistrationInteractor: RegistrationBusinessLogic, RegistrationDataStore {
             return
         }
         
-        self.presenter.signUp(response: Registration.SignUp.Response(success: true, errorType: nil, message: nil))
+        self.presenter.showActivityIndicator(true)
+        self.userNetworkManager.registration(with: request.email, password: request.password, success: { [weak self] in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.signUp(response: Registration.SignUp.Response(success: true, errorType: nil, message: nil))
+        }) { [weak self] (error) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.signUp(response: Registration.SignUp.Response(success: false, errorType: .network, message: error.message))
+        }
     }
     
 }
