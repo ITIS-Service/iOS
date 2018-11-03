@@ -24,6 +24,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     
     var presenter: LoginPresentationLogic!
     var worker: LoginWorker!
+    var networkManager: UserNetworkManager!
   
     // MARK: Do something
     
@@ -38,9 +39,14 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
             return
         }
         
-        let success = self.worker.signIn(with: request.email, password: request.password)
-        let errorMessage = "Пользователь с данным e-mail и паролем не найден"
-        self.presenter.signIn(response: Login.SignIn.Response(success: success, message: errorMessage, shouldShowQuiz: true))
+        self.presenter.showActivityIndicator(true)
+        self.networkManager.login(with: request.email, password: request.password, success: { [weak self] (loginResponseDto) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.signIn(response: Login.SignIn.Response(success: true, message: nil, shouldShowQuiz: !loginResponseDto.passedQuiz))
+        }) { [weak self] (error) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.signIn(response: Login.SignIn.Response(success: false, message: error.message, shouldShowQuiz: false))
+        }
     }
 
 }

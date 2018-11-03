@@ -17,6 +17,7 @@ protocol LoginDisplayLogic: class {
     func openCoursesScreen()
     func openStartQuizScreen()
     func showError(with viewModel: Login.SignIn.ViewModel)
+    func showActivityIndicator(_ show: Bool)
     
 }
 
@@ -62,6 +63,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.networkManager = UserNetworkManagerImpl()
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
@@ -128,6 +130,14 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         self.errorLabel.text = viewModel.errorMessage
         self.emailTextField.textColor = Common.Autorization.errorColor
         self.passwordTextField.textColor = Common.Autorization.errorColor
+    }
+    
+    func showActivityIndicator(_ show: Bool) {
+        if (show) {
+            self.view.showActivityIndicator()
+        } else {
+            self.view.hideActivityIndicator()
+        }
     }
     
 }

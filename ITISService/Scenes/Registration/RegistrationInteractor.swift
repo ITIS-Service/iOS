@@ -28,7 +28,6 @@ class RegistrationInteractor: RegistrationBusinessLogic, RegistrationDataStore {
     
     init() {
         self.worker = RegistrationWorker()
-        self.userNetworkManager = UserNetworkManager()
     }
     
     func signUp(with request: Registration.SignUp.Request) {

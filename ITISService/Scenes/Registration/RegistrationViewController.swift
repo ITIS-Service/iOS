@@ -61,6 +61,7 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.userNetworkManager = UserNetworkManagerImpl()
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor

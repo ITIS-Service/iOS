@@ -15,6 +15,7 @@ import UIKit
 protocol LoginPresentationLogic {
     
     func signIn(response: Login.SignIn.Response)
+    func showActivityIndicator(_ show: Bool)
     
 }
 
@@ -30,9 +31,13 @@ class LoginPresenter: LoginPresentationLogic {
                 viewController.openCoursesScreen()
             }
         } else {
-            let viewModel = Login.SignIn.ViewModel(errorMessage: response.message)
+            let viewModel = Login.SignIn.ViewModel(errorMessage: response.message!)
             viewController.showError(with: viewModel)
         }
+    }
+    
+    func showActivityIndicator(_ show: Bool) {
+        self.viewController.showActivityIndicator(show)
     }
     
 }

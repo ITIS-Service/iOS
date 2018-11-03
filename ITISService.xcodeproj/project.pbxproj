@@ -63,6 +63,7 @@
 		CB5F41552179A53B0058293F /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F414F2179A53B0058293F /* LoginModels.swift */; };
 		CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F41502179A53B0058293F /* LoginViewController.swift */; };
 		CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F41512179A53B0058293F /* LoginInteractor.swift */; };
+		CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */; };
 		CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF903218B815D00B63286 /* EndPointType.swift */; };
 		CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF905218B821B00B63286 /* HTTPMethod.swift */; };
 		CBEFF908218B827600B63286 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF907218B827600B63286 /* HTTPTask.swift */; };
@@ -140,6 +141,7 @@
 		CB5F414F2179A53B0058293F /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		CB5F41502179A53B0058293F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CB5F41512179A53B0058293F /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
 		CBEFF903218B815D00B63286 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		CBEFF905218B821B00B63286 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		CBEFF907218B827600B63286 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		CB07D22F2184445A0072EB07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB8654B8218DC0A500FDBD77 /* Dto */,
 				CB07D230218444630072EB07 /* Course.swift */,
 				CB07D2322184453E0072EB07 /* Teacher.swift */,
 				CB07D2342184455B0072EB07 /* User.swift */,
@@ -496,6 +499,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		CB8654B8218DC0A500FDBD77 /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
 		CBEFF8FE218B80FD00B63286 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +703,7 @@
 				CB07D231218444630072EB07 /* Course.swift in Sources */,
 				CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */,
 				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
+				CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */,
 				CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
 				CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */,

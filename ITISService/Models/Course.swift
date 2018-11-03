@@ -8,13 +8,10 @@
 
 import Foundation
 
-struct Course {
+struct Course: Codable {
     
     let id: Int
     let name: String
     let description: String
-    let times: [TimeInterval]
-    let place: String
-    let teacher: Teacher
     
 }

@@ -24,7 +24,7 @@ enum Login {
     
     struct Response {
         let success: Bool
-        let message: String
+        let message: String?
         let shouldShowQuiz: Bool
     }
     

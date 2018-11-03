@@ -15,6 +15,7 @@ public struct ExceptionResponse: Codable {
         case noResponse = "NO_RESPONSE"
         case internalError = "INTERNAL_ERROR"
         case requestError = "REQUEST_ERROR"
+        case parseError = "PARSE_ERROR"
         
         // Server codes
         case resourceNotFound = "RESOURCE_NOT_FOUND"
@@ -24,5 +25,9 @@ public struct ExceptionResponse: Codable {
     
     let message: String
     let errorCode: ErrorCode
+    
+    public static func parseException() -> ExceptionResponse {
+        return ExceptionResponse(message: "Ошибка при получении данных от сервера", errorCode: .parseError)
+    }
     
 }
