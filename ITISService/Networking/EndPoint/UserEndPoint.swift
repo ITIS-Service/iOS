@@ -8,10 +8,7 @@
 
 import Foundation
 
-enum NetworkEnvironment {
-    case production
-    case local
-}
+
 
 public enum UserApi  {
     case registration(email: String, password: String)
@@ -21,10 +18,7 @@ public enum UserApi  {
 extension UserApi: EndPointType {
     
     var environmentBaseURL: String {
-        switch NetworkManager.environment {
-        case .production: return "production url"
-        case .local: return "http://localhost:8080/users"
-        }
+        return NetworkManager.environment.rawValue + "/users"
     }
     
     var baseURL: URL {

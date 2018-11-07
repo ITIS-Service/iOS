@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="F6C-zf-hFt">
-                                <rect key="frame" x="16" y="164" width="343" height="139"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="F6C-zf-hFt">
+                                <rect key="frame" x="16" y="101" width="343" height="139"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPe-Vi-rcv">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -106,7 +106,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-xa-1E4">
-                                <rect key="frame" x="126" y="387" width="123" height="45"/>
+                                <rect key="frame" x="126" y="324" width="123" height="45"/>
                                 <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
@@ -118,10 +118,10 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQS-ud-duL">
-                                <rect key="frame" x="16" y="36" width="343" height="112"/>
+                                <rect key="frame" x="16" y="36" width="343" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email не найден. Используйте почту от КФУ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZK-x5-OJH">
-                                        <rect key="frame" x="16" y="16" width="311" height="80"/>
+                                        <rect key="frame" x="16" y="16" width="311" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -145,7 +145,6 @@
                             <constraint firstItem="gp2-Rg-mlJ" firstAttribute="trailing" secondItem="F6C-zf-hFt" secondAttribute="trailing" constant="16" id="Iff-jb-aBG"/>
                             <constraint firstItem="uQS-ud-duL" firstAttribute="top" secondItem="gp2-Rg-mlJ" secondAttribute="top" constant="16" id="QJm-lm-2az"/>
                             <constraint firstItem="F6C-zf-hFt" firstAttribute="centerX" secondItem="X2i-9e-Can" secondAttribute="centerX" id="Qxd-OF-tf7"/>
-                            <constraint firstItem="F6C-zf-hFt" firstAttribute="centerY" secondItem="X2i-9e-Can" secondAttribute="centerY" constant="-100" id="US5-79-p7g"/>
                             <constraint firstItem="gp2-Rg-mlJ" firstAttribute="trailing" secondItem="uQS-ud-duL" secondAttribute="trailing" constant="16" id="h2C-RT-fSC"/>
                             <constraint firstItem="uQS-ud-duL" firstAttribute="leading" secondItem="gp2-Rg-mlJ" secondAttribute="leading" constant="16" id="n2f-YH-HtH"/>
                         </constraints>
@@ -157,6 +156,7 @@
                         <outlet property="errorLabel" destination="GZK-x5-OJH" id="M9B-1X-nH0"/>
                         <outlet property="errorView" destination="uQS-ud-duL" id="whe-ZP-jpA"/>
                         <outlet property="passwordTextField" destination="A8e-gy-MRh" id="Ug5-bU-c13"/>
+                        <outlet property="sendButton" destination="aVm-xa-1E4" id="Apv-Uh-Zj6"/>
                         <segue destination="Y7X-j4-MG4" kind="presentation" identifier="startQuizNavigationController" id="hB7-60-73O"/>
                     </connections>
                 </viewController>

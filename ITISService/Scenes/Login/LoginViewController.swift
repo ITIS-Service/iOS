@@ -36,6 +36,9 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var bottomSpacerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var signUpButtonToBottomSpacerConstraint: NSLayoutConstraint!
+    
     //MARK: -
     
     var interactor: LoginBusinessLogic?
@@ -91,6 +94,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     
     private func configureDesign() {
         self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Ваша почта КФУ", attributes: Common.Autorization.placeholderAttributes)
+        self.emailTextField.autocorrectionType = .no
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Ваш пароль", attributes: Common.Autorization.placeholderAttributes)
         
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -113,6 +117,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDesign()
+        self.subscribeToKeyboardNotifications()
     }
     
     //MARK: - LoginDisplayLogic
@@ -126,10 +131,14 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     }
     
     func showError(with viewModel: Login.SignIn.ViewModel) {
-        self.errorView.isHidden = false
-        self.errorLabel.text = viewModel.errorMessage
-        self.emailTextField.textColor = Common.Autorization.errorColor
-        self.passwordTextField.textColor = Common.Autorization.errorColor
+        if UIScreen.isIphone5Screen() {
+            self.present(UIAlertController.errorAlert(with: viewModel.errorMessage), animated: true)
+        } else {
+            self.errorView.isHidden = false
+            self.errorLabel.text = viewModel.errorMessage
+            self.emailTextField.textColor = Common.Autorization.errorColor
+            self.passwordTextField.textColor = Common.Autorization.errorColor
+        }
     }
     
     func showActivityIndicator(_ show: Bool) {
@@ -138,6 +147,24 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         } else {
             self.view.hideActivityIndicator()
         }
+    }
+    
+}
+
+// MARK: - KeyboardHandler
+
+extension LoginViewController: KeyboardHandler {
+    
+    func handle(keyboardHeight: CGFloat, view: UIView) {
+        if keyboardHeight == 0 {
+             self.bottomSpacerHeightConstraint.constant = keyboardHeight
+        } else {
+            self.bottomSpacerHeightConstraint.constant = keyboardHeight - self.signUpButtonToBottomSpacerConstraint.constant            
+        }
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
 }

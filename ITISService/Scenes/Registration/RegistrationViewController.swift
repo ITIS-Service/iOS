@@ -23,16 +23,17 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
     //MARK: - Constants
     
     fileprivate struct Constants {
-        
+        static let titleColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 149 / 255.0, alpha: 1)
     }
     
     //MARK: - Instance Properties
     
-    @IBOutlet weak var errorView: UIView!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet fileprivate weak var errorView: UIView!
+    @IBOutlet fileprivate weak var errorLabel: UILabel!
+    @IBOutlet fileprivate weak var emailTextField: UITextField!
+    @IBOutlet fileprivate weak var passwordTextField: UITextField!
+    @IBOutlet fileprivate weak var confirmPasswordTextField: UITextField!
+    @IBOutlet fileprivate weak var sendButton: UIButton!
     
     //MARK: -
     
@@ -80,9 +81,13 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
     
     //MARK: - Instance Methods
     
-    @IBAction func onSignUpButtonClick(_ sender: Any) {
+    @IBAction fileprivate func onSignUpButtonClick(_ sender: Any) {
         let request = Registration.SignUp.Request(email: emailTextField.text!, password: passwordTextField.text!, confirmPassword: confirmPasswordTextField.text!)
         self.interactor.signUp(with: request)
+    }
+    
+    @objc fileprivate func onSendBarButtonClick(_ sender: Any) {
+        self.onSignUpButtonClick(sender)
     }
     
     //MARK: -
@@ -90,12 +95,21 @@ class RegistrationViewController: UIViewController, RegistrationDisplayLogic {
     private func configureDesign() {
         self.navigationController?.transparent()
         self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Ваш e-mail", attributes: Common.Autorization.placeholderAttributes)
+        self.emailTextField.autocorrectionType = .no
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Создать пароль", attributes: Common.Autorization.placeholderAttributes)
         self.confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: "Повторить пароль", attributes: Common.Autorization.placeholderAttributes)
         
         self.emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.confirmPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        if UIScreen.isIphone5Screen() {
+            let sendBarButtonItem = UIBarButtonItem(title: "Отправить", style: .done, target: self, action: #selector(onSendBarButtonClick(_:)))
+            sendBarButtonItem.setTitleTextAttributes([.foregroundColor: Constants.titleColor, .font: UIFont(name: "HelveticaNeue-Light", size: 17)!], for: .normal)
+            self.navigationItem.rightBarButtonItem = sendBarButtonItem
+            
+            self.sendButton.isHidden = true
+        }
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {

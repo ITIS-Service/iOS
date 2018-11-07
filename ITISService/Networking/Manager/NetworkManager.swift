@@ -8,9 +8,18 @@
 
 import Foundation
 
+enum NetworkEnvironment: String {
+    case production = "https://itis-courses.herokuapp.com"
+    case local = "http://localhost:8080"
+}
+
 class NetworkManager {
     
+    #if PRODUCTION
+    static let environment: NetworkEnvironment = .production
+    #else
     static let environment: NetworkEnvironment = .local
+    #endif
     
 }
 
