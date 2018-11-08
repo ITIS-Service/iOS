@@ -19,8 +19,10 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
             NetworkLogger.log(request: request)
             task = session.dataTask(with: request, completionHandler: { (data, response, error) in
                 guard let data = data, let response = response as? HTTPURLResponse else {
-                    let noResponse = ExceptionResponse(message: NetworkResponse.noResponse.rawValue, errorCode: .noResponse)
-                    failure(noResponse)
+                    DispatchQueue.main.async {
+                        let noResponse = ExceptionResponse(message: NetworkResponse.noResponse.rawValue, errorCode: .noResponse)
+                        failure(noResponse)
+                    }
                     return
                 }
                 NetworkLogger.log(response: response, data: data)
