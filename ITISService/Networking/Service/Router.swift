@@ -75,6 +75,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
             switch route.task {
             case .request:
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                self.addAuthorizationHeaders(in: &request)
             case .requestParameters(let bodyParameters, let urlParameters):
                 try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
             case .requestParametersAndHeaders(let bodyParameters, let urlParameters, let additionalHeaders):
@@ -102,9 +103,16 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     fileprivate func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
         guard let headers = additionalHeaders else { return }
+        
         for (key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
+    }
+    
+    fileprivate func addAuthorizationHeaders(in request: inout URLRequest) {
+        guard let token = KeychainManager.shared.token else { return }
+        
+        request.setValue(Common.Token.prefix + token, forHTTPHeaderField: Common.Token.headerString)
     }
     
 }

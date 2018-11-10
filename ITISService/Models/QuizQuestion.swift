@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct QuizQuestion {
+struct QuizQuestion: Codable {
     
     let id: Int
     let title: String

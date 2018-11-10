@@ -8,11 +8,10 @@
 
 import Foundation
 
-
-
 public enum UserApi  {
     case registration(email: String, password: String)
     case login(email: String, password: String)
+    case questions
 }
 
 extension UserApi: EndPointType {
@@ -32,11 +31,18 @@ extension UserApi: EndPointType {
             return "registration"
         case .login(_, _):
             return "login"
+        case .questions:
+            return "questions"
         }
     }
     
     var httpMethod: HTTPMethod {
-        return .post
+        switch self {
+        case .login(_, _), .registration(_, _):
+            return .post
+        case .questions:
+            return .get
+        }
     }
     
     var task: HTTPTask {
@@ -45,6 +51,8 @@ extension UserApi: EndPointType {
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
         case .login(let email, let password):
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
+        case .questions:
+            return .request
         }
     }
     

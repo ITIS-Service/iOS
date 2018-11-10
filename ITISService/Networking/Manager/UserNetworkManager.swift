@@ -12,12 +12,26 @@ protocol UserNetworkManager {
     
     func registration(with email: String, password: String, success: @escaping (() -> Void), failure: @escaping (ExceptionResponse) -> Void)
     func login(with email: String, password: String, success: @escaping ((LoginResponseDto) -> Void), failure: @escaping (ExceptionResponse) -> Void)
+    func fetchQuestions(success: @escaping ([QuizQuestion]) -> Void, failure: @escaping (ExceptionResponse) -> Void)
     
 }
 
 class UserNetworkManagerImpl: UserNetworkManager {
     
-    private let router = Router<UserApi>()
+    // MARK: - Instance Properties
+    
+    fileprivate let router = Router<UserApi>()
+    
+    // MARK: - Instance Methods
+    
+    fileprivate func extractToken(from response: URLResponse) {
+        if let httpResponse = response as? HTTPURLResponse, let authHeader = httpResponse.allHeaderFields[Common.Token.headerString] as? String {
+            let token = authHeader.replacingOccurrences(of: Common.Token.prefix, with: "")
+            KeychainManager.shared.token = token
+        }
+    }
+    
+    // MARK: -
     
     func registration(with email: String, password: String, success: @escaping (() -> Void), failure: @escaping (ExceptionResponse) -> Void) {
         router.request(.registration(email: email, password: password), success: { [weak self] (data, response) in
@@ -41,10 +55,15 @@ class UserNetworkManagerImpl: UserNetworkManager {
         }
     }
     
-    private func extractToken(from response: URLResponse) {
-        if let httpResponse = response as? HTTPURLResponse, let authHeader = httpResponse.allHeaderFields[Common.Token.headerString] as? String {
-            let token = authHeader.replacingOccurrences(of: Common.Token.prefix, with: "")
-            KeychainManager.shared.token = token
+    func fetchQuestions(success: @escaping ([QuizQuestion]) -> Void, failure: @escaping (ExceptionResponse) -> Void) {
+        router.request(.questions, success: { (data, _) in
+            if let questions = try? JSONDecoder().decode([QuizQuestion].self, from: data) {
+                success(questions)
+            } else {
+                failure(ExceptionResponse.parseException())
+            }
+        }) { (error) in
+            failure(error)
         }
     }
     

@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
-        interactor.networkManager = UserNetworkManagerImpl()
+        interactor.networkManager = NetworkManagers.userNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
