@@ -12,12 +12,13 @@
 
 import UIKit
 
-protocol QuestionDisplayLogic: AnswerTableViewCellDelegate {
+protocol QuestionDisplayLogic: AnswerTableViewCellDelegate, ErrorMessagePresenter {
     func showQuestionTitle(with viewModel: Question.Show.ViewModel)
     func showAnswers(with tableViewModels: [Question.AnswersTableView.Model])
     func showNextQuestionScreen()
     func unselectButtons(with viewModel: Question.Buttons.ViewModel)
     func showCoursesScreen()
+    func showActivityIndicator(_ show: Bool)
 }
 
 class QuestionViewController: UIViewController, QuestionDisplayLogic {
@@ -62,6 +63,7 @@ class QuestionViewController: UIViewController, QuestionDisplayLogic {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.userNetworkManager = NetworkManagers.userNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
@@ -138,6 +140,14 @@ class QuestionViewController: UIViewController, QuestionDisplayLogic {
     
     func showCoursesScreen() {
         self.performSegue(withIdentifier: "coursesNavigationController", sender: nil)
+    }
+    
+    func showActivityIndicator(_ show: Bool) {
+        if show {
+            self.view.showActivityIndicator()
+        } else {
+            self.view.hideActivityIndicator()
+        }
     }
     
 }

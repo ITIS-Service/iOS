@@ -72,16 +72,22 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         
         request.httpMethod = route.httpMethod.rawValue
         do {
+            
             switch route.task {
             case .request:
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                self.addAuthorizationHeaders(in: &request)
+                
             case .requestParameters(let bodyParameters, let urlParameters):
                 try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
+                
             case .requestParametersAndHeaders(let bodyParameters, let urlParameters, let additionalHeaders):
                 self.addAdditionalHeaders(additionalHeaders, request: &request)
                 try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
+                
             }
+            
+            self.addAuthorizationHeaders(in: &request)
+            
             return request
         } catch {
             throw error

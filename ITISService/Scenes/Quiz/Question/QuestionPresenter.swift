@@ -16,7 +16,9 @@ protocol QuestionPresentationLogic {
     func showQuestion(with response: Question.Show.Response)
     func showNextQuestionScreen()
     func unselectOtherButton(with response: Question.Buttons.Response)
-    func showCoursesScreen() 
+    func showCoursesScreen()
+    func showActivityIndicator(_ show: Bool)
+    func showError(_ error: ExceptionResponse)
 }
 
 class QuestionPresenter: QuestionPresentationLogic {
@@ -51,6 +53,14 @@ class QuestionPresenter: QuestionPresentationLogic {
         }
         
         self.viewController.unselectButtons(with: Question.Buttons.ViewModel(unselectedIndexPaths: unselectIndexPaths))
+    }
+    
+    func showActivityIndicator(_ show: Bool) {
+        self.viewController.showActivityIndicator(show)
+    }
+    
+    func showError(_ error: ExceptionResponse) {
+        self.viewController.showMesssage(with: error)
     }
     
 }

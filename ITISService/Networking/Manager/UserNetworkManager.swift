@@ -11,8 +11,12 @@ import Foundation
 protocol UserNetworkManager {
     
     func registration(with email: String, password: String, success: @escaping (() -> Void), failure: @escaping (ExceptionResponse) -> Void)
+    
     func login(with email: String, password: String, success: @escaping ((LoginResponseDto) -> Void), failure: @escaping (ExceptionResponse) -> Void)
+    
     func fetchQuestions(success: @escaping ([QuizQuestion]) -> Void, failure: @escaping (ExceptionResponse) -> Void)
+    
+    func sendAnswers(with answers: [String: Int], success: @escaping (Response) -> Void, failure: @escaping (ExceptionResponse) -> Void)
     
 }
 
@@ -59,6 +63,18 @@ class UserNetworkManagerImpl: UserNetworkManager {
         router.request(.questions, success: { (data, _) in
             if let questions = try? JSONDecoder().decode([QuizQuestion].self, from: data) {
                 success(questions)
+            } else {
+                failure(ExceptionResponse.parseException())
+            }
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func sendAnswers(with answers: [String: Int], success: @escaping (Response) -> Void, failure: @escaping (ExceptionResponse) -> Void) {
+        router.request(.answers(answers: answers), success: { (data, _) in
+            if let response = try? JSONDecoder().decode(Response.self, from: data) {
+                success(response)
             } else {
                 failure(ExceptionResponse.parseException())
             }

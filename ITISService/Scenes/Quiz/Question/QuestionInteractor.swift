@@ -27,6 +27,7 @@ class QuestionInteractor: QuestionBusinessLogic, QuestionDataStore {
     
     var presenter: QuestionPresentationLogic!
     var worker: QuestionWorker!
+    var userNetworkManager: UserNetworkManager!
     
     func getNextQuestion() {
         if let question = QuizManager.shared.nextQuestion() {
@@ -43,9 +44,20 @@ class QuestionInteractor: QuestionBusinessLogic, QuestionDataStore {
         if QuizManager.shared.hasNextQuestion() {
             self.presenter.showNextQuestionScreen()
         } else {
-            self.presenter.showCoursesScreen()
-            print("Quiz Complete! Sending results!")
-            print("Buffer results: \(QuizManager.shared.buffer)")
+            self.presenter.showActivityIndicator(true)
+            
+            var preparedAnswers = [String: Int]()
+            QuizManager.shared.buffer.forEach { key, value in
+                preparedAnswers[String(key)] = value
+            }
+            
+            self.userNetworkManager.sendAnswers(with: preparedAnswers, success: { [weak self] (response) in
+                self?.presenter.showActivityIndicator(false)
+                self?.presenter.showCoursesScreen()
+            }) { [weak self] (error) in
+                self?.presenter.showActivityIndicator(false)
+                self?.presenter.showError(error)
+            }
         }
     }
     

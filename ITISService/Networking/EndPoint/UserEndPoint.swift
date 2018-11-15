@@ -12,6 +12,7 @@ public enum UserApi  {
     case registration(email: String, password: String)
     case login(email: String, password: String)
     case questions
+    case answers(answers: [String: Int])
 }
 
 extension UserApi: EndPointType {
@@ -27,18 +28,20 @@ extension UserApi: EndPointType {
     
     var path: String {
         switch self {
-        case .registration(_, _):
+        case .registration:
             return "registration"
-        case .login(_, _):
+        case .login:
             return "login"
         case .questions:
             return "questions"
+        case .answers:
+            return "answers"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .login(_, _), .registration(_, _):
+        case .login, .registration, .answers:
             return .post
         case .questions:
             return .get
@@ -53,6 +56,8 @@ extension UserApi: EndPointType {
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
         case .questions:
             return .request
+        case .answers(let answers):
+            return .requestParameters(bodyParameters: ["answers": answers], urlParameters: nil)
         }
     }
     
