@@ -13,7 +13,7 @@
 import UIKit
 
 protocol CoursesBusinessLogic {
-    func doSomething(request: Courses.Something.Request)
+    func fetchCourses()
 }
 
 protocol CoursesDataStore {
@@ -22,17 +22,30 @@ protocol CoursesDataStore {
 
 class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     
-    var presenter: CoursesPresentationLogic?
-    var worker: CoursesWorker?
-    //var name: String = ""
+    // MARK: - Instance Properties
+    
+    var presenter: CoursesPresentationLogic!
+    var worker: CoursesWorker!
+    var userNetworkManager: UserNetworkManager!
+    
+    var listCourses: ListCourses?
 
-    // MARK: Do something
-
-    func doSomething(request: Courses.Something.Request) {
-        worker = CoursesWorker()
-        worker?.doSomeWork()
-
-        let response = Courses.Something.Response()
-        presenter?.presentSomething(response: response)
+    // MARK: - Instance Methods
+    
+    func fetchCourses() {
+        self.presenter.showActivityIndicator(true)
+        self.userNetworkManager.fetchCourses(success: { [weak self] (listCourses) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.presenter.showActivityIndicator(false)
+            strongSelf.listCourses = listCourses
+            strongSelf.presenter.displayCourses(response: Courses.List.Response(listCourses: listCourses))
+        }) { [weak self] (error) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.showAlert(with: error)
+        }
     }
+    
 }

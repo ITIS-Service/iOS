@@ -12,18 +12,42 @@
 
 import UIKit
 
-protocol CoursesPresentationLogic {
-    func presentSomething(response: Courses.Something.Response)
+protocol CoursesPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentationLogic {
+    func displayCourses(response: Courses.List.Response)
 }
 
 class CoursesPresenter: CoursesPresentationLogic {
     
-    weak var viewController: CoursesDisplayLogic?
+    // MARK: - Instance Properties
+    
+    weak var viewController: CoursesDisplayLogic!
+    
+    weak var loaderDislpayViewController: LoaderDisplayLogic! {
+        get {
+            return self.viewController
+        }
+    }
+    
+    weak var errorMessagePresenter: ErrorMessagePresenter! {
+        get {
+            return self.viewController
+        }
+    }
 
-    // MARK: Do something
-
-    func presentSomething(response: Courses.Something.Response) {
-        let viewModel = Courses.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    // MARK: - Instance Methods
+    
+    func displayCourses(response: Courses.List.Response) {
+        let suggestedCourses = response.listCourses.suggestedCourses.map {
+            return Courses.TableView.Model(name: $0.name, description: $0.description)
+        }
+        
+        let allCourses = response.listCourses.allCourses.map {
+            return Courses.TableView.Model(name: $0.name, description: $0.description)
+        }
+        
+        let suggestedCoursesSection = Courses.TableView.Section(items: suggestedCourses, headerTitle: "Предложенные курсы")
+        let allCoursesSection = Courses.TableView.Section(items: allCourses, headerTitle: "Все курсы")
+        
+        self.viewController.displayListCourses(sections: [suggestedCoursesSection, allCoursesSection])
     }
 }

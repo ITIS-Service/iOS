@@ -13,14 +13,15 @@
 import UIKit
 
 enum Courses {
-  // MARK: Use cases
+    
+    // MARK: - Use cases
   
-    enum Something {
+    enum List {
         struct Request {
             
         }
         struct Response {
-            
+            let listCourses: ListCourses
         }
         struct ViewModel {
             
@@ -28,6 +29,7 @@ enum Courses {
     }
     
     // MARK: - TableView Models
+    
     enum TableView {
         
         struct Model: TableViewCompatible {
@@ -52,7 +54,7 @@ enum Courses {
             var headerTitle: String?
             var footerTitle: String?
             
-            init(items: [TableViewCompatible], headerTitle: String?, footerTitle: String?) {
+            init(items: [TableViewCompatible], headerTitle: String?, footerTitle: String? = nil) {
                 self.items = items
                 self.headerTitle = headerTitle
                 self.footerTitle = footerTitle

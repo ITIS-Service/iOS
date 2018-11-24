@@ -10,6 +10,8 @@ import Foundation
 
 protocol UserNetworkManager {
     
+    // MARK: - Instance Methods
+    
     func registration(with email: String, password: String, success: @escaping (() -> Void), failure: @escaping (ExceptionResponse) -> Void)
     
     func login(with email: String, password: String, success: @escaping ((LoginResponseDto) -> Void), failure: @escaping (ExceptionResponse) -> Void)
@@ -18,6 +20,7 @@ protocol UserNetworkManager {
     
     func sendAnswers(with answers: [String: Int], success: @escaping (Response) -> Void, failure: @escaping (ExceptionResponse) -> Void)
     
+    func fetchCourses(success: @escaping (ListCourses) -> (), failure: @escaping (ExceptionResponse) -> ())
 }
 
 class UserNetworkManagerImpl: UserNetworkManager {
@@ -75,6 +78,18 @@ class UserNetworkManagerImpl: UserNetworkManager {
         router.request(.answers(answers: answers), success: { (data, _) in
             if let response = try? JSONDecoder().decode(Response.self, from: data) {
                 success(response)
+            } else {
+                failure(ExceptionResponse.parseException())
+            }
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func fetchCourses(success: @escaping (ListCourses) -> (), failure: @escaping (ExceptionResponse) -> ()) {
+        router.request(.courses, success: { (data, _) in
+            if let listCourses = try? JSONDecoder().decode(ListCourses.self, from: data) {
+                success(listCourses)
             } else {
                 failure(ExceptionResponse.parseException())
             }

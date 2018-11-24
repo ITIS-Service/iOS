@@ -12,30 +12,30 @@
 
 import UIKit
 
-protocol CoursesDisplayLogic: class {
-    func displaySomething(viewModel: Courses.Something.ViewModel)
+protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
+    func displayListCourses(sections: [Courses.TableView.Section])
 }
 
 class CoursesViewController: UIViewController, CoursesDisplayLogic {
     
-    //MARK: - Constants
+    // MARK: - Constants
     
     fileprivate struct Constants {
         static let backgroundColor = UIColor(red: 42 / 255.0, green: 42 / 255.0, blue: 42 / 255.0, alpha: 1)
     }
     
-    //MARK: - Instance Properties
+    // MARK: - Instance Properties
     
     @IBOutlet weak var tableView: UITableView!
     
-    //MARK: -
+    // MARK: -
     
     private let datasource = CoursesDatasource()
     
-    var interactor: CoursesBusinessLogic?
-    var router: (NSObjectProtocol & CoursesRoutingLogic & CoursesDataPassing)?
+    var interactor: CoursesBusinessLogic!
+    var router: (NSObjectProtocol & CoursesRoutingLogic & CoursesDataPassing)!
     
-    //MARK: - Object lifecycle
+    // MARK: - Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -47,7 +47,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         setup()
     }
     
-    //MARK: - Setup
+    // MARK: - Setup
     
     private func setup() {
         let viewController = self
@@ -57,12 +57,13 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.userNetworkManager = NetworkManagers.userNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
     }
     
-    //MARK: - Routing
+    // MARK: - Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let scene = segue.identifier {
@@ -73,9 +74,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         }
     }
     
-    //MARK: - Instance Methods
+    // MARK: - Instance Methods
     
-    //MARK: -
+    // MARK: -
     
     private func configureDesign() {
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -87,37 +88,30 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         self.tableView.register(CourseTableViewCell.nib(), forCellReuseIdentifier: CourseTableViewCell.identifier())
         self.tableView.dataSource = self.datasource
         self.tableView.delegate = self.datasource
+        
         self.datasource.onTap = { (indexPath) in
             //Open course details screen
         }
-        
-        //Dummy data
-        let model1 = Courses.TableView.Model(name: "Мобильная разработка (iOS)", description: "Программист iOS создаёт игры и приложения для устройств компании Apple. Разработки для этой операционной системы — самые доходные на мобильном рынке.")
-        let model2 = Courses.TableView.Model(name: "Мобильная разработка (Android)", description: "Разработка под Android — это создание игр и полезных приложений под 80% мобильных устройств. Android — открытая и свободная система, настроенная к модернизации и адаптации, она позволяет реализовать самые смелые фантазии программиста.")
-        let model3 = Courses.TableView.Model(name: "Анализ Данных", description: "Специализация подходит людям, незнакомым с анализом данных. Серия курсов постепенно, от простого к сложному, погружает в предмет. В первом курсе рассказывается о математическом аппарате и основах программирования на Python.")
-        
-        let section1 = Courses.TableView.Section(items: [model1, model3], headerTitle: "Предложенные курсы", footerTitle: nil)
-        let section2 = Courses.TableView.Section(items: [model2], headerTitle: "Все курсы", footerTitle: nil)
-        
-        self.datasource.sections = [section1, section2]
-        self.tableView.reloadData()
     }
     
-    func displaySomething(viewModel: Courses.Something.ViewModel) {
-        
-    }
-    
-    //MARK: - View lifecycle
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.configureDesign()
+        self.interactor.fetchCourses()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    //MARK: - CoursesDisplayLogic Methods
+    // MARK: - CoursesDisplayLogic Methods
+    
+    func displayListCourses(sections: [Courses.TableView.Section]) {
+        self.datasource.sections = sections
+        self.tableView.reloadData()
+    }
     
 }

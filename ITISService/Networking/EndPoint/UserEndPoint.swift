@@ -13,9 +13,14 @@ public enum UserApi  {
     case login(email: String, password: String)
     case questions
     case answers(answers: [String: Int])
+    case courses
 }
 
+// MARK: - EndPointType
+
 extension UserApi: EndPointType {
+    
+    // MARK: - Instance Properties
     
     var environmentBaseURL: String {
         return NetworkManager.environment.rawValue + "/users"
@@ -36,6 +41,8 @@ extension UserApi: EndPointType {
             return "questions"
         case .answers:
             return "answers"
+        case .courses:
+            return "courses"
         }
     }
     
@@ -43,7 +50,7 @@ extension UserApi: EndPointType {
         switch self {
         case .login, .registration, .answers:
             return .post
-        case .questions:
+        case .questions, .courses:
             return .get
         }
     }
@@ -54,7 +61,7 @@ extension UserApi: EndPointType {
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
         case .login(let email, let password):
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
-        case .questions:
+        case .questions, .courses:
             return .request
         case .answers(let answers):
             return .requestParameters(bodyParameters: ["answers": answers], urlParameters: nil)
@@ -64,5 +71,4 @@ extension UserApi: EndPointType {
     var headers: HTTPHeaders? {
         return nil
     }
-    
 }

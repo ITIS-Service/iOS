@@ -10,6 +10,6 @@ import Foundation
 
 struct LoginResponseDto: Codable {
     
-    let passedQuiz: Bool
+    let isPassedQuiz: Bool
     
 }

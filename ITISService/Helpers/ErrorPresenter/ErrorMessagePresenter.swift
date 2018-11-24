@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ErrorMessagePresenter {
+protocol ErrorMessagePresenter: class {
     
     // MARK: - Instance Properties
     
@@ -18,7 +18,6 @@ protocol ErrorMessagePresenter {
     
     func showMesssage(with error: ExceptionResponse, okHandler: (() -> Void)?)
     func showMesssage(with error: ExceptionResponse)
-    
 }
 
 // MARK: -
@@ -47,5 +46,4 @@ extension ErrorMessagePresenter where Self: UIViewController {
     func showMesssage(with error: ExceptionResponse) {
         self.showMesssage(with: error, okHandler: nil)
     }
-    
 }
