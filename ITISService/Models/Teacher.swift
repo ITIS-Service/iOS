@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct Teacher {
+struct Teacher: Codable {
     
-    let link: String
+    let id: Int
     let firstName: String
     let lastName: String
+    let email: String
+    let link: URL
     
 }

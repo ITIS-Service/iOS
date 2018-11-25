@@ -18,10 +18,22 @@ protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
 
 class CoursesViewController: UIViewController, CoursesDisplayLogic {
     
-    // MARK: - Constants
+    // MARK: - Nested Types
     
     fileprivate struct Constants {
+        
+        // MARK: - Properties
+        
         static let backgroundColor = UIColor(red: 42 / 255.0, green: 42 / 255.0, blue: 42 / 255.0, alpha: 1)
+    }
+    
+    // MARK: -
+    
+    fileprivate struct Segues {
+        
+        // MARK: - Properties
+        
+        static let courseDetails = "CourseDetails"
     }
     
     // MARK: - Instance Properties
@@ -89,8 +101,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         self.tableView.dataSource = self.datasource
         self.tableView.delegate = self.datasource
         
-        self.datasource.onTap = { (indexPath) in
-            //Open course details screen
+        self.datasource.onTap = { [unowned self] (indexPath) in
+            self.interactor.selectCourse(at: indexPath)
+            self.performSegue(withIdentifier: Segues.courseDetails, sender: nil)
         }
     }
     

@@ -14,13 +14,25 @@ import UIKit
 
 protocol CoursesBusinessLogic {
     func fetchCourses()
+    func selectCourse(at indexPath: IndexPath)
 }
 
 protocol CoursesDataStore {
-    //var name: String { get set }
+    var listCourses: ListCourses? { get }
+    var selectedCourse: Course? { get }
 }
 
 class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
+    
+    // MARK: - Nested Types
+    
+    fileprivate struct Constants {
+        
+        // MARK: - Properties
+        
+        static let suggestedCoursesSectionIndex = 0
+        static let allCoursesSectionIndex = 1
+    }
     
     // MARK: - Instance Properties
     
@@ -29,6 +41,7 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     var userNetworkManager: UserNetworkManager!
     
     var listCourses: ListCourses?
+    var selectedCourse: Course?
 
     // MARK: - Instance Methods
     
@@ -48,4 +61,15 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         }
     }
     
+    func selectCourse(at indexPath: IndexPath) {
+        guard let listCourses = self.listCourses else {
+            return
+        }
+        
+        if indexPath.section == Constants.suggestedCoursesSectionIndex {
+            self.selectedCourse = listCourses.suggestedCourses[indexPath.row]
+        } else if indexPath.section == Constants.allCoursesSectionIndex {
+            self.selectedCourse = listCourses.allCourses[indexPath.row]
+        }
+    }
 }

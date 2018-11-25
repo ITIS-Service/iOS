@@ -13,46 +13,35 @@
 import UIKit
 
 @objc protocol CoursesRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToCourseDetails(segue: UIStoryboardSegue)
 }
 
 protocol CoursesDataPassing {
-    var dataStore: CoursesDataStore? { get }
+    var dataStore: CoursesDataStore! { get }
 }
 
 class CoursesRouter: NSObject, CoursesRoutingLogic, CoursesDataPassing {
     
-    weak var viewController: CoursesViewController?
-    var dataStore: CoursesDataStore?
-
-    // MARK: Routing
-
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
-
-    // MARK: Navigation
-
-    //func navigateToSomewhere(source: CoursesViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
-
-    // MARK: Passing data
-
-    //func passDataToSomewhere(source: CoursesDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    // MARK: - Instance Properties
+    
+    weak var viewController: CoursesViewController!
+    var dataStore: CoursesDataStore!
+    
+    // MARK: - Instance Methods
+    
+    fileprivate func passDataToCourseDetails(source: CoursesDataStore, destination: CourseDetailsDataStore) {
+        if let course = source.selectedCourse {
+            destination.course = course
+        }
+    }
+    
+    // MARK: -
+    
+    func routeToCourseDetails(segue: UIStoryboardSegue) {
+        guard let datasourceHolder = segue.destination as? CourseDetailsDataStoreHolder else {
+            return
+        }
+        
+        self.passDataToCourseDetails(source: self.dataStore, destination: datasourceHolder.courseDetailsDataStore)
+    }
 }
