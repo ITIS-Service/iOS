@@ -69,6 +69,7 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
         viewController.router = router
         viewController.courseDetailsDataStore = interactor
         interactor.presenter = presenter
+        interactor.userNetworkManager = NetworkManagers.userNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
@@ -91,7 +92,7 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
     
     private func configureDesign() {
         self.interactor.setupInitialState()
-        
+        self.interactor.fetchCourseDetails()
     }
     
     // MARK: - View lifecycle
@@ -123,6 +124,16 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
         self.managementView.isHidden = !viewModel.shouldShowManagementView
         self.academicPerformanceButton.isHidden = !viewModel.shouldShowAcademicPerformanceButton
         self.signUpCourseButton.isHidden = !viewModel.shouldShowSignUpCourseButton
+    }
+    
+}
+
+// MARK: - UITextViewDelegate
+extension CourseDetailsViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL)
+        return true
     }
     
 }

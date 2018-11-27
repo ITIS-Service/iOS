@@ -14,6 +14,7 @@ import UIKit
 
 protocol CourseDetailsPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentationLogic {
     func displayInitialState(with response: CourseDetailsModels.InitialSate.Response)
+    func displayCourseDetails(with response: CourseDetailsModels.Fetch.Response)
 }
 
 class CourseDetailsPresenter: CourseDetailsPresentationLogic {
@@ -50,9 +51,12 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
         let teacherLinkAttributedString = NSMutableAttributedString(string: "Посмотреть профиль КФУ")
         let url = courseDetails.teacher.link
         
-        teacherLinkAttributedString.setAttributes([.link: url], range: NSMakeRange(0, teacherLinkAttributedString.string.count - 1))
+        teacherLinkAttributedString.setAttributes([
+            .link: url,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)
+            ], range: NSMakeRange(0, teacherLinkAttributedString.string.count))
         
-        let times = courseDetails.dayTimes.reduce("") { (result, dayTime) -> String in
+        var times = courseDetails.dayTimes.reduce("") { (result, dayTime) -> String in
             var timesString = dayTime.day.name
             timesString += ": "
             dayTime.times.enumerated().forEach {
@@ -62,8 +66,9 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
                     timesString += "\($0.element), "
                 }
             }
-            return timesString
+            return result + timesString
         }
+        times = String(times.dropLast())
         
         var shouldShowManagementView = false
         var shouldShowAcademicPerformanceButton = false

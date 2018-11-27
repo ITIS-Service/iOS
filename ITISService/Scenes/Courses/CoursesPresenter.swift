@@ -45,9 +45,18 @@ class CoursesPresenter: CoursesPresentationLogic {
             return Courses.TableView.Model(name: $0.name, description: $0.description)
         }
         
-        let suggestedCoursesSection = Courses.TableView.Section(items: suggestedCourses, headerTitle: "Предложенные курсы")
-        let allCoursesSection = Courses.TableView.Section(items: allCourses, headerTitle: "Все курсы")
+        var sections = [Courses.TableView.Section]()
         
-        self.viewController.displayListCourses(sections: [suggestedCoursesSection, allCoursesSection])
+        if !suggestedCourses.isEmpty {
+            let suggestedCoursesSection = Courses.TableView.Section(items: suggestedCourses, headerTitle: "Предложенные курсы")
+            sections.append(suggestedCoursesSection)
+        }
+        
+        if !allCourses.isEmpty {
+            let allCoursesSection = Courses.TableView.Section(items: allCourses, headerTitle: "Все курсы")
+            sections.append(allCoursesSection)
+        }
+        
+        self.viewController.displayListCourses(sections: sections)
     }
 }

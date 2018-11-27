@@ -91,18 +91,13 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
     // MARK: -
     
     private func configureDesign() {
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
-            .font: UIFont(name: "HelveticaNeue-Light", size: 17)!
-        ]
-        self.navigationController?.navigationBar.barTintColor = Constants.backgroundColor
-        
         self.tableView.register(CourseTableViewCell.nib(), forCellReuseIdentifier: CourseTableViewCell.identifier())
         self.tableView.dataSource = self.datasource
         self.tableView.delegate = self.datasource
+        self.tableView.tableFooterView = UIView()
         
         self.datasource.onTap = { [unowned self] (indexPath) in
-            self.interactor.selectCourse(at: indexPath)
+            self.interactor.selectCourse(at: indexPath, numberOfSections: self.tableView.numberOfSections)
             self.performSegue(withIdentifier: Segues.courseDetails, sender: nil)
         }
     }

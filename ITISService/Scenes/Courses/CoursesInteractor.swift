@@ -14,7 +14,7 @@ import UIKit
 
 protocol CoursesBusinessLogic {
     func fetchCourses()
-    func selectCourse(at indexPath: IndexPath)
+    func selectCourse(at indexPath: IndexPath, numberOfSections: Int)
 }
 
 protocol CoursesDataStore {
@@ -61,15 +61,23 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         }
     }
     
-    func selectCourse(at indexPath: IndexPath) {
+    func selectCourse(at indexPath: IndexPath, numberOfSections: Int) {
         guard let listCourses = self.listCourses else {
             return
         }
         
-        if indexPath.section == Constants.suggestedCoursesSectionIndex {
-            self.selectedCourse = listCourses.suggestedCourses[indexPath.row]
-        } else if indexPath.section == Constants.allCoursesSectionIndex {
-            self.selectedCourse = listCourses.allCourses[indexPath.row]
+        if numberOfSections == 1 {
+            if !listCourses.allCourses.isEmpty {
+                self.selectedCourse = listCourses.allCourses[indexPath.row]
+            } else if !listCourses.suggestedCourses.isEmpty {
+                self.selectedCourse = listCourses.suggestedCourses[indexPath.row]
+            }
+        } else {
+            if indexPath.section == Constants.suggestedCoursesSectionIndex {
+                self.selectedCourse = listCourses.suggestedCourses[indexPath.row]
+            } else if indexPath.section == Constants.allCoursesSectionIndex {
+                self.selectedCourse = listCourses.allCourses[indexPath.row]
+            }
         }
     }
 }
