@@ -15,6 +15,8 @@ import UIKit
 protocol CourseDetailsBusinessLogic {
     func setupInitialState()
     func fetchCourseDetails()
+    func signUpCourse()
+    func courseName() -> String
 }
 
 protocol CourseDetailsDataStore: class {
@@ -46,6 +48,21 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
             self?.presenter.showActivityIndicator(false)
             self?.presenter.showAlert(with: error)
         }
+    }
+    
+    func signUpCourse() {
+        self.presenter.showActivityIndicator(true)
+        self.userNetworkManager.signUpCourse(with: self.course.id, success: { [weak self] (courseDetails) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
+        }) { [weak self] (error) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.showAlert(with: error)
+        }
+    }
+    
+    func courseName() -> String {
+        return self.course.name
     }
 
 }

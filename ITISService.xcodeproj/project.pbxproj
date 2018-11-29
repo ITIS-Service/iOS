@@ -54,6 +54,7 @@
 		CB2DE5DD21921D5B00CA9424 /* CGRect + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE5DC21921D5B00CA9424 /* CGRect + Extension.swift */; };
 		CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE5DE219228C500CA9424 /* UIAlertController + Extension.swift */; };
 		CB2DE5E1219237A800CA9424 /* UIScreen + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE5E0219237A800CA9424 /* UIScreen + Extension.swift */; };
+		CB30D59D21AFE71000FDA02B /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */; };
 		CB31B1412196C11800BB4E0A /* NetworkManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31B1402196C11800BB4E0A /* NetworkManagers.swift */; };
 		CB31B1442196C48000BB4E0A /* ErrorMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31B1432196C48000BB4E0A /* ErrorMessagePresenter.swift */; };
 		CB39DC362185C70400DA04D0 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39DC342185C70400DA04D0 /* AnswerTableViewCell.swift */; };
@@ -155,6 +156,7 @@
 		CB2DE5DC21921D5B00CA9424 /* CGRect + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + Extension.swift"; sourceTree = "<group>"; };
 		CB2DE5DE219228C500CA9424 /* UIAlertController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Extension.swift"; sourceTree = "<group>"; };
 		CB2DE5E0219237A800CA9424 /* UIScreen + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen + Extension.swift"; sourceTree = "<group>"; };
+		CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		CB31B1402196C11800BB4E0A /* NetworkManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagers.swift; sourceTree = "<group>"; };
 		CB31B1432196C48000BB4E0A /* ErrorMessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessagePresenter.swift; sourceTree = "<group>"; };
 		CB39DC342185C70400DA04D0 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				CB2DE5DC21921D5B00CA9424 /* CGRect + Extension.swift */,
 				CB2DE5DE219228C500CA9424 /* UIAlertController + Extension.swift */,
 				CB2DE5E0219237A800CA9424 /* UIScreen + Extension.swift */,
+				CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 				CB07D22021843F300072EB07 /* CoursesWorker.swift in Sources */,
 				CB0ACA5B21A93FA700C3D202 /* ErrorMessagePresentationLogic.swift in Sources */,
 				CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */,
+				CB30D59D21AFE71000FDA02B /* UIViewController + Extension.swift in Sources */,
 				CB07D2582184D6710072EB07 /* QuizManager.swift in Sources */,
 				CBDC5C9621AA8DD200185142 /* CourseDetailsPresenter.swift in Sources */,
 				CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */,

@@ -16,4 +16,12 @@ enum Fonts {
         return UIFont(name: "HelveticaNeue-Light", size: size)!
     }
     
+    static func medium(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: "HelveticaNeue-Medium", size: size)!
+    }
+    
+    static func regular(ofSize size: CGFloat) -> UIFont {
+        return UIFont(name: "HelveticaNeue", size: size)!
+    }
+    
 }

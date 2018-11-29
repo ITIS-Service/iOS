@@ -23,6 +23,8 @@ protocol UserNetworkManager {
     func fetchCourses(success: @escaping (ListCourses) -> (), failure: @escaping (ExceptionResponse) -> ())
     
     func fetchCourseDetails(courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ())
+    
+    func signUpCourse(with courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ()) 
 }
 
 class UserNetworkManagerImpl: UserNetworkManager {
@@ -102,6 +104,18 @@ class UserNetworkManagerImpl: UserNetworkManager {
     
     func fetchCourseDetails(courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ())  {
         router.request(.courseDetails(courseID: courseID), success: { (data, _) in
+            if let courseDetails = try? JSONDecoder().decode(CourseDetails.self, from: data) {
+                success(courseDetails)
+            } else {
+                failure(ExceptionResponse.parseException())
+            }
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func signUpCourse(with courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ()) {
+        router.request(.signUp(courseID: courseID), success: { (data, _) in
             if let courseDetails = try? JSONDecoder().decode(CourseDetails.self, from: data) {
                 success(courseDetails)
             } else {

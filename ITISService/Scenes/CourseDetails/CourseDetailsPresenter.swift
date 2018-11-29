@@ -79,7 +79,7 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
             if userCourseStatus == .accepted {
                 shouldShowAcademicPerformanceButton = true
             }
-        } else {
+        } else if courseDetails.signUpOpen ?? false {
             shouldShowSignUpCourseButton = true
         }
         
@@ -92,7 +92,8 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
             underlineStyle: .single,
             shouldShowManagementView: shouldShowManagementView,
             shouldShowAcademicPerformanceButton: shouldShowAcademicPerformanceButton,
-            shouldShowSignUpCourseButton: shouldShowSignUpCourseButton
+            shouldShowSignUpCourseButton: shouldShowSignUpCourseButton,
+            courseStatus: courseDetails.userCourseStatus?.description
         )
         
         self.viewController.showCourseDetails(with: viewModel)

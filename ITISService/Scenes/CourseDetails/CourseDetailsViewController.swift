@@ -39,6 +39,7 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
     @IBOutlet fileprivate weak var managementView: UIView!
     @IBOutlet fileprivate weak var academicPerformanceButton: UIButton!
     @IBOutlet fileprivate weak var signUpCourseButton: UIButton!
+    @IBOutlet fileprivate weak var courseStatusLabel: UILabel!
     
     // MARK: -
     
@@ -88,6 +89,22 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
     
     // MARK: - Instance Methods
     
+    @IBAction fileprivate func onSignUpCourseButtonTouchUpInside(_ sender: UIButton) {
+        let confirmAlertController = UIAlertController(title: "Запись на курс", message: "Подтверждение записи на курс \(self.interactor.courseName())", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Подтвердить", style: .default) { [unowned self] (action) in
+            self.interactor.signUpCourse()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        confirmAlertController.addAction(confirmAction)
+        confirmAlertController.addAction(cancelAction)
+        
+        self.present(alertController: confirmAlertController, animated: true)
+    }
+    
+    
     // MARK: -
     
     private func configureDesign() {
@@ -120,6 +137,7 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
         
         self.placeLabel.text = viewModel.place
         self.timeLabel.text = viewModel.times
+        self.courseStatusLabel.text = viewModel.courseStatus
         
         self.managementView.isHidden = !viewModel.shouldShowManagementView
         self.academicPerformanceButton.isHidden = !viewModel.shouldShowAcademicPerformanceButton
