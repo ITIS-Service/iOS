@@ -37,6 +37,10 @@ class CoursesPresenter: CoursesPresentationLogic {
     // MARK: - Instance Methods
     
     func displayCourses(response: Courses.List.Response) {
+        let userCourses = response.listCourses.userCourses.map {
+            return Courses.TableView.Model(name: $0.name, description: $0.description)
+        }
+        
         let suggestedCourses = response.listCourses.suggestedCourses.map {
             return Courses.TableView.Model(name: $0.name, description: $0.description)
         }
@@ -46,6 +50,11 @@ class CoursesPresenter: CoursesPresentationLogic {
         }
         
         var sections = [Courses.TableView.Section]()
+        
+        if !userCourses.isEmpty {
+            let userCoursesSection = Courses.TableView.Section(items: userCourses, headerTitle: "Мои курсы")
+            sections.append(userCoursesSection)
+        }
         
         if !suggestedCourses.isEmpty {
             let suggestedCoursesSection = Courses.TableView.Section(items: suggestedCourses, headerTitle: "Предложенные курсы")

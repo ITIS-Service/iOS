@@ -66,18 +66,20 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
             return
         }
         
-        if numberOfSections == 1 {
-            if !listCourses.allCourses.isEmpty {
-                self.selectedCourse = listCourses.allCourses[indexPath.row]
-            } else if !listCourses.suggestedCourses.isEmpty {
-                self.selectedCourse = listCourses.suggestedCourses[indexPath.row]
-            }
-        } else {
-            if indexPath.section == Constants.suggestedCoursesSectionIndex {
-                self.selectedCourse = listCourses.suggestedCourses[indexPath.row]
-            } else if indexPath.section == Constants.allCoursesSectionIndex {
-                self.selectedCourse = listCourses.allCourses[indexPath.row]
-            }
+        var sections = [[Course]]()
+        
+        if !listCourses.userCourses.isEmpty {
+            sections.append(listCourses.userCourses)
         }
+        
+        if !listCourses.suggestedCourses.isEmpty {
+            sections.append(listCourses.suggestedCourses)
+        }
+        
+        if !listCourses.allCourses.isEmpty {
+            sections.append(listCourses.allCourses)
+        }
+        
+        self.selectedCourse = sections[indexPath.section][indexPath.row]
     }
 }

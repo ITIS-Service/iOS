@@ -10,6 +10,7 @@ import Foundation
 
 struct ListCourses: Codable {
     
+    let userCourses: [Course]
     let suggestedCourses: [Course]
     let allCourses: [Course]
     
