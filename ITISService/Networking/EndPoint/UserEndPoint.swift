@@ -16,6 +16,7 @@ public enum UserApi  {
     case courses
     case courseDetails(courseID: Int)
     case signUp(courseID: Int)
+    case points(courseID: Int)
 }
 
 // MARK: - EndPointType
@@ -49,6 +50,8 @@ extension UserApi: EndPointType {
             return "courses/\(courseID)/details"
         case .signUp(let courseID):
             return "courses/\(courseID)/signUp"
+        case .points(let courseID):
+            return "courses/\(courseID)/points"
         }
     }
     
@@ -56,7 +59,7 @@ extension UserApi: EndPointType {
         switch self {
         case .login, .registration, .answers, .signUp:
             return .post
-        case .questions, .courses, .courseDetails:
+        case .questions, .courses, .courseDetails, .points:
             return .get
         }
     }
@@ -67,7 +70,7 @@ extension UserApi: EndPointType {
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
         case .login(let email, let password):
             return .requestParameters(bodyParameters: ["email": email, "password": password], urlParameters: nil)
-        case .questions, .courses, .courseDetails, .signUp:
+        case .questions, .courses, .courseDetails, .signUp, .points:
             return .request
         case .answers(let answers):
             return .requestParameters(bodyParameters: ["answers": answers], urlParameters: nil)

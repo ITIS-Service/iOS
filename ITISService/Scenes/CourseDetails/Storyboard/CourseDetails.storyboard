@@ -139,6 +139,9 @@
                                                         <state key="normal" title="УСПЕВАЕМОСТЬ">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <segue destination="dnu-OH-LoQ" kind="show" identifier="UserPoints" id="Cvf-6u-TQA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -256,6 +259,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dli-z4-Alg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-135.19999999999999" y="17.541229385307346"/>
+        </scene>
+        <!--Points-->
+        <scene sceneID="QzZ-3l-KbH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Points" id="dnu-OH-LoQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciE-Is-Moz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="17"/>
         </scene>
     </scenes>
 </document>

@@ -13,46 +13,34 @@
 import UIKit
 
 @objc protocol CourseDetailsRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToUserPoints(segue: UIStoryboardSegue) 
 }
 
 protocol CourseDetailsDataPassing {
-    var dataStore: CourseDetailsDataStore? { get }
+    var dataStore: CourseDetailsDataStore! { get }
 }
 
 class CourseDetailsRouter: NSObject, CourseDetailsRoutingLogic, CourseDetailsDataPassing {
     
-    weak var viewController: CourseDetailsViewController?
-    var dataStore: CourseDetailsDataStore?
+    // MARK: - Instance Properties
+    
+    weak var viewController: CourseDetailsViewController!
+    var dataStore: CourseDetailsDataStore!
+    
+    // MARK: - Instance Methods
+    
+    fileprivate func passDataToUserPoints(source: CourseDetailsDataStore, destination: PointsDataStore) {
+        destination.course = source.course
+    }
+    
+    // MARK: -
 
-    // MARK: Routing
-
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
-    //{
-    //  if let segue = segue {
-    //    let destinationVC = segue.destination as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //    var destinationDS = destinationVC.router!.dataStore!
-    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
-
-    // MARK: Navigation
-
-    //func navigateToSomewhere(source: CourseDetailsViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
-
-    // MARK: Passing data
-
-    //func passDataToSomewhere(source: CourseDetailsDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func routeToUserPoints(segue: UIStoryboardSegue) {
+        guard let dataStoreHolder = segue.destination as? PointsDataStoreHolder else {
+            return
+        }
+        
+        self.passDataToUserPoints(source: self.dataStore, destination: dataStoreHolder.datastore)
+    }
+    
 }

@@ -122,7 +122,7 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
     // MARK: - CourseDetailsDisplayLogic Methods
     
     func configureInitialState(with viewModel: CourseDetailsModels.InitialSate.ViewModel) {
-        self.navigationController?.title = viewModel.name
+        self.title = viewModel.name
         self.descriptionLabel.text = viewModel.description
     }
     

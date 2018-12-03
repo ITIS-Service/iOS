@@ -63,6 +63,21 @@
 		CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */; };
 		CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDBA217E008A00BF35C6 /* Constants.swift */; };
 		CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDD7217E62DB00BF35C6 /* Validator.swift */; };
+		CB50D20D21B33E67007B5BD4 /* PointsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D20721B33E67007B5BD4 /* PointsPresenter.swift */; };
+		CB50D20E21B33E67007B5BD4 /* PointsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D20821B33E67007B5BD4 /* PointsWorker.swift */; };
+		CB50D20F21B33E67007B5BD4 /* PointsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D20921B33E67007B5BD4 /* PointsRouter.swift */; };
+		CB50D21021B33E67007B5BD4 /* PointsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D20A21B33E67007B5BD4 /* PointsModels.swift */; };
+		CB50D21121B33E67007B5BD4 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D20B21B33E67007B5BD4 /* PointsViewController.swift */; };
+		CB50D21221B33E67007B5BD4 /* PointsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D20C21B33E67007B5BD4 /* PointsInteractor.swift */; };
+		CB50D21521B33E78007B5BD4 /* Points.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21421B33E78007B5BD4 /* Points.storyboard */; };
+		CB50D21921B33EC6007B5BD4 /* PointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D21721B33EC6007B5BD4 /* PointTableViewCell.swift */; };
+		CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */; };
+		CB50D21D21B343C9007B5BD4 /* PointsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */; };
+		CB50D21F21B343E2007B5BD4 /* PointsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */; };
+		CB5BFFF621B3C75200A20944 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFF521B3C75200A20944 /* UserPoints.swift */; };
+		CB5BFFF821B3CBB300A20944 /* TableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFF721B3CBB300A20944 /* TableViewDatasource.swift */; };
+		CB5BFFFB21B3CBF300A20944 /* PointsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFFA21B3CBF300A20944 /* PointsDatasource.swift */; };
+		CB5BFFFD21B3D0A300A20944 /* DefaultTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFFC21B3D0A300A20944 /* DefaultTableViewSection.swift */; };
 		CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F41382179A00C0058293F /* AppDelegate.swift */; };
 		CB5F41402179A00D0058293F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB5F413F2179A00D0058293F /* Assets.xcassets */; };
 		CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5F41412179A00D0058293F /* LaunchScreen.storyboard */; };
@@ -165,6 +180,21 @@
 		CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
 		CB49FDBA217E008A00BF35C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB49FDD7217E62DB00BF35C6 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		CB50D20721B33E67007B5BD4 /* PointsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsPresenter.swift; sourceTree = "<group>"; };
+		CB50D20821B33E67007B5BD4 /* PointsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsWorker.swift; sourceTree = "<group>"; };
+		CB50D20921B33E67007B5BD4 /* PointsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRouter.swift; sourceTree = "<group>"; };
+		CB50D20A21B33E67007B5BD4 /* PointsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsModels.swift; sourceTree = "<group>"; };
+		CB50D20B21B33E67007B5BD4 /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		CB50D20C21B33E67007B5BD4 /* PointsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsInteractor.swift; sourceTree = "<group>"; };
+		CB50D21421B33E78007B5BD4 /* Points.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Points.storyboard; sourceTree = "<group>"; };
+		CB50D21721B33EC6007B5BD4 /* PointTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTableViewCell.swift; sourceTree = "<group>"; };
+		CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointTableViewCell.xib; sourceTree = "<group>"; };
+		CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsFooterView.swift; sourceTree = "<group>"; };
+		CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsFooterView.xib; sourceTree = "<group>"; };
+		CB5BFFF521B3C75200A20944 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
+		CB5BFFF721B3CBB300A20944 /* TableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDatasource.swift; sourceTree = "<group>"; };
+		CB5BFFFA21B3CBF300A20944 /* PointsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsDatasource.swift; sourceTree = "<group>"; };
+		CB5BFFFC21B3D0A300A20944 /* DefaultTableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableViewSection.swift; sourceTree = "<group>"; };
 		CB5F41352179A00C0058293F /* ITISService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITISService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5F41382179A00C0058293F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB5F413F2179A00D0058293F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -276,6 +306,7 @@
 		CB07D229218442470072EB07 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CB50D21621B33EB7007B5BD4 /* Point */,
 				CB39DC332185C6F000DA04D0 /* Answer */,
 				CB07D22A218442530072EB07 /* Course */,
 			);
@@ -307,6 +338,7 @@
 				CB62630121AAAF8D00AA1757 /* CourseDetails.swift */,
 				CB62630321AAB06500AA1757 /* DayTime.swift */,
 				CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */,
+				CB5BFFF521B3C75200A20944 /* UserPoints.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +349,8 @@
 				CB07D23D21844F6B0072EB07 /* TableViewCompatible.swift */,
 				CB07D242218453B70072EB07 /* Configurable.swift */,
 				CB07D244218454ED0072EB07 /* TableViewSection.swift */,
+				CB5BFFF721B3CBB300A20944 /* TableViewDatasource.swift */,
+				CB5BFFFC21B3D0A300A20944 /* DefaultTableViewSection.swift */,
 			);
 			path = TableViewCompatible;
 			sourceTree = "<group>";
@@ -452,6 +486,7 @@
 		CB28AACA2194C3E400E49AB6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CB50D21B21B34332007B5BD4 /* PointsFooterView */,
 				CB28AACB2194C40600E49AB6 /* EmailTextField.swift */,
 			);
 			path = UI;
@@ -538,6 +573,55 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CB50D20621B33E53007B5BD4 /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				CB5BFFF921B3CBE100A20944 /* TableView Datasource */,
+				CB50D21321B33E6B007B5BD4 /* Storyboard */,
+				CB50D20721B33E67007B5BD4 /* PointsPresenter.swift */,
+				CB50D20821B33E67007B5BD4 /* PointsWorker.swift */,
+				CB50D20921B33E67007B5BD4 /* PointsRouter.swift */,
+				CB50D20A21B33E67007B5BD4 /* PointsModels.swift */,
+				CB50D20B21B33E67007B5BD4 /* PointsViewController.swift */,
+				CB50D20C21B33E67007B5BD4 /* PointsInteractor.swift */,
+			);
+			path = Points;
+			sourceTree = "<group>";
+		};
+		CB50D21321B33E6B007B5BD4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB50D21421B33E78007B5BD4 /* Points.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CB50D21621B33EB7007B5BD4 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				CB50D21721B33EC6007B5BD4 /* PointTableViewCell.swift */,
+				CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */,
+			);
+			path = Point;
+			sourceTree = "<group>";
+		};
+		CB50D21B21B34332007B5BD4 /* PointsFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */,
+				CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */,
+			);
+			path = PointsFooterView;
+			sourceTree = "<group>";
+		};
+		CB5BFFF921B3CBE100A20944 /* TableView Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CB5BFFFA21B3CBF300A20944 /* PointsDatasource.swift */,
+			);
+			path = "TableView Datasource";
+			sourceTree = "<group>";
+		};
 		CB5F412C2179A00C0058293F = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +659,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB50D20621B33E53007B5BD4 /* Points */,
 				CBED732321ADC7D100FE30BF /* NavigationController */,
 				CBDC5C8F21AA8C3C00185142 /* CourseDetails */,
 				CB07D2462184BE130072EB07 /* Quiz */,
@@ -759,11 +844,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB50D21F21B343E2007B5BD4 /* PointsFooterView.xib in Resources */,
 				CB07D22E218442640072EB07 /* CourseTableViewCell.xib in Resources */,
 				CB07D22721843F610072EB07 /* Courses.storyboard in Resources */,
 				CB07D2552184C1CC0072EB07 /* Quiz.storyboard in Resources */,
+				CB50D21521B33E78007B5BD4 /* Points.storyboard in Resources */,
 				CBDC5C9E21AA8E0D00185142 /* CourseDetails.storyboard in Resources */,
 				CB39DC372185C70400DA04D0 /* AnswerTableViewCell.xib in Resources */,
+				CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */,
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
 				CB19D454217DC47200B4586F /* Registration.storyboard in Resources */,
 				CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */,
@@ -840,13 +928,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB28AACC2194C40600E49AB6 /* EmailTextField.swift in Sources */,
+				CB5BFFFB21B3CBF300A20944 /* PointsDatasource.swift in Sources */,
 				CBEFF920218BA35100B63286 /* NetworkLogger.swift in Sources */,
+				CB5BFFF821B3CBB300A20944 /* TableViewDatasource.swift in Sources */,
 				CB07D2352184455B0072EB07 /* User.swift in Sources */,
 				CB07D231218444630072EB07 /* Course.swift in Sources */,
 				CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */,
 				CB2DE5DD21921D5B00CA9424 /* CGRect + Extension.swift in Sources */,
+				CB50D21021B33E67007B5BD4 /* PointsModels.swift in Sources */,
 				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
+				CB50D20D21B33E67007B5BD4 /* PointsPresenter.swift in Sources */,
 				CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */,
+				CB5BFFF621B3C75200A20944 /* UserPoints.swift in Sources */,
 				CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
 				CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */,
@@ -859,8 +952,10 @@
 				CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
 				CB0ACA5921A93D5000C3D202 /* LoaderDisplayLogic.swift in Sources */,
+				CB50D21121B33E67007B5BD4 /* PointsViewController.swift in Sources */,
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
+				CB50D21221B33E67007B5BD4 /* PointsInteractor.swift in Sources */,
 				CB31B1442196C48000BB4E0A /* ErrorMessagePresenter.swift in Sources */,
 				CBEFF91A218B935300B63286 /* UserNetworkManager.swift in Sources */,
 				CBEFF908218B827600B63286 /* HTTPTask.swift in Sources */,
@@ -869,12 +964,14 @@
 				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
 				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,
 				CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */,
+				CB5BFFFD21B3D0A300A20944 /* DefaultTableViewSection.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
 				CBEFF910218B874700B63286 /* NetworkRouter.swift in Sources */,
 				CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */,
 				CB39DC3A2185CA4B00DA04D0 /* AnswersDatasource.swift in Sources */,
 				CB5F41552179A53B0058293F /* LoginModels.swift in Sources */,
+				CB50D21921B33EC6007B5BD4 /* PointTableViewCell.swift in Sources */,
 				CB2DE5DB21921B8200CA9424 /* KeyboardHandler.swift in Sources */,
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
 				CB62630421AAB06500AA1757 /* DayTime.swift in Sources */,
@@ -882,6 +979,7 @@
 				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,
 				CBED732A21ADC96100FE30BF /* Fonts.swift in Sources */,
 				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
+				CB50D21D21B343C9007B5BD4 /* PointsFooterView.swift in Sources */,
 				CBDC5C9B21AA8DD200185142 /* CourseDetailsInteractor.swift in Sources */,
 				CBDC5C9721AA8DD200185142 /* CourseDetailsWorker.swift in Sources */,
 				CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */,
@@ -914,10 +1012,12 @@
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
 				CBEFF918218B8F7800B63286 /* Response.swift in Sources */,
 				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
+				CB50D20E21B33E67007B5BD4 /* PointsWorker.swift in Sources */,
 				CBED732821ADC87A00FE30BF /* Colors.swift in Sources */,
 				CB07D22221843F300072EB07 /* CoursesModels.swift in Sources */,
 				CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */,
 				CB07D2662184DD820072EB07 /* QuestionRouter.swift in Sources */,
+				CB50D20F21B33E67007B5BD4 /* PointsRouter.swift in Sources */,
 				CB07D243218453B70072EB07 /* Configurable.swift in Sources */,
 				CB14059E218C38DB0068D880 /* Log.swift in Sources */,
 				CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */,

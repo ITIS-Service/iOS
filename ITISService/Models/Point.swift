@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct Point {
+struct Point: Codable {
     
     let id: Int
     let title: String
     let description: String
     let count: Int
-    let course: Course
     
 }
