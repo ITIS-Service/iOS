@@ -12,11 +12,15 @@
 
 import UIKit
 
+protocol CoursesDataStoreHolder {
+    var dataStore: CoursesDataStore! { get }
+}
+
 protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func displayListCourses(sections: [Courses.TableView.Section])
 }
 
-class CoursesViewController: UIViewController, CoursesDisplayLogic {
+class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataStoreHolder {
     
     // MARK: - Nested Types
     
@@ -46,6 +50,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
     
     var interactor: CoursesBusinessLogic!
     var router: (NSObjectProtocol & CoursesRoutingLogic & CoursesDataPassing)!
+    var dataStore: CoursesDataStore!
     
     // MARK: - Object lifecycle
     
@@ -68,6 +73,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         let router = CoursesRouter()
         viewController.interactor = interactor
         viewController.router = router
+        viewController.dataStore = interactor
         interactor.presenter = presenter
         interactor.userNetworkManager = NetworkManagers.userNetworkManager
         presenter.viewController = viewController
@@ -121,5 +127,4 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic {
         self.datasource.sections = sections
         self.tableView.reloadData()
     }
-    
 }

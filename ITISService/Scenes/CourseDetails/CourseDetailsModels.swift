@@ -40,6 +40,7 @@ enum CourseDetailsModels {
             let shouldShowManagementView: Bool
             let shouldShowAcademicPerformanceButton: Bool
             let shouldShowSignUpCourseButton: Bool
+            let shouldShowSignOutCourseButton: Bool
             let courseStatus: String?
         }
     }

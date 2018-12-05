@@ -19,6 +19,7 @@ protocol CourseDetailsDataStoreHolder {
 protocol CourseDetailsDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func configureInitialState(with viewModel: CourseDetailsModels.InitialSate.ViewModel)
     func showCourseDetails(with viewModel: CourseDetailsModels.Fetch.ViewModel)
+    func updateListCourse()
 }
 
 class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, CourseDetailsDataStoreHolder {
@@ -40,6 +41,7 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
     @IBOutlet fileprivate weak var academicPerformanceButton: UIButton!
     @IBOutlet fileprivate weak var signUpCourseButton: UIButton!
     @IBOutlet fileprivate weak var courseStatusLabel: UILabel!
+    @IBOutlet fileprivate weak var signOutCourseButton: UIButton!
     
     // MARK: -
     
@@ -104,6 +106,20 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
         self.present(alertController: confirmAlertController, animated: true)
     }
     
+    @IBAction fileprivate func onSignOutCourseButtonTouchUpInside(_ sender: UIButton) {
+        let confirmAlertController = UIAlertController(title: "Отписаться от курса", message: "Вы больше не будете записаны на курс \(self.interactor.courseName())", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Подтвердить", style: .default) { [unowned self] (action) in
+            self.interactor.signOutCourse()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        
+        confirmAlertController.addAction(confirmAction)
+        confirmAlertController.addAction(cancelAction)
+        
+        self.present(alertController: confirmAlertController, animated: true)
+    }
     
     // MARK: -
     
@@ -142,8 +158,12 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
         self.managementView.isHidden = !viewModel.shouldShowManagementView
         self.academicPerformanceButton.isHidden = !viewModel.shouldShowAcademicPerformanceButton
         self.signUpCourseButton.isHidden = !viewModel.shouldShowSignUpCourseButton
+        self.signOutCourseButton.isHidden = !viewModel.shouldShowSignOutCourseButton
     }
     
+    func updateListCourse() {
+        self.router.updateListCourse()
+    }
 }
 
 // MARK: - UITextViewDelegate

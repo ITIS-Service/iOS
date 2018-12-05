@@ -13,7 +13,8 @@
 import UIKit
 
 @objc protocol CourseDetailsRoutingLogic {
-    func routeToUserPoints(segue: UIStoryboardSegue) 
+    func routeToUserPoints(segue: UIStoryboardSegue)
+    func updateListCourse()
 }
 
 protocol CourseDetailsDataPassing {
@@ -41,6 +42,14 @@ class CourseDetailsRouter: NSObject, CourseDetailsRoutingLogic, CourseDetailsDat
         }
         
         self.passDataToUserPoints(source: self.dataStore, destination: dataStoreHolder.datastore)
+    }
+    
+    func updateListCourse() {
+        guard let dataStoreHolder = viewController.navigationController?.viewControllers.first as? CoursesDataStoreHolder else {
+            return
+        }
+        
+        dataStoreHolder.dataStore.updateListCourses()
     }
     
 }

@@ -15,6 +15,7 @@ import UIKit
 protocol CourseDetailsPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentationLogic {
     func displayInitialState(with response: CourseDetailsModels.InitialSate.Response)
     func displayCourseDetails(with response: CourseDetailsModels.Fetch.Response)
+    func updateListCourse() 
 }
 
 class CourseDetailsPresenter: CourseDetailsPresentationLogic {
@@ -73,11 +74,14 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
         var shouldShowManagementView = false
         var shouldShowAcademicPerformanceButton = false
         var shouldShowSignUpCourseButton = false
+        var shouldShowSignOutCourseButton = false
         
         if let userCourseStatus = courseDetails.userCourseStatus {
             shouldShowManagementView = true
             if userCourseStatus == .accepted {
                 shouldShowAcademicPerformanceButton = true
+            } else if userCourseStatus == .waiting {
+                shouldShowSignOutCourseButton = true
             }
         } else if courseDetails.signUpOpen ?? false {
             shouldShowSignUpCourseButton = true
@@ -93,10 +97,14 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
             shouldShowManagementView: shouldShowManagementView,
             shouldShowAcademicPerformanceButton: shouldShowAcademicPerformanceButton,
             shouldShowSignUpCourseButton: shouldShowSignUpCourseButton,
+            shouldShowSignOutCourseButton: shouldShowSignOutCourseButton,
             courseStatus: courseDetails.userCourseStatus?.description
         )
         
         self.viewController.showCourseDetails(with: viewModel)
     }
     
+    func updateListCourse() {
+        self.viewController.updateListCourse()
+    }
 }

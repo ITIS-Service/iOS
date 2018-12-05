@@ -109,7 +109,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="wCY-DP-iH4"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR8-QL-eV0">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR8-QL-eV0">
                                                 <rect key="frame" x="16" y="369.5" width="359" height="114"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус записи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9Z-oI-lez">
@@ -143,22 +143,38 @@
                                                             <segue destination="dnu-OH-LoQ" kind="show" identifier="UserPoints" id="Cvf-6u-TQA"/>
                                                         </connections>
                                                     </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHd-Q3-3Dh">
+                                                        <rect key="frame" x="0.0" y="69" width="343" height="45"/>
+                                                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                                        <state key="normal" title="ОТПИСАТЬСЯ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onSignOutCourseButtonTouchUpInside:" destination="FbQ-lg-biK" eventType="touchUpInside" id="zd3-lM-zT7"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="tHd-Q3-3Dh" secondAttribute="trailing" constant="16" id="0cZ-2E-Nwb"/>
                                                     <constraint firstItem="aD9-eK-VUi" firstAttribute="top" secondItem="CUT-Eb-Mla" secondAttribute="bottom" constant="8" id="3Av-kz-KEW"/>
                                                     <constraint firstItem="4gx-yH-l7A" firstAttribute="top" secondItem="aD9-eK-VUi" secondAttribute="bottom" constant="8" id="BkP-Sf-E1C"/>
                                                     <constraint firstItem="S9Z-oI-lez" firstAttribute="top" secondItem="vR8-QL-eV0" secondAttribute="top" id="EyG-Yq-ASM"/>
                                                     <constraint firstItem="CUT-Eb-Mla" firstAttribute="trailing" secondItem="S9Z-oI-lez" secondAttribute="trailing" id="FwN-HJ-aBb"/>
+                                                    <constraint firstItem="tHd-Q3-3Dh" firstAttribute="leading" secondItem="vR8-QL-eV0" secondAttribute="leading" id="Kdb-KW-T0n"/>
                                                     <constraint firstAttribute="trailing" secondItem="4gx-yH-l7A" secondAttribute="trailing" constant="16" id="MvM-GK-CWI"/>
                                                     <constraint firstAttribute="bottom" secondItem="4gx-yH-l7A" secondAttribute="bottom" id="ZXM-c9-TuA"/>
                                                     <constraint firstAttribute="trailing" secondItem="S9Z-oI-lez" secondAttribute="trailing" constant="16" id="ZzN-r4-wAV"/>
                                                     <constraint firstItem="CUT-Eb-Mla" firstAttribute="leading" secondItem="S9Z-oI-lez" secondAttribute="leading" id="adz-tc-gqD"/>
+                                                    <constraint firstItem="tHd-Q3-3Dh" firstAttribute="top" secondItem="aD9-eK-VUi" secondAttribute="bottom" constant="8" id="amH-gn-5Xh"/>
                                                     <constraint firstItem="CUT-Eb-Mla" firstAttribute="top" secondItem="S9Z-oI-lez" secondAttribute="bottom" constant="8" id="bNW-Qn-rQ9"/>
                                                     <constraint firstItem="S9Z-oI-lez" firstAttribute="leading" secondItem="vR8-QL-eV0" secondAttribute="leading" id="cXe-xl-lC5"/>
                                                     <constraint firstItem="4gx-yH-l7A" firstAttribute="leading" secondItem="vR8-QL-eV0" secondAttribute="leading" id="exp-Bf-DRj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tHd-Q3-3Dh" secondAttribute="bottom" id="qCL-nD-6aF"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJo-m1-ITa">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJo-m1-ITa">
                                                 <rect key="frame" x="16" y="369.5" width="343" height="45"/>
                                                 <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
@@ -250,6 +266,7 @@
                         <outlet property="descriptionLabel" destination="vsD-zH-6QG" id="Vu0-uR-gyB"/>
                         <outlet property="managementView" destination="vR8-QL-eV0" id="Qo3-c7-Q2X"/>
                         <outlet property="placeLabel" destination="oqR-nm-3AS" id="HX3-Ku-4mz"/>
+                        <outlet property="signOutCourseButton" destination="tHd-Q3-3Dh" id="6n8-2T-Zg5"/>
                         <outlet property="signUpCourseButton" destination="YJo-m1-ITa" id="Qub-7T-sbb"/>
                         <outlet property="teacherLinkTextView" destination="LtQ-H2-uTz" id="AJ5-bJ-p6f"/>
                         <outlet property="teacherNameLabel" destination="Twr-kQ-Erp" id="47M-72-FaL"/>

@@ -16,6 +16,7 @@ protocol CourseDetailsBusinessLogic {
     func setupInitialState()
     func fetchCourseDetails()
     func signUpCourse()
+    func signOutCourse()
     func courseName() -> String
 }
 
@@ -55,6 +56,19 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
         self.userNetworkManager.signUpCourse(with: self.course.id, success: { [weak self] (courseDetails) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
+            self?.presenter.updateListCourse()
+        }) { [weak self] (error) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.showAlert(with: error)
+        }
+    }
+    
+    func signOutCourse() {
+        self.presenter.showActivityIndicator(true)
+        self.userNetworkManager.signOutCourse(with: self.course.id, success: { [weak self] (courseDetails) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
+            self?.presenter.updateListCourse()
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.showAlert(with: error)

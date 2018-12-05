@@ -20,6 +20,8 @@ protocol CoursesBusinessLogic {
 protocol CoursesDataStore {
     var listCourses: ListCourses? { get }
     var selectedCourse: Course? { get }
+    
+    func updateListCourses()
 }
 
 class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
@@ -44,6 +46,10 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     var selectedCourse: Course?
 
     // MARK: - Instance Methods
+    
+    func updateListCourses() {
+        self.fetchCourses()
+    }
     
     func fetchCourses() {
         self.presenter.showActivityIndicator(true)
