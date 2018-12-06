@@ -74,6 +74,13 @@
 		CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */; };
 		CB50D21D21B343C9007B5BD4 /* PointsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */; };
 		CB50D21F21B343E2007B5BD4 /* PointsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */; };
+		CB56FD8921B839CF00C7196E /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8321B839CF00C7196E /* SettingsPresenter.swift */; };
+		CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8421B839CF00C7196E /* SettingsWorker.swift */; };
+		CB56FD8B21B839CF00C7196E /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8521B839CF00C7196E /* SettingsRouter.swift */; };
+		CB56FD8C21B839CF00C7196E /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8621B839CF00C7196E /* SettingsModels.swift */; };
+		CB56FD8D21B839CF00C7196E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8721B839CF00C7196E /* SettingsViewController.swift */; };
+		CB56FD8E21B839CF00C7196E /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8821B839CF00C7196E /* SettingsInteractor.swift */; };
+		CB56FD9121B839F200C7196E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB56FD9021B839F200C7196E /* Settings.storyboard */; };
 		CB5BFFF621B3C75200A20944 /* UserPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFF521B3C75200A20944 /* UserPoints.swift */; };
 		CB5BFFF821B3CBB300A20944 /* TableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFF721B3CBB300A20944 /* TableViewDatasource.swift */; };
 		CB5BFFFB21B3CBF300A20944 /* PointsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BFFFA21B3CBF300A20944 /* PointsDatasource.swift */; };
@@ -90,6 +97,9 @@
 		CB62630221AAAF8D00AA1757 /* CourseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62630121AAAF8D00AA1757 /* CourseDetails.swift */; };
 		CB62630421AAB06500AA1757 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62630321AAB06500AA1757 /* DayTime.swift */; };
 		CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */; };
+		CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */; };
+		CBD845BA21B8F47B0029FE12 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */; };
+		CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */; };
 		CBDC5C9621AA8DD200185142 /* CourseDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9021AA8DD200185142 /* CourseDetailsPresenter.swift */; };
 		CBDC5C9721AA8DD200185142 /* CourseDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9121AA8DD200185142 /* CourseDetailsWorker.swift */; };
 		CBDC5C9821AA8DD200185142 /* CourseDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9221AA8DD200185142 /* CourseDetailsRouter.swift */; };
@@ -191,6 +201,13 @@
 		CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointTableViewCell.xib; sourceTree = "<group>"; };
 		CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsFooterView.swift; sourceTree = "<group>"; };
 		CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsFooterView.xib; sourceTree = "<group>"; };
+		CB56FD8321B839CF00C7196E /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		CB56FD8421B839CF00C7196E /* SettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWorker.swift; sourceTree = "<group>"; };
+		CB56FD8521B839CF00C7196E /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		CB56FD8621B839CF00C7196E /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		CB56FD8721B839CF00C7196E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CB56FD8821B839CF00C7196E /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		CB56FD9021B839F200C7196E /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CB5BFFF521B3C75200A20944 /* UserPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPoints.swift; sourceTree = "<group>"; };
 		CB5BFFF721B3CBB300A20944 /* TableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDatasource.swift; sourceTree = "<group>"; };
 		CB5BFFFA21B3CBF300A20944 /* PointsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsDatasource.swift; sourceTree = "<group>"; };
@@ -209,6 +226,9 @@
 		CB62630121AAAF8D00AA1757 /* CourseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetails.swift; sourceTree = "<group>"; };
 		CB62630321AAB06500AA1757 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
+		CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDatasource.swift; sourceTree = "<group>"; };
 		CBDC5C9021AA8DD200185142 /* CourseDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsPresenter.swift; sourceTree = "<group>"; };
 		CBDC5C9121AA8DD200185142 /* CourseDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsWorker.swift; sourceTree = "<group>"; };
 		CBDC5C9221AA8DD200185142 /* CourseDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsRouter.swift; sourceTree = "<group>"; };
@@ -306,6 +326,7 @@
 		CB07D229218442470072EB07 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CBD845B621B8F4630029FE12 /* Setting */,
 				CB50D21621B33EB7007B5BD4 /* Point */,
 				CB39DC332185C6F000DA04D0 /* Answer */,
 				CB07D22A218442530072EB07 /* Course */,
@@ -614,6 +635,29 @@
 			path = PointsFooterView;
 			sourceTree = "<group>";
 		};
+		CB56FD8221B839AF00C7196E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CBD845BB21B8F6190029FE12 /* TableView Datasource */,
+				CB56FD8F21B839E400C7196E /* Storyboard */,
+				CB56FD8321B839CF00C7196E /* SettingsPresenter.swift */,
+				CB56FD8421B839CF00C7196E /* SettingsWorker.swift */,
+				CB56FD8521B839CF00C7196E /* SettingsRouter.swift */,
+				CB56FD8621B839CF00C7196E /* SettingsModels.swift */,
+				CB56FD8721B839CF00C7196E /* SettingsViewController.swift */,
+				CB56FD8821B839CF00C7196E /* SettingsInteractor.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CB56FD8F21B839E400C7196E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB56FD9021B839F200C7196E /* Settings.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		CB5BFFF921B3CBE100A20944 /* TableView Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +703,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB56FD8221B839AF00C7196E /* Settings */,
 				CB50D20621B33E53007B5BD4 /* Points */,
 				CBED732321ADC7D100FE30BF /* NavigationController */,
 				CBDC5C8F21AA8C3C00185142 /* CourseDetails */,
@@ -691,6 +736,23 @@
 				CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */,
 			);
 			path = Dto;
+			sourceTree = "<group>";
+		};
+		CBD845B621B8F4630029FE12 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */,
+				CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CBD845BB21B8F6190029FE12 /* TableView Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */,
+			);
+			path = "TableView Datasource";
 			sourceTree = "<group>";
 		};
 		CBDC5C8F21AA8C3C00185142 /* CourseDetails */ = {
@@ -855,6 +917,8 @@
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
 				CB19D454217DC47200B4586F /* Registration.storyboard in Resources */,
 				CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */,
+				CB56FD9121B839F200C7196E /* Settings.storyboard in Resources */,
+				CBD845BA21B8F47B0029FE12 /* SettingTableViewCell.xib in Resources */,
 				CB5F41402179A00D0058293F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,9 +1012,11 @@
 				CB2DE5E1219237A800CA9424 /* UIScreen + Extension.swift in Sources */,
 				CBEFF914218B8C6400B63286 /* UserEndPoint.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
+				CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
 				CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
+				CB56FD8B21B839CF00C7196E /* SettingsRouter.swift in Sources */,
 				CB0ACA5921A93D5000C3D202 /* LoaderDisplayLogic.swift in Sources */,
 				CB50D21121B33E67007B5BD4 /* PointsViewController.swift in Sources */,
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
@@ -965,6 +1031,7 @@
 				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,
 				CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */,
 				CB5BFFFD21B3D0A300A20944 /* DefaultTableViewSection.swift in Sources */,
+				CB56FD8E21B839CF00C7196E /* SettingsInteractor.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
 				CBEFF910218B874700B63286 /* NetworkRouter.swift in Sources */,
@@ -976,6 +1043,7 @@
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
 				CB62630421AAB06500AA1757 /* DayTime.swift in Sources */,
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
+				CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */,
 				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,
 				CBED732A21ADC96100FE30BF /* Fonts.swift in Sources */,
 				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
@@ -988,6 +1056,7 @@
 				CB07D25A2184D6A40072EB07 /* QuizQuestion.swift in Sources */,
 				CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */,
 				CBED732521ADC82500FE30BF /* TransparentNavigationController.swift in Sources */,
+				CB56FD8D21B839CF00C7196E /* SettingsViewController.swift in Sources */,
 				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
 				CBDC5C9A21AA8DD200185142 /* CourseDetailsViewController.swift in Sources */,
 				CB07D2642184DD820072EB07 /* QuestionPresenter.swift in Sources */,
@@ -1009,6 +1078,7 @@
 				CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */,
 				CBE2FF2221A7D02F005DC733 /* LoaderPresentationLogic.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
+				CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
 				CBEFF918218B8F7800B63286 /* Response.swift in Sources */,
 				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
@@ -1022,8 +1092,10 @@
 				CB14059E218C38DB0068D880 /* Log.swift in Sources */,
 				CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */,
 				CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */,
+				CB56FD8921B839CF00C7196E /* SettingsPresenter.swift in Sources */,
 				CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */,
 				CBE2FF1F21A7C981005DC733 /* ListCourses.swift in Sources */,
+				CB56FD8C21B839CF00C7196E /* SettingsModels.swift in Sources */,
 				CB14059B218C365D0068D880 /* UIColor + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
