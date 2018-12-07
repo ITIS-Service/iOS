@@ -74,6 +74,12 @@
 		CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */; };
 		CB50D21D21B343C9007B5BD4 /* PointsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */; };
 		CB50D21F21B343E2007B5BD4 /* PointsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */; };
+		CB56A67A21BA578300EE923E /* DBProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A67921BA578300EE923E /* DBProtocols.swift */; };
+		CB56A67C21BA57F300EE923E /* DBLayerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A67B21BA57F300EE923E /* DBLayerAPI.swift */; };
+		CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A67E21BA59A500EE923E /* CoreDataStorageContext.swift */; };
+		CB56A6A221BA5CA500EE923E /* CoreDataStorageContext + Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6A121BA5CA500EE923E /* CoreDataStorageContext + Operations.swift */; };
+		CB56A6A621BA5E9B00EE923E /* ITISService.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6A421BA5E9B00EE923E /* ITISService.xcdatamodeld */; };
+		CB56A6A821BA62DE00EE923E /* CoreDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56A6A721BA62DE00EE923E /* CoreDataObject.swift */; };
 		CB56FD8921B839CF00C7196E /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8321B839CF00C7196E /* SettingsPresenter.swift */; };
 		CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8421B839CF00C7196E /* SettingsWorker.swift */; };
 		CB56FD8B21B839CF00C7196E /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56FD8521B839CF00C7196E /* SettingsRouter.swift */; };
@@ -109,6 +115,9 @@
 		CBDC5C9A21AA8DD200185142 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9421AA8DD200185142 /* CourseDetailsViewController.swift */; };
 		CBDC5C9B21AA8DD200185142 /* CourseDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9521AA8DD200185142 /* CourseDetailsInteractor.swift */; };
 		CBDC5C9E21AA8E0D00185142 /* CourseDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDC5C9D21AA8E0D00185142 /* CourseDetails.storyboard */; };
+		CBDF43A221BA9A8D00C73B65 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDF43A121BA9A8D00C73B65 /* Group.swift */; };
+		CBDF43A421BA9B3400C73B65 /* DefaultUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDF43A321BA9B3400C73B65 /* DefaultUserExtension.swift */; };
+		CBDF43A621BA9CAB00C73B65 /* DefaultGroupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDF43A521BA9CAB00C73B65 /* DefaultGroupExtension.swift */; };
 		CBE2FF1F21A7C981005DC733 /* ListCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2FF1E21A7C981005DC733 /* ListCourses.swift */; };
 		CBE2FF2221A7D02F005DC733 /* LoaderPresentationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2FF2121A7D02F005DC733 /* LoaderPresentationLogic.swift */; };
 		CBED732521ADC82500FE30BF /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED732421ADC82500FE30BF /* TransparentNavigationController.swift */; };
@@ -203,6 +212,12 @@
 		CB50D21821B33EC6007B5BD4 /* PointTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointTableViewCell.xib; sourceTree = "<group>"; };
 		CB50D21C21B343C9007B5BD4 /* PointsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsFooterView.swift; sourceTree = "<group>"; };
 		CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointsFooterView.xib; sourceTree = "<group>"; };
+		CB56A67921BA578300EE923E /* DBProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProtocols.swift; sourceTree = "<group>"; };
+		CB56A67B21BA57F300EE923E /* DBLayerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLayerAPI.swift; sourceTree = "<group>"; };
+		CB56A67E21BA59A500EE923E /* CoreDataStorageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageContext.swift; sourceTree = "<group>"; };
+		CB56A6A121BA5CA500EE923E /* CoreDataStorageContext + Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStorageContext + Operations.swift"; sourceTree = "<group>"; };
+		CB56A6A521BA5E9B00EE923E /* ITISService.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITISService.xcdatamodel; sourceTree = "<group>"; };
+		CB56A6A721BA62DE00EE923E /* CoreDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataObject.swift; sourceTree = "<group>"; };
 		CB56FD8321B839CF00C7196E /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		CB56FD8421B839CF00C7196E /* SettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWorker.swift; sourceTree = "<group>"; };
 		CB56FD8521B839CF00C7196E /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
@@ -240,6 +255,9 @@
 		CBDC5C9421AA8DD200185142 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
 		CBDC5C9521AA8DD200185142 /* CourseDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsInteractor.swift; sourceTree = "<group>"; };
 		CBDC5C9D21AA8E0D00185142 /* CourseDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseDetails.storyboard; sourceTree = "<group>"; };
+		CBDF43A121BA9A8D00C73B65 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		CBDF43A321BA9B3400C73B65 /* DefaultUserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserExtension.swift; sourceTree = "<group>"; };
+		CBDF43A521BA9CAB00C73B65 /* DefaultGroupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGroupExtension.swift; sourceTree = "<group>"; };
 		CBE2FF1E21A7C981005DC733 /* ListCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCourses.swift; sourceTree = "<group>"; };
 		CBE2FF2121A7D02F005DC733 /* LoaderPresentationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentationLogic.swift; sourceTree = "<group>"; };
 		CBED732421ADC82500FE30BF /* TransparentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
@@ -351,17 +369,19 @@
 			isa = PBXGroup;
 			children = (
 				CB8654B8218DC0A500FDBD77 /* Dto */,
-				CBE2FF1E21A7C981005DC733 /* ListCourses.swift */,
-				CB07D230218444630072EB07 /* Course.swift */,
-				CB07D2322184453E0072EB07 /* Teacher.swift */,
-				CB07D2342184455B0072EB07 /* User.swift */,
-				CB07D236218445E90072EB07 /* Point.swift */,
-				CB07D2592184D6A40072EB07 /* QuizQuestion.swift */,
+				CBDF43A021BA9A8100C73B65 /* Group */,
+				CBDF439F21BA9A3100C73B65 /* User */,
+				CB56A6A421BA5E9B00EE923E /* ITISService.xcdatamodeld */,
 				CB07D25B2184D6C50072EB07 /* Answer.swift */,
-				CBEFF917218B8F7800B63286 /* Response.swift */,
-				CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */,
+				CB07D230218444630072EB07 /* Course.swift */,
 				CB62630121AAAF8D00AA1757 /* CourseDetails.swift */,
 				CB62630321AAB06500AA1757 /* DayTime.swift */,
+				CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */,
+				CBE2FF1E21A7C981005DC733 /* ListCourses.swift */,
+				CB07D2592184D6A40072EB07 /* QuizQuestion.swift */,
+				CB07D236218445E90072EB07 /* Point.swift */,
+				CBEFF917218B8F7800B63286 /* Response.swift */,
+				CB07D2322184453E0072EB07 /* Teacher.swift */,
 				CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */,
 				CB5BFFF521B3C75200A20944 /* UserPoints.swift */,
 			);
@@ -564,6 +584,7 @@
 		CB49FDB3217DFBDA00BF35C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CB56A67821BA576800EE923E /* DBLayer */,
 				CBE2FF2021A7D014005DC733 /* LoaderLogic */,
 				CB31B1422196C47300BB4E0A /* ErrorPresenter */,
 				CB2DE5D921921B7800CA9424 /* Keyboard */,
@@ -637,6 +658,26 @@
 				CB50D21E21B343E2007B5BD4 /* PointsFooterView.xib */,
 			);
 			path = PointsFooterView;
+			sourceTree = "<group>";
+		};
+		CB56A67821BA576800EE923E /* DBLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A67D21BA599800EE923E /* CoreData */,
+				CB56A67921BA578300EE923E /* DBProtocols.swift */,
+				CB56A67B21BA57F300EE923E /* DBLayerAPI.swift */,
+			);
+			path = DBLayer;
+			sourceTree = "<group>";
+		};
+		CB56A67D21BA599800EE923E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CB56A67E21BA59A500EE923E /* CoreDataStorageContext.swift */,
+				CB56A6A121BA5CA500EE923E /* CoreDataStorageContext + Operations.swift */,
+				CB56A6A721BA62DE00EE923E /* CoreDataObject.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		CB56FD8221B839AF00C7196E /* Settings */ = {
@@ -797,6 +838,24 @@
 				CBDC5C9D21AA8E0D00185142 /* CourseDetails.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CBDF439F21BA9A3100C73B65 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CBDF43A321BA9B3400C73B65 /* DefaultUserExtension.swift */,
+				CB07D2342184455B0072EB07 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CBDF43A021BA9A8100C73B65 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				CBDF43A521BA9CAB00C73B65 /* DefaultGroupExtension.swift */,
+				CBDF43A121BA9A8D00C73B65 /* Group.swift */,
+			);
+			path = Group;
 			sourceTree = "<group>";
 		};
 		CBE2FF2021A7D014005DC733 /* LoaderLogic */ = {
@@ -1026,6 +1085,7 @@
 				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
 				CB50D20D21B33E67007B5BD4 /* PointsPresenter.swift in Sources */,
 				CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */,
+				CB56A6A821BA62DE00EE923E /* CoreDataObject.swift in Sources */,
 				CB5BFFF621B3C75200A20944 /* UserPoints.swift in Sources */,
 				CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
@@ -1036,7 +1096,9 @@
 				CBEFF914218B8C6400B63286 /* UserEndPoint.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
 				CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */,
+				CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
+				CB56A67A21BA578300EE923E /* DBProtocols.swift in Sources */,
 				CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
 				CB56FD8B21B839CF00C7196E /* SettingsRouter.swift in Sources */,
@@ -1044,6 +1106,7 @@
 				CB50D21121B33E67007B5BD4 /* PointsViewController.swift in Sources */,
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
+				CBDF43A621BA9CAB00C73B65 /* DefaultGroupExtension.swift in Sources */,
 				CB50D21221B33E67007B5BD4 /* PointsInteractor.swift in Sources */,
 				CB31B1442196C48000BB4E0A /* ErrorMessagePresenter.swift in Sources */,
 				CBEFF91A218B935300B63286 /* UserNetworkManager.swift in Sources */,
@@ -1068,18 +1131,23 @@
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
 				CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */,
 				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,
+				CBDF43A421BA9B3400C73B65 /* DefaultUserExtension.swift in Sources */,
 				CBED732A21ADC96100FE30BF /* Fonts.swift in Sources */,
 				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
+				CB56A6A621BA5E9B00EE923E /* ITISService.xcdatamodeld in Sources */,
 				CB50D21D21B343C9007B5BD4 /* PointsFooterView.swift in Sources */,
 				CBDC5C9B21AA8DD200185142 /* CourseDetailsInteractor.swift in Sources */,
 				CBDC5C9721AA8DD200185142 /* CourseDetailsWorker.swift in Sources */,
+				CBDF43A221BA9A8D00C73B65 /* Group.swift in Sources */,
 				CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */,
 				CBDC5C9821AA8DD200185142 /* CourseDetailsRouter.swift in Sources */,
 				CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */,
 				CB07D25A2184D6A40072EB07 /* QuizQuestion.swift in Sources */,
 				CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */,
+				CB56A6A221BA5CA500EE923E /* CoreDataStorageContext + Operations.swift in Sources */,
 				CBD845C021B90B530029FE12 /* MainTabBarController.swift in Sources */,
 				CBED732521ADC82500FE30BF /* TransparentNavigationController.swift in Sources */,
+				CB56A67C21BA57F300EE923E /* DBLayerAPI.swift in Sources */,
 				CB56FD8D21B839CF00C7196E /* SettingsViewController.swift in Sources */,
 				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
 				CBDC5C9A21AA8DD200185142 /* CourseDetailsViewController.swift in Sources */,
@@ -1318,6 +1386,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB56A6A421BA5E9B00EE923E /* ITISService.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB56A6A521BA5E9B00EE923E /* ITISService.xcdatamodel */,
+			);
+			currentVersion = CB56A6A521BA5E9B00EE923E /* ITISService.xcdatamodel */;
+			path = ITISService.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CB5F412D2179A00C0058293F /* Project object */;
 }
