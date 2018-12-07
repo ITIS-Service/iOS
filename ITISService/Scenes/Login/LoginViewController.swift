@@ -23,13 +23,26 @@ protocol LoginDisplayLogic: class {
 
 class LoginViewController: UIViewController, LoginDisplayLogic {
     
-    //MARK: - Constants
+    // MARK: - Nested Type
     
-    fileprivate struct Constants {
+    fileprivate enum Constants {
+        
+        // MARK: - Type Properties
+        
         static let titleColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 149 / 255.0, alpha: 1)
     }
     
-    //MARK: - Instance Properties
+    // MARK: -
+    
+    fileprivate enum Segues {
+        
+        // MARK: - Type Properties
+        
+        static let showMainTabBar = "ShowMainTabBar"
+        static let showStartQuiz = "ShowStartQuiz"
+    }
+    
+    // MARK: - Instance Properties
     
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var errorView: UIView!
@@ -39,12 +52,12 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     @IBOutlet weak var bottomSpacerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var signUpButtonToBottomSpacerConstraint: NSLayoutConstraint!
     
-    //MARK: -
+    // MARK: -
     
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     
-    //MARK: - Object lifecycle
+    // MARK: - Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -56,7 +69,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         setup()
     }
   
-    //MARK: - Setup
+    // MARK: - Setup
 
     private func setup() {
         let viewController = self
@@ -83,14 +96,14 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         }
     }
     
-    //MARK: - Instance Methods
+    // MARK: - Instance Methods
     
     @IBAction func onSignInButtonClick(_ sender: UIButton) {
         let request = Login.SignIn.Request(email: self.emailTextField.text!, password: self.passwordTextField.text!)
         self.interactor?.signIn(with: request)
     }
     
-    //MARK: -
+    // MARK: -
     
     private func configureDesign() {
         self.emailTextField.attributedPlaceholder = NSAttributedString(string: "Ваша почта КФУ", attributes: Common.Autorization.placeholderAttributes)
@@ -120,14 +133,14 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         self.subscribeToKeyboardNotifications()
     }
     
-    //MARK: - LoginDisplayLogic
+    // MARK: - LoginDisplayLogic
     
     func openCoursesScreen() {
-        self.performSegue(withIdentifier: "coursesNavigationController", sender: nil)
+        self.performSegue(withIdentifier: Segues.showMainTabBar, sender: nil)
     }
     
     func openStartQuizScreen() {
-        self.performSegue(withIdentifier: "startQuizNavigationController", sender: nil)
+        self.performSegue(withIdentifier: Segues.showStartQuiz, sender: nil)
     }
     
     func showError(with viewModel: Login.SignIn.ViewModel) {

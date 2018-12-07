@@ -87,6 +87,9 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     private func configureDesign() {
         self.tableView.dataSource = self.datasource
         self.tableView.delegate = self.datasource
+        self.tableView.tableFooterView = UIView()
+        
+        self.tableView.register(SettingTableViewCell.nib(), forCellReuseIdentifier: SettingTableViewCell.identifier())
         
         self.interactor.prepareInitialState()
     }

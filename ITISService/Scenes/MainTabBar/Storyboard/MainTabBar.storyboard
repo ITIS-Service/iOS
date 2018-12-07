@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ac4-OE-ptv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="Lp2-Ut-LCF">
+            <objects>
+                <tabBarController id="Ac4-OE-ptv" customClass="MainTabBarController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JoM-49-dt3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.97647058819999999" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="N9f-76-ziN" kind="relationship" relationship="viewControllers" id="MM1-xg-LQF"/>
+                        <segue destination="i2i-o1-foO" kind="relationship" relationship="viewControllers" id="3rg-13-NfA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYx-qc-cwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-986" y="56"/>
+        </scene>
+        <!--Courses-->
+        <scene sceneID="2ng-S0-K3U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Courses" id="GV6-99-IlE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZoN-WA-C6O"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nu-lT-zpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="-279"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="eS2-co-lQz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="kdy-Zh-3M8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gGR-VY-u9p"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdI-x6-MQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="474"/>
+        </scene>
+        <!--Курсы-->
+        <scene sceneID="oPW-hV-9qu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N9f-76-ziN" customClass="TransparentNavigationController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Курсы" image="courses" id="7dP-i6-8dr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hwL-aQ-F1C">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GV6-99-IlE" kind="relationship" relationship="rootViewController" id="rh4-hC-pF0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dq5-ss-c3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170.40000000000001" y="-278.41079460269867"/>
+        </scene>
+        <!--Настройки-->
+        <scene sceneID="Qem-gy-mzX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i2i-o1-foO" customClass="TransparentNavigationController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Настройки" image="settings" id="A8e-dm-rVs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mpu-Kc-I1X">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kdy-Zh-3M8" kind="relationship" relationship="rootViewController" id="kEE-Bq-akZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mk4-NT-t6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="475"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="courses" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
+    </resources>
+</document>

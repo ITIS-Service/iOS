@@ -100,6 +100,8 @@
 		CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */; };
 		CBD845BA21B8F47B0029FE12 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */; };
 		CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */; };
+		CBD845C021B90B530029FE12 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845BF21B90B530029FE12 /* MainTabBarController.swift */; };
+		CBD845C321B90B8E0029FE12 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD845C221B90B8E0029FE12 /* MainTabBar.storyboard */; };
 		CBDC5C9621AA8DD200185142 /* CourseDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9021AA8DD200185142 /* CourseDetailsPresenter.swift */; };
 		CBDC5C9721AA8DD200185142 /* CourseDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9121AA8DD200185142 /* CourseDetailsWorker.swift */; };
 		CBDC5C9821AA8DD200185142 /* CourseDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC5C9221AA8DD200185142 /* CourseDetailsRouter.swift */; };
@@ -229,6 +231,8 @@
 		CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDatasource.swift; sourceTree = "<group>"; };
+		CBD845BF21B90B530029FE12 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CBD845C221B90B8E0029FE12 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		CBDC5C9021AA8DD200185142 /* CourseDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsPresenter.swift; sourceTree = "<group>"; };
 		CBDC5C9121AA8DD200185142 /* CourseDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsWorker.swift; sourceTree = "<group>"; };
 		CBDC5C9221AA8DD200185142 /* CourseDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsRouter.swift; sourceTree = "<group>"; };
@@ -703,6 +707,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CBD845BE21B90B2E0029FE12 /* MainTabBar */,
 				CB56FD8221B839AF00C7196E /* Settings */,
 				CB50D20621B33E53007B5BD4 /* Points */,
 				CBED732321ADC7D100FE30BF /* NavigationController */,
@@ -753,6 +758,23 @@
 				CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */,
 			);
 			path = "TableView Datasource";
+			sourceTree = "<group>";
+		};
+		CBD845BE21B90B2E0029FE12 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CBD845C121B90B7C0029FE12 /* Storyboard */,
+				CBD845BF21B90B530029FE12 /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		CBD845C121B90B7C0029FE12 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CBD845C221B90B8E0029FE12 /* MainTabBar.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		CBDC5C8F21AA8C3C00185142 /* CourseDetails */ = {
@@ -912,6 +934,7 @@
 				CB07D2552184C1CC0072EB07 /* Quiz.storyboard in Resources */,
 				CB50D21521B33E78007B5BD4 /* Points.storyboard in Resources */,
 				CBDC5C9E21AA8E0D00185142 /* CourseDetails.storyboard in Resources */,
+				CBD845C321B90B8E0029FE12 /* MainTabBar.storyboard in Resources */,
 				CB39DC372185C70400DA04D0 /* AnswerTableViewCell.xib in Resources */,
 				CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */,
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
@@ -1055,6 +1078,7 @@
 				CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */,
 				CB07D25A2184D6A40072EB07 /* QuizQuestion.swift in Sources */,
 				CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */,
+				CBD845C021B90B530029FE12 /* MainTabBarController.swift in Sources */,
 				CBED732521ADC82500FE30BF /* TransparentNavigationController.swift in Sources */,
 				CB56FD8D21B839CF00C7196E /* SettingsViewController.swift in Sources */,
 				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
