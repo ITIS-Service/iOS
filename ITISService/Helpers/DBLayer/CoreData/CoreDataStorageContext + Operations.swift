@@ -11,24 +11,36 @@ import CoreData
 
 extension CoreDataStorageContext {
     
+    // MARK: - Instance Properties
+    
+    fileprivate var sortDescriptor: Sorted {
+        return Sorted(key: "uid", ascending: true)
+    }
+    
     // MARK: - Instance Methods
     
-    func create<T: Storable>(_ model: T.Type, completion: @escaping (T) -> ()) throws {
+    fileprivate func createPredicate(withUID uid: Int64) -> NSPredicate {
+        return NSPredicate(format: "uid == %d", uid)
+    }
+    
+    // MARK: -
+    
+    func create<T: Storable>(_ model: T.Type) throws -> T {
         guard let entity = NSEntityDescription.entity(forEntityName: model.entityName, in: self.persistentContainer.viewContext) else {
-            return
+            fatalError()
         }
         
         let object = NSManagedObject(entity: entity, insertInto: self.persistentContainer.viewContext)
         
         try self.persistentContainer.viewContext.save()
         
-        completion(object as! T)
+        return object as! T
     }
     
     func update(block: @escaping () -> ()) throws {
-        try self.persistentContainer.viewContext.save()
-        
         block()
+        
+        try self.persistentContainer.viewContext.save()
     }
     
     // MARK: -
@@ -55,7 +67,7 @@ extension CoreDataStorageContext {
     
     // MARK: -
     
-    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?, completion: ([T]) -> ()) {
+    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> [T] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: model.entityName)
         
         fetchRequest.predicate = predicate
@@ -67,9 +79,19 @@ extension CoreDataStorageContext {
         }
         
         guard let result = try? self.persistentContainer.viewContext.fetch(fetchRequest) else {
-            return completion([])
+            return []
         }
         
-        completion(result.compactMap { $0 as? T })
+        return result.compactMap { $0 as? T }
+    }
+    
+    func firstOrNew<T: Storable>(_ model: T.Type, id: Int) throws -> T {
+        let predicate = self.createPredicate(withUID: Int64(id))
+        
+        if let object = self.fetch(model, predicate: predicate, sorted: self.sortDescriptor).first {
+            return object
+        } else {
+            return try self.create(model)
+        }
     }
 }

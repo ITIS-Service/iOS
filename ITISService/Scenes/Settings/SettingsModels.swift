@@ -28,6 +28,21 @@ enum Settings {
         }
     }
     
+    enum UserProfile {
+        struct Request {
+            
+        }
+        struct Response {
+            let user: User
+        }
+        struct ViewModel {
+            let name: String
+            let email: String
+            let group: String
+            let courseNumber: String
+        }
+    }
+    
     // MARK: - UITableView Models
     
     enum TableView {

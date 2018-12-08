@@ -14,6 +14,7 @@ import UIKit
 
 protocol SettingsPresentationLogic {
     func displaySettings(with response: Settings.InitialState.Response)
+    func displayUserInfo(with response: Settings.UserProfile.Response)
 }
 
 class SettingsPresenter: SettingsPresentationLogic {
@@ -32,6 +33,29 @@ class SettingsPresenter: SettingsPresentationLogic {
         let section = DefaultTableViewSection(items: items, headerTitle: "Основные")
         
         self.viewController.displaySettingRows(with: [section])
+    }
+    
+    func displayUserInfo(with response: Settings.UserProfile.Response) {
+        let user = response.user
+        
+        guard let firstName = user.firstName, let lastName = user.lastName else {
+            return
+        }
+        
+        guard let email = user.email else {
+            return
+        }
+        
+        guard let groupName = user.group?.name, let courseNumber = user.group?.course else {
+            return
+        }
+        
+        let fullName = "\(lastName) \(firstName)"
+        let course = "\(courseNumber)"
+        
+        let viewModel = Settings.UserProfile.ViewModel(name: fullName, email: email, group: groupName, courseNumber: course)
+        
+        self.viewController.displayUserProfile(with: viewModel)
     }
     
 }

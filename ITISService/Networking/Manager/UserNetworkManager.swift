@@ -14,7 +14,7 @@ protocol UserNetworkManager {
     
     func registration(with email: String, password: String, success: @escaping (() -> Void), failure: @escaping (ExceptionResponse) -> Void)
     
-    func login(with email: String, password: String, success: @escaping ((LoginResponseDto) -> Void), failure: @escaping (ExceptionResponse) -> Void)
+    func login(with email: String, password: String, success: @escaping (User) -> Void, failure: @escaping (ExceptionResponse) -> Void)
     
     func fetchQuestions(success: @escaping ([QuizQuestion]) -> Void, failure: @escaping (ExceptionResponse) -> Void)
     
@@ -37,6 +37,10 @@ class UserNetworkManagerImpl: UserNetworkManager {
     
     fileprivate let router = Router<UserApi>()
     
+    // MARK: -
+    
+    var userManager: UserManager!
+    
     // MARK: - Instance Methods
     
     fileprivate func extractToken(from response: URLResponse) {
@@ -57,11 +61,13 @@ class UserNetworkManagerImpl: UserNetworkManager {
         }
     }
     
-    func login(with email: String, password: String, success: @escaping ((LoginResponseDto) -> Void), failure: @escaping (ExceptionResponse) -> Void) {
+    func login(with email: String, password: String, success: @escaping (User) -> Void, failure: @escaping (ExceptionResponse) -> Void) {
         router.request(.login(email: email, password: password), success: { [weak self] (data, response) in
-            if let loginResponseDto = try? JSONDecoder().decode(LoginResponseDto.self, from: data) {
-                self?.extractToken(from: response)
-                success(loginResponseDto)
+            self?.extractToken(from: response)
+            
+            if let user = try? JSONDecoder().decode(User.self, from: data) {
+                self?.userManager.save(user)
+                success(user)
             } else {
                 failure(ExceptionResponse.parseException())
             }

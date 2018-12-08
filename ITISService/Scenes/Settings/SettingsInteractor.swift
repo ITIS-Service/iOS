@@ -35,5 +35,9 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
     
     func prepareInitialState() {
         self.presenter.displaySettings(with: Settings.InitialState.Response(settingsNames: self.settingNames))
+        
+        if let user = Managers.userManager.first() {
+            self.presenter.displayUserInfo(with: Settings.UserProfile.Response(user: user))
+        }
     }
 }

@@ -22,11 +22,12 @@ protocol StorageContext {
     
     // MARK: - Instance Methods
     
-    func create<T: Storable>(_ model: T.Type, completion: @escaping (T) -> ()) throws
+    func create<T: Storable>(_ model: T.Type) throws -> T
     func update(block: @escaping () -> ()) throws
     
     func delete(object: Storable) throws
     func deleteAll<T: Storable>(_ model: T.Type) throws
     
-    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?, completion: ([T]) -> ())
+    func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> [T]
+    func firstOrNew<T: Storable>(_ model: T.Type, id: Int) throws -> T
 }

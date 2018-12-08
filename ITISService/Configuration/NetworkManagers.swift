@@ -10,6 +10,10 @@ import Foundation
 
 enum NetworkManagers {
     
-    static let userNetworkManager: UserNetworkManager = UserNetworkManagerImpl()
+    static var userNetworkManager: UserNetworkManager = {
+        let networkManager = UserNetworkManagerImpl()
+        networkManager.userManager = Managers.userManager
+        return networkManager
+    }()
     
 }

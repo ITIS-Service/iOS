@@ -40,9 +40,9 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
         }
         
         self.presenter.showActivityIndicator(true)
-        self.networkManager.login(with: request.email, password: request.password, success: { [weak self] (loginResponseDto) in
+        self.networkManager.login(with: request.email, password: request.password, success: { [weak self] (user) in
             self?.presenter.showActivityIndicator(false)
-            self?.presenter.signIn(response: Login.SignIn.Response(success: true, message: nil, shouldShowQuiz: !loginResponseDto.isPassedQuiz))
+            self?.presenter.signIn(response: Login.SignIn.Response(success: true, message: nil, shouldShowQuiz: !user.passedQuiz))
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.signIn(response: Login.SignIn.Response(success: false, message: error.message, shouldShowQuiz: false))

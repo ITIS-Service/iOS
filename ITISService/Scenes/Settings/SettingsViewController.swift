@@ -14,6 +14,7 @@ import UIKit
 
 protocol SettingsDisplayLogic: class {
     func displaySettingRows(with sections: [TableViewSection])
+    func displayUserProfile(with viewModel: Settings.UserProfile.ViewModel)
 }
 
 class SettingsViewController: UIViewController, SettingsDisplayLogic {
@@ -106,6 +107,13 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     func displaySettingRows(with sections: [TableViewSection]) {
         self.datasource.sections = sections
         self.tableView.reloadData()
+    }
+    
+    func displayUserProfile(with viewModel: Settings.UserProfile.ViewModel) {
+        self.nameLabel.text = viewModel.name
+        self.emailLabel.text = viewModel.email
+        self.groupNameLabel.text = viewModel.group
+        self.courseNumberLabel.text = viewModel.courseNumber
     }
     
 }

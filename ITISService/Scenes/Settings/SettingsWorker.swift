@@ -12,10 +12,4 @@
 
 import UIKit
 
-class SettingsWorker {
-    
-    func doSomeWork() {
-        
-    }
-    
-}
+class SettingsWorker { }

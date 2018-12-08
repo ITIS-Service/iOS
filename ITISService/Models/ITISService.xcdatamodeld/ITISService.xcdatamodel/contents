@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DefaultGroup" representedClassName="DefaultGroup" syncable="YES" codeGenerationType="class">
+        <attribute name="course" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="rawCourse" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="rawUsers" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultUser" inverseName="rawGroup" inverseEntity="DefaultUser" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultUser" inverseName="group" inverseEntity="DefaultUser" syncable="YES"/>
     </entity>
     <entity name="DefaultUser" representedClassName="DefaultUser" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +12,7 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="passedQuiz" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="rawGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultGroup" inverseName="rawUsers" inverseEntity="DefaultGroup" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultGroup" inverseName="users" inverseEntity="DefaultGroup" syncable="YES"/>
     </entity>
     <elements>
         <element name="DefaultGroup" positionX="-54" positionY="18" width="128" height="105"/>
