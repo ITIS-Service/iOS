@@ -114,11 +114,12 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         super.viewDidLoad()
         
         self.configureDesign()
-        self.interactor.fetchCourses()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.interactor.fetchCourses()
     }
     
     // MARK: - CoursesDisplayLogic Methods

@@ -15,6 +15,8 @@ import UIKit
 protocol SettingsPresentationLogic {
     func displaySettings(with response: Settings.InitialState.Response)
     func displayUserInfo(with response: Settings.UserProfile.Response)
+    func displayConfirmExitActionSheet()
+    func showLoginScreen()
 }
 
 class SettingsPresenter: SettingsPresentationLogic {
@@ -26,9 +28,13 @@ class SettingsPresenter: SettingsPresentationLogic {
     // MARK: - Instance Methods
     
     func displaySettings(with response: Settings.InitialState.Response) {
-        let items = response.settingsNames.map {
+        var items: [TableViewCompatible] = response.settingsNames.map {
             return Settings.TableView.Model(settingName: $0)
         }
+        
+        let exitModel = Settings.TableView.ExitModel()
+        
+        items.append(exitModel)
         
         let section = DefaultTableViewSection(items: items, headerTitle: "Основные")
         
@@ -56,6 +62,19 @@ class SettingsPresenter: SettingsPresentationLogic {
         let viewModel = Settings.UserProfile.ViewModel(name: fullName, email: email, group: groupName, courseNumber: course)
         
         self.viewController.displayUserProfile(with: viewModel)
+    }
+    
+    func displayConfirmExitActionSheet() {
+        let title = "Подтверждения выхода"
+        
+        let confirmTitle = "Выйти"
+        let cancelTitle = "Отмена"
+        
+        self.viewController.displayConfirmExitActionSheet(with: Settings.SelectCell.ViewModel(title: title, confirmTitle: confirmTitle, cancelTitle: cancelTitle))
+    }
+    
+    func showLoginScreen() {
+        self.viewController.showLoginScreen()
     }
     
 }

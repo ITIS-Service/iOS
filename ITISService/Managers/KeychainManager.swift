@@ -11,16 +11,39 @@ import SwiftKeychainWrapper
 
 class KeychainManager {
     
+    // MARK: - Nested Types
+    
+    fileprivate enum Keys {
+        
+        // MARK: - Type Properties
+        
+        static let token = "token"
+    }
+    
+    // MARK: - Instance Methods
+    
+    func clear() {
+        let _ = KeychainWrapper.standard.removeAllKeys()
+    }
+    
+    // MARK: - Instance Properties
+    
     static let shared = KeychainManager()
+    
+    // MARK: -
     
     var token: String? {
         set {
-            Log.i("\(newValue ?? "null")")
-            KeychainWrapper.standard.set(newValue ?? "", forKey: "token")
+            if let newValue = newValue {
+                Log.i("\(newValue)")
+                KeychainWrapper.standard.set(newValue, forKey: Keys.token)
+            } else {
+                KeychainWrapper.standard.removeObject(forKey: Keys.token)
+            }
         }
+        
         get {
-            return KeychainWrapper.standard.string(forKey: "token")
+            return KeychainWrapper.standard.string(forKey: Keys.token)
         }
     }
-    
 }

@@ -14,4 +14,5 @@ protocol UserManager {
     
     func save(_ user: User)
     func first() -> User?
+    func deleteAll()
 }

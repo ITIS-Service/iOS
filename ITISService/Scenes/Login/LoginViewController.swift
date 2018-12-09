@@ -38,7 +38,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         
         // MARK: - Type Properties
         
-        static let showMainTabBar = "ShowMainTabBar"
+        static let finishLogin = "FinishLogin"
         static let showStartQuiz = "ShowStartQuiz"
     }
     
@@ -136,7 +136,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     // MARK: - LoginDisplayLogic
     
     func openCoursesScreen() {
-        self.performSegue(withIdentifier: Segues.showMainTabBar, sender: nil)
+        self.performSegue(withIdentifier: Segues.finishLogin, sender: nil)
     }
     
     func openStartQuizScreen() {
@@ -161,7 +161,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
             self.view.hideActivityIndicator()
         }
     }
-    
 }
 
 // MARK: - KeyboardHandler

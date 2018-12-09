@@ -14,6 +14,8 @@ import UIKit
 
 protocol SettingsBusinessLogic {
     func prepareInitialState()
+    func selectCellRequest(with request: Settings.SelectCell.Request)
+    func exitProfile()
 }
 
 protocol SettingsDataStore {
@@ -21,6 +23,17 @@ protocol SettingsDataStore {
 }
 
 class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
+    
+    // MARK: - Nested Types
+    
+    fileprivate enum Constants {
+        
+        // MARK: - Type Properties
+        
+        static let mainSectionIndex = 0
+        
+        static let exitRowIndex = 3
+    }
     
     // MARK: - Instance Properties
     
@@ -39,5 +52,22 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
         if let user = Managers.userManager.first() {
             self.presenter.displayUserInfo(with: Settings.UserProfile.Response(user: user))
         }
+    }
+    
+    func selectCellRequest(with request: Settings.SelectCell.Request) {
+        let indexPath = request.indexPath
+        
+        if indexPath.section == Constants.mainSectionIndex {
+            if indexPath.row == Constants.exitRowIndex {
+                self.presenter.displayConfirmExitActionSheet()
+            }
+        }
+    }
+    
+    func exitProfile() {
+        Managers.userManager.deleteAll()
+        KeychainManager.shared.clear()
+        
+        self.presenter.showLoginScreen()
     }
 }

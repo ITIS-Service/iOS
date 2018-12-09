@@ -23,10 +23,13 @@ protocol QuestionDisplayLogic: AnswerTableViewCellDelegate, ErrorMessagePresente
 
 class QuestionViewController: UIViewController, QuestionDisplayLogic {
     
-    //MARK: - Constants
+    // MARK: - Nested Types
     
-    fileprivate struct Constants {
+    fileprivate struct Segues {
         
+        // MARK: - Type Properties
+        
+        static let finishQuiz = "FinishQuiz"
     }
     
     //MARK: - Instance Properties
@@ -139,7 +142,7 @@ class QuestionViewController: UIViewController, QuestionDisplayLogic {
     }
     
     func showCoursesScreen() {
-        self.performSegue(withIdentifier: "coursesNavigationController", sender: nil)
+        self.performSegue(withIdentifier: Segues.finishQuiz, sender: nil)
     }
     
     func showActivityIndicator(_ show: Bool) {

@@ -113,6 +113,8 @@
 		CBD7932821BBA3E9002F958E /* CoreDataGroupTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7932721BBA3E9002F958E /* CoreDataGroupTranslator.swift */; };
 		CBD7932A21BBAE83002F958E /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7932921BBAE83002F958E /* Managers.swift */; };
 		CBD7932C21BBAEBE002F958E /* Translators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7932B21BBAEBE002F958E /* Translators.swift */; };
+		CBD7933021BC4093002F958E /* ExitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7932E21BC4093002F958E /* ExitTableViewCell.swift */; };
+		CBD7933121BC4093002F958E /* ExitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD7932F21BC4093002F958E /* ExitTableViewCell.xib */; };
 		CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */; };
 		CBD845BA21B8F47B0029FE12 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */; };
 		CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */; };
@@ -260,6 +262,8 @@
 		CBD7932721BBA3E9002F958E /* CoreDataGroupTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGroupTranslator.swift; sourceTree = "<group>"; };
 		CBD7932921BBAE83002F958E /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
 		CBD7932B21BBAEBE002F958E /* Translators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translators.swift; sourceTree = "<group>"; };
+		CBD7932E21BC4093002F958E /* ExitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
+		CBD7932F21BC4093002F958E /* ExitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitTableViewCell.xib; sourceTree = "<group>"; };
 		CBD845B721B8F47B0029FE12 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		CBD845B821B8F47B0029FE12 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		CBD845BC21B8F6280029FE12 /* SettingsTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDatasource.swift; sourceTree = "<group>"; };
@@ -362,6 +366,7 @@
 		CB07D229218442470072EB07 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CBD7932D21BC407C002F958E /* Exit */,
 				CBD845B621B8F4630029FE12 /* Setting */,
 				CB50D21621B33EB7007B5BD4 /* Point */,
 				CB39DC332185C6F000DA04D0 /* Answer */,
@@ -839,6 +844,15 @@
 			path = Translators;
 			sourceTree = "<group>";
 		};
+		CBD7932D21BC407C002F958E /* Exit */ = {
+			isa = PBXGroup;
+			children = (
+				CBD7932E21BC4093002F958E /* ExitTableViewCell.swift */,
+				CBD7932F21BC4093002F958E /* ExitTableViewCell.xib */,
+			);
+			path = Exit;
+			sourceTree = "<group>";
+		};
 		CBD845B621B8F4630029FE12 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1027,6 +1041,7 @@
 				CB50D21F21B343E2007B5BD4 /* PointsFooterView.xib in Resources */,
 				CB07D22E218442640072EB07 /* CourseTableViewCell.xib in Resources */,
 				CB07D22721843F610072EB07 /* Courses.storyboard in Resources */,
+				CBD7933121BC4093002F958E /* ExitTableViewCell.xib in Resources */,
 				CB07D2552184C1CC0072EB07 /* Quiz.storyboard in Resources */,
 				CB50D21521B33E78007B5BD4 /* Points.storyboard in Resources */,
 				CBDC5C9E21AA8E0D00185142 /* CourseDetails.storyboard in Resources */,
@@ -1183,6 +1198,7 @@
 				CBDC5C9721AA8DD200185142 /* CourseDetailsWorker.swift in Sources */,
 				CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */,
 				CBDC5C9821AA8DD200185142 /* CourseDetailsRouter.swift in Sources */,
+				CBD7933021BC4093002F958E /* ExitTableViewCell.swift in Sources */,
 				CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */,
 				CB07D25A2184D6A40072EB07 /* QuizQuestion.swift in Sources */,
 				CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */,

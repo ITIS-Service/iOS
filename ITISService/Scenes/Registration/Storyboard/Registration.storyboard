@@ -170,7 +170,7 @@
                 <viewControllerPlaceholder storyboardName="Quiz" referencedIdentifier="startQuizNavigationController" id="Y7X-j4-MG4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKG-1A-n4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="-18"/>
+            <point key="canvasLocation" x="566" y="26"/>
         </scene>
     </scenes>
 </document>

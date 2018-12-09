@@ -15,14 +15,19 @@ import UIKit
 protocol SettingsDisplayLogic: class {
     func displaySettingRows(with sections: [TableViewSection])
     func displayUserProfile(with viewModel: Settings.UserProfile.ViewModel)
+    func displayConfirmExitActionSheet(with viewModel: Settings.SelectCell.ViewModel)
+    func showLoginScreen()
 }
 
 class SettingsViewController: UIViewController, SettingsDisplayLogic {
     
-    // MARK: - Constants
+    // MARK: - Nested Types
     
-    fileprivate struct Constants {
+    fileprivate enum Segues {
         
+        // MARK: - Type Properties
+        
+        static let showLoginScreen = "ShowLoginScreen"
     }
     
     // MARK: - Instance Properties
@@ -91,6 +96,11 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         self.tableView.tableFooterView = UIView()
         
         self.tableView.register(SettingTableViewCell.nib(), forCellReuseIdentifier: SettingTableViewCell.identifier())
+        self.tableView.register(ExitTableViewCell.nib(), forCellReuseIdentifier: ExitTableViewCell.identifier())
+        
+        self.datasource.onTap = { [unowned self] indexPath in
+            self.interactor.selectCellRequest(with: Settings.SelectCell.Request(indexPath: indexPath))
+        }
         
         self.interactor.prepareInitialState()
     }
@@ -116,4 +126,22 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         self.courseNumberLabel.text = viewModel.courseNumber
     }
     
+    func displayConfirmExitActionSheet(with viewModel: Settings.SelectCell.ViewModel) {
+        let alertController = UIAlertController(title: viewModel.title, message: nil, preferredStyle: .actionSheet)
+        
+        let confirmAction = UIAlertAction(title: viewModel.confirmTitle, style: .destructive) { [unowned self] (action) in
+            self.interactor.exitProfile()
+        }
+        
+        let cancelAction = UIAlertAction(title: viewModel.cancelTitle, style: .cancel)
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true)
+    }
+    
+    func showLoginScreen() {
+        self.performSegue(withIdentifier: Segues.showLoginScreen, sender: nil)
+    }
 }

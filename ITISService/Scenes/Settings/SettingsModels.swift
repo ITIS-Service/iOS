@@ -43,6 +43,20 @@ enum Settings {
         }
     }
     
+    enum SelectCell {
+        struct Request {
+            let indexPath: IndexPath
+        }
+        struct Response {
+            
+        }
+        struct ViewModel {
+            let title: String
+            let confirmTitle: String
+            let cancelTitle: String
+        }
+    }
+    
     // MARK: - UITableView Models
     
     enum TableView {
@@ -60,6 +74,18 @@ enum Settings {
                 
                 cell.configure(with: self)
                 
+                return cell
+            }
+        }
+        
+        struct ExitModel: TableViewCompatible {
+            
+            var reuseIdentifier: String {
+                return ExitTableViewCell.identifier()
+            }
+            
+            func cell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
                 return cell
             }
         }

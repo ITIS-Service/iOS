@@ -52,6 +52,10 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     }
     
     func fetchCourses() {
+        guard Managers.userManager.first() != nil else {
+            return
+        }
+        
         self.presenter.showActivityIndicator(true)
         self.userNetworkManager.fetchCourses(success: { [weak self] (listCourses) in
             guard let strongSelf = self else {

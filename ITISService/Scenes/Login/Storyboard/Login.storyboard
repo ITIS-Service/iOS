@@ -156,21 +156,14 @@
                         <outlet property="errorView" destination="FYY-p2-IrE" id="Znr-NI-wqj"/>
                         <outlet property="passwordTextField" destination="GFi-EN-KZC" id="nuG-Vc-v6z"/>
                         <outlet property="signUpButtonToBottomSpacerConstraint" destination="BcW-en-CfE" id="Maz-No-dKq"/>
-                        <segue destination="hY8-oO-20n" kind="presentation" identifier="ShowMainTabBar" id="h9A-ni-0Ud"/>
                         <segue destination="QMM-Bu-Xeb" kind="presentation" identifier="ShowStartQuiz" id="wy0-NH-lAk"/>
+                        <segue destination="mHV-kS-Nqh" kind="unwind" identifier="FinishLogin" unwindAction="loginFinishedWithSegue:" id="dZy-CE-aba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hA7-CZ-yvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mHV-kS-Nqh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1052" y="134.48275862068968"/>
-        </scene>
-        <!--MainTabBar-->
-        <scene sceneID="q3u-eK-8ih">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MainTabBar" id="hY8-oO-20n" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j0m-9i-0tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1701" y="25"/>
         </scene>
         <!--registrationViewController-->
         <scene sceneID="aOD-bN-7rM">

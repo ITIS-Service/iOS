@@ -25,4 +25,8 @@ struct DefaultUserManager<Object>: UserManager where Object: Storable {
         
         return Translators.userTranslator.translate(storedObject: storedObject as! CoreDataUserTranslator.StoredObject)
     }
+    
+    func deleteAll() {
+        try? Services.storageContext.deleteAll(Object.self)
+    }
 }
