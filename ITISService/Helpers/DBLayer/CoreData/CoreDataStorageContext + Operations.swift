@@ -62,6 +62,7 @@ extension CoreDataStorageContext {
             }
             
             self.persistentContainer.viewContext.delete(objectData)
+            self.saveContext()
         }
     }
     

@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="1708" y="244"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Transparent Navigation Controller-->
         <scene sceneID="rjY-5L-VLx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GOC-I3-N7D" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GOC-I3-N7D" customClass="TransparentNavigationController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nMf-IF-5YD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

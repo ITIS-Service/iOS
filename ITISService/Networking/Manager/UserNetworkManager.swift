@@ -55,7 +55,13 @@ class UserNetworkManagerImpl: UserNetworkManager {
     func registration(with email: String, password: String, success: @escaping (() -> Void), failure: @escaping (ExceptionResponse) -> Void) {
         router.request(.registration(email: email, password: password), success: { [weak self] (data, response) in
             self?.extractToken(from: response)
-            success()
+            
+            if let user = try? JSONDecoder().decode(User.self, from: data) {
+                self?.userManager.save(user)
+                success()
+            } else {
+                failure(ExceptionResponse.parseException())
+            }
         }) { (error) in
             failure(error)
         }

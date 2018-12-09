@@ -36,11 +36,20 @@
                     <connections>
                         <outlet property="tableView" destination="JZN-sC-sLO" id="zqm-G1-7PK"/>
                         <segue destination="Vxd-me-1ir" kind="show" identifier="CourseDetails" id="ydQ-oS-P6N"/>
+                        <segue destination="3Wk-qr-keO" kind="presentation" identifier="ShowLogin" id="S0M-t2-6tF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nA-93-YV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1004" y="124.58770614692655"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="6uJ-lf-5dV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="3Wk-qr-keO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IiE-EN-twX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="576"/>
         </scene>
         <!--CourseDetails-->
         <scene sceneID="3Ly-8h-Zqm">

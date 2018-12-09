@@ -18,6 +18,7 @@ protocol CoursesDataStoreHolder {
 
 protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func displayListCourses(sections: [Courses.TableView.Section])
+    func showLoginScreen()
 }
 
 class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataStoreHolder {
@@ -38,6 +39,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         // MARK: - Properties
         
         static let courseDetails = "CourseDetails"
+        static let showLogin = "ShowLogin"
     }
     
     // MARK: - Instance Properties
@@ -114,12 +116,12 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         super.viewDidLoad()
         
         self.configureDesign()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.interactor.fetchCourses()
+        
+        self.interactor.subscribeToUserUnauthorizedNotification()
+        self.interactor.subsribeToUserSignInNotification()
+        self.interactor.subsribeToUserSignUpNotification()
+        self.interactor.subscribeToUserFinishQuizNotification()
     }
     
     // MARK: - CoursesDisplayLogic Methods
@@ -127,5 +129,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     func displayListCourses(sections: [Courses.TableView.Section]) {
         self.datasource.sections = sections
         self.tableView.reloadData()
+    }
+    
+    func showLoginScreen() {
+        self.performSegue(withIdentifier: Segues.showLogin, sender: nil)
     }
 }

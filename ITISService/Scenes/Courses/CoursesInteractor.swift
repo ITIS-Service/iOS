@@ -15,6 +15,11 @@ import UIKit
 protocol CoursesBusinessLogic {
     func fetchCourses()
     func selectCourse(at indexPath: IndexPath, numberOfSections: Int)
+    
+    func subscribeToUserUnauthorizedNotification()
+    func subsribeToUserSignInNotification()
+    func subscribeToUserFinishQuizNotification()
+    func subsribeToUserSignUpNotification()
 }
 
 protocol CoursesDataStore {
@@ -38,14 +43,60 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     
     // MARK: - Instance Properties
     
+    fileprivate var userUnauthorizedObserver: AnyObject?
+    fileprivate var userSignInObserver: AnyObject?
+    fileprivate var userFinishQuizObserver: AnyObject?
+    fileprivate var userSignUpObserver: AnyObject?
+    
+    // MARK: -
+    
     var presenter: CoursesPresentationLogic!
     var worker: CoursesWorker!
     var userNetworkManager: UserNetworkManager!
     
     var listCourses: ListCourses?
     var selectedCourse: Course?
+    
+    // MARK: - Initializers
+    
+    deinit {
+        self.unsubscribeFromUserUnauthorizedNotification()
+        self.unsubscribeFromUserSignInNotification()
+        self.unsubscribeFromUserFinishQuiz()
+        self.unsubscriveFromUserSignUpNotification()
+    }
 
     // MARK: - Instance Methods
+    
+    fileprivate func unsubscribeFromUserUnauthorizedNotification() {
+        if let userUnauthorizedObserver = self.userUnauthorizedObserver {
+            NotificationCenter.default.removeObserver(userUnauthorizedObserver)
+            self.userUnauthorizedObserver = nil
+        }
+    }
+    
+    fileprivate func unsubscribeFromUserSignInNotification() {
+        if let userSignInObserver = self.userSignInObserver {
+            NotificationCenter.default.removeObserver(userSignInObserver)
+            self.userSignInObserver = nil
+        }
+    }
+    
+    fileprivate func unsubscribeFromUserFinishQuiz() {
+        if let userFinishQuizObserver = self.userFinishQuizObserver {
+            NotificationCenter.default.removeObserver(userFinishQuizObserver)
+            self.userFinishQuizObserver = nil
+        }
+    }
+    
+    fileprivate func unsubscriveFromUserSignUpNotification() {
+        if let userSignUpObserver = self.userSignUpObserver {
+            NotificationCenter.default.removeObserver(userSignUpObserver)
+            self.userSignUpObserver = nil
+        }
+    }
+    
+    // MARK: -
     
     func updateListCourses() {
         self.fetchCourses()
@@ -71,6 +122,8 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         }
     }
     
+    // MARK: -
+    
     func selectCourse(at indexPath: IndexPath, numberOfSections: Int) {
         guard let listCourses = self.listCourses else {
             return
@@ -91,5 +144,31 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         }
         
         self.selectedCourse = sections[indexPath.section][indexPath.row]
+    }
+    
+    // MARK: -
+    
+    func subscribeToUserUnauthorizedNotification() {
+        self.userUnauthorizedObserver = NotificationCenter.default.addObserver(forName: .userUnauthorized, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.presenter.showLoginScreen()
+        })
+    }
+    
+    func subsribeToUserSignInNotification() {
+        self.userSignInObserver = NotificationCenter.default.addObserver(forName: .userDidSignIn, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.fetchCourses()
+        })
+    }
+    
+    func subscribeToUserFinishQuizNotification() {
+        self.userFinishQuizObserver = NotificationCenter.default.addObserver(forName: .userDidFinishQuiz, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.fetchCourses()
+        })
+    }
+    
+    func subsribeToUserSignUpNotification() {
+        self.userSignUpObserver = NotificationCenter.default.addObserver(forName: .userDidSignUp, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.fetchCourses()
+        })
     }
 }

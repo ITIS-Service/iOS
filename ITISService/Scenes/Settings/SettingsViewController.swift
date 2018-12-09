@@ -103,6 +103,8 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         }
         
         self.interactor.prepareInitialState()
+        self.interactor.subscribeToSignInNotification()
+        self.interactor.subscribeToSignUpNotification()
     }
     
     // MARK: - View lifecycle

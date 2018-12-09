@@ -10,15 +10,6 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
-    // MARK: - Nested Types
-    
-    fileprivate enum Segues {
-        
-        // MARK: - Type Properties
-        
-        static let showLoginScreen = "ShowLoginScreen"
-    }
-    
     // MARK: - Instance Methods
     
     @IBAction func loginFinished(segue: UIStoryboardSegue) {
@@ -27,12 +18,11 @@ class MainTabBarController: UITabBarController {
     
     // MARK - UIViewController
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if Managers.userManager.first() == nil {
-            self.performSegue(withIdentifier: Segues.showLoginScreen, sender: nil)
+            NotificationCenter.default.post(name: .userUnauthorized, object: self)
         }
     }
-    
 }

@@ -14,6 +14,7 @@ import UIKit
 
 protocol CoursesPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentationLogic {
     func displayCourses(response: Courses.List.Response)
+    func showLoginScreen()
 }
 
 class CoursesPresenter: CoursesPresentationLogic {
@@ -67,5 +68,9 @@ class CoursesPresenter: CoursesPresentationLogic {
         }
         
         self.viewController.displayListCourses(sections: sections)
+    }
+    
+    func showLoginScreen() {
+        self.viewController.showLoginScreen()
     }
 }

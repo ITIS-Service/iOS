@@ -22,20 +22,11 @@
                     <connections>
                         <segue destination="N9f-76-ziN" kind="relationship" relationship="viewControllers" id="MM1-xg-LQF"/>
                         <segue destination="i2i-o1-foO" kind="relationship" relationship="viewControllers" id="3rg-13-NfA"/>
-                        <segue destination="J8z-xM-VnF" kind="presentation" identifier="ShowLoginScreen" id="DFd-FF-ZGI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYx-qc-cwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-986" y="56"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="wrZ-cl-pfF">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="J8z-xM-VnF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z0p-Bc-drV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-986" y="542"/>
         </scene>
         <!--Courses-->
         <scene sceneID="2ng-S0-K3U">

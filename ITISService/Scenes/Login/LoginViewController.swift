@@ -110,12 +110,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         self.emailTextField.autocorrectionType = .no
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Ваш пароль", attributes: Common.Autorization.placeholderAttributes)
         
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: Constants.titleColor,
-            .font: UIFont(name: "HelveticaNeue-Light", size: 17)!
-        ]
-        self.navigationController?.transparent()
-        
         self.emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

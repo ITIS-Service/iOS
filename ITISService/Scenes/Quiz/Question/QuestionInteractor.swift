@@ -54,6 +54,8 @@ class QuestionInteractor: QuestionBusinessLogic, QuestionDataStore {
             self.userNetworkManager.sendAnswers(with: preparedAnswers, success: { [weak self] (response) in
                 self?.presenter.showActivityIndicator(false)
                 self?.presenter.showCoursesScreen()
+                
+                NotificationCenter.default.post(name: .userDidFinishQuiz, object: self)
             }) { [weak self] (error) in
                 self?.presenter.showActivityIndicator(false)
                 self?.presenter.showError(error)

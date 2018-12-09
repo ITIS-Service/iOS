@@ -45,6 +45,8 @@ class RegistrationInteractor: RegistrationBusinessLogic, RegistrationDataStore {
         self.userNetworkManager.registration(with: request.email, password: request.password, success: { [weak self] in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.signUp(response: Registration.SignUp.Response(success: true, errorType: nil, message: nil))
+            
+            NotificationCenter.default.post(name: .userDidSignUp, object: self)
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.signUp(response: Registration.SignUp.Response(success: false, errorType: .network, message: error.message))

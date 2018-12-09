@@ -16,6 +16,9 @@ protocol SettingsBusinessLogic {
     func prepareInitialState()
     func selectCellRequest(with request: Settings.SelectCell.Request)
     func exitProfile()
+    
+    func subscribeToSignInNotification()
+    func subscribeToSignUpNotification()
 }
 
 protocol SettingsDataStore {
@@ -43,8 +46,33 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
     // MARK: -
     
     fileprivate var settingNames = ["Аккаунт", "Уведомления", "Опрос"]
+    fileprivate var signInObserver: AnyObject?
+    fileprivate var signUpObserver: AnyObject?
+    
+    // MARK: - Initializers
+    
+    deinit {
+        self.unsubscribeFromSignInNotification()
+        self.unsubscribeFromSignUpNotification()
+    }
     
     // MARK: - Instance Methods
+    
+    fileprivate func unsubscribeFromSignInNotification() {
+        if let signInObserver = self.signInObserver {
+            NotificationCenter.default.removeObserver(signInObserver)
+            self.signInObserver = nil
+        }
+    }
+    
+    fileprivate func unsubscribeFromSignUpNotification() {
+        if let signUpObserver = self.signUpObserver {
+            NotificationCenter.default.removeObserver(signUpObserver)
+            self.signUpObserver = nil
+        }
+    }
+    
+    // MARK: -
     
     func prepareInitialState() {
         self.presenter.displaySettings(with: Settings.InitialState.Response(settingsNames: self.settingNames))
@@ -53,6 +81,8 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
             self.presenter.displayUserInfo(with: Settings.UserProfile.Response(user: user))
         }
     }
+    
+    // MARK: -
     
     func selectCellRequest(with request: Settings.SelectCell.Request) {
         let indexPath = request.indexPath
@@ -69,5 +99,23 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
         KeychainManager.shared.clear()
         
         self.presenter.showLoginScreen()
+    }
+    
+    // MARK: -
+    
+    func subscribeToSignInNotification() {
+        self.signInObserver = NotificationCenter.default.addObserver(forName: .userDidSignIn, object: nil, queue: OperationQueue.main) { [weak self] (notification) in
+            if let user = Managers.userManager.first() {
+                self?.presenter.displayUserInfo(with: Settings.UserProfile.Response(user: user))
+            }
+        }
+    }
+    
+    func subscribeToSignUpNotification() {
+        self.signUpObserver = NotificationCenter.default.addObserver(forName: .userDidSignUp, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            if let user = Managers.userManager.first() {
+                self?.presenter.displayUserInfo(with: Settings.UserProfile.Response(user: user))
+            }
+        })
     }
 }
