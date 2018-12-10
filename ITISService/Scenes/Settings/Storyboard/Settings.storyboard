@@ -110,11 +110,20 @@
                         <outlet property="nameLabel" destination="bBa-pL-Coo" id="MpD-C6-Wi5"/>
                         <outlet property="tableView" destination="p2e-xB-HHY" id="BGJ-db-ZeR"/>
                         <segue destination="drQ-FP-JCE" kind="presentation" identifier="ShowLoginScreen" id="Y0p-Wk-VIc"/>
+                        <segue destination="vTb-U0-eP3" kind="show" identifier="ShowAccountSettings" id="8Kf-7J-7LU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abt-1z-h22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="932" y="106.59670164917542"/>
+        </scene>
+        <!--AccountSettings-->
+        <scene sceneID="JVy-QV-E32">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AccountSettings" id="vTb-U0-eP3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wvn-FL-uou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="-190"/>
         </scene>
         <!--Login-->
         <scene sceneID="XMy-UA-sN5">

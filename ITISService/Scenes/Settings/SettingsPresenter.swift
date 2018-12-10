@@ -17,6 +17,7 @@ protocol SettingsPresentationLogic {
     func displayUserInfo(with response: Settings.UserProfile.Response)
     func displayConfirmExitActionSheet()
     func showLoginScreen()
+    func showAccountSettingsScreen()
 }
 
 class SettingsPresenter: SettingsPresentationLogic {
@@ -77,4 +78,7 @@ class SettingsPresenter: SettingsPresentationLogic {
         self.viewController.showLoginScreen()
     }
     
+    func showAccountSettingsScreen() {
+        self.viewController.showAccountSettingsScreen()
+    }
 }

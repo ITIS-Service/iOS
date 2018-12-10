@@ -35,6 +35,9 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
         
         static let mainSectionIndex = 0
         
+        static let accountRowIndex = 0
+        static let notificationsRowsIndex = 1
+        static let quizRowIndex = 2
         static let exitRowIndex = 3
     }
     
@@ -88,8 +91,23 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
         let indexPath = request.indexPath
         
         if indexPath.section == Constants.mainSectionIndex {
-            if indexPath.row == Constants.exitRowIndex {
+            switch indexPath.row {
+            case Constants.accountRowIndex:
+                self.presenter.showAccountSettingsScreen()
+                
+            case Constants.notificationsRowsIndex:
+                // TODO: - Implement open notifications settings
+                break
+                
+            case Constants.quizRowIndex:
+                // TODO: - Implement open quiz screen
+                break
+                
+            case Constants.exitRowIndex:
                 self.presenter.displayConfirmExitActionSheet()
+                
+            default:
+                fatalError()
             }
         }
     }

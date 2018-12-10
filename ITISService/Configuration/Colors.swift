@@ -18,4 +18,6 @@ enum Colors {
     static let white = UIColor(red: 255, green: 255, blue: 255)
     
     static let orange = UIColor(red: 249, green: 84, blue: 0)
+    
+    static let placeholder = UIColor(red: 100, green: 100, blue: 100)
 }

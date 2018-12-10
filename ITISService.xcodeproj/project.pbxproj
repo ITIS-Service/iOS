@@ -53,6 +53,16 @@
 		CB2DE5DD21921D5B00CA9424 /* CGRect + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE5DC21921D5B00CA9424 /* CGRect + Extension.swift */; };
 		CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE5DE219228C500CA9424 /* UIAlertController + Extension.swift */; };
 		CB2DE5E1219237A800CA9424 /* UIScreen + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE5E0219237A800CA9424 /* UIScreen + Extension.swift */; };
+		CB2DF0E921BEC2D0002B16A3 /* AccountSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0E321BEC2D0002B16A3 /* AccountSettingsPresenter.swift */; };
+		CB2DF0EA21BEC2D0002B16A3 /* AccountSettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0E421BEC2D0002B16A3 /* AccountSettingsWorker.swift */; };
+		CB2DF0EB21BEC2D0002B16A3 /* AccountSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0E521BEC2D0002B16A3 /* AccountSettingsRouter.swift */; };
+		CB2DF0EC21BEC2D0002B16A3 /* AccountSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0E621BEC2D0002B16A3 /* AccountSettingsModels.swift */; };
+		CB2DF0ED21BEC2D0002B16A3 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0E721BEC2D0002B16A3 /* AccountSettingsViewController.swift */; };
+		CB2DF0EE21BEC2D0002B16A3 /* AccountSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0E821BEC2D0002B16A3 /* AccountSettingsInteractor.swift */; };
+		CB2DF0F121BEC2E0002B16A3 /* AccountSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2DF0F021BEC2E0002B16A3 /* AccountSettings.storyboard */; };
+		CB2DF0F521BEC37C002B16A3 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0F321BEC37C002B16A3 /* TextFieldTableViewCell.swift */; };
+		CB2DF0F621BEC37C002B16A3 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2DF0F421BEC37C002B16A3 /* TextFieldTableViewCell.xib */; };
+		CB2DF0F921BED9F2002B16A3 /* AccountSettingsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF0F821BED9F2002B16A3 /* AccountSettingsDatasource.swift */; };
 		CB30D59D21AFE71000FDA02B /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */; };
 		CB31B1412196C11800BB4E0A /* NetworkManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31B1402196C11800BB4E0A /* NetworkManagers.swift */; };
 		CB31B1442196C48000BB4E0A /* ErrorMessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31B1432196C48000BB4E0A /* ErrorMessagePresenter.swift */; };
@@ -201,6 +211,16 @@
 		CB2DE5DC21921D5B00CA9424 /* CGRect + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + Extension.swift"; sourceTree = "<group>"; };
 		CB2DE5DE219228C500CA9424 /* UIAlertController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Extension.swift"; sourceTree = "<group>"; };
 		CB2DE5E0219237A800CA9424 /* UIScreen + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen + Extension.swift"; sourceTree = "<group>"; };
+		CB2DF0E321BEC2D0002B16A3 /* AccountSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPresenter.swift; sourceTree = "<group>"; };
+		CB2DF0E421BEC2D0002B16A3 /* AccountSettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsWorker.swift; sourceTree = "<group>"; };
+		CB2DF0E521BEC2D0002B16A3 /* AccountSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsRouter.swift; sourceTree = "<group>"; };
+		CB2DF0E621BEC2D0002B16A3 /* AccountSettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsModels.swift; sourceTree = "<group>"; };
+		CB2DF0E721BEC2D0002B16A3 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		CB2DF0E821BEC2D0002B16A3 /* AccountSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsInteractor.swift; sourceTree = "<group>"; };
+		CB2DF0F021BEC2E0002B16A3 /* AccountSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountSettings.storyboard; sourceTree = "<group>"; };
+		CB2DF0F321BEC37C002B16A3 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		CB2DF0F421BEC37C002B16A3 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		CB2DF0F821BED9F2002B16A3 /* AccountSettingsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsDatasource.swift; sourceTree = "<group>"; };
 		CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		CB31B1402196C11800BB4E0A /* NetworkManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagers.swift; sourceTree = "<group>"; };
 		CB31B1432196C48000BB4E0A /* ErrorMessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessagePresenter.swift; sourceTree = "<group>"; };
@@ -368,6 +388,7 @@
 		CB07D229218442470072EB07 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CB2DF0F221BEC34C002B16A3 /* TextFieldTableViewCell */,
 				CBD7932D21BC407C002F958E /* Exit */,
 				CBD845B621B8F4630029FE12 /* Setting */,
 				CB50D21621B33EB7007B5BD4 /* Point */,
@@ -564,6 +585,46 @@
 				CB2DE5DA21921B8200CA9424 /* KeyboardHandler.swift */,
 			);
 			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		CB2DF0E221BEC2B9002B16A3 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DF0F721BED9D6002B16A3 /* TableView Datasource */,
+				CB2DF0EF21BEC2D3002B16A3 /* Storyboard */,
+				CB2DF0E321BEC2D0002B16A3 /* AccountSettingsPresenter.swift */,
+				CB2DF0E421BEC2D0002B16A3 /* AccountSettingsWorker.swift */,
+				CB2DF0E521BEC2D0002B16A3 /* AccountSettingsRouter.swift */,
+				CB2DF0E621BEC2D0002B16A3 /* AccountSettingsModels.swift */,
+				CB2DF0E721BEC2D0002B16A3 /* AccountSettingsViewController.swift */,
+				CB2DF0E821BEC2D0002B16A3 /* AccountSettingsInteractor.swift */,
+			);
+			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		CB2DF0EF21BEC2D3002B16A3 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DF0F021BEC2E0002B16A3 /* AccountSettings.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CB2DF0F221BEC34C002B16A3 /* TextFieldTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DF0F321BEC37C002B16A3 /* TextFieldTableViewCell.swift */,
+				CB2DF0F421BEC37C002B16A3 /* TextFieldTableViewCell.xib */,
+			);
+			path = TextFieldTableViewCell;
+			sourceTree = "<group>";
+		};
+		CB2DF0F721BED9D6002B16A3 /* TableView Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DF0F821BED9F2002B16A3 /* AccountSettingsDatasource.swift */,
+			);
+			path = "TableView Datasource";
 			sourceTree = "<group>";
 		};
 		CB31B13E2196C0FE00BB4E0A /* Configuration */ = {
@@ -775,6 +836,7 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CB2DF0E221BEC2B9002B16A3 /* AccountSettings */,
 				CBD845BE21B90B2E0029FE12 /* MainTabBar */,
 				CB56FD8221B839AF00C7196E /* Settings */,
 				CB50D20621B33E53007B5BD4 /* Points */,
@@ -1050,9 +1112,11 @@
 				CBDC5C9E21AA8E0D00185142 /* CourseDetails.storyboard in Resources */,
 				CBD845C321B90B8E0029FE12 /* MainTabBar.storyboard in Resources */,
 				CB39DC372185C70400DA04D0 /* AnswerTableViewCell.xib in Resources */,
+				CB2DF0F121BEC2E0002B16A3 /* AccountSettings.storyboard in Resources */,
 				CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */,
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
 				CB19D454217DC47200B4586F /* Registration.storyboard in Resources */,
+				CB2DF0F621BEC37C002B16A3 /* TextFieldTableViewCell.xib in Resources */,
 				CB5F41432179A00D0058293F /* LaunchScreen.storyboard in Resources */,
 				CB56FD9121B839F200C7196E /* Settings.storyboard in Resources */,
 				CBD845BA21B8F47B0029FE12 /* SettingTableViewCell.xib in Resources */,
@@ -1132,6 +1196,7 @@
 			files = (
 				CB28AACC2194C40600E49AB6 /* EmailTextField.swift in Sources */,
 				CB5BFFFB21B3CBF300A20944 /* PointsDatasource.swift in Sources */,
+				CB2DF0EC21BEC2D0002B16A3 /* AccountSettingsModels.swift in Sources */,
 				CBD7932121BBA0C8002F958E /* UserTranslator.swift in Sources */,
 				CBEFF920218BA35100B63286 /* NetworkLogger.swift in Sources */,
 				CB5BFFF821B3CBB300A20944 /* TableViewDatasource.swift in Sources */,
@@ -1145,15 +1210,18 @@
 				CBD7932621BBA189002F958E /* CoreDataUserTranslator.swift in Sources */,
 				CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */,
 				CB56A6A821BA62DE00EE923E /* CoreDataObject.swift in Sources */,
+				CB2DF0E921BEC2D0002B16A3 /* AccountSettingsPresenter.swift in Sources */,
 				CB5BFFF621B3C75200A20944 /* UserPoints.swift in Sources */,
 				CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */,
 				CB5F41562179A53B0058293F /* LoginViewController.swift in Sources */,
 				CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */,
 				CB07D22121843F300072EB07 /* CoursesRouter.swift in Sources */,
+				CB2DF0EB21BEC2D0002B16A3 /* AccountSettingsRouter.swift in Sources */,
 				CBEFF912218B881800B63286 /* Router.swift in Sources */,
 				CB2DE5E1219237A800CA9424 /* UIScreen + Extension.swift in Sources */,
 				CBEFF914218B8C6400B63286 /* UserEndPoint.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
+				CB2DF0F521BEC37C002B16A3 /* TextFieldTableViewCell.swift in Sources */,
 				CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */,
 				CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */,
 				CBD7932A21BBAE83002F958E /* Managers.swift in Sources */,
@@ -1194,6 +1262,7 @@
 				CBD7931621BB9B0C002F958E /* User.swift in Sources */,
 				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,
 				CBED732A21ADC96100FE30BF /* Fonts.swift in Sources */,
+				CB2DF0F921BED9F2002B16A3 /* AccountSettingsDatasource.swift in Sources */,
 				CBD7931D21BB9C54002F958E /* DefaultUserManager.swift in Sources */,
 				CB07D23E21844F6B0072EB07 /* TableViewCompatible.swift in Sources */,
 				CB56A6A621BA5E9B00EE923E /* ITISService.xcdatamodeld in Sources */,
@@ -1217,6 +1286,8 @@
 				CB31B1412196C11800BB4E0A /* NetworkManagers.swift in Sources */,
 				CBFB5AFD21AAD614009F0175 /* UserCourseStatus.swift in Sources */,
 				CB07D245218454ED0072EB07 /* TableViewSection.swift in Sources */,
+				CB2DF0EA21BEC2D0002B16A3 /* AccountSettingsWorker.swift in Sources */,
+				CB2DF0EE21BEC2D0002B16A3 /* AccountSettingsInteractor.swift in Sources */,
 				CB62630221AAAF8D00AA1757 /* CourseDetails.swift in Sources */,
 				CBEFF916218B8D2900B63286 /* NetworkManager.swift in Sources */,
 				CB07D23B21844BBD0072EB07 /* UIView + Extension.swift in Sources */,
@@ -1243,6 +1314,7 @@
 				CB07D22221843F300072EB07 /* CoursesModels.swift in Sources */,
 				CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */,
 				CB07D2662184DD820072EB07 /* QuestionRouter.swift in Sources */,
+				CB2DF0ED21BEC2D0002B16A3 /* AccountSettingsViewController.swift in Sources */,
 				CBD7932821BBA3E9002F958E /* CoreDataGroupTranslator.swift in Sources */,
 				CB50D20F21B33E67007B5BD4 /* PointsRouter.swift in Sources */,
 				CB07D243218453B70072EB07 /* Configurable.swift in Sources */,
