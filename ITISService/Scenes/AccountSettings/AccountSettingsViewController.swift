@@ -86,6 +86,7 @@ class AccountSettingsViewController: UIViewController, AccountSettingsDisplayLog
         
         self.tableView.dataSource = self.datasource
         self.tableView.delegate = self.datasource
+        self.tableView.tableFooterView = UIView()
         self.tableView.register(TextFieldTableViewCell.nib(), forCellReuseIdentifier: TextFieldTableViewCell.identifier())
         
         self.interactor.prepareInitialState()
