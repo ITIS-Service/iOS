@@ -100,7 +100,7 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
                 break
                 
             case Constants.quizRowIndex:
-                // TODO: - Implement open quiz screen
+                self.presenter.didQuizCellClicked()
                 break
                 
             case Constants.exitRowIndex:

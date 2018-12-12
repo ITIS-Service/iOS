@@ -111,6 +111,7 @@
                         <outlet property="tableView" destination="p2e-xB-HHY" id="BGJ-db-ZeR"/>
                         <segue destination="drQ-FP-JCE" kind="presentation" identifier="ShowLoginScreen" id="Y0p-Wk-VIc"/>
                         <segue destination="vTb-U0-eP3" kind="show" identifier="ShowAccountSettings" id="8Kf-7J-7LU"/>
+                        <segue destination="TvK-cm-EY0" kind="presentation" identifier="ShowStartQuiz" id="RCV-MN-9eo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abt-1z-h22" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,6 +133,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IX-Ih-Hwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569" y="106"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="S8u-Ag-1TQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quiz" id="TvK-cm-EY0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYe-JL-IVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568" y="310"/>
         </scene>
     </scenes>
 </document>
