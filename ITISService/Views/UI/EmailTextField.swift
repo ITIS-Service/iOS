@@ -10,11 +10,11 @@ import UIKit
 
 class EmailTextField: UITextField {
     
-    fileprivate struct Constants {
+    fileprivate enum Constants {
         static let studDomen = "@stud.kpfu.ru"
     }
     
-    // MARK: - Initializers
+    // MARK: - UITextField
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +30,12 @@ extension EmailTextField: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let text = textField.text, let textRange = Range(range, in: text) {
             var updatedText = text.replacingCharacters(in: textRange, with: string)
+            
+            if updatedText.count > 0, let studDomenIndex = text.firstIndex(of: "@") {
+                if range.location >= studDomenIndex.encodedOffset, string.isEmpty {
+                    return false
+                }
+            }
             
             if (!updatedText.contains(Constants.studDomen)) {
                 updatedText += Constants.studDomen
