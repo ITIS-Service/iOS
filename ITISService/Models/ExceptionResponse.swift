@@ -16,6 +16,7 @@ public struct ExceptionResponse: Codable {
         case internalError = "INTERNAL_ERROR"
         case requestError = "REQUEST_ERROR"
         case parseError = "PARSE_ERROR"
+        case badRequest = "BAD_REQUEST"
         
         // Server codes
         case resourceNotFound = "RESOURCE_NOT_FOUND"

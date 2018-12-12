@@ -13,11 +13,14 @@ public enum UserApi  {
     case login(email: String, password: String)
     case questions
     case answers(answers: [String: Int])
+    
     case courses
     case courseDetails(courseID: Int)
     case signUp(courseID: Int)
     case points(courseID: Int)
     case signOut(courseID: Int)
+    
+    case changePassword(oldPassword: String, newPassword: String)
 }
 
 // MARK: - EndPointType
@@ -55,12 +58,14 @@ extension UserApi: EndPointType {
             return "courses/\(courseID)/points"
         case .signOut(let courseID):
             return "courses/\(courseID)/signOut"
+        case .changePassword:
+            return "profile/password/change"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .login, .registration, .answers, .signUp, .signOut:
+        case .login, .registration, .answers, .signUp, .signOut, .changePassword:
             return .post
         case .questions, .courses, .courseDetails, .points:
             return .get
@@ -77,6 +82,8 @@ extension UserApi: EndPointType {
             return .request
         case .answers(let answers):
             return .requestParameters(bodyParameters: ["answers": answers], urlParameters: nil)
+        case .changePassword(let oldPassword, let newPassword):
+            return .requestParameters(bodyParameters: ["oldPassword": oldPassword, "newPassword": newPassword], urlParameters: nil)
         }
     }
     

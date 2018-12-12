@@ -14,6 +14,7 @@ import UIKit
 
 protocol AccountSettingsBusinessLogic {
     func prepareInitialState()
+    func changePassword()
 }
 
 protocol AccountSettingsDataStore {
@@ -26,11 +27,82 @@ class AccountSettingsInteractor: AccountSettingsBusinessLogic, AccountSettingsDa
     
     var presenter: AccountSettingsPresentationLogic!
     var worker: AccountSettingsWorker!
+    var userNetworkManager: UserNetworkManager!
+    
+    // MARK: -
+    
+    var oldPassword: String?
+    var newPassword: String?
+    var confirmNewPassword: String?
     
     // MARK: - Instance Methods
     
-    func prepareInitialState() {
-        self.presenter.displayInitialAccountSettingsRows()
+    fileprivate func updateDoneButtonState() {
+        var response = AccountSettings.DoneButton.Response(hasEmptyField: true)
+        
+        guard let oldPassword = self.oldPassword else {
+            return
+        }
+        
+        guard let newPassword = self.newPassword else {
+            return
+        }
+        
+        guard let confirmNewPassword = self.confirmNewPassword else {
+            return
+        }
+        
+        if !oldPassword.isEmpty, !newPassword.isEmpty, !confirmNewPassword.isEmpty {
+            response = AccountSettings.DoneButton.Response(hasEmptyField: false)
+        }
+        
+        defer {
+            self.presenter.passwordRowsDidChanged(with: response)
+        }
     }
     
+    // MARK: -
+    
+    func prepareInitialState() {
+        let oldPasswordRow = AccountSettings.TableView.TextFieldModel(title: "Старый пароль", placeholder: "Введите старый пароль", onTextFieldDidChange: { [unowned self] textField in
+            self.oldPassword = textField.text
+            self.updateDoneButtonState()
+        })
+        
+        let newPasswordRow = AccountSettings.TableView.TextFieldModel(title: "Новый пароль", placeholder: "Введите новый пароль", onTextFieldDidChange: { [unowned self] textField in
+            self.newPassword = textField.text
+            self.updateDoneButtonState()
+        })
+        
+        let confirmNewPasswordRow = AccountSettings.TableView.TextFieldModel(title: "Подтверждение пароля", placeholder: "Введите пароль еще раз", onTextFieldDidChange: { [unowned self] textField in
+            self.confirmNewPassword = textField.text
+            self.updateDoneButtonState()
+        })
+        
+        let passwordSection = DefaultTableViewSection(items: [oldPasswordRow, newPasswordRow, confirmNewPasswordRow], headerTitle: "Пароль")
+        
+        self.presenter.displayInitialAccountSettingsRows(with: [passwordSection])
+    }
+    
+    func changePassword() {
+        guard let newPassword = self.newPassword, let oldPassword = self.oldPassword, let confirmNewPassword = self.confirmNewPassword else {
+            return
+        }
+        
+        guard newPassword == confirmNewPassword else {
+            let exception = ExceptionResponse(message: "Пароли не совпадают", errorCode: .badRequest)
+            self.presenter.showAlert(with: exception)
+            return
+        }
+        
+        self.presenter.showActivityIndicator(true)
+        
+        self.userNetworkManager.changePassword(oldPassword: oldPassword, newPassword: newPassword, success: { [weak self] (respose) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.passwordDidUpdated()
+        }) { [weak self] (error) in
+            self?.presenter.showActivityIndicator(false)
+            self?.presenter.showAlert(with: error)
+        }
+    }
 }

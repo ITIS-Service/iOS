@@ -16,9 +16,23 @@ enum AccountSettings {
     
     // MARK: - Use Cases
   
-    enum Something {
+    enum DoneButton {
         struct Request {
             
+        }
+        struct Response {
+            let hasEmptyField: Bool
+        }
+        struct ViewModel {
+            let doneButtonEnabled: Bool
+        }
+    }
+    
+    enum ChangePassword {
+        struct Request {
+            let oldPassword: String
+            let newPassword: String
+            let confirmNewPassword: String
         }
         struct Response {
             
@@ -33,6 +47,8 @@ enum AccountSettings {
             
             let title: String
             let placeholder: String?
+            
+            var onTextFieldDidChange: ((UITextField) -> ())?
             
             var reuseIdentifier: String {
                 return TextFieldTableViewCell.identifier()

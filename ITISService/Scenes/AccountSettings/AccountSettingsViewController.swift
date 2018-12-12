@@ -12,8 +12,10 @@
 
 import UIKit
 
-protocol AccountSettingsDisplayLogic: class {
+protocol AccountSettingsDisplayLogic: ErrorMessagePresenter, LoaderDisplayLogic {
     func displayRows(with sections: [TableViewSection])
+    func updateDoneButtonState(with viewModel: AccountSettings.DoneButton.ViewModel)
+    func closeAccountSettingsScreen()
 }
 
 class AccountSettingsViewController: UIViewController, AccountSettingsDisplayLogic {
@@ -53,6 +55,7 @@ class AccountSettingsViewController: UIViewController, AccountSettingsDisplayLog
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.userNetworkManager = NetworkManagers.userNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
@@ -72,7 +75,7 @@ class AccountSettingsViewController: UIViewController, AccountSettingsDisplayLog
     // MARK: - Instance Methods
     
     @objc fileprivate func onDoneButtonTouchUpInside(_ sender: UIBarButtonItem) {
-        
+        self.interactor.changePassword()
     }
     
     // MARK: -
@@ -104,5 +107,13 @@ class AccountSettingsViewController: UIViewController, AccountSettingsDisplayLog
     func displayRows(with sections: [TableViewSection]) {
         self.datasource.sections = sections
         self.tableView.reloadData()
+    }
+    
+    func updateDoneButtonState(with viewModel: AccountSettings.DoneButton.ViewModel) {
+        self.navigationItem.rightBarButtonItem?.isEnabled = viewModel.doneButtonEnabled
+    }
+    
+    func closeAccountSettingsScreen() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

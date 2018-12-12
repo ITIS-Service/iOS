@@ -28,7 +28,9 @@ protocol UserNetworkManager {
     
     func fetchPoints(courseID: Int, success: @escaping (UserPoints) -> (), failure: @escaping (ExceptionResponse) -> ())
     
-    func signOutCourse(with courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ()) 
+    func signOutCourse(with courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ())
+    
+    func changePassword(oldPassword: String, newPassword: String, success: @escaping (Response) -> (), failure: @escaping (ExceptionResponse) -> ())
 }
 
 class UserNetworkManagerImpl: UserNetworkManager {
@@ -158,6 +160,18 @@ class UserNetworkManagerImpl: UserNetworkManager {
         router.request(.signOut(courseID: courseID), success: { (data, _) in
             if let courseDetails = try? JSONDecoder().decode(CourseDetails.self, from: data) {
                 success(courseDetails)
+            } else {
+                failure(ExceptionResponse.parseException())
+            }
+        }) { (error) in
+            failure(error)
+        }
+    }
+    
+    func changePassword(oldPassword: String, newPassword: String, success: @escaping (Response) -> (), failure: @escaping (ExceptionResponse) -> ()) {
+        router.request(.changePassword(oldPassword: oldPassword, newPassword: newPassword), success: { (data, _) in
+            if let response = try? JSONDecoder().decode(Response.self, from: data) {
+                success(response)
             } else {
                 failure(ExceptionResponse.parseException())
             }

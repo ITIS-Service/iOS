@@ -30,6 +30,12 @@ class TextFieldTableViewCell: UITableViewCell, Configurable {
     
     // MARK: - Instance Methods
     
+    @objc fileprivate func onTextFieldDidChange(_ textField: UITextField) {
+        self.model?.onTextFieldDidChange?(textField)
+    }
+    
+    // MARK: -
+    
     func configure(with model: AccountSettings.TableView.TextFieldModel) {
         self.model = model
         self.titleLabel.text = model.title
@@ -37,5 +43,7 @@ class TextFieldTableViewCell: UITableViewCell, Configurable {
         if let placeholder = model.placeholder {
             self.textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: self.placeholderAttributes)
         }
+        
+        self.textField.addTarget(self, action: #selector(onTextFieldDidChange(_:)), for: .editingChanged)
     }
 }

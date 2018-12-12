@@ -12,23 +12,37 @@
 
 import UIKit
 
-protocol AccountSettingsPresentationLogic {
-    func displayInitialAccountSettingsRows()
+protocol AccountSettingsPresentationLogic: ErrorMessagePrentationLogic, LoaderPresentationLogic {
+    func displayInitialAccountSettingsRows(with sections: [TableViewSection])
+    func passwordDidUpdated()
+    func passwordRowsDidChanged(with response: AccountSettings.DoneButton.Response)
 }
 
 class AccountSettingsPresenter: AccountSettingsPresentationLogic {
     
+    // MARK: - Instance Properties
+    
     weak var viewController: AccountSettingsDisplayLogic!
+    
+    var errorMessagePresenter: ErrorMessagePresenter! {
+        return self.viewController
+    }
+    
+    var loaderDislpayViewController: LoaderDisplayLogic! {
+        return self.viewController
+    }
+    
+    // MARK: - Instance Methods
 
-    func displayInitialAccountSettingsRows() {
-        let oldPasswordRow = AccountSettings.TableView.TextFieldModel(title: "Старый пароль", placeholder: "Введите старый пароль")
-        
-        let newPasswordRow = AccountSettings.TableView.TextFieldModel(title: "Новый пароль", placeholder: "Введите новый пароль")
-        
-        let confirmNewPasswordRow = AccountSettings.TableView.TextFieldModel(title: "Подтверждение пароля", placeholder: "Введите пароль еще раз")
-        
-        let passwordSection = DefaultTableViewSection(items: [oldPasswordRow, newPasswordRow, confirmNewPasswordRow], headerTitle: "Пароль")
-        
-        self.viewController.displayRows(with: [passwordSection])
+    func displayInitialAccountSettingsRows(with sections: [TableViewSection]) {
+        self.viewController.displayRows(with: sections)
+    }
+    
+    func passwordRowsDidChanged(with response: AccountSettings.DoneButton.Response) {
+        self.viewController.updateDoneButtonState(with: AccountSettings.DoneButton.ViewModel(doneButtonEnabled: !response.hasEmptyField))
+    }
+    
+    func passwordDidUpdated() {
+        self.viewController.closeAccountSettingsScreen()
     }
 }
