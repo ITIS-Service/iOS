@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol LoginDisplayLogic: class {
+protocol LoginDisplayLogic: ErrorMessagePresenter {
     
     func openCoursesScreen()
     func openStartQuizScreen()
@@ -80,6 +80,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         viewController.router = router
         interactor.presenter = presenter
         interactor.networkManager = NetworkManagers.userNetworkManager
+        interactor.deviceNetworkManager = NetworkManagers.deviceNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor

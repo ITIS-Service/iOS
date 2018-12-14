@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol LoginPresentationLogic {
+protocol LoginPresentationLogic: ErrorMessagePrentationLogic {
     
     func signIn(response: Login.SignIn.Response)
     func showActivityIndicator(_ show: Bool)
@@ -22,6 +22,10 @@ protocol LoginPresentationLogic {
 class LoginPresenter: LoginPresentationLogic {
     
     weak var viewController: LoginDisplayLogic!
+    
+    var errorMessagePresenter: ErrorMessagePresenter! {
+        return self.viewController
+    }
     
     func signIn(response: Login.SignIn.Response) {
         if (response.success) {

@@ -39,6 +39,7 @@ class KeychainManager {
                 Log.i("\(newValue)")
                 KeychainWrapper.standard.set(newValue, forKey: Keys.token)
             } else {
+                Log.i("deleted")
                 KeychainWrapper.standard.removeObject(forKey: Keys.token)
             }
         }
@@ -54,12 +55,13 @@ class KeychainManager {
                 Log.i(newValue)
                 KeychainWrapper.standard.set(newValue, forKey: Keys.deviceToken)
             } else {
+                Log.i("deleted")
                 KeychainWrapper.standard.removeObject(forKey: Keys.deviceToken)
             }
         }
         
         get {
-            return KeychainWrapper.standard.string(forKey: Keys.token)
+            return KeychainWrapper.standard.string(forKey: Keys.deviceToken)
         }
     }
 }

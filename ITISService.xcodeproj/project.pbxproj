@@ -116,6 +116,7 @@
 		CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */; };
 		CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */; };
 		CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */; };
+		CBC2220321C38178008E7586 /* UIDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2220221C38178008E7586 /* UIDevice + Extension.swift */; };
 		CBD7931621BB9B0C002F958E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931521BB9B0C002F958E /* User.swift */; };
 		CBD7931921BB9C08002F958E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931821BB9C08002F958E /* Group.swift */; };
 		CBD7931B21BB9C44002F958E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931A21BB9C44002F958E /* UserManager.swift */; };
@@ -279,6 +280,7 @@
 		CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceEndPoint.swift; sourceTree = "<group>"; };
 		CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNetworkManager.swift; sourceTree = "<group>"; };
 		CBC2220121C376FD008E7586 /* ITISService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ITISService.entitlements; sourceTree = "<group>"; };
+		CBC2220221C38178008E7586 /* UIDevice + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice + Extension.swift"; sourceTree = "<group>"; };
 		CBD7931521BB9B0C002F958E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBD7931821BB9C08002F958E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		CBD7931A21BB9C44002F958E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -697,6 +699,7 @@
 				CB2DE5E0219237A800CA9424 /* UIScreen + Extension.swift */,
 				CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */,
 				CB7E279821BD5B680035F1F3 /* NSNotificationName + Extension.swift */,
+				CBC2220221C38178008E7586 /* UIDevice + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1322,6 +1325,7 @@
 				CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
 				CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */,
+				CBC2220321C38178008E7586 /* UIDevice + Extension.swift in Sources */,
 				CBEFF918218B8F7800B63286 /* Response.swift in Sources */,
 				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
 				CB50D20E21B33E67007B5BD4 /* PointsWorker.swift in Sources */,

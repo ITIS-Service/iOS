@@ -45,6 +45,7 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
     
     var presenter: SettingsPresentationLogic!
     var worker: SettingsWorker!
+    var deviceNetworkManager: DeviceNetworkManager!
     
     // MARK: -
     
@@ -113,10 +114,23 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
     }
     
     func exitProfile() {
-        Managers.userManager.deleteAll()
-        KeychainManager.shared.clear()
+        guard let token = KeychainManager.shared.deviceToken else {
+            return
+        }
         
-        self.presenter.showLoginScreen()
+        self.deviceNetworkManager.unregister(token: token, success: { (response) in
+            Log.i("Device deleted from server successfully")
+        }) { (error) in
+            Log.e("Unable to delete device from server")
+            Log.e("Message: \(error.message)")
+        }
+        
+        defer {
+            Managers.userManager.deleteAll()
+            KeychainManager.shared.clear()
+            
+            self.presenter.showLoginScreen()
+        }
     }
     
     // MARK: -
