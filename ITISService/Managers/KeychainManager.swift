@@ -18,6 +18,7 @@ class KeychainManager {
         // MARK: - Type Properties
         
         static let token = "token"
+        static let deviceToken = "device_token"
     }
     
     // MARK: - Instance Methods
@@ -39,6 +40,21 @@ class KeychainManager {
                 KeychainWrapper.standard.set(newValue, forKey: Keys.token)
             } else {
                 KeychainWrapper.standard.removeObject(forKey: Keys.token)
+            }
+        }
+        
+        get {
+            return KeychainWrapper.standard.string(forKey: Keys.token)
+        }
+    }
+    
+    var deviceToken: String? {
+        set {
+            if let newValue = newValue {
+                Log.i(newValue)
+                KeychainWrapper.standard.set(newValue, forKey: Keys.deviceToken)
+            } else {
+                KeychainWrapper.standard.removeObject(forKey: Keys.deviceToken)
             }
         }
         

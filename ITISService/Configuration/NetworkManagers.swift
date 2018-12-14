@@ -16,4 +16,9 @@ enum NetworkManagers {
         return networkManager
     }()
     
+    static var deviceNetworkManager: DeviceNetworkManager = {
+        let deviceNetworkManager = DeviceNetworkManagerImpl()
+        return deviceNetworkManager
+    }()
+    
 }

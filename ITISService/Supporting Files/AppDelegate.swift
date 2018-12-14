@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if PRODUCTION
         Fabric.with([Crashlytics.self])
         #endif
+        
+        self.registerNotifications()
         
         return true
     }
@@ -46,7 +49,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // MARK: - Push Notifications
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        
+        KeychainManager.shared.deviceToken = token
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        Log.e("Failed to register: \(error)")
+    }
 
+    func registerNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] (granted, error) in
+            Log.i("Permission granted: \(granted)")
+            
+            guard granted else {
+                return
+            }
+            
+            self?.getNotificationSettings()
+        }
+    }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            Log.i("Notification settings: \(settings)")
+            
+            guard settings.authorizationStatus == .authorized else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
 
 }
 

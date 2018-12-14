@@ -114,6 +114,8 @@
 		CB62630421AAB06500AA1757 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62630321AAB06500AA1757 /* DayTime.swift */; };
 		CB7E279921BD5B680035F1F3 /* NSNotificationName + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E279821BD5B680035F1F3 /* NSNotificationName + Extension.swift */; };
 		CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */; };
+		CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */; };
+		CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */; };
 		CBD7931621BB9B0C002F958E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931521BB9B0C002F958E /* User.swift */; };
 		CBD7931921BB9C08002F958E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931821BB9C08002F958E /* Group.swift */; };
 		CBD7931B21BB9C44002F958E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931A21BB9C44002F958E /* UserManager.swift */; };
@@ -274,6 +276,9 @@
 		CB62630321AAB06500AA1757 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		CB7E279821BD5B680035F1F3 /* NSNotificationName + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName + Extension.swift"; sourceTree = "<group>"; };
 		CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
+		CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceEndPoint.swift; sourceTree = "<group>"; };
+		CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNetworkManager.swift; sourceTree = "<group>"; };
+		CBC2220121C376FD008E7586 /* ITISService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ITISService.entitlements; sourceTree = "<group>"; };
 		CBD7931521BB9B0C002F958E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBD7931821BB9C08002F958E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		CBD7931A21BB9C44002F958E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -820,6 +825,7 @@
 		CB5F41372179A00C0058293F /* ITISService */ = {
 			isa = PBXGroup;
 			children = (
+				CBC2220121C376FD008E7586 /* ITISService.entitlements */,
 				CB31B13E2196C0FE00BB4E0A /* Configuration */,
 				CBEFF8FE218B80FD00B63286 /* Networking */,
 				CB07D2562184D6670072EB07 /* Managers */,
@@ -1006,6 +1012,7 @@
 			isa = PBXGroup;
 			children = (
 				CBEFF913218B8C6400B63286 /* UserEndPoint.swift */,
+				CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -1014,6 +1021,7 @@
 			isa = PBXGroup;
 			children = (
 				CBEFF915218B8D2900B63286 /* NetworkManager.swift */,
+				CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */,
 				CBEFF919218B935300B63286 /* UserNetworkManager.swift */,
 			);
 			path = Manager;
@@ -1077,6 +1085,11 @@
 				TargetAttributes = {
 					CB5F41342179A00C0058293F = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1256,6 +1269,7 @@
 				CB5D859821BAD86600CE3F90 /* Services.swift in Sources */,
 				CB2DE5DB21921B8200CA9424 /* KeyboardHandler.swift in Sources */,
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
+				CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */,
 				CB62630421AAB06500AA1757 /* DayTime.swift in Sources */,
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
 				CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */,
@@ -1307,6 +1321,7 @@
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
 				CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
+				CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */,
 				CBEFF918218B8F7800B63286 /* Response.swift in Sources */,
 				CB07D241218451890072EB07 /* CoursesDatasource.swift in Sources */,
 				CB50D20E21B33E67007B5BD4 /* PointsWorker.swift in Sources */,
@@ -1465,6 +1480,7 @@
 			baseConfigurationReference = 5CA3A7A3B11A94EE430B72A7 /* Pods-ITISService.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ITISService/ITISService.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PQHSF52J78;
 				INFOPLIST_FILE = "$(SRCROOT)/ITISService/Supporting Files/Info.plist";
@@ -1485,6 +1501,7 @@
 			baseConfigurationReference = 280EE32B6111CBF215AD255F /* Pods-ITISService.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ITISService/ITISService.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PQHSF52J78;
