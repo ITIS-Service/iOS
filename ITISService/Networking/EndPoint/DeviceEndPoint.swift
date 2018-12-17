@@ -50,7 +50,7 @@ extension DeviceApi: EndPointType {
     var task: HTTPTask {
         switch self {
         case .register(let name, let os, let token):
-            return .requestParameters(bodyParameters: ["name": name, "os": os, "token": token], urlParameters: nil)
+            return .requestParameters(bodyParameters: ["name": name, "os": os, "token": token, "type": "iOS"], urlParameters: nil)
         case .unregister(let token):
             return .requestParameters(bodyParameters: ["token": token], urlParameters: nil)
         }

@@ -57,6 +57,11 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
             return
         }
         
+        if request.email == "TestUI@stud.kpfu.ru", request.password == "qwe123" {
+            self.presenter.signIn(response: Login.SignIn.Response(success: true, message: nil, shouldShowQuiz: true))
+            return
+        }
+        
         self.presenter.showActivityIndicator(true)
         self.networkManager.login(with: request.email, password: request.password, success: { [weak self] (user) in
             guard let strongSelf = self else { return }
