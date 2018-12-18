@@ -45,8 +45,9 @@ class MainTabBarController: UITabBarController {
             }
             
             switch category {
-            case .courseStatus:
+            case .courseStatus(let courseID):
                 self.selectedIndex = Tabs.courses.rawValue
+                Managers.courseDetailsManager.didStatusChangeEvent.raise(data: courseID)
             }
         })
     }

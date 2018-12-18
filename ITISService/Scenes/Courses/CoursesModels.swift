@@ -28,6 +28,18 @@ enum Courses {
         }
     }
     
+    enum CourseStatus {
+        struct Request {
+            
+        }
+        struct Response {
+            let courseID: Int
+        }
+        struct ViewModel {
+            
+        }
+    }
+    
     // MARK: - TableView Models
     
     enum TableView {

@@ -173,6 +173,15 @@
 		CBF340B321C8F3470053AE32 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B221C8F3470053AE32 /* Keys.swift */; };
 		CBF340B621C8F8CF0053AE32 /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B521C8F8CF0053AE32 /* BannerManager.swift */; };
 		CBF340B821C8F8DB0053AE32 /* DefaultBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B721C8F8DB0053AE32 /* DefaultBannerManager.swift */; };
+		CBF340C021C914630053AE32 /* CourseDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340BF21C914630053AE32 /* CourseDetailsManager.swift */; };
+		CBF340C321C916EE0053AE32 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340C221C916EE0053AE32 /* Event.swift */; };
+		CBF340C521C9172B0053AE32 /* Invocable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340C421C9172B0053AE32 /* Invocable.swift */; };
+		CBF340C721C917AA0053AE32 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340C621C917AA0053AE32 /* Disposable.swift */; };
+		CBF340C921C917E40053AE32 /* EventHandlerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340C821C917E40053AE32 /* EventHandlerWrapper.swift */; };
+		CBF340CB21C919A60053AE32 /* DefaultCourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340CA21C919A60053AE32 /* DefaultCourseManager.swift */; };
+		CBF340CD21C935B90053AE32 /* NotificationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340CC21C935B90053AE32 /* NotificationPresenterManager.swift */; };
+		CBF340CF21C936BB0053AE32 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340CE21C936BB0053AE32 /* UIApplication + Extension.swift */; };
+		CBF340D221C93D110053AE32 /* DefaultNotificationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340D121C93D110053AE32 /* DefaultNotificationPresenterManager.swift */; };
 		CBFB5AFD21AAD614009F0175 /* UserCourseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */; };
 /* End PBXBuildFile section */
 
@@ -361,6 +370,15 @@
 		CBF340B221C8F3470053AE32 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		CBF340B521C8F8CF0053AE32 /* BannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerManager.swift; sourceTree = "<group>"; };
 		CBF340B721C8F8DB0053AE32 /* DefaultBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBannerManager.swift; sourceTree = "<group>"; };
+		CBF340BF21C914630053AE32 /* CourseDetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsManager.swift; sourceTree = "<group>"; };
+		CBF340C221C916EE0053AE32 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		CBF340C421C9172B0053AE32 /* Invocable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invocable.swift; sourceTree = "<group>"; };
+		CBF340C621C917AA0053AE32 /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		CBF340C821C917E40053AE32 /* EventHandlerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandlerWrapper.swift; sourceTree = "<group>"; };
+		CBF340CA21C919A60053AE32 /* DefaultCourseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCourseManager.swift; sourceTree = "<group>"; };
+		CBF340CC21C935B90053AE32 /* NotificationPresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenterManager.swift; sourceTree = "<group>"; };
+		CBF340CE21C936BB0053AE32 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
+		CBF340D121C93D110053AE32 /* DefaultNotificationPresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNotificationPresenterManager.swift; sourceTree = "<group>"; };
 		CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCourseStatus.swift; sourceTree = "<group>"; };
 		ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -460,6 +478,7 @@
 		CB07D22F2184445A0072EB07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CBF340BE21C914510053AE32 /* CourseDetails */,
 				CBD7931721BB9BFF002F958E /* Group */,
 				CBD7931421BB9B04002F958E /* User */,
 				CB8654B8218DC0A500FDBD77 /* Dto */,
@@ -521,6 +540,7 @@
 		CB07D2562184D6670072EB07 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CBF340D021C93CF50053AE32 /* NotificationPresenterManager */,
 				CBF340B421C8F8C40053AE32 /* BannerManager */,
 				CBF340AD21C8E8880053AE32 /* NotificationManager */,
 				CB07D2572184D6710072EB07 /* QuizManager.swift */,
@@ -723,6 +743,7 @@
 			isa = PBXGroup;
 			children = (
 				CB56A67821BA576800EE923E /* DBLayer */,
+				CBF340C121C916E20053AE32 /* Event */,
 				CBE2FF2021A7D014005DC733 /* LoaderLogic */,
 				CB31B1422196C47300BB4E0A /* ErrorPresenter */,
 				CB2DE5D921921B7800CA9424 /* Keyboard */,
@@ -746,6 +767,7 @@
 				CB30D59C21AFE71000FDA02B /* UIViewController + Extension.swift */,
 				CB7E279821BD5B680035F1F3 /* NSNotificationName + Extension.swift */,
 				CBC2220221C38178008E7586 /* UIDevice + Extension.swift */,
+				CBF340CE21C936BB0053AE32 /* UIApplication + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1174,6 +1196,35 @@
 			path = BannerManager;
 			sourceTree = "<group>";
 		};
+		CBF340BE21C914510053AE32 /* CourseDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CBF340CA21C919A60053AE32 /* DefaultCourseManager.swift */,
+				CBF340BF21C914630053AE32 /* CourseDetailsManager.swift */,
+			);
+			path = CourseDetails;
+			sourceTree = "<group>";
+		};
+		CBF340C121C916E20053AE32 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				CBF340C621C917AA0053AE32 /* Disposable.swift */,
+				CBF340C221C916EE0053AE32 /* Event.swift */,
+				CBF340C821C917E40053AE32 /* EventHandlerWrapper.swift */,
+				CBF340C421C9172B0053AE32 /* Invocable.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		CBF340D021C93CF50053AE32 /* NotificationPresenterManager */ = {
+			isa = PBXGroup;
+			children = (
+				CBF340D121C93D110053AE32 /* DefaultNotificationPresenterManager.swift */,
+				CBF340CC21C935B90053AE32 /* NotificationPresenterManager.swift */,
+			);
+			path = NotificationPresenterManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1371,10 +1422,12 @@
 				CB28AACC2194C40600E49AB6 /* EmailTextField.swift in Sources */,
 				CB5BFFFB21B3CBF300A20944 /* PointsDatasource.swift in Sources */,
 				CB2DF0EC21BEC2D0002B16A3 /* AccountSettingsModels.swift in Sources */,
+				CBF340CD21C935B90053AE32 /* NotificationPresenterManager.swift in Sources */,
 				CBD7932121BBA0C8002F958E /* UserTranslator.swift in Sources */,
 				CBEFF920218BA35100B63286 /* NetworkLogger.swift in Sources */,
 				CB5BFFF821B3CBB300A20944 /* TableViewDatasource.swift in Sources */,
 				CB7E279921BD5B680035F1F3 /* NSNotificationName + Extension.swift in Sources */,
+				CBF340C021C914630053AE32 /* CourseDetailsManager.swift in Sources */,
 				CB07D231218444630072EB07 /* Course.swift in Sources */,
 				CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */,
 				CB2DE5DD21921D5B00CA9424 /* CGRect + Extension.swift in Sources */,
@@ -1400,6 +1453,8 @@
 				CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */,
 				CBD7932A21BBAE83002F958E /* Managers.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
+				CBF340CF21C936BB0053AE32 /* UIApplication + Extension.swift in Sources */,
+				CBF340D221C93D110053AE32 /* DefaultNotificationPresenterManager.swift in Sources */,
 				CB56A67A21BA578300EE923E /* DBProtocols.swift in Sources */,
 				CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */,
 				CB5F41522179A53B0058293F /* LoginPresenter.swift in Sources */,
@@ -1432,6 +1487,7 @@
 				CB2DE5DB21921B8200CA9424 /* KeyboardHandler.swift in Sources */,
 				CB5F41542179A53B0058293F /* LoginRouter.swift in Sources */,
 				CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */,
+				CBF340C721C917AA0053AE32 /* Disposable.swift in Sources */,
 				CB62630421AAB06500AA1757 /* DayTime.swift in Sources */,
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
 				CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */,
@@ -1485,7 +1541,9 @@
 				CBE2FF2221A7D02F005DC733 /* LoaderPresentationLogic.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
 				CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */,
+				CBF340C921C917E40053AE32 /* EventHandlerWrapper.swift in Sources */,
 				CBF340AF21C8E8BE0053AE32 /* NotificationManager.swift in Sources */,
+				CBF340C521C9172B0053AE32 /* Invocable.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
 				CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */,
 				CBC2220321C38178008E7586 /* UIDevice + Extension.swift in Sources */,
@@ -1503,12 +1561,14 @@
 				CB14059E218C38DB0068D880 /* Log.swift in Sources */,
 				CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */,
 				CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */,
+				CBF340C321C916EE0053AE32 /* Event.swift in Sources */,
 				CBF340B121C8EEF70053AE32 /* NotificationCategory.swift in Sources */,
 				CBD7932321BBA154002F958E /* GroupTranslator.swift in Sources */,
 				CB56FD8921B839CF00C7196E /* SettingsPresenter.swift in Sources */,
 				CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */,
 				CBE2FF1F21A7C981005DC733 /* ListCourses.swift in Sources */,
 				CB56FD8C21B839CF00C7196E /* SettingsModels.swift in Sources */,
+				CBF340CB21C919A60053AE32 /* DefaultCourseManager.swift in Sources */,
 				CB14059B218C365D0068D880 /* UIColor + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

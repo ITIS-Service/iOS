@@ -13,8 +13,10 @@ enum Managers {
     // MARK: - Type Properties
     
     static let userManager: UserManager = DefaultUserManager<DefaultUser>()
+    static let courseDetailsManager: CourseDetailsManager = DefaultCourseDetailsManager()
     
-    static let notificationManager: NotificationManager = DefaultNotificationManager(bannerManager: Managers.bannerManager)
     static let bannerManager: BannerManager = DefaultBannerManager()
+    static let notificationManager: NotificationManager = DefaultNotificationManager(notificationPresenterManager: Managers.notificationPresenterManager)
+    static let notificationPresenterManager: NotificationPresenterManager = DefaultNotificationPresenterManager(bannerManager: Managers.bannerManager)
     
 }

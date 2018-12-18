@@ -29,6 +29,10 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     
     // MARK: - Instance Properties
     
+    fileprivate var updateHandler: Disposable?
+    
+    // MARK: -
+    
     var presenter: CourseDetailsPresentationLogic!
     var worker: CourseDetailsWorker!
     var userNetworkManager: UserNetworkManager!
@@ -38,7 +42,43 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     
     var courseDetails: CourseDetails?
     
+    // MARK: - Initializers
+    
+    deinit {
+        self.unsubscribeFromCourseUpdateEvents()
+    }
+    
+    init() {
+        self.subscribeToCourseUpdateEvents()
+    }
+    
     // MARK: - Instance Methods
+    
+    fileprivate func subscribeToCourseUpdateEvents() {
+        self.updateHandler = Managers.courseDetailsManager.didUpdateEvent.addHandler(target: self) { [weak self] (courseID) in
+            guard let viewController = self else {
+                return
+            }
+            
+            guard let openedCourseID = viewController.course?.id ?? viewController.courseID else {
+                return
+            }
+            
+            if openedCourseID == courseID {
+                viewController.presenter.showActivityIndicator(true)
+                viewController.fetchCourseDetails()
+            }
+        }
+    }
+    
+    fileprivate func unsubscribeFromCourseUpdateEvents() {
+        if let updateHandler = self.updateHandler {
+            updateHandler.dispose()
+            self.updateHandler = nil
+        }
+    }
+    
+    // MARK: -
 
     func setupInitialState() {
         if let course = self.course {

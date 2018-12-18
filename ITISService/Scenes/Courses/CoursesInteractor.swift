@@ -15,11 +15,6 @@ import UIKit
 protocol CoursesBusinessLogic {
     func fetchCourses()
     func selectCourse(at indexPath: IndexPath, numberOfSections: Int)
-    
-    func subscribeToUserUnauthorizedNotification()
-    func subsribeToUserSignInNotification()
-    func subscribeToUserFinishQuizNotification()
-    func subsribeToUserSignUpNotification()
 }
 
 protocol CoursesDataStore {
@@ -48,6 +43,8 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     fileprivate var userFinishQuizObserver: AnyObject?
     fileprivate var userSignUpObserver: AnyObject?
     
+    fileprivate var courseDetailsHandler: Disposable?
+    
     // MARK: -
     
     var presenter: CoursesPresentationLogic!
@@ -59,6 +56,14 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     
     // MARK: - Initializers
     
+    init() {
+        self.subscribeToUserUnauthorizedNotification()
+        self.subsribeToUserSignInNotification()
+        self.subsribeToUserSignUpNotification()
+        self.subscribeToUserFinishQuizNotification()
+        self.subscribeToCourseDetailsEvents()
+    }
+    
     deinit {
         self.unsubscribeFromUserUnauthorizedNotification()
         self.unsubscribeFromUserSignInNotification()
@@ -67,6 +72,38 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     }
 
     // MARK: - Instance Methods
+    
+    fileprivate func subscribeToUserUnauthorizedNotification() {
+        self.userUnauthorizedObserver = NotificationCenter.default.addObserver(forName: .userUnauthorized, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.presenter.showLoginScreen()
+        })
+    }
+    
+    fileprivate func subsribeToUserSignInNotification() {
+        self.userSignInObserver = NotificationCenter.default.addObserver(forName: .userDidSignIn, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.fetchCourses()
+        })
+    }
+    
+    fileprivate func subscribeToUserFinishQuizNotification() {
+        self.userFinishQuizObserver = NotificationCenter.default.addObserver(forName: .userDidFinishQuiz, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.fetchCourses()
+        })
+    }
+    
+    fileprivate func subsribeToUserSignUpNotification() {
+        self.userSignUpObserver = NotificationCenter.default.addObserver(forName: .userDidSignUp, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
+            self?.fetchCourses()
+        })
+    }
+    
+    fileprivate func subscribeToCourseDetailsEvents() {
+        self.courseDetailsHandler = Managers.courseDetailsManager.didStatusChangeEvent.addHandler(target: self) { [weak self] (courseID) in
+            let response = Courses.CourseStatus.Response(courseID: courseID)
+            
+            self?.presenter.didCourseDetailsStatusChanged(with: response)
+        }
+    }
     
     fileprivate func unsubscribeFromUserUnauthorizedNotification() {
         if let userUnauthorizedObserver = self.userUnauthorizedObserver {
@@ -93,6 +130,13 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         if let userSignUpObserver = self.userSignUpObserver {
             NotificationCenter.default.removeObserver(userSignUpObserver)
             self.userSignUpObserver = nil
+        }
+    }
+    
+    fileprivate func unsubscribeFromCourseDetailsEvents() {
+        if let courseDetailsHandler = self.courseDetailsHandler {
+            courseDetailsHandler.dispose()
+            self.courseDetailsHandler = nil
         }
     }
     
@@ -144,31 +188,5 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         }
         
         self.selectedCourse = sections[indexPath.section][indexPath.row]
-    }
-    
-    // MARK: -
-    
-    func subscribeToUserUnauthorizedNotification() {
-        self.userUnauthorizedObserver = NotificationCenter.default.addObserver(forName: .userUnauthorized, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
-            self?.presenter.showLoginScreen()
-        })
-    }
-    
-    func subsribeToUserSignInNotification() {
-        self.userSignInObserver = NotificationCenter.default.addObserver(forName: .userDidSignIn, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
-            self?.fetchCourses()
-        })
-    }
-    
-    func subscribeToUserFinishQuizNotification() {
-        self.userFinishQuizObserver = NotificationCenter.default.addObserver(forName: .userDidFinishQuiz, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
-            self?.fetchCourses()
-        })
-    }
-    
-    func subsribeToUserSignUpNotification() {
-        self.userSignUpObserver = NotificationCenter.default.addObserver(forName: .userDidSignUp, object: nil, queue: OperationQueue.main, using: { [weak self] (notification) in
-            self?.fetchCourses()
-        })
     }
 }

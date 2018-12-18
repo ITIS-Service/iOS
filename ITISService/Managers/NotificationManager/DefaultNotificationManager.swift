@@ -11,12 +11,46 @@ import UserNotifications
 
 class DefaultNotificationManager: NSObject, NotificationManager {
     
+    // MARK: - Nested Types
+    
+    fileprivate enum Category {
+        
+        // MARK: - Type Properties
+        
+        static let courseStatus = "course.status"
+    }
+    
+    // MARK: -
+    
+    fileprivate enum JSONKeys {
+        
+        // MARK: - Type Properties
+        
+        static let courseID = "courseID"
+    }
+    
+    // MARK: - Instance Methods
+    
+    fileprivate func notificationCategory(from content: UNNotificationContent) -> NotificationCategory? {
+        switch content.categoryIdentifier {
+        case Category.courseStatus:
+            guard let courseID = content.userInfo[JSONKeys.courseID] as? Int else {
+                return nil
+            }
+            
+            return NotificationCategory(courseID: courseID)
+            
+        default:
+            return nil
+        }
+    }
+    
     // MARK: - Initializers
     
-    var bannerManager: BannerManager
+    var notificationPresenterManager: NotificationPresenterManager
     
-    init(bannerManager: BannerManager) {
-        self.bannerManager = bannerManager
+    init(notificationPresenterManager: NotificationPresenterManager) {
+        self.notificationPresenterManager = notificationPresenterManager
         
         super.init()
         
@@ -30,12 +64,12 @@ extension DefaultNotificationManager: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         Log.i(notification.request.content.categoryIdentifier)
         
-        guard let category = NotificationCategory(rawValue: notification.request.content.categoryIdentifier) else {
+        guard let category = self.notificationCategory(from: notification.request.content) else {
             return completionHandler([])
         }
         
         if UIApplication.shared.applicationState == .active {
-            self.bannerManager.showInfoBanner(category: category, title: notification.request.content.body, subtitle: notification.request.content.title)
+            self.notificationPresenterManager.reveiveNotification(category: category, title: notification.request.content.body, subtitle: notification.request.content.title)
         } else {
             completionHandler([.badge, .sound, .alert])
         }
@@ -48,7 +82,7 @@ extension DefaultNotificationManager: UNUserNotificationCenterDelegate {
             completionHandler()
         }
         
-        guard let category = NotificationCategory(rawValue: response.notification.request.content.categoryIdentifier) else {
+        guard let category = self.notificationCategory(from: response.notification.request.content) else {
             return
         }
         

@@ -8,8 +8,14 @@
 
 import Foundation
 
-enum NotificationCategory: String {
+enum NotificationCategory {
     
-    case courseStatus = "course.status"
+    case courseStatus(courseID: Int)
+    
+    // MARK: - Initializers
+    
+    init(courseID: Int) {
+        self = .courseStatus(courseID: courseID)
+    }
     
 }

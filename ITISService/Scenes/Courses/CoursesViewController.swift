@@ -19,13 +19,14 @@ protocol CoursesDataStoreHolder {
 protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func displayListCourses(sections: [Courses.TableView.Section])
     func showLoginScreen()
+    func showCourseDetailsScreen(with data: Any?)
 }
 
 class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataStoreHolder {
     
     // MARK: - Nested Types
     
-    fileprivate struct Constants {
+    fileprivate enum Constants {
         
         // MARK: - Properties
         
@@ -34,7 +35,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     
     // MARK: -
     
-    fileprivate struct Segues {
+    fileprivate enum Segues {
         
         // MARK: - Properties
         
@@ -99,8 +100,6 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     
     // MARK: - Instance Methods
     
-    // MARK: -
-    
     private func configureDesign() {
         self.tableView.register(CourseTableViewCell.nib(), forCellReuseIdentifier: CourseTableViewCell.identifier())
         self.tableView.dataSource = self.datasource
@@ -120,11 +119,6 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         
         self.configureDesign()
         self.interactor.fetchCourses()
-        
-        self.interactor.subscribeToUserUnauthorizedNotification()
-        self.interactor.subsribeToUserSignInNotification()
-        self.interactor.subsribeToUserSignUpNotification()
-        self.interactor.subscribeToUserFinishQuizNotification()
     }
     
     // MARK: - CoursesDisplayLogic Methods
@@ -136,5 +130,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     
     func showLoginScreen() {
         self.performSegue(withIdentifier: Segues.showLogin, sender: nil)
+    }
+    
+    func showCourseDetailsScreen(with data: Any?) {
+        self.performSegue(withIdentifier: Segues.courseDetails, sender: data)
     }
 }
