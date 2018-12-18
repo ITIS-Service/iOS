@@ -21,7 +21,8 @@ protocol CourseDetailsBusinessLogic {
 }
 
 protocol CourseDetailsDataStore: class {
-    var course: Course! { get set }
+    var course: Course? { get set }
+    var courseID: Int? { get set }
 }
 
 class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStore {
@@ -32,19 +33,29 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     var worker: CourseDetailsWorker!
     var userNetworkManager: UserNetworkManager!
     
-    var course: Course!
+    var course: Course?
+    var courseID: Int?
+    
+    var courseDetails: CourseDetails?
     
     // MARK: - Instance Methods
 
     func setupInitialState() {
-        self.presenter.displayInitialState(with: CourseDetailsModels.InitialSate.Response(course: self.course))
+        if let course = self.course {
+            self.presenter.displayInitialState(with: CourseDetailsModels.InitialSate.Response(course: course))
+        }
         self.presenter.showActivityIndicator(true)
     }
     
     func fetchCourseDetails() {
-        self.userNetworkManager.fetchCourseDetails(courseID: self.course.id, success: { [weak self] (courseDetails) in
+        guard let courseID = self.course?.id ?? self.courseID else {
+            return
+        }
+        
+        self.userNetworkManager.fetchCourseDetails(courseID: courseID, success: { [weak self] (courseDetails) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
+            self?.courseDetails = courseDetails
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.showAlert(with: error)
@@ -52,8 +63,12 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     }
     
     func signUpCourse() {
+        guard let courseID = self.course?.id ?? self.courseID else {
+            return
+        }
+        
         self.presenter.showActivityIndicator(true)
-        self.userNetworkManager.signUpCourse(with: self.course.id, success: { [weak self] (courseDetails) in
+        self.userNetworkManager.signUpCourse(with: courseID, success: { [weak self] (courseDetails) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
             self?.presenter.updateListCourse()
@@ -64,8 +79,12 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     }
     
     func signOutCourse() {
+        guard let courseID = self.course?.id ?? self.courseID else {
+            return
+        }
+        
         self.presenter.showActivityIndicator(true)
-        self.userNetworkManager.signOutCourse(with: self.course.id, success: { [weak self] (courseDetails) in
+        self.userNetworkManager.signOutCourse(with: courseID, success: { [weak self] (courseDetails) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
             self?.presenter.updateListCourse()
@@ -76,7 +95,7 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     }
     
     func courseName() -> String {
-        return self.course.name
+        return self.courseDetails?.name ?? ""
     }
 
 }

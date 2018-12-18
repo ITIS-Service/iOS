@@ -9,6 +9,6 @@ target 'ITISService' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'SwiftKeychainWrapper'
-  pod 'Gloss', '~> 2.0'
+  pod 'NotificationBannerSwift'
 
 end

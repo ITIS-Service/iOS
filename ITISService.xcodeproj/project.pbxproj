@@ -167,6 +167,12 @@
 		CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */; };
 		CBEFF91E218BA23200B63286 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF91D218BA23200B63286 /* KeychainManager.swift */; };
 		CBEFF920218BA35100B63286 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEFF91F218BA35100B63286 /* NetworkLogger.swift */; };
+		CBF340AC21C8E5A70053AE32 /* DefaultNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340AB21C8E5A70053AE32 /* DefaultNotificationManager.swift */; };
+		CBF340AF21C8E8BE0053AE32 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340AE21C8E8BE0053AE32 /* NotificationManager.swift */; };
+		CBF340B121C8EEF70053AE32 /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B021C8EEF70053AE32 /* NotificationCategory.swift */; };
+		CBF340B321C8F3470053AE32 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B221C8F3470053AE32 /* Keys.swift */; };
+		CBF340B621C8F8CF0053AE32 /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B521C8F8CF0053AE32 /* BannerManager.swift */; };
+		CBF340B821C8F8DB0053AE32 /* DefaultBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340B721C8F8DB0053AE32 /* DefaultBannerManager.swift */; };
 		CBFB5AFD21AAD614009F0175 /* UserCourseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +355,12 @@
 		CBEFF91B218B943C00B63286 /* ExceptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionResponse.swift; sourceTree = "<group>"; };
 		CBEFF91D218BA23200B63286 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		CBEFF91F218BA35100B63286 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		CBF340AB21C8E5A70053AE32 /* DefaultNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNotificationManager.swift; sourceTree = "<group>"; };
+		CBF340AE21C8E8BE0053AE32 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		CBF340B021C8EEF70053AE32 /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
+		CBF340B221C8F3470053AE32 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		CBF340B521C8F8CF0053AE32 /* BannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerManager.swift; sourceTree = "<group>"; };
+		CBF340B721C8F8DB0053AE32 /* DefaultBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBannerManager.swift; sourceTree = "<group>"; };
 		CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCourseStatus.swift; sourceTree = "<group>"; };
 		ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -509,6 +521,8 @@
 		CB07D2562184D6670072EB07 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CBF340B421C8F8C40053AE32 /* BannerManager */,
+				CBF340AD21C8E8880053AE32 /* NotificationManager */,
 				CB07D2572184D6710072EB07 /* QuizManager.swift */,
 				CBEFF91D218BA23200B63286 /* KeychainManager.swift */,
 			);
@@ -670,6 +684,7 @@
 			children = (
 				CBED732721ADC87A00FE30BF /* Colors.swift */,
 				CBED732921ADC96100FE30BF /* Fonts.swift */,
+				CBF340B221C8F3470053AE32 /* Keys.swift */,
 				CB31B1402196C11800BB4E0A /* NetworkManagers.swift */,
 				CB5D859721BAD86600CE3F90 /* Services.swift */,
 				CBD7932921BBAE83002F958E /* Managers.swift */,
@@ -1140,6 +1155,25 @@
 			path = Encoding;
 			sourceTree = "<group>";
 		};
+		CBF340AD21C8E8880053AE32 /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				CBF340AB21C8E5A70053AE32 /* DefaultNotificationManager.swift */,
+				CBF340B021C8EEF70053AE32 /* NotificationCategory.swift */,
+				CBF340AE21C8E8BE0053AE32 /* NotificationManager.swift */,
+			);
+			path = NotificationManager;
+			sourceTree = "<group>";
+		};
+		CBF340B421C8F8C40053AE32 /* BannerManager */ = {
+			isa = PBXGroup;
+			children = (
+				CBF340B721C8F8DB0053AE32 /* DefaultBannerManager.swift */,
+				CBF340B521C8F8CF0053AE32 /* BannerManager.swift */,
+			);
+			path = BannerManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1194,6 +1228,9 @@
 					CB5F41342179A00C0058293F = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1269,14 +1306,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ITISService/Pods-ITISService-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1366,6 +1407,7 @@
 				CB0ACA5921A93D5000C3D202 /* LoaderDisplayLogic.swift in Sources */,
 				CB50D21121B33E67007B5BD4 /* PointsViewController.swift in Sources */,
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
+				CBF340AC21C8E5A70053AE32 /* DefaultNotificationManager.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
 				CBD7932C21BBAEBE002F958E /* Translators.swift in Sources */,
 				CB50D21221B33E67007B5BD4 /* PointsInteractor.swift in Sources */,
@@ -1405,6 +1447,7 @@
 				CBDC5C9721AA8DD200185142 /* CourseDetailsWorker.swift in Sources */,
 				CBEFF91C218B943C00B63286 /* ExceptionResponse.swift in Sources */,
 				CBDC5C9821AA8DD200185142 /* CourseDetailsRouter.swift in Sources */,
+				CBF340B821C8F8DB0053AE32 /* DefaultBannerManager.swift in Sources */,
 				CBD7933021BC4093002F958E /* ExitTableViewCell.swift in Sources */,
 				CB07D2652184DD820072EB07 /* QuestionWorker.swift in Sources */,
 				CB07D25A2184D6A40072EB07 /* QuizQuestion.swift in Sources */,
@@ -1433,13 +1476,16 @@
 				CBD7931921BB9C08002F958E /* Group.swift in Sources */,
 				CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */,
 				CB30D59D21AFE71000FDA02B /* UIViewController + Extension.swift in Sources */,
+				CBF340B621C8F8CF0053AE32 /* BannerManager.swift in Sources */,
 				CB07D2582184D6710072EB07 /* QuizManager.swift in Sources */,
 				CBDC5C9621AA8DD200185142 /* CourseDetailsPresenter.swift in Sources */,
+				CBF340B321C8F3470053AE32 /* Keys.swift in Sources */,
 				CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */,
 				CBD7931B21BB9C44002F958E /* UserManager.swift in Sources */,
 				CBE2FF2221A7D02F005DC733 /* LoaderPresentationLogic.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
 				CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */,
+				CBF340AF21C8E8BE0053AE32 /* NotificationManager.swift in Sources */,
 				CB07D237218445E90072EB07 /* Point.swift in Sources */,
 				CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */,
 				CBC2220321C38178008E7586 /* UIDevice + Extension.swift in Sources */,
@@ -1457,6 +1503,7 @@
 				CB14059E218C38DB0068D880 /* Log.swift in Sources */,
 				CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */,
 				CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */,
+				CBF340B121C8EEF70053AE32 /* NotificationCategory.swift in Sources */,
 				CBD7932321BBA154002F958E /* GroupTranslator.swift in Sources */,
 				CB56FD8921B839CF00C7196E /* SettingsPresenter.swift in Sources */,
 				CB07D22421843F300072EB07 /* CoursesInteractor.swift in Sources */,

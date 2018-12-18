@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol CoursesRoutingLogic {
-    func routeToCourseDetails(segue: UIStoryboardSegue)
+    func routeToCourseDetails(segue: UIStoryboardSegue, sender: Any?)
 }
 
 protocol CoursesDataPassing {
@@ -35,13 +35,21 @@ class CoursesRouter: NSObject, CoursesRoutingLogic, CoursesDataPassing {
         }
     }
     
+    fileprivate func passDataToCourseDetails(destination: CourseDetailsDataStore, courseID: Int) {
+        destination.courseID = courseID
+    }
+    
     // MARK: -
     
-    func routeToCourseDetails(segue: UIStoryboardSegue) {
+    func routeToCourseDetails(segue: UIStoryboardSegue, sender: Any?) {
         guard let datasourceHolder = segue.destination as? CourseDetailsDataStoreHolder else {
             return
         }
         
-        self.passDataToCourseDetails(source: self.dataStore, destination: datasourceHolder.courseDetailsDataStore)
+        if let courseID = sender as? Int {
+            self.passDataToCourseDetails(destination: datasourceHolder.courseDetailsDataStore, courseID: courseID)
+        } else {
+            self.passDataToCourseDetails(source: self.dataStore, destination: datasourceHolder.courseDetailsDataStore)
+        }
     }
 }

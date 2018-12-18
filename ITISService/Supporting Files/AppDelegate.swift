@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         #endif
         
+        let _ = Managers.notificationManager
+        
         self.registerNotifications()
         
         return true

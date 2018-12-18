@@ -2,28 +2,36 @@ PODS:
   - Crashlytics (3.10.9):
     - Fabric (~> 1.7.13)
   - Fabric (1.7.13)
-  - Gloss (2.0.1)
+  - MarqueeLabel/Swift (3.2.0)
+  - NotificationBannerSwift (1.7.3):
+    - MarqueeLabel/Swift (~> 3.2.0)
+    - SnapKit (~> 4.0.1)
+  - SnapKit (4.0.1)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - Gloss (~> 2.0)
+  - NotificationBannerSwift
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Fabric
-    - Gloss
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - SnapKit
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
-  Gloss: 1e8743f8de1fbe14a97f220ff901cba91ae5f8f8
+  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
+  NotificationBannerSwift: c9f4bc868d78df975ed59c0b2fccdbbe0e863efe
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: fedf5eb6858567b43f7c9b55624e10885a79f910
+PODFILE CHECKSUM: 48c6e798d67db6a891bc8de7c095d0663ddf5be6
 
 COCOAPODS: 1.5.3

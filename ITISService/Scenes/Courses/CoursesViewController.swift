@@ -87,9 +87,12 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
+            switch scene {
+            case Segues.courseDetails:
+                self.router.routeToCourseDetails(segue: segue, sender: sender)
+                
+            default:
+                break
             }
         }
     }

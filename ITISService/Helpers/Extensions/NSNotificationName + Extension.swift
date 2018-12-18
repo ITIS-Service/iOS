@@ -16,4 +16,5 @@ extension NSNotification.Name {
     public static let userDidSignUp = NSNotification.Name("userDidSignUp")
     public static let userUnauthorized = NSNotification.Name("userUnauthorized")
     public static let userDidFinishQuiz = NSNotification.Name("userDidFinishQuiz")
+    public static let notificationDidReceived = NSNotification.Name("notificationDidReceived")
 }

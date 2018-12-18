@@ -10,7 +10,7 @@ import Foundation
 
 enum NetworkEnvironment: String {
     case production = "https://itis-courses.herokuapp.com"
-    case local = "http://10.17.1.22:8080"
+    case local = "http://10.0.0.202:8080"
 }
 
 class NetworkManager {
