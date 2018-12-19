@@ -44,6 +44,7 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     fileprivate var userSignUpObserver: AnyObject?
     
     fileprivate var courseDetailsHandler: Disposable?
+    fileprivate var pointsChangeHandler: Disposable?
     
     // MARK: -
     
@@ -62,13 +63,16 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         self.subsribeToUserSignUpNotification()
         self.subscribeToUserFinishQuizNotification()
         self.subscribeToCourseDetailsEvents()
+        self.subscribeToPointsChangeEvents()
     }
     
     deinit {
         self.unsubscribeFromUserUnauthorizedNotification()
         self.unsubscribeFromUserSignInNotification()
+        self.unsubscriveFromUserSignUpNotification()
         self.unsubscribeFromUserFinishQuiz()
         self.unsubscriveFromUserSignUpNotification()
+        self.unsubscribeFromPointsChangeEvents()
     }
 
     // MARK: - Instance Methods
@@ -105,6 +109,14 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         }
     }
     
+    fileprivate func subscribeToPointsChangeEvents() {
+        self.pointsChangeHandler = Managers.pointsManager.didPointsChangedEvent.addHandler(target: self, handler: { [weak self] (courseID) in
+            let response = Courses.Points.Response(courseID: courseID)
+            
+            self?.presenter.didPointsChanged(with: response)
+        })
+    }
+    
     fileprivate func unsubscribeFromUserUnauthorizedNotification() {
         if let userUnauthorizedObserver = self.userUnauthorizedObserver {
             NotificationCenter.default.removeObserver(userUnauthorizedObserver)
@@ -137,6 +149,13 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
         if let courseDetailsHandler = self.courseDetailsHandler {
             courseDetailsHandler.dispose()
             self.courseDetailsHandler = nil
+        }
+    }
+    
+    fileprivate func unsubscribeFromPointsChangeEvents() {
+        if let pointsChangeHandler = self.pointsChangeHandler {
+            pointsChangeHandler.dispose()
+            self.pointsChangeHandler = nil
         }
     }
     

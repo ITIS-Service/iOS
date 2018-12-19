@@ -30,6 +30,9 @@ class DefaultNotificationPresenterManager: NotificationPresenterManager {
         switch category {
         case .courseStatus:
             return !(visibleViewController is CourseDetailsViewController)
+            
+        case .coursePoints:
+            return !(visibleViewController is PointsViewController)
         }
     }
     
@@ -42,6 +45,9 @@ class DefaultNotificationPresenterManager: NotificationPresenterManager {
             switch category {
             case .courseStatus(let courseID):
                 Managers.courseDetailsManager.didUpdateEvent.raise(data: courseID)
+                
+            case .coursePoints(let courseID):
+                Managers.pointsManager.didPointsUpdateEvent.raise(data: courseID)
             }
         }
     }

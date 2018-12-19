@@ -14,6 +14,7 @@ import UIKit
 
 @objc protocol CoursesRoutingLogic {
     func routeToCourseDetails(segue: UIStoryboardSegue, sender: Any?)
+    func routeToPoints(segue: UIStoryboardSegue, sender: Any?)
 }
 
 protocol CoursesDataPassing {
@@ -50,6 +51,20 @@ class CoursesRouter: NSObject, CoursesRoutingLogic, CoursesDataPassing {
             self.passDataToCourseDetails(destination: datasourceHolder.courseDetailsDataStore, courseID: courseID)
         } else {
             self.passDataToCourseDetails(source: self.dataStore, destination: datasourceHolder.courseDetailsDataStore)
+        }
+    }
+    
+    func routeToPoints(segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationController = segue.destination as? UINavigationController else {
+            return
+        }
+        
+        guard let dataStoreHolder = navigationController.viewControllers.first as? PointsDataStoreHolder else {
+            return
+        }
+        
+        if let courseID = sender as? Int {
+            dataStoreHolder.datastore.courseID = courseID
         }
     }
 }

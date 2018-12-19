@@ -16,6 +16,7 @@ protocol CoursesPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentati
     func displayCourses(response: Courses.List.Response)
     func showLoginScreen()
     func didCourseDetailsStatusChanged(with response: Courses.CourseStatus.Response)
+    func didPointsChanged(with response: Courses.Points.Response)
 }
 
 class CoursesPresenter: CoursesPresentationLogic {
@@ -77,5 +78,9 @@ class CoursesPresenter: CoursesPresentationLogic {
     
     func didCourseDetailsStatusChanged(with response: Courses.CourseStatus.Response) {
         self.viewController.showCourseDetailsScreen(with: response.courseID)
+    }
+    
+    func didPointsChanged(with response: Courses.Points.Response) {
+        self.viewController.showPointsScreen(with: response.courseID)
     }
 }

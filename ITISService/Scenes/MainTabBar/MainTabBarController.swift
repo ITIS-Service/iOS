@@ -48,6 +48,10 @@ class MainTabBarController: UITabBarController {
             case .courseStatus(let courseID):
                 self.selectedIndex = Tabs.courses.rawValue
                 Managers.courseDetailsManager.didStatusChangeEvent.raise(data: courseID)
+                
+            case .coursePoints(let courseID):
+                self.selectedIndex = Tabs.courses.rawValue
+                Managers.pointsManager.didPointsChangedEvent.raise(data: courseID)
             }
         })
     }

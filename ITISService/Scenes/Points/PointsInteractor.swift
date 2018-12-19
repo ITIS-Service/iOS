@@ -17,7 +17,8 @@ protocol PointsBusinessLogic {
 }
 
 protocol PointsDataStore: class {
-    var course: Course! { get set }
+    var course: Course? { get set }
+    var courseID: Int? { get set }
 }
 
 class PointsInteractor: PointsBusinessLogic, PointsDataStore {
@@ -30,14 +31,56 @@ class PointsInteractor: PointsBusinessLogic, PointsDataStore {
     
     // MARK: -
     
-    var course: Course!
+    var course: Course?
+    var courseID: Int?
+    
+    var pointsUpdateHandler: Disposable?
+    
+    // MARK: - Initializers
+    
+    init() {
+        self.subscribeToPointsUpdateEvent()
+    }
+    
+    deinit {
+        self.unsubscribeFromPointsUpdateEvent()
+    }
 
     // MARK - Instance Methods
+    
+    fileprivate func subscribeToPointsUpdateEvent() {
+        self.pointsUpdateHandler = Managers.pointsManager.didPointsUpdateEvent.addHandler(target: self, handler: { [weak self] (updateCourseID) in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            guard let courseID = strongSelf.course?.id ?? strongSelf.courseID else {
+                return
+            }
+            
+            if updateCourseID == courseID {
+                self?.fetchPoints()
+            }
+        })
+    }
+    
+    fileprivate func unsubscribeFromPointsUpdateEvent() {
+        if let pointsUpdateHandler = self.pointsUpdateHandler {
+            pointsUpdateHandler.dispose()
+            self.pointsUpdateHandler = nil
+        }
+    }
+    
+    // MARK: -
 
     func fetchPoints() {
+        guard let courseID = self.course?.id ?? self.courseID else {
+            return
+        }
+        
         self.presenter.showActivityIndicator(true)
         
-        self.userNetworkManager.fetchPoints(courseID: self.course.id, success: { [weak self] (userPoints) in
+        self.userNetworkManager.fetchPoints(courseID: courseID, success: { [weak self] (userPoints) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.displayPoints(with: Points.Fetch.Response(total: userPoints.total, points: userPoints.points))
         }) { [weak self] (error) in

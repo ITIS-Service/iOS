@@ -11,11 +11,6 @@ import Foundation
 enum NotificationCategory {
     
     case courseStatus(courseID: Int)
-    
-    // MARK: - Initializers
-    
-    init(courseID: Int) {
-        self = .courseStatus(courseID: courseID)
-    }
+    case coursePoints(courseID: Int)
     
 }

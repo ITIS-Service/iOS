@@ -18,6 +18,7 @@ class DefaultNotificationManager: NSObject, NotificationManager {
         // MARK: - Type Properties
         
         static let courseStatus = "course.status"
+        static let coursePoints = "course.points"
     }
     
     // MARK: -
@@ -38,8 +39,14 @@ class DefaultNotificationManager: NSObject, NotificationManager {
                 return nil
             }
             
-            return NotificationCategory(courseID: courseID)
+            return .courseStatus(courseID: courseID)
             
+        case Category.coursePoints:
+            guard let courseID = content.userInfo[JSONKeys.courseID] as? Int else {
+                return nil
+            }
+            
+            return .coursePoints(courseID: courseID)
         default:
             return nil
         }

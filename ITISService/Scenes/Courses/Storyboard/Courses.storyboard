@@ -37,6 +37,7 @@
                         <outlet property="tableView" destination="JZN-sC-sLO" id="zqm-G1-7PK"/>
                         <segue destination="Vxd-me-1ir" kind="show" identifier="CourseDetails" id="ydQ-oS-P6N"/>
                         <segue destination="3Wk-qr-keO" kind="presentation" identifier="ShowLogin" id="S0M-t2-6tF"/>
+                        <segue destination="j7W-RU-E4K" kind="presentation" identifier="CoursePoints" id="4cQ-dV-mQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nA-93-YV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,6 +59,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdJ-Sh-9Cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1702" y="124"/>
+        </scene>
+        <!--Points-->
+        <scene sceneID="S2i-36-wbh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Points" id="dtP-K3-oUV" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="P1v-AI-pV4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xyz-JR-tPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="-335"/>
+        </scene>
+        <!--Transparent Navigation Controller-->
+        <scene sceneID="0gL-2n-dPk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7W-RU-E4K" customClass="TransparentNavigationController" customModule="ITISService" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZBo-dE-6OK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dtP-K3-oUV" kind="relationship" relationship="rootViewController" id="ugr-Ht-gSJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fl4-1M-vi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834" y="-334"/>
         </scene>
     </scenes>
 </document>

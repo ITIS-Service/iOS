@@ -22,14 +22,6 @@ protocol PointsDataStoreHolder {
 
 class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStoreHolder {
     
-    // MARK: - Nested Types
-    
-    fileprivate enum Constants {
-        
-        // MARK: - Type properties
-        
-    }
-    
     // MARK: - Instance Properties
     
     @IBOutlet fileprivate weak var tableView: UITableView!
@@ -44,6 +36,24 @@ class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStor
     var interactor: PointsBusinessLogic!
     var router: (NSObjectProtocol & PointsRoutingLogic & PointsDataPassing)!
     var datastore: PointsDataStore!
+    
+    // MARK: -
+    
+    var isOpenedModal: Bool {
+        if self.presentingViewController != nil {
+            return true
+        }
+        
+        if self.navigationController?.presentingViewController?.presentedViewController == self.navigationController {
+            return true
+        }
+        
+        if self.tabBarController?.presentingViewController is UITabBarController {
+            return true
+        }
+        
+        return false
+    }
     
     // MARK: - Object lifecycle
     
@@ -87,11 +97,22 @@ class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStor
     
     // MARK: - Instance Methods
     
+    @objc fileprivate func onCloseButtonTouchUpInside(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
+    }
+    
+    // MARK: -
+    
     fileprivate func configureDesign() {
         self.tableView.dataSource = self.datasource
         self.tableView.delegate = self.datasource
         self.tableView.tableFooterView = UIView()
         self.tableView.register(PointTableViewCell.nib(), forCellReuseIdentifier: PointTableViewCell.identifier())
+        
+        if self.isOpenedModal {
+            let closeButton = UIBarButtonItem(title: "Закрыть", style: .done, target: self, action: #selector(self.onCloseButtonTouchUpInside(_:)))
+            self.navigationItem.rightBarButtonItem = closeButton
+        }
     }
     
     fileprivate func fetchPoints() {

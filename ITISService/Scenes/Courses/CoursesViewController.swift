@@ -20,6 +20,7 @@ protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func displayListCourses(sections: [Courses.TableView.Section])
     func showLoginScreen()
     func showCourseDetailsScreen(with data: Any?)
+    func showPointsScreen(with data: Any?)
 }
 
 class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataStoreHolder {
@@ -41,6 +42,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         
         static let courseDetails = "CourseDetails"
         static let showLogin = "ShowLogin"
+        static let coursePoints = "CoursePoints"
     }
     
     // MARK: - Instance Properties
@@ -92,6 +94,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
             case Segues.courseDetails:
                 self.router.routeToCourseDetails(segue: segue, sender: sender)
                 
+            case Segues.coursePoints:
+                self.router.routeToPoints(segue: segue, sender: sender)
+                
             default:
                 break
             }
@@ -134,5 +139,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     
     func showCourseDetailsScreen(with data: Any?) {
         self.performSegue(withIdentifier: Segues.courseDetails, sender: data)
+    }
+    
+    func showPointsScreen(with data: Any?) {
+        self.performSegue(withIdentifier: Segues.coursePoints, sender: data)
     }
 }

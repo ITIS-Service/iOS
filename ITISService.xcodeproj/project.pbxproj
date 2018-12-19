@@ -182,6 +182,8 @@
 		CBF340CD21C935B90053AE32 /* NotificationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340CC21C935B90053AE32 /* NotificationPresenterManager.swift */; };
 		CBF340CF21C936BB0053AE32 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340CE21C936BB0053AE32 /* UIApplication + Extension.swift */; };
 		CBF340D221C93D110053AE32 /* DefaultNotificationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340D121C93D110053AE32 /* DefaultNotificationPresenterManager.swift */; };
+		CBF340D521CA656A0053AE32 /* PointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340D421CA656A0053AE32 /* PointsManager.swift */; };
+		CBF340D721CA657A0053AE32 /* DefaultPointsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF340D621CA657A0053AE32 /* DefaultPointsManager.swift */; };
 		CBFB5AFD21AAD614009F0175 /* UserCourseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */; };
 /* End PBXBuildFile section */
 
@@ -379,6 +381,8 @@
 		CBF340CC21C935B90053AE32 /* NotificationPresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenterManager.swift; sourceTree = "<group>"; };
 		CBF340CE21C936BB0053AE32 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		CBF340D121C93D110053AE32 /* DefaultNotificationPresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNotificationPresenterManager.swift; sourceTree = "<group>"; };
+		CBF340D421CA656A0053AE32 /* PointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsManager.swift; sourceTree = "<group>"; };
+		CBF340D621CA657A0053AE32 /* DefaultPointsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPointsManager.swift; sourceTree = "<group>"; };
 		CBFB5AFC21AAD614009F0175 /* UserCourseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCourseStatus.swift; sourceTree = "<group>"; };
 		ED63CB8BB16C21500096B4AE /* Pods_ITISService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -480,6 +484,7 @@
 			children = (
 				CBF340BE21C914510053AE32 /* CourseDetails */,
 				CBD7931721BB9BFF002F958E /* Group */,
+				CBF340D321CA655A0053AE32 /* Points */,
 				CBD7931421BB9B04002F958E /* User */,
 				CB8654B8218DC0A500FDBD77 /* Dto */,
 				CB56A6A421BA5E9B00EE923E /* ITISService.xcdatamodeld */,
@@ -1225,6 +1230,15 @@
 			path = NotificationPresenterManager;
 			sourceTree = "<group>";
 		};
+		CBF340D321CA655A0053AE32 /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				CBF340D621CA657A0053AE32 /* DefaultPointsManager.swift */,
+				CBF340D421CA656A0053AE32 /* PointsManager.swift */,
+			);
+			path = Points;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1433,6 +1447,7 @@
 				CB2DE5DD21921D5B00CA9424 /* CGRect + Extension.swift in Sources */,
 				CB50D21021B33E67007B5BD4 /* PointsModels.swift in Sources */,
 				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
+				CBF340D521CA656A0053AE32 /* PointsManager.swift in Sources */,
 				CB50D20D21B33E67007B5BD4 /* PointsPresenter.swift in Sources */,
 				CBD7932621BBA189002F958E /* CoreDataUserTranslator.swift in Sources */,
 				CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */,
@@ -1509,6 +1524,7 @@
 				CB07D25A2184D6A40072EB07 /* QuizQuestion.swift in Sources */,
 				CBEFF90A218B82C500B63286 /* ParameterEncoding.swift in Sources */,
 				CB56A6A221BA5CA500EE923E /* CoreDataStorageContext + Operations.swift in Sources */,
+				CBF340D721CA657A0053AE32 /* DefaultPointsManager.swift in Sources */,
 				CBD845C021B90B530029FE12 /* MainTabBarController.swift in Sources */,
 				CBED732521ADC82500FE30BF /* TransparentNavigationController.swift in Sources */,
 				CB56A67C21BA57F300EE923E /* DBLayerAPI.swift in Sources */,
