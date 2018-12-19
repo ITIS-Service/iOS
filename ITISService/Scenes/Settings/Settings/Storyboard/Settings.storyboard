@@ -112,6 +112,7 @@
                         <segue destination="drQ-FP-JCE" kind="presentation" identifier="ShowLoginScreen" id="Y0p-Wk-VIc"/>
                         <segue destination="vTb-U0-eP3" kind="show" identifier="ShowAccountSettings" id="8Kf-7J-7LU"/>
                         <segue destination="TvK-cm-EY0" kind="presentation" identifier="ShowStartQuiz" id="RCV-MN-9eo"/>
+                        <segue destination="zUZ-hY-6eA" kind="show" identifier="ShowNotificationSettings" id="71Y-UH-sh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abt-1z-h22" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,6 +126,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvn-FL-uou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1569" y="-190"/>
+        </scene>
+        <!--NotificationSettings-->
+        <scene sceneID="UxT-la-ckb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NotificationSettings" id="zUZ-hY-6eA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Srt-Gb-EnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594" y="-34"/>
         </scene>
         <!--Login-->
         <scene sceneID="XMy-UA-sN5">

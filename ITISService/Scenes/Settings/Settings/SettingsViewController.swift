@@ -19,6 +19,7 @@ protocol SettingsDisplayLogic: class {
     func showLoginScreen()
     func showAccountSettingsScreen()
     func openStartQuizScreen()
+    func showNotificationSettingsScreen()
 }
 
 class SettingsViewController: UIViewController, SettingsDisplayLogic {
@@ -32,6 +33,7 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
         static let showLoginScreen = "ShowLoginScreen"
         static let showAccountSettings = "ShowAccountSettings"
         static let showStartQuiz = "ShowStartQuiz"
+        static let showNotificationSettings = "ShowNotificationSettings"
     }
     
     // MARK: - Instance Properties
@@ -158,5 +160,9 @@ class SettingsViewController: UIViewController, SettingsDisplayLogic {
     
     func openStartQuizScreen() {
         self.performSegue(withIdentifier: Segues.showStartQuiz, sender: nil)
+    }
+    
+    func showNotificationSettingsScreen() {
+        self.performSegue(withIdentifier: Segues.showNotificationSettings, sender: nil)
     }
 }

@@ -97,12 +97,10 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
                 self.presenter.showAccountSettingsScreen()
                 
             case Constants.notificationsRowsIndex:
-                // TODO: - Implement open notifications settings
-                break
+                self.presenter.didNotifcationSettingsCellClicked()
                 
             case Constants.quizRowIndex:
                 self.presenter.didQuizCellClicked()
-                break
                 
             case Constants.exitRowIndex:
                 self.presenter.displayConfirmExitActionSheet()

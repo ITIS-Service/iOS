@@ -19,6 +19,7 @@ protocol SettingsPresentationLogic {
     func showLoginScreen()
     func showAccountSettingsScreen()
     func didQuizCellClicked()
+    func didNotifcationSettingsCellClicked() 
 }
 
 class SettingsPresenter: SettingsPresentationLogic {
@@ -85,5 +86,9 @@ class SettingsPresenter: SettingsPresentationLogic {
     
     func didQuizCellClicked() {
         self.viewController.openStartQuizScreen()
+    }
+    
+    func didNotifcationSettingsCellClicked() {
+        self.viewController.showNotificationSettingsScreen()
     }
 }

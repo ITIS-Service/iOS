@@ -113,6 +113,16 @@
 		CB62630221AAAF8D00AA1757 /* CourseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62630121AAAF8D00AA1757 /* CourseDetails.swift */; };
 		CB62630421AAB06500AA1757 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62630321AAB06500AA1757 /* DayTime.swift */; };
 		CB7E279921BD5B680035F1F3 /* NSNotificationName + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E279821BD5B680035F1F3 /* NSNotificationName + Extension.swift */; };
+		CB833B2E21CAABF200DEAE52 /* NotificationSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B2821CAABF200DEAE52 /* NotificationSettingsPresenter.swift */; };
+		CB833B2F21CAABF200DEAE52 /* NotificationSettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B2921CAABF200DEAE52 /* NotificationSettingsWorker.swift */; };
+		CB833B3021CAABF200DEAE52 /* NotificationSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B2A21CAABF200DEAE52 /* NotificationSettingsRouter.swift */; };
+		CB833B3121CAABF200DEAE52 /* NotificationSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B2B21CAABF200DEAE52 /* NotificationSettingsModels.swift */; };
+		CB833B3221CAABF200DEAE52 /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B2C21CAABF200DEAE52 /* NotificationSettingsViewController.swift */; };
+		CB833B3321CAABF200DEAE52 /* NotificationSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B2D21CAABF200DEAE52 /* NotificationSettingsInteractor.swift */; };
+		CB833B3621CAAC0F00DEAE52 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB833B3521CAAC0F00DEAE52 /* NotificationSettings.storyboard */; };
+		CB833B3B21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */; };
+		CB833B3F21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */; };
+		CB833B4021CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */; };
 		CB8654BA218DC0B800FDBD77 /* LoginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */; };
 		CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */; };
 		CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */; };
@@ -309,6 +319,16 @@
 		CB62630121AAAF8D00AA1757 /* CourseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetails.swift; sourceTree = "<group>"; };
 		CB62630321AAB06500AA1757 /* DayTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		CB7E279821BD5B680035F1F3 /* NSNotificationName + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName + Extension.swift"; sourceTree = "<group>"; };
+		CB833B2821CAABF200DEAE52 /* NotificationSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsPresenter.swift; sourceTree = "<group>"; };
+		CB833B2921CAABF200DEAE52 /* NotificationSettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsWorker.swift; sourceTree = "<group>"; };
+		CB833B2A21CAABF200DEAE52 /* NotificationSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsRouter.swift; sourceTree = "<group>"; };
+		CB833B2B21CAABF200DEAE52 /* NotificationSettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsModels.swift; sourceTree = "<group>"; };
+		CB833B2C21CAABF200DEAE52 /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
+		CB833B2D21CAABF200DEAE52 /* NotificationSettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsInteractor.swift; sourceTree = "<group>"; };
+		CB833B3521CAAC0F00DEAE52 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
+		CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsDatasource.swift; sourceTree = "<group>"; };
+		CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewCell.swift; sourceTree = "<group>"; };
+		CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingTableViewCell.xib; sourceTree = "<group>"; };
 		CB8654B9218DC0B800FDBD77 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
 		CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceEndPoint.swift; sourceTree = "<group>"; };
 		CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNetworkManager.swift; sourceTree = "<group>"; };
@@ -460,12 +480,13 @@
 		CB07D229218442470072EB07 /* TableView Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CB2DF0F221BEC34C002B16A3 /* TextFieldTableViewCell */,
-				CBD7932D21BC407C002F958E /* Exit */,
-				CBD845B621B8F4630029FE12 /* Setting */,
-				CB50D21621B33EB7007B5BD4 /* Point */,
 				CB39DC332185C6F000DA04D0 /* Answer */,
 				CB07D22A218442530072EB07 /* Course */,
+				CBD7932D21BC407C002F958E /* Exit */,
+				CB833B3C21CAADE700DEAE52 /* NotificationSetting */,
+				CB50D21621B33EB7007B5BD4 /* Point */,
+				CBD845B621B8F4630029FE12 /* Setting */,
+				CB2DF0F221BEC34C002B16A3 /* TextField */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -687,13 +708,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		CB2DF0F221BEC34C002B16A3 /* TextFieldTableViewCell */ = {
+		CB2DF0F221BEC34C002B16A3 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
 				CB2DF0F321BEC37C002B16A3 /* TextFieldTableViewCell.swift */,
 				CB2DF0F421BEC37C002B16A3 /* TextFieldTableViewCell.xib */,
 			);
-			path = TextFieldTableViewCell;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		CB2DF0F721BED9D6002B16A3 /* TableView Datasource */ = {
@@ -920,9 +941,8 @@
 		CB5F414A2179A1510058293F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CB2DF0E221BEC2B9002B16A3 /* AccountSettings */,
+				CB833B3821CAAC6800DEAE52 /* Settings */,
 				CBD845BE21B90B2E0029FE12 /* MainTabBar */,
-				CB56FD8221B839AF00C7196E /* Settings */,
 				CB50D20621B33E53007B5BD4 /* Points */,
 				CBED732321ADC7D100FE30BF /* NavigationController */,
 				CBDC5C8F21AA8C3C00185142 /* CourseDetails */,
@@ -947,6 +967,56 @@
 				CB5F41512179A53B0058293F /* LoginInteractor.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CB833B2721CAABD300DEAE52 /* NotificationSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CB833B3921CAAD1100DEAE52 /* TableView Datasource */,
+				CB833B3421CAABFD00DEAE52 /* Storyboard */,
+				CB833B2821CAABF200DEAE52 /* NotificationSettingsPresenter.swift */,
+				CB833B2921CAABF200DEAE52 /* NotificationSettingsWorker.swift */,
+				CB833B2A21CAABF200DEAE52 /* NotificationSettingsRouter.swift */,
+				CB833B2B21CAABF200DEAE52 /* NotificationSettingsModels.swift */,
+				CB833B2C21CAABF200DEAE52 /* NotificationSettingsViewController.swift */,
+				CB833B2D21CAABF200DEAE52 /* NotificationSettingsInteractor.swift */,
+			);
+			path = NotificationSettings;
+			sourceTree = "<group>";
+		};
+		CB833B3421CAABFD00DEAE52 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CB833B3521CAAC0F00DEAE52 /* NotificationSettings.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CB833B3821CAAC6800DEAE52 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DF0E221BEC2B9002B16A3 /* AccountSettings */,
+				CB833B2721CAABD300DEAE52 /* NotificationSettings */,
+				CB56FD8221B839AF00C7196E /* Settings */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CB833B3921CAAD1100DEAE52 /* TableView Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */,
+			);
+			path = "TableView Datasource";
+			sourceTree = "<group>";
+		};
+		CB833B3C21CAADE700DEAE52 /* NotificationSetting */ = {
+			isa = PBXGroup;
+			children = (
+				CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */,
+				CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */,
+			);
+			path = NotificationSetting;
 			sourceTree = "<group>";
 		};
 		CB8654B8218DC0A500FDBD77 /* Dto */ = {
@@ -1340,6 +1410,8 @@
 				CBDC5C9E21AA8E0D00185142 /* CourseDetails.storyboard in Resources */,
 				CBD845C321B90B8E0029FE12 /* MainTabBar.storyboard in Resources */,
 				CB39DC372185C70400DA04D0 /* AnswerTableViewCell.xib in Resources */,
+				CB833B4021CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib in Resources */,
+				CB833B3621CAAC0F00DEAE52 /* NotificationSettings.storyboard in Resources */,
 				CB2DF0F121BEC2E0002B16A3 /* AccountSettings.storyboard in Resources */,
 				CB50D21A21B33EC6007B5BD4 /* PointTableViewCell.xib in Resources */,
 				CB19D440217DA3E800B4586F /* Login.storyboard in Resources */,
@@ -1435,6 +1507,7 @@
 			files = (
 				CB28AACC2194C40600E49AB6 /* EmailTextField.swift in Sources */,
 				CB5BFFFB21B3CBF300A20944 /* PointsDatasource.swift in Sources */,
+				CB833B3B21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift in Sources */,
 				CB2DF0EC21BEC2D0002B16A3 /* AccountSettingsModels.swift in Sources */,
 				CBF340CD21C935B90053AE32 /* NotificationPresenterManager.swift in Sources */,
 				CBD7932121BBA0C8002F958E /* UserTranslator.swift in Sources */,
@@ -1459,10 +1532,12 @@
 				CBEFF906218B821B00B63286 /* HTTPMethod.swift in Sources */,
 				CB07D22121843F300072EB07 /* CoursesRouter.swift in Sources */,
 				CB2DF0EB21BEC2D0002B16A3 /* AccountSettingsRouter.swift in Sources */,
+				CB833B3221CAABF200DEAE52 /* NotificationSettingsViewController.swift in Sources */,
 				CBEFF912218B881800B63286 /* Router.swift in Sources */,
 				CB2DE5E1219237A800CA9424 /* UIScreen + Extension.swift in Sources */,
 				CBEFF914218B8C6400B63286 /* UserEndPoint.swift in Sources */,
 				CB19D44C217DC44900B4586F /* RegistrationPresenter.swift in Sources */,
+				CB833B3121CAABF200DEAE52 /* NotificationSettingsModels.swift in Sources */,
 				CB2DF0F521BEC37C002B16A3 /* TextFieldTableViewCell.swift in Sources */,
 				CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */,
 				CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */,
@@ -1479,6 +1554,7 @@
 				CB07D22D218442640072EB07 /* CourseTableViewCell.swift in Sources */,
 				CBF340AC21C8E5A70053AE32 /* DefaultNotificationManager.swift in Sources */,
 				CB19D451217DC44900B4586F /* RegistrationInteractor.swift in Sources */,
+				CB833B2E21CAABF200DEAE52 /* NotificationSettingsPresenter.swift in Sources */,
 				CBD7932C21BBAEBE002F958E /* Translators.swift in Sources */,
 				CB50D21221B33E67007B5BD4 /* PointsInteractor.swift in Sources */,
 				CB31B1442196C48000BB4E0A /* ErrorMessagePresenter.swift in Sources */,
@@ -1504,6 +1580,8 @@
 				CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */,
 				CBF340C721C917AA0053AE32 /* Disposable.swift in Sources */,
 				CB62630421AAB06500AA1757 /* DayTime.swift in Sources */,
+				CB833B3F21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift in Sources */,
+				CB833B2F21CAABF200DEAE52 /* NotificationSettingsWorker.swift in Sources */,
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
 				CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */,
 				CBD7931621BB9B0C002F958E /* User.swift in Sources */,
@@ -1575,6 +1653,7 @@
 				CB50D20F21B33E67007B5BD4 /* PointsRouter.swift in Sources */,
 				CB07D243218453B70072EB07 /* Configurable.swift in Sources */,
 				CB14059E218C38DB0068D880 /* Log.swift in Sources */,
+				CB833B3021CAABF200DEAE52 /* NotificationSettingsRouter.swift in Sources */,
 				CB2DE5DF219228C500CA9424 /* UIAlertController + Extension.swift in Sources */,
 				CBEFF904218B815D00B63286 /* EndPointType.swift in Sources */,
 				CBF340C321C916EE0053AE32 /* Event.swift in Sources */,
@@ -1585,6 +1664,7 @@
 				CBE2FF1F21A7C981005DC733 /* ListCourses.swift in Sources */,
 				CB56FD8C21B839CF00C7196E /* SettingsModels.swift in Sources */,
 				CBF340CB21C919A60053AE32 /* DefaultCourseManager.swift in Sources */,
+				CB833B3321CAABF200DEAE52 /* NotificationSettingsInteractor.swift in Sources */,
 				CB14059B218C365D0068D880 /* UIColor + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
