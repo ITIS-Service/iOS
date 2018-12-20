@@ -163,6 +163,8 @@
 		CBED2D3C21CB84DE0012C472 /* DefaultUserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D3B21CB84DE0012C472 /* DefaultUserSettingsManager.swift */; };
 		CBED2D3E21CB85F00012C472 /* UserSettingsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D3D21CB85F00012C472 /* UserSettingsTranslator.swift */; };
 		CBED2D4021CB86230012C472 /* CoreDataUserSettingsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D3F21CB86230012C472 /* CoreDataUserSettingsTranslator.swift */; };
+		CBED2D4521CBA13C0012C472 /* ProfileEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D4421CBA13C0012C472 /* ProfileEndPoint.swift */; };
+		CBED2D4721CBA2DB0012C472 /* ProfileNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D4621CBA2DB0012C472 /* ProfileNetworkManager.swift */; };
 		CBED732521ADC82500FE30BF /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED732421ADC82500FE30BF /* TransparentNavigationController.swift */; };
 		CBED732821ADC87A00FE30BF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED732721ADC87A00FE30BF /* Colors.swift */; };
 		CBED732A21ADC96100FE30BF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED732921ADC96100FE30BF /* Fonts.swift */; };
@@ -376,6 +378,8 @@
 		CBED2D3B21CB84DE0012C472 /* DefaultUserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserSettingsManager.swift; sourceTree = "<group>"; };
 		CBED2D3D21CB85F00012C472 /* UserSettingsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTranslator.swift; sourceTree = "<group>"; };
 		CBED2D3F21CB86230012C472 /* CoreDataUserSettingsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUserSettingsTranslator.swift; sourceTree = "<group>"; };
+		CBED2D4421CBA13C0012C472 /* ProfileEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEndPoint.swift; sourceTree = "<group>"; };
+		CBED2D4621CBA2DB0012C472 /* ProfileNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkManager.swift; sourceTree = "<group>"; };
 		CBED732421ADC82500FE30BF /* TransparentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
 		CBED732721ADC87A00FE30BF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CBED732921ADC96100FE30BF /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -1225,6 +1229,7 @@
 			children = (
 				CBEFF913218B8C6400B63286 /* UserEndPoint.swift */,
 				CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */,
+				CBED2D4421CBA13C0012C472 /* ProfileEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -1234,6 +1239,7 @@
 			children = (
 				CBEFF915218B8D2900B63286 /* NetworkManager.swift */,
 				CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */,
+				CBED2D4621CBA2DB0012C472 /* ProfileNetworkManager.swift */,
 				CBEFF919218B935300B63286 /* UserNetworkManager.swift */,
 			);
 			path = Manager;
@@ -1578,6 +1584,7 @@
 				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,
 				CB07D22321843F300072EB07 /* CoursesViewController.swift in Sources */,
 				CB5BFFFD21B3D0A300A20944 /* DefaultTableViewSection.swift in Sources */,
+				CBED2D4721CBA2DB0012C472 /* ProfileNetworkManager.swift in Sources */,
 				CB56FD8E21B839CF00C7196E /* SettingsInteractor.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
@@ -1595,6 +1602,7 @@
 				CB833B3F21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift in Sources */,
 				CB833B2F21CAABF200DEAE52 /* NotificationSettingsWorker.swift in Sources */,
 				CB07D2332184453E0072EB07 /* Teacher.swift in Sources */,
+				CBED2D4521CBA13C0012C472 /* ProfileEndPoint.swift in Sources */,
 				CBD845B921B8F47B0029FE12 /* SettingTableViewCell.swift in Sources */,
 				CBD7931621BB9B0C002F958E /* User.swift in Sources */,
 				CB07D2682184DD820072EB07 /* QuestionViewController.swift in Sources */,

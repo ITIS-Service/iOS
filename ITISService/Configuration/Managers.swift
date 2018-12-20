@@ -15,6 +15,7 @@ enum Managers {
     static let userManager: UserManager = DefaultUserManager<DefaultUser>()
     static let courseDetailsManager: CourseDetailsManager = DefaultCourseDetailsManager()
     static let pointsManager: PointsManager = DefaultPointsManager()
+    static let userSettingsManager: UserSettingsManager = DefaultUserSettingsManager<DefaultUserSettings>()
     
     static let bannerManager: BannerManager = DefaultBannerManager()
     static let notificationManager: NotificationManager = DefaultNotificationManager(notificationPresenterManager: Managers.notificationPresenterManager)

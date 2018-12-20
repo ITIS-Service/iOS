@@ -23,7 +23,7 @@ extension DeviceApi: EndPointType {
     // MARK: - Instance Properties
     
     var environmentBaseURL: String {
-        return NetworkManager.environment.rawValue + "/users"
+        return NetworkManager.environment.rawValue + "/users/device"
     }
     
     var baseURL: URL {
@@ -34,9 +34,9 @@ extension DeviceApi: EndPointType {
     var path: String {
         switch self {
         case .register:
-            return "device/register"
+            return "register"
         case .unregister:
-            return "device/unregister"
+            return "unregister"
         }
     }
     

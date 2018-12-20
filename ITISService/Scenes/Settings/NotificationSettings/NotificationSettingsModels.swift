@@ -31,6 +31,7 @@ enum NotificationSettings {
         struct Model: TableViewCompatible {
             
             let title: String
+            let isOn: Bool
             
             var onSwitchValueChanged: ((Bool) -> Void)?
             

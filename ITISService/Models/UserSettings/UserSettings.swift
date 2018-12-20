@@ -11,7 +11,7 @@ import Foundation
 struct UserSettings: Codable {
     
     let id: Int
-    let courseStatusNotificationEnabled: Bool
-    let pointsNotificationEnabled: Bool
+    var courseStatusNotificationEnabled: Bool
+    var pointsNotificationEnabled: Bool
     
 }

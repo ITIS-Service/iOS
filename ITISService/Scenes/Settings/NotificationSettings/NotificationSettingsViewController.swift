@@ -59,6 +59,7 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.profileNetworkManager = NetworkManagers.profileNetworkManager
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor

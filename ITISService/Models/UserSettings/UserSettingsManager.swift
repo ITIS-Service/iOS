@@ -12,4 +12,6 @@ protocol UserSettingsManager {
     
     // MARK: - Instance Methods
     
+    func save(_ userSettings: UserSettings)
+    func deleteAll()
 }

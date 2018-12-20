@@ -21,4 +21,10 @@ enum NetworkManagers {
         return deviceNetworkManager
     }()
     
+    static var profileNetworkManager: ProfileNetworkManager = {
+       let profileNetworkManager = ProfileNetworkManagerImpl()
+        profileNetworkManager.userSettingsManager = Managers.userSettingsManager
+        return profileNetworkManager
+    }()
+    
 }

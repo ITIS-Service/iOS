@@ -32,6 +32,7 @@ class NotificationSettingTableViewCell: UITableViewCell, Configurable {
     func configure(with model: NotificationSettings.TableView.Model) {
         self.model = model
         self.titleLabel.text = model.title
+        self.settingSwitch.isOn = model.isOn
     }
     
 }
