@@ -13,9 +13,17 @@
         <attribute name="passedQuiz" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultGroup" inverseName="users" inverseEntity="DefaultGroup" syncable="YES"/>
+        <relationship name="userSettings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultUserSettings" inverseName="user" inverseEntity="DefaultUserSettings" syncable="YES"/>
+    </entity>
+    <entity name="DefaultUserSettings" representedClassName="DefaultUserSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="courseStatusNotificationEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pointsNotificationEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultUser" inverseName="userSettings" inverseEntity="DefaultUser" syncable="YES"/>
     </entity>
     <elements>
         <element name="DefaultGroup" positionX="-54" positionY="18" width="128" height="105"/>
-        <element name="DefaultUser" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="DefaultUser" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="DefaultUserSettings" positionX="-54" positionY="36" width="128" height="105"/>
     </elements>
 </model>

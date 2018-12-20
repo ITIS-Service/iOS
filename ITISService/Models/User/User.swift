@@ -16,13 +16,6 @@ struct User: Codable {
     let email: String?
     let group: Group?
     let passedQuiz: Bool
+    let userSettings: UserSettings?
     
-    init(id: Int, firstName: String?, lastName: String?, email: String?, group: Group?, passedQuiz: Bool) {
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
-        self.group = group
-        self.passedQuiz = passedQuiz
-    }
 }

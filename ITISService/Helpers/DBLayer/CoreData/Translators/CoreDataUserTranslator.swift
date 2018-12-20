@@ -16,6 +16,7 @@ struct CoreDataUserTranslator: UserTranslator {
     
     let storageContext: StorageContext
     let groupTranslator: CoreDataGroupTranslator
+    let userSettingsTranslator: CoreDataUserSettingsTranslator
     
     // MARK: - Instance Methods
     
@@ -35,6 +36,10 @@ struct CoreDataUserTranslator: UserTranslator {
             storedObject.group = self.groupTranslator.translate(group: group)
         }
         
+        if let userSettings = user.userSettings {
+            storedObject.userSettings = self.userSettingsTranslator.translate(userSettings: userSettings)
+        }
+        
         return storedObject
     }
     
@@ -44,11 +49,16 @@ struct CoreDataUserTranslator: UserTranslator {
         }
         
         var group: Group?
+        var userSettings: UserSettings?
         
         if let storedGroup = storedObject.group {
             group = self.groupTranslator.translate(storedObject: storedGroup)
         }
         
-        return User(id: id, firstName: storedObject.firstName, lastName: storedObject.lastName, email: storedObject.email, group: group, passedQuiz: storedObject.passedQuiz)
+        if let storedUserSettings = storedObject.userSettings {
+            userSettings = self.userSettingsTranslator.translate(storedObject: storedUserSettings)
+        }
+        
+        return User(id: id, firstName: storedObject.firstName, lastName: storedObject.lastName, email: storedObject.email, group: group, passedQuiz: storedObject.passedQuiz, userSettings: userSettings)
     }
 }

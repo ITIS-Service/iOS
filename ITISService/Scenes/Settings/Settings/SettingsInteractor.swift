@@ -112,6 +112,13 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
     }
     
     func exitProfile() {
+        defer {
+            Managers.userManager.deleteAll()
+            KeychainManager.shared.clear()
+            
+            self.presenter.showLoginScreen()
+        }
+        
         guard let token = KeychainManager.shared.deviceToken else {
             return
         }
@@ -121,13 +128,6 @@ class SettingsInteractor: SettingsBusinessLogic, SettingsDataStore {
         }) { (error) in
             Log.e("Unable to delete device from server")
             Log.e("Message: \(error.message)")
-        }
-        
-        defer {
-            Managers.userManager.deleteAll()
-            KeychainManager.shared.clear()
-            
-            self.presenter.showLoginScreen()
         }
     }
     

@@ -10,8 +10,11 @@ import Foundation
 
 enum Translators {
     
-    static let userTranslator = CoreDataUserTranslator(storageContext: Services.storageContext, groupTranslator: Translators.groupTranslator)
+    static let userTranslator = CoreDataUserTranslator(storageContext: Services.storageContext,
+                                                       groupTranslator: Translators.groupTranslator,
+                                                       userSettingsTranslator: Translators.userSettingsTranslator)
     
     static let groupTranslator = CoreDataGroupTranslator(storageContext: Services.storageContext)
+    static let userSettingsTranslator = CoreDataUserSettingsTranslator(storageContext: Services.storageContext)
     
 }
