@@ -23,11 +23,13 @@ class MainTabBarController: UITabBarController {
     // MARK: - Instance Properties
     
     fileprivate var notificationReceiveObserver: AnyObject?
+    fileprivate var registeredNotificationsObserver: AnyObject?
     
     // MARK: - Initializers
     
     deinit {
         self.unsubscribeFromNotificationsReceive()
+        self.unsubscribeFromregisteredNotifications()
     }
     
     // MARK: - Instance Methods
@@ -37,6 +39,30 @@ class MainTabBarController: UITabBarController {
     }
     
     // MARK: -
+    
+    fileprivate func subscribeToRegisteredNotifications() {
+        self.registeredNotificationsObserver = NotificationCenter.default.addObserver(forName: .deviceDidRegisteredNotifications, object: nil, queue: OperationQueue.main, using: { (notification) in
+            guard let token = notification.userInfo?[Keys.deviceToken] as? String else {
+                return
+            }
+            
+            let model = UIDevice.modelName
+            let systemVersion = UIDevice.current.systemVersion
+            
+            NetworkManagers.deviceNetworkManager.register(name: model, os: "iOS \(systemVersion)", token: token, success: { (response) in
+                Log.i("Device registered on server successfully")
+            }, failure: { (error) in
+                Log.e("Unable to register device on server. Message: \(error.message)")
+            })
+        })
+    }
+    
+    fileprivate func unsubscribeFromregisteredNotifications() {
+        if let registeredNotificationsObserver = self.registeredNotificationsObserver {
+            NotificationCenter.default.removeObserver(registeredNotificationsObserver)
+            self.registeredNotificationsObserver = nil
+        }
+    }
     
     fileprivate func subscribeToNotificationsReceive() {
         self.notificationReceiveObserver = NotificationCenter.default.addObserver(forName: .notificationDidReceived, object: nil, queue: OperationQueue.main, using: { (notification) in
@@ -65,17 +91,18 @@ class MainTabBarController: UITabBarController {
     
     // MARK - UIViewController
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.subscribeToNotificationsReceive()
+        self.subscribeToRegisteredNotifications()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if Managers.userManager.first() == nil {
             NotificationCenter.default.post(name: .userUnauthorized, object: self)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.subscribeToNotificationsReceive()
     }
 }

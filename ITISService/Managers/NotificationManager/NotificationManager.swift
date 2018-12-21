@@ -10,6 +10,8 @@ import Foundation
 
 protocol NotificationManager {
     
+    // MARK: - Instance Methods
     
+    func registerNotifications()
     
 }

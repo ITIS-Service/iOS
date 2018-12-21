@@ -19,4 +19,6 @@ extension NSNotification.Name {
     
     public static let notificationDidReceived = NSNotification.Name("notificationDidReceived")
     public static let courseStatusDidChanged = Notification.Name("courseStatusDidChanged")
+    
+    public static let deviceDidRegisteredNotifications = Notification.Name("deviceDidRegisteredNotifications")
 }

@@ -11,5 +11,6 @@ import Foundation
 enum Keys {
     
     static let notificationCategory = "category"
+    static let deviceToken = "deviceToken"
     
 }

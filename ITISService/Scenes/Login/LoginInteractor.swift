@@ -31,25 +31,6 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
     
     // MARK: - Instance Methods
     
-    fileprivate func registerDevice() {
-        guard let token = KeychainManager.shared.deviceToken else {
-            Log.w("Device token not found")
-            return
-        }
-        
-        let model = UIDevice.modelName
-        let systemVersion = UIDevice.current.systemVersion
-        
-        self.deviceNetworkManager.register(name: model, os: "iOS \(systemVersion)", token: token, success: { (response) in
-            Log.i("Device registered on server successfully")
-        }) { (error) in
-            Log.e("Unable to register device on server")
-            Log.e("Message: \(error.message)")
-        }
-    }
-    
-    // MARK: -
-    
     func signIn(with request: Login.SignIn.Request) {
         guard Validator.validate(studEmail: request.email) else {
             let response = Login.SignIn.Response(success: false, message: Common.Messages.invalidEmail, shouldShowQuiz: false)
@@ -69,7 +50,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore {
             strongSelf.presenter.signIn(response: Login.SignIn.Response(success: true, message: nil, shouldShowQuiz: !user.passedQuiz))
             
             NotificationCenter.default.post(name: .userDidSignIn, object: self)
-            strongSelf.registerDevice()
+            Managers.notificationManager.registerNotifications()
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
             self?.presenter.signIn(response: Login.SignIn.Response(success: false, message: error.message, shouldShowQuiz: false))

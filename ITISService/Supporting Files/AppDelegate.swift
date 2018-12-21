@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let _ = Managers.notificationManager
         
-        self.registerNotifications()
-        
         return true
     }
 
@@ -59,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = tokenParts.joined()
         
         KeychainManager.shared.deviceToken = token
+        
+        NotificationCenter.default.post(name: .deviceDidRegisteredNotifications, object: self, userInfo: [Keys.deviceToken: token])
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
