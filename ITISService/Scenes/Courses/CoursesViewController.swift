@@ -115,6 +115,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
             self.interactor.selectCourse(at: indexPath, numberOfSections: self.tableView.numberOfSections)
             self.performSegue(withIdentifier: Segues.courseDetails, sender: nil)
         }
+        
+        self.interactor.setupInitialState()
+        self.interactor.fetchCourses()
     }
     
     // MARK: - UIViewController
@@ -123,7 +126,6 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         super.viewDidLoad()
         
         self.configureDesign()
-        self.interactor.fetchCourses()
     }
     
     // MARK: - CoursesDisplayLogic Methods

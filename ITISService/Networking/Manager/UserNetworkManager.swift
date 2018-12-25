@@ -20,7 +20,7 @@ protocol UserNetworkManager {
     
     func sendAnswers(with answers: [String: Int], success: @escaping (Response) -> Void, failure: @escaping (ExceptionResponse) -> Void)
     
-    func fetchCourses(success: @escaping (ListCourses) -> (), failure: @escaping (ExceptionResponse) -> ())
+    func fetchCourses(success: @escaping (CourseList) -> (), failure: @escaping (ExceptionResponse) -> ())
     
     func fetchCourseDetails(courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ())
     
@@ -42,6 +42,7 @@ class UserNetworkManagerImpl: UserNetworkManager {
     // MARK: -
     
     var userManager: UserManager!
+    var courseListManager: CourseListManager!
     
     // MARK: - Instance Methods
     
@@ -108,10 +109,11 @@ class UserNetworkManagerImpl: UserNetworkManager {
         }
     }
     
-    func fetchCourses(success: @escaping (ListCourses) -> (), failure: @escaping (ExceptionResponse) -> ()) {
-        router.request(.courses, success: { (data, _) in
-            if let listCourses = try? JSONDecoder().decode(ListCourses.self, from: data) {
+    func fetchCourses(success: @escaping (CourseList) -> (), failure: @escaping (ExceptionResponse) -> ()) {
+        router.request(.courses, success: { [weak self] (data, _) in
+            if let listCourses = try? JSONDecoder().decode(CourseList.self, from: data) {
                 success(listCourses)
+                self?.courseListManager.save(listCourses)
             } else {
                 failure(ExceptionResponse.parseException())
             }

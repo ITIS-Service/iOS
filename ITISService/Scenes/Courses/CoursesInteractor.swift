@@ -15,10 +15,11 @@ import UIKit
 protocol CoursesBusinessLogic {
     func fetchCourses()
     func selectCourse(at indexPath: IndexPath, numberOfSections: Int)
+    func setupInitialState()
 }
 
 protocol CoursesDataStore {
-    var listCourses: ListCourses? { get }
+    var listCourses: CourseList? { get }
     var selectedCourse: Course? { get }
     
     func updateListCourses()
@@ -52,7 +53,7 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     var worker: CoursesWorker!
     var userNetworkManager: UserNetworkManager!
     
-    var listCourses: ListCourses?
+    var listCourses: CourseList?
     var selectedCourse: Course?
     
     // MARK: - Initializers
@@ -161,6 +162,13 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
     
     // MARK: -
     
+    func setupInitialState() {
+        if let courseList = Managers.courseListManager.fetch() {
+            self.listCourses = courseList
+            self.presenter.displayCourses(response: Courses.List.Response(listCourses: courseList))
+        }
+    }
+    
     func updateListCourses() {
         self.fetchCourses()
     }
@@ -170,7 +178,10 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
             return
         }
         
-        self.presenter.showActivityIndicator(true)
+        if self.listCourses == nil {
+            self.presenter.showActivityIndicator(true)
+        }
+        
         self.userNetworkManager.fetchCourses(success: { [weak self] (listCourses) in
             guard let strongSelf = self else {
                 return

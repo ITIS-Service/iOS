@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ListCourses: Codable {
+struct CourseList: Codable {
     
     let userCourses: [Course]
     let suggestedCourses: [Course]

@@ -13,6 +13,7 @@ enum NetworkManagers {
     static var userNetworkManager: UserNetworkManager = {
         let networkManager = UserNetworkManagerImpl()
         networkManager.userManager = Managers.userManager
+        networkManager.courseListManager = Managers.courseListManager
         return networkManager
     }()
     

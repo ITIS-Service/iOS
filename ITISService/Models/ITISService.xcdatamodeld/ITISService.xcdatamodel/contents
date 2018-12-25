@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DefaultCourse" representedClassName="DefaultCourse" syncable="YES" codeGenerationType="class">
+        <attribute name="courseDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="allCourseList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultCourseList" inverseName="allCourses" inverseEntity="DefaultCourseList" syncable="YES"/>
+        <relationship name="suggestedCourseList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultCourseList" inverseName="suggestedCourses" inverseEntity="DefaultCourseList" syncable="YES"/>
+        <relationship name="userCourseList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultCourseList" inverseName="userCourses" inverseEntity="DefaultCourseList" syncable="YES"/>
+    </entity>
+    <entity name="DefaultCourseList" representedClassName="DefaultCourseList" syncable="YES" codeGenerationType="class">
+        <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="allCourses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultCourse" inverseName="allCourseList" inverseEntity="DefaultCourse" syncable="YES"/>
+        <relationship name="suggestedCourses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultCourse" inverseName="suggestedCourseList" inverseEntity="DefaultCourse" syncable="YES"/>
+        <relationship name="userCourses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultCourse" inverseName="userCourseList" inverseEntity="DefaultCourse" syncable="YES"/>
+    </entity>
     <entity name="DefaultGroup" representedClassName="DefaultGroup" syncable="YES" codeGenerationType="class">
         <attribute name="course" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,8 +36,10 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultUser" inverseName="userSettings" inverseEntity="DefaultUser" syncable="YES"/>
     </entity>
     <elements>
+        <element name="DefaultCourse" positionX="-54" positionY="45" width="128" height="135"/>
         <element name="DefaultGroup" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="DefaultUser" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="DefaultUserSettings" positionX="-54" positionY="36" width="128" height="105"/>
+        <element name="DefaultCourseList" positionX="-54" positionY="45" width="128" height="105"/>
     </elements>
 </model>

@@ -21,7 +21,7 @@ enum Courses {
             
         }
         struct Response {
-            let listCourses: ListCourses
+            let listCourses: CourseList
         }
         struct ViewModel {
             
