@@ -32,6 +32,7 @@ enum Day: Int, Codable {
 
 struct DayTime: Codable {
     
+    let id: Int
     let day: Day
     let times: [String]
     

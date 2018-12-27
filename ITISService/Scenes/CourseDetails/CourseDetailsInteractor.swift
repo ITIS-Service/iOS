@@ -81,15 +81,25 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     // MARK: -
 
     func setupInitialState() {
-        if let course = self.course {
+        guard let courseID = self.course?.id ?? self.courseID else {
+            return
+        }
+        
+        if let courseDetails = Managers.courseDetailsManager.fetch(withCourseID: courseID) {
+            self.courseDetails = courseDetails
+            self.presenter.displayCourseDetails(with: CourseDetailsModels.Fetch.Response(courseDetails: courseDetails))
+        } else if let course = self.course {
             self.presenter.displayInitialState(with: CourseDetailsModels.InitialSate.Response(course: course))
         }
-        self.presenter.showActivityIndicator(true)
     }
     
     func fetchCourseDetails() {
         guard let courseID = self.course?.id ?? self.courseID else {
             return
+        }
+        
+        if self.courseDetails == nil {
+            self.presenter.showActivityIndicator(true)
         }
         
         self.userNetworkManager.fetchCourseDetails(courseID: courseID, success: { [weak self] (courseDetails) in
@@ -135,7 +145,7 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     }
     
     func courseName() -> String {
-        return self.courseDetails?.name ?? ""
+        return self.courseDetails?.course.name ?? ""
     }
 
 }

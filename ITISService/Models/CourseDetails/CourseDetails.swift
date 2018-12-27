@@ -11,8 +11,7 @@ import Foundation
 struct CourseDetails: Codable {
     
     let id: Int
-    let name: String
-    let description: String
+    let course: Course
     let courseNumber: Int
     let dayTimes: [DayTime]
     let place: String

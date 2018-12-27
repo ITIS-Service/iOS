@@ -73,6 +73,12 @@
 		CB3B405221D2362300D603D6 /* DefaultCourseListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B405121D2362300D603D6 /* DefaultCourseListManager.swift */; };
 		CB3B405421D2366700D603D6 /* CourseListTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B405321D2366700D603D6 /* CourseListTranslator.swift */; };
 		CB3B405621D2369700D603D6 /* CoreDataCourseListTranlsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B405521D2369700D603D6 /* CoreDataCourseListTranlsator.swift */; };
+		CB42FD5021D372E500E9FC5D /* CourseDetailsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42FD4F21D372E500E9FC5D /* CourseDetailsTranslator.swift */; };
+		CB42FD5221D3734D00E9FC5D /* CoreDataCourseDetailsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42FD5121D3734D00E9FC5D /* CoreDataCourseDetailsTranslator.swift */; };
+		CB42FD5421D3749100E9FC5D /* DayTimeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42FD5321D3749100E9FC5D /* DayTimeTranslator.swift */; };
+		CB42FD5621D374C000E9FC5D /* CoreDataDayTimeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42FD5521D374C000E9FC5D /* CoreDataDayTimeTranslator.swift */; };
+		CB42FD5821D3773E00E9FC5D /* TeacherTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42FD5721D3773E00E9FC5D /* TeacherTranslator.swift */; };
+		CB42FD5A21D3778200E9FC5D /* CoreDataTeacherTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42FD5921D3778200E9FC5D /* CoreDataTeacherTranslator.swift */; };
 		CB49FDB6217DFBFA00BF35C6 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */; };
 		CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDBA217E008A00BF35C6 /* Constants.swift */; };
 		CB49FDD8217E62DB00BF35C6 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49FDD7217E62DB00BF35C6 /* Validator.swift */; };
@@ -291,6 +297,12 @@
 		CB3B405121D2362300D603D6 /* DefaultCourseListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCourseListManager.swift; sourceTree = "<group>"; };
 		CB3B405321D2366700D603D6 /* CourseListTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListTranslator.swift; sourceTree = "<group>"; };
 		CB3B405521D2369700D603D6 /* CoreDataCourseListTranlsator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCourseListTranlsator.swift; sourceTree = "<group>"; };
+		CB42FD4F21D372E500E9FC5D /* CourseDetailsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsTranslator.swift; sourceTree = "<group>"; };
+		CB42FD5121D3734D00E9FC5D /* CoreDataCourseDetailsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCourseDetailsTranslator.swift; sourceTree = "<group>"; };
+		CB42FD5321D3749100E9FC5D /* DayTimeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimeTranslator.swift; sourceTree = "<group>"; };
+		CB42FD5521D374C000E9FC5D /* CoreDataDayTimeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDayTimeTranslator.swift; sourceTree = "<group>"; };
+		CB42FD5721D3773E00E9FC5D /* TeacherTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherTranslator.swift; sourceTree = "<group>"; };
+		CB42FD5921D3778200E9FC5D /* CoreDataTeacherTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTeacherTranslator.swift; sourceTree = "<group>"; };
 		CB49FDB5217DFBFA00BF35C6 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
 		CB49FDBA217E008A00BF35C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB49FDD7217E62DB00BF35C6 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -1131,8 +1143,11 @@
 			isa = PBXGroup;
 			children = (
 				CBE3A04321D10A4E0092722A /* CourseTranslator.swift */,
+				CB42FD4F21D372E500E9FC5D /* CourseDetailsTranslator.swift */,
 				CB3B405321D2366700D603D6 /* CourseListTranslator.swift */,
+				CB42FD5321D3749100E9FC5D /* DayTimeTranslator.swift */,
 				CBD7932221BBA154002F958E /* GroupTranslator.swift */,
+				CB42FD5721D3773E00E9FC5D /* TeacherTranslator.swift */,
 				CBD7932021BBA0C8002F958E /* UserTranslator.swift */,
 				CBED2D3D21CB85F00012C472 /* UserSettingsTranslator.swift */,
 			);
@@ -1143,8 +1158,11 @@
 			isa = PBXGroup;
 			children = (
 				CBE3A04521D10AC60092722A /* CoreDataCourseTranslator.swift */,
+				CB42FD5121D3734D00E9FC5D /* CoreDataCourseDetailsTranslator.swift */,
 				CB3B405521D2369700D603D6 /* CoreDataCourseListTranlsator.swift */,
+				CB42FD5521D374C000E9FC5D /* CoreDataDayTimeTranslator.swift */,
 				CBD7932721BBA3E9002F958E /* CoreDataGroupTranslator.swift */,
+				CB42FD5921D3778200E9FC5D /* CoreDataTeacherTranslator.swift */,
 				CBD7932521BBA189002F958E /* CoreDataUserTranslator.swift */,
 				CBED2D3F21CB86230012C472 /* CoreDataUserSettingsTranslator.swift */,
 			);
@@ -1582,6 +1600,7 @@
 				CB50D20D21B33E67007B5BD4 /* PointsPresenter.swift in Sources */,
 				CBD7932621BBA189002F958E /* CoreDataUserTranslator.swift in Sources */,
 				CB56A6A821BA62DE00EE923E /* CoreDataObject.swift in Sources */,
+				CB42FD5A21D3778200E9FC5D /* CoreDataTeacherTranslator.swift in Sources */,
 				CB2DF0E921BEC2D0002B16A3 /* AccountSettingsPresenter.swift in Sources */,
 				CB5BFFF621B3C75200A20944 /* UserPoints.swift in Sources */,
 				CBEFF90C218B850300B63286 /* URLParameterEncoder.swift in Sources */,
@@ -1599,6 +1618,7 @@
 				CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */,
 				CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */,
 				CBD7932A21BBAE83002F958E /* Managers.swift in Sources */,
+				CB42FD5821D3773E00E9FC5D /* TeacherTranslator.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
 				CBF340CF21C936BB0053AE32 /* UIApplication + Extension.swift in Sources */,
 				CBF340D221C93D110053AE32 /* DefaultNotificationPresenterManager.swift in Sources */,
@@ -1620,6 +1640,7 @@
 				CBEFF91A218B935300B63286 /* UserNetworkManager.swift in Sources */,
 				CBEFF908218B827600B63286 /* HTTPTask.swift in Sources */,
 				CBDC5C9921AA8DD200185142 /* CourseDetailsModels.swift in Sources */,
+				CB42FD5021D372E500E9FC5D /* CourseDetailsTranslator.swift in Sources */,
 				CBEFF90E218B868D00B63286 /* JSONParameterEncoder.swift in Sources */,
 				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
 				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,
@@ -1629,6 +1650,7 @@
 				CB56FD8E21B839CF00C7196E /* SettingsInteractor.swift in Sources */,
 				CB5F41392179A00C0058293F /* AppDelegate.swift in Sources */,
 				CB3B405621D2369700D603D6 /* CoreDataCourseListTranlsator.swift in Sources */,
+				CB42FD5421D3749100E9FC5D /* DayTimeTranslator.swift in Sources */,
 				CB5F41572179A53B0058293F /* LoginInteractor.swift in Sources */,
 				CBEFF910218B874700B63286 /* NetworkRouter.swift in Sources */,
 				CB19D450217DC44900B4586F /* RegistrationViewController.swift in Sources */,
@@ -1674,6 +1696,7 @@
 				CB56FD8D21B839CF00C7196E /* SettingsViewController.swift in Sources */,
 				CBED2D3C21CB84DE0012C472 /* DefaultUserSettingsManager.swift in Sources */,
 				CB07D21F21843F300072EB07 /* CoursesPresenter.swift in Sources */,
+				CB42FD5221D3734D00E9FC5D /* CoreDataCourseDetailsTranslator.swift in Sources */,
 				CBDC5C9A21AA8DD200185142 /* CourseDetailsViewController.swift in Sources */,
 				CB07D2642184DD820072EB07 /* QuestionPresenter.swift in Sources */,
 				CB31B1412196C11800BB4E0A /* NetworkManagers.swift in Sources */,
@@ -1689,6 +1712,7 @@
 				CB39DC362185C70400DA04D0 /* AnswerTableViewCell.swift in Sources */,
 				CB07D22021843F300072EB07 /* CoursesWorker.swift in Sources */,
 				CB0ACA5B21A93FA700C3D202 /* ErrorMessagePresentationLogic.swift in Sources */,
+				CB42FD5621D374C000E9FC5D /* CoreDataDayTimeTranslator.swift in Sources */,
 				CBD7931921BB9C08002F958E /* Group.swift in Sources */,
 				CB19D44D217DC44900B4586F /* RegistrationWorker.swift in Sources */,
 				CB30D59D21AFE71000FDA02B /* UIViewController + Extension.swift in Sources */,

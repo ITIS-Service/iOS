@@ -43,6 +43,7 @@ class UserNetworkManagerImpl: UserNetworkManager {
     
     var userManager: UserManager!
     var courseListManager: CourseListManager!
+    var courseDetailsManager: CourseDetailsManager!
     
     // MARK: - Instance Methods
     
@@ -123,9 +124,10 @@ class UserNetworkManagerImpl: UserNetworkManager {
     }
     
     func fetchCourseDetails(courseID: Int, success: @escaping (CourseDetails) -> (), failure: @escaping (ExceptionResponse) -> ())  {
-        router.request(.courseDetails(courseID: courseID), success: { (data, _) in
+        router.request(.courseDetails(courseID: courseID), success: { [weak self] (data, _) in
             if let courseDetails = try? JSONDecoder().decode(CourseDetails.self, from: data) {
                 success(courseDetails)
+                self?.courseDetailsManager.save(courseDetails)
             } else {
                 failure(ExceptionResponse.parseException())
             }

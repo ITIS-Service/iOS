@@ -30,4 +30,5 @@ protocol StorageContext {
     
     func fetch<T: Storable>(_ model: T.Type, predicate: NSPredicate?, sorted: Sorted?) -> [T]
     func firstOrNew<T: Storable>(_ model: T.Type, id: Int) throws -> T
+    func first<T: Storable>(_ model: T.Type, id: Int) throws -> T?
 }

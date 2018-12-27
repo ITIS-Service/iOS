@@ -10,7 +10,14 @@ import Foundation
 
 protocol CourseDetailsManager {
     
+    // MARK: - Instance Properties
+    
     var didStatusChangeEvent: Event<Int> { get }
     var didUpdateEvent: Event<Int> { get }
+    
+    // MARK: - Instance Methods
+    
+    func save(_ courseDetails: CourseDetails)
+    func fetch(withCourseID id: Int) -> CourseDetails?
     
 }

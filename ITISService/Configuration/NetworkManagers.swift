@@ -14,6 +14,7 @@ enum NetworkManagers {
         let networkManager = UserNetworkManagerImpl()
         networkManager.userManager = Managers.userManager
         networkManager.courseListManager = Managers.courseListManager
+        networkManager.courseDetailsManager = Managers.courseDetailsManager
         return networkManager
     }()
     

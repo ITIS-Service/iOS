@@ -101,7 +101,7 @@ class CourseDetailsPresenter: CourseDetailsPresentationLogic {
             courseStatus: courseDetails.userCourseStatus?.description
         )
         
-        let initialViewModel = CourseDetailsModels.InitialSate.ViewModel(name: courseDetails.name, description: courseDetails.description)
+        let initialViewModel = CourseDetailsModels.InitialSate.ViewModel(name: courseDetails.course.name, description: courseDetails.course.description)
         
         self.viewController.configureInitialState(with: initialViewModel)
         self.viewController.showCourseDetails(with: viewModel)

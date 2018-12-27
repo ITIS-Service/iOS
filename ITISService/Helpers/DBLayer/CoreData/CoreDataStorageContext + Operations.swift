@@ -87,12 +87,20 @@ extension CoreDataStorageContext {
     }
     
     func firstOrNew<T: Storable>(_ model: T.Type, id: Int) throws -> T {
+        if let object = try self.first(model, id: id) {
+            return object
+        } else {
+            return try self.create(model)
+        }
+    }
+    
+    func first<T: Storable>(_ model: T.Type, id: Int) throws -> T? {
         let predicate = self.createPredicate(withUID: Int64(id))
         
         if let object = self.fetch(model, predicate: predicate, sorted: self.sortDescriptor).first {
             return object
         } else {
-            return try self.create(model)
+            return nil
         }
     }
 }
