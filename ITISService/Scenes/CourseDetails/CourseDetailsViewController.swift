@@ -24,10 +24,13 @@ protocol CourseDetailsDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
 
 class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, CourseDetailsDataStoreHolder {
     
-    // MARK: - Constants
+    // MARK: - Nested Types
     
-    fileprivate struct Constants {
+    fileprivate enum Segues {
         
+        // MARK: - Type Properties
+        
+        static let showUserPoints = "UserPoints"
     }
     
     // MARK: - Instance Properties
@@ -81,11 +84,12 @@ class CourseDetailsViewController: UIViewController, CourseDetailsDisplayLogic, 
     // MARK: - Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
+        switch segue.identifier {
+        case Segues.showUserPoints:
+            self.router.routeToUserPoints(segue: segue)
+            
+        default:
+            break
         }
     }
     

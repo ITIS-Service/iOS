@@ -133,6 +133,8 @@
 		CB833B3B21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */; };
 		CB833B3F21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */; };
 		CB833B4021CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */; };
+		CBA9339C21D5294800EF7F94 /* PointTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9339B21D5294800EF7F94 /* PointTranslator.swift */; };
+		CBA9339E21D5297800EF7F94 /* CoreDataPointTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9339D21D5297800EF7F94 /* CoreDataPointTranslator.swift */; };
 		CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */; };
 		CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */; };
 		CBC2220321C38178008E7586 /* UIDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2220221C38178008E7586 /* UIDevice + Extension.swift */; };
@@ -359,6 +361,8 @@
 		CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsDatasource.swift; sourceTree = "<group>"; };
 		CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewCell.swift; sourceTree = "<group>"; };
 		CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingTableViewCell.xib; sourceTree = "<group>"; };
+		CBA9339B21D5294800EF7F94 /* PointTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTranslator.swift; sourceTree = "<group>"; };
+		CBA9339D21D5297800EF7F94 /* CoreDataPointTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPointTranslator.swift; sourceTree = "<group>"; };
 		CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceEndPoint.swift; sourceTree = "<group>"; };
 		CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNetworkManager.swift; sourceTree = "<group>"; };
 		CBC2220121C376FD008E7586 /* ITISService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ITISService.entitlements; sourceTree = "<group>"; };
@@ -1147,6 +1151,7 @@
 				CB3B405321D2366700D603D6 /* CourseListTranslator.swift */,
 				CB42FD5321D3749100E9FC5D /* DayTimeTranslator.swift */,
 				CBD7932221BBA154002F958E /* GroupTranslator.swift */,
+				CBA9339B21D5294800EF7F94 /* PointTranslator.swift */,
 				CB42FD5721D3773E00E9FC5D /* TeacherTranslator.swift */,
 				CBD7932021BBA0C8002F958E /* UserTranslator.swift */,
 				CBED2D3D21CB85F00012C472 /* UserSettingsTranslator.swift */,
@@ -1162,6 +1167,7 @@
 				CB3B405521D2369700D603D6 /* CoreDataCourseListTranlsator.swift */,
 				CB42FD5521D374C000E9FC5D /* CoreDataDayTimeTranslator.swift */,
 				CBD7932721BBA3E9002F958E /* CoreDataGroupTranslator.swift */,
+				CBA9339D21D5297800EF7F94 /* CoreDataPointTranslator.swift */,
 				CB42FD5921D3778200E9FC5D /* CoreDataTeacherTranslator.swift */,
 				CBD7932521BBA189002F958E /* CoreDataUserTranslator.swift */,
 				CBED2D3F21CB86230012C472 /* CoreDataUserSettingsTranslator.swift */,
@@ -1598,6 +1604,7 @@
 				CB07D25C2184D6C50072EB07 /* Answer.swift in Sources */,
 				CBF340D521CA656A0053AE32 /* PointsManager.swift in Sources */,
 				CB50D20D21B33E67007B5BD4 /* PointsPresenter.swift in Sources */,
+				CBA9339E21D5297800EF7F94 /* CoreDataPointTranslator.swift in Sources */,
 				CBD7932621BBA189002F958E /* CoreDataUserTranslator.swift in Sources */,
 				CB56A6A821BA62DE00EE923E /* CoreDataObject.swift in Sources */,
 				CB42FD5A21D3778200E9FC5D /* CoreDataTeacherTranslator.swift in Sources */,
@@ -1641,6 +1648,7 @@
 				CBEFF908218B827600B63286 /* HTTPTask.swift in Sources */,
 				CBDC5C9921AA8DD200185142 /* CourseDetailsModels.swift in Sources */,
 				CB42FD5021D372E500E9FC5D /* CourseDetailsTranslator.swift in Sources */,
+				CBA9339C21D5294800EF7F94 /* PointTranslator.swift in Sources */,
 				CBEFF90E218B868D00B63286 /* JSONParameterEncoder.swift in Sources */,
 				CB49FDBB217E008A00BF35C6 /* Constants.swift in Sources */,
 				CB07D2692184DD820072EB07 /* QuestionInteractor.swift in Sources */,

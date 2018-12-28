@@ -18,5 +18,6 @@ struct CourseDetails: Codable {
     let teacher: Teacher
     let userCourseStatus: UserCourseStatus?
     let signUpOpen: Bool?
+    let userPoints: UserPoints?
     
 }

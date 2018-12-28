@@ -23,6 +23,7 @@ protocol CourseDetailsBusinessLogic {
 protocol CourseDetailsDataStore: class {
     var course: Course? { get set }
     var courseID: Int? { get set }
+    var courseDetails: CourseDetails? { get }
 }
 
 class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStore {

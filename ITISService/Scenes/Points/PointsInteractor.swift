@@ -17,8 +17,8 @@ protocol PointsBusinessLogic {
 }
 
 protocol PointsDataStore: class {
-    var course: Course? { get set }
     var courseID: Int? { get set }
+    var userPoints: UserPoints? { get set }
 }
 
 class PointsInteractor: PointsBusinessLogic, PointsDataStore {
@@ -31,8 +31,8 @@ class PointsInteractor: PointsBusinessLogic, PointsDataStore {
     
     // MARK: -
     
-    var course: Course?
     var courseID: Int?
+    var userPoints: UserPoints?
     
     var pointsUpdateHandler: Disposable?
     
@@ -54,7 +54,7 @@ class PointsInteractor: PointsBusinessLogic, PointsDataStore {
                 return
             }
             
-            guard let courseID = strongSelf.course?.id ?? strongSelf.courseID else {
+            guard let courseID = strongSelf.courseID else {
                 return
             }
             
@@ -72,13 +72,21 @@ class PointsInteractor: PointsBusinessLogic, PointsDataStore {
     }
     
     // MARK: -
+    
+    func setupInitialState() {
+        if let userPoints = self.userPoints {
+            self.presenter.displayPoints(with: Points.Fetch.Response(total: userPoints.total, points: userPoints.points))
+        }
+    }
 
     func fetchPoints() {
-        guard let courseID = self.course?.id ?? self.courseID else {
+        guard let courseID = self.courseID else {
             return
         }
         
-        self.presenter.showActivityIndicator(true)
+        if self.userPoints == nil {
+            self.presenter.showActivityIndicator(true)
+        }
         
         self.userNetworkManager.fetchPoints(courseID: courseID, success: { [weak self] (userPoints) in
             self?.presenter.showActivityIndicator(false)

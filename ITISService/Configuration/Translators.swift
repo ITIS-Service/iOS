@@ -21,5 +21,6 @@ enum Translators {
     static let dayTimeTranslator = CoreDataDayTimeTranslator(storageContext: Services.storageContext)
     static let teacherTranslator = CoreDataTeacherTranslator(storageContext: Services.storageContext)
     static let courseDetailsTranslator = CoreDataCourseDetailsTranslator(storageContext: Services.storageContext)
+    static let pointTranlsator = CoreDataPointTranslator(storageContext: Services.storageContext)
     
 }

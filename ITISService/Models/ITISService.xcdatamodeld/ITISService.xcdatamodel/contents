@@ -17,6 +17,7 @@
         <attribute name="userCourseStatus" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultCourse" inverseName="courseDetails" inverseEntity="DefaultCourse" syncable="YES"/>
         <relationship name="dayTimes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultDayTime" inverseName="courseDetails" inverseEntity="DefaultDayTime" syncable="YES"/>
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultPoint" inverseName="courseDetails" inverseEntity="DefaultPoint" syncable="YES"/>
         <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultTeacher" inverseName="courses" inverseEntity="DefaultTeacher" syncable="YES"/>
     </entity>
     <entity name="DefaultCourseList" representedClassName="DefaultCourseList" syncable="YES" codeGenerationType="class">
@@ -36,6 +37,13 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DefaultUser" inverseName="group" inverseEntity="DefaultUser" syncable="YES"/>
+    </entity>
+    <entity name="DefaultPoint" representedClassName="DefaultPoint" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pointDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="courseDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DefaultCourseDetails" inverseName="points" inverseEntity="DefaultCourseDetails" syncable="YES"/>
     </entity>
     <entity name="DefaultTeacher" representedClassName="DefaultTeacher" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -62,10 +70,11 @@
     </entity>
     <elements>
         <element name="DefaultCourse" positionX="-54" positionY="45" width="128" height="150"/>
-        <element name="DefaultCourseDetails" positionX="-54" positionY="63" width="128" height="165"/>
+        <element name="DefaultCourseDetails" positionX="-54" positionY="63" width="128" height="180"/>
         <element name="DefaultCourseList" positionX="-54" positionY="45" width="128" height="105"/>
         <element name="DefaultDayTime" positionX="-45" positionY="81" width="128" height="105"/>
         <element name="DefaultGroup" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="DefaultPoint" positionX="-54" positionY="90" width="128" height="120"/>
         <element name="DefaultTeacher" positionX="-54" positionY="90" width="128" height="135"/>
         <element name="DefaultUser" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="DefaultUserSettings" positionX="-54" positionY="36" width="128" height="105"/>

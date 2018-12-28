@@ -29,19 +29,14 @@ class CourseDetailsRouter: NSObject, CourseDetailsRoutingLogic, CourseDetailsDat
     var dataStore: CourseDetailsDataStore!
     
     // MARK: - Instance Methods
-    
-    fileprivate func passDataToUserPoints(source: CourseDetailsDataStore, destination: PointsDataStore) {
-        destination.course = source.course
-    }
-    
-    // MARK: -
 
     func routeToUserPoints(segue: UIStoryboardSegue) {
         guard let dataStoreHolder = segue.destination as? PointsDataStoreHolder else {
             return
         }
         
-        self.passDataToUserPoints(source: self.dataStore, destination: dataStoreHolder.datastore)
+        dataStoreHolder.datastore.userPoints = dataStore.courseDetails?.userPoints
+        dataStoreHolder.datastore.courseID = dataStore.course?.id
     }
     
     func updateListCourse() {

@@ -32,13 +32,19 @@ struct CoreDataCourseDetailsTranslator: CourseDetailsTranslator {
         storedObject.teacher = Translators.teacherTranslator.translate(teacher: courseDetails.teacher)
         storedObject.course = Translators.courseTranslator.translate(course: courseDetails.course)
         
+        let dayTimes = courseDetails.dayTimes.map { Translators.dayTimeTranslator.translate(dayTime: $0) }
         if let storedDayTimes = storedObject.dayTimes {
             storedObject.removeFromDayTimes(storedDayTimes)
         }
-        
-        let dayTimes = courseDetails.dayTimes.map { Translators.dayTimeTranslator.translate(dayTime: $0) }
-        
         storedObject.addToDayTimes(NSOrderedSet(array: dayTimes))
+        
+        if let points = courseDetails.userPoints?.points {
+            let mappedPoints = points.map { Translators.pointTranlsator.translate(point: $0) }
+            if let storedPoints = storedObject.points {
+                storedObject.removeFromPoints(storedPoints)
+            }
+            storedObject.addToPoints(NSOrderedSet(array: mappedPoints))
+        }
         
         return storedObject
     }
@@ -58,14 +64,26 @@ struct CoreDataCourseDetailsTranslator: CourseDetailsTranslator {
         
         let dayTimes = rawDayTimes.map { Translators.dayTimeTranslator.translate(storedObject: $0) }
         
-        guard let userCourseStatus = UserCourseStatus(rawValue: storedObject.userCourseStatus!) else {
-            fatalError()
+        var userCourseStatus: UserCourseStatus?
+        
+        if let storedUserCourseStatus = storedObject.userCourseStatus {
+            userCourseStatus = UserCourseStatus(rawValue: storedUserCourseStatus)
         }
         
         let teacher = Translators.teacherTranslator.translate(storedObject: storedObject.teacher!)
         let course = Translators.courseTranslator.translate(storedObject: storedObject.course!)
         
-        return CourseDetails(id: id, course: course, courseNumber: courseNumber, dayTimes: dayTimes, place: storedObject.place!, teacher: teacher, userCourseStatus: userCourseStatus, signUpOpen: storedObject.signUpOpen)
+        var userPoints: UserPoints?
+        
+        if let storedPoints = storedObject.points?.array as? [DefaultPoint] {
+            let points = storedPoints.map { Translators.pointTranlsator.translate(storedObject: $0) }
+            
+            let total = points.reduce(0) { $0 + $1.count }
+            
+            userPoints = UserPoints(total: total, points: points)
+        }
+        
+        return CourseDetails(id: id, course: course, courseNumber: courseNumber, dayTimes: dayTimes, place: storedObject.place!, teacher: teacher, userCourseStatus: userCourseStatus, signUpOpen: storedObject.signUpOpen, userPoints: userPoints)
     }
     
 }
