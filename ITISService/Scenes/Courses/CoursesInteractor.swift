@@ -192,7 +192,7 @@ class CoursesInteractor: CoursesBusinessLogic, CoursesDataStore {
             strongSelf.presenter.displayCourses(response: Courses.List.Response(listCourses: listCourses))
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
-            self?.presenter.showAlert(with: error)
+            self?.presenter.didFetchCoursesFailed(with: Courses.Error.Response(exceptionResponse: error))
         }
     }
     

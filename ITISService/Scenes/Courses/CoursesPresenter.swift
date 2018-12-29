@@ -17,6 +17,7 @@ protocol CoursesPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentati
     func showLoginScreen()
     func didCourseDetailsStatusChanged(with response: Courses.CourseStatus.Response)
     func didPointsChanged(with response: Courses.Points.Response)
+    func didFetchCoursesFailed(with response: Courses.Error.Response)
 }
 
 class CoursesPresenter: CoursesPresentationLogic {
@@ -82,5 +83,11 @@ class CoursesPresenter: CoursesPresentationLogic {
     
     func didPointsChanged(with response: Courses.Points.Response) {
         self.viewController.showPointsScreen(with: response.courseID)
+    }
+    
+    func didFetchCoursesFailed(with response: Courses.Error.Response) {
+        let viewModel = Courses.Error.ViewModel(title: "Ошибка", subtitle: response.exceptionResponse.message, buttonTitle: "Обновить", imageName: "Error")
+        
+        self.viewController.showErrorEmptyState(with: viewModel)
     }
 }

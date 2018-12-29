@@ -52,6 +52,21 @@ enum Courses {
         }
     }
     
+    enum Error {
+        struct Request {
+            
+        }
+        struct Response {
+            let exceptionResponse: ExceptionResponse
+        }
+        struct ViewModel {
+            let title: String
+            let subtitle: String
+            let buttonTitle: String
+            let imageName: String
+        }
+    }
+    
     // MARK: - TableView Models
     
     enum TableView {

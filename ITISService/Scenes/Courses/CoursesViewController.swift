@@ -21,9 +21,10 @@ protocol CoursesDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func showLoginScreen()
     func showCourseDetailsScreen(with data: Any?)
     func showPointsScreen(with data: Any?)
+    func showErrorEmptyState(with viewModel: Courses.Error.ViewModel)
 }
 
-class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataStoreHolder {
+class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataStoreHolder, EmptyStateConfigurable {
     
     // MARK: - Nested Types
     
@@ -56,6 +57,8 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     var interactor: CoursesBusinessLogic!
     var router: (NSObjectProtocol & CoursesRoutingLogic & CoursesDataPassing)!
     var dataStore: CoursesDataStore!
+    
+    var emptyState: EmptyState! = EmptyState(title: "Курсов не найдено", buttonTitle: "Обновить", image: #imageLiteral(resourceName: "NotFound.pdf"))
     
     // MARK: - Object lifecycle
     
@@ -118,6 +121,9 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         
         self.interactor.setupInitialState()
         self.interactor.fetchCourses()
+        
+        self.emptyStateDataSource = self
+        self.emptyStateDelegate = self
     }
     
     // MARK: - UIViewController
@@ -128,11 +134,12 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
         self.configureDesign()
     }
     
-    // MARK: - CoursesDisplayLogic Methods
+    // MARK: - CoursesDisplayLogic
     
     func displayListCourses(sections: [Courses.TableView.Section]) {
         self.datasource.sections = sections
         self.tableView.reloadData()
+        self.reloadEmptyStateForTableView(self.tableView)
     }
     
     func showLoginScreen() {
@@ -146,4 +153,18 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     func showPointsScreen(with data: Any?) {
         self.performSegue(withIdentifier: Segues.coursePoints, sender: data)
     }
+    
+    func showErrorEmptyState(with viewModel: Courses.Error.ViewModel) {
+        self.emptyState = EmptyState(title: viewModel.title, buttonTitle: viewModel.buttonTitle, subtitle: viewModel.subtitle, image: UIImage(named: viewModel.imageName))
+        self.reloadEmptyStateForTableView(self.tableView)
+    }
+}
+
+// MARK: - EmptyStateConfigurable
+extension CoursesViewController {
+    
+    func didEmptyStateButtonClicked() {
+        self.interactor.fetchCourses()
+    }
+    
 }

@@ -10,5 +10,6 @@ target 'ITISService' do
   pod 'Crashlytics'
   pod 'SwiftKeychainWrapper'
   pod 'NotificationBannerSwift'
+  pod 'UIEmptyState'
 
 end

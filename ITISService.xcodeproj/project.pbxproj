@@ -144,6 +144,7 @@
 		CBC2221C21C3AD24008E7586 /* HelperBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2221B21C3AD24008E7586 /* HelperBase.swift */; };
 		CBC2221E21C3AE2D008E7586 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2221D21C3AE2D008E7586 /* TestBase.swift */; };
 		CBC2222121C3AED2008E7586 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2222021C3AED2008E7586 /* UserData.swift */; };
+		CBC9D83721D655CB00D765A7 /* EmptyStateConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC9D83621D655CB00D765A7 /* EmptyStateConfigurable.swift */; };
 		CBD7931621BB9B0C002F958E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931521BB9B0C002F958E /* User.swift */; };
 		CBD7931921BB9C08002F958E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931821BB9C08002F958E /* Group.swift */; };
 		CBD7931B21BB9C44002F958E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931A21BB9C44002F958E /* UserManager.swift */; };
@@ -174,6 +175,7 @@
 		CBE3A04221D1090C0092722A /* DefaultCourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE3A04121D1090C0092722A /* DefaultCourseManager.swift */; };
 		CBE3A04421D10A4E0092722A /* CourseTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE3A04321D10A4E0092722A /* CourseTranslator.swift */; };
 		CBE3A04621D10AC60092722A /* CoreDataCourseTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE3A04521D10AC60092722A /* CoreDataCourseTranslator.swift */; };
+		CBE7AF5B21D7566D00368E99 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE7AF5A21D7566D00368E99 /* EmptyState.swift */; };
 		CBED2D3821CB84630012C472 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D3721CB84630012C472 /* UserSettings.swift */; };
 		CBED2D3A21CB84C20012C472 /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D3921CB84C20012C472 /* UserSettingsManager.swift */; };
 		CBED2D3C21CB84DE0012C472 /* DefaultUserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED2D3B21CB84DE0012C472 /* DefaultUserSettingsManager.swift */; };
@@ -375,6 +377,7 @@
 		CBC2221B21C3AD24008E7586 /* HelperBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperBase.swift; sourceTree = "<group>"; };
 		CBC2221D21C3AE2D008E7586 /* TestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
 		CBC2222021C3AED2008E7586 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CBC9D83621D655CB00D765A7 /* EmptyStateConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateConfigurable.swift; sourceTree = "<group>"; };
 		CBD7931521BB9B0C002F958E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBD7931821BB9C08002F958E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		CBD7931A21BB9C44002F958E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -405,6 +408,7 @@
 		CBE3A04121D1090C0092722A /* DefaultCourseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCourseManager.swift; sourceTree = "<group>"; };
 		CBE3A04321D10A4E0092722A /* CourseTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTranslator.swift; sourceTree = "<group>"; };
 		CBE3A04521D10AC60092722A /* CoreDataCourseTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCourseTranslator.swift; sourceTree = "<group>"; };
+		CBE7AF5A21D7566D00368E99 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		CBED2D3721CB84630012C472 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		CBED2D3921CB84C20012C472 /* UserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsManager.swift; sourceTree = "<group>"; };
 		CBED2D3B21CB84DE0012C472 /* DefaultUserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserSettingsManager.swift; sourceTree = "<group>"; };
@@ -820,6 +824,7 @@
 		CB49FDB3217DFBDA00BF35C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CBC9D83521D655AD00D765A7 /* EmptyState */,
 				CB56A67821BA576800EE923E /* DBLayer */,
 				CBF340C121C916E20053AE32 /* Event */,
 				CBE2FF2021A7D014005DC733 /* LoaderLogic */,
@@ -1123,6 +1128,15 @@
 				CBC2220C21C3AB29008E7586 /* ITISServiceUITests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CBC9D83521D655AD00D765A7 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				CBC9D83621D655CB00D765A7 /* EmptyStateConfigurable.swift */,
+				CBE7AF5A21D7566D00368E99 /* EmptyState.swift */,
+			);
+			path = EmptyState;
 			sourceTree = "<group>";
 		};
 		CBD7931421BB9B04002F958E /* User */ = {
@@ -1529,6 +1543,7 @@
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/UIEmptyState/UIEmptyState.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1538,6 +1553,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIEmptyState.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1624,6 +1640,7 @@
 				CB2DF0F521BEC37C002B16A3 /* TextFieldTableViewCell.swift in Sources */,
 				CBD845BD21B8F6280029FE12 /* SettingsTableViewDatasource.swift in Sources */,
 				CB56A67F21BA59A500EE923E /* CoreDataStorageContext.swift in Sources */,
+				CBE7AF5B21D7566D00368E99 /* EmptyState.swift in Sources */,
 				CBD7932A21BBAE83002F958E /* Managers.swift in Sources */,
 				CB42FD5821D3773E00E9FC5D /* TeacherTranslator.swift in Sources */,
 				CB19D44F217DC44900B4586F /* RegistrationModels.swift in Sources */,
@@ -1731,6 +1748,7 @@
 				CB07D26C2184DED20072EB07 /* StartQuizViewController.swift in Sources */,
 				CBE3A04021D108FC0092722A /* CourseManager.swift in Sources */,
 				CBD7931B21BB9C44002F958E /* UserManager.swift in Sources */,
+				CBC9D83721D655CB00D765A7 /* EmptyStateConfigurable.swift in Sources */,
 				CBE2FF2221A7D02F005DC733 /* LoaderPresentationLogic.swift in Sources */,
 				CB19D44E217DC44900B4586F /* RegistrationRouter.swift in Sources */,
 				CB56FD8A21B839CF00C7196E /* SettingsWorker.swift in Sources */,

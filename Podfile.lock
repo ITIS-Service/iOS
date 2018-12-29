@@ -8,12 +8,14 @@ PODS:
     - SnapKit (~> 4.0.1)
   - SnapKit (4.0.1)
   - SwiftKeychainWrapper (3.0.1)
+  - UIEmptyState (4.0.1)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - NotificationBannerSwift
   - SwiftKeychainWrapper
+  - UIEmptyState
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - NotificationBannerSwift
     - SnapKit
     - SwiftKeychainWrapper
+    - UIEmptyState
 
 SPEC CHECKSUMS:
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
@@ -31,7 +34,8 @@ SPEC CHECKSUMS:
   NotificationBannerSwift: c9f4bc868d78df975ed59c0b2fccdbbe0e863efe
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
+  UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
 
-PODFILE CHECKSUM: 48c6e798d67db6a891bc8de7c095d0663ddf5be6
+PODFILE CHECKSUM: c19067a226768b8f70ef985e0e82a0a510dcc2e7
 
 COCOAPODS: 1.5.3
