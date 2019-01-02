@@ -14,13 +14,14 @@ import UIKit
 
 protocol PointsDisplayLogic: LoaderDisplayLogic, ErrorMessagePresenter {
     func showPoints(sections: [TableViewSection], viewModel: Points.Fetch.ViewModel)
+    func showErrorEmptyState(with viewModel: Points.Error.ViewModel)
 }
 
 protocol PointsDataStoreHolder {
     var datastore: PointsDataStore! { get }
 }
 
-class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStoreHolder {
+class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStoreHolder, EmptyStateConfigurable {
     
     // MARK: - Instance Properties
     
@@ -36,6 +37,8 @@ class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStor
     var interactor: PointsBusinessLogic!
     var router: (NSObjectProtocol & PointsRoutingLogic & PointsDataPassing)!
     var datastore: PointsDataStore!
+    
+    var emptyState = EmptyState(title: "Баллов не найдено", buttonTitle: "Обновить", subtitle: "Здесь будут показаны баллы проставленные преподавателем", image: #imageLiteral(resourceName: "NotFound.pdf"))
     
     // MARK: -
     
@@ -113,6 +116,9 @@ class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStor
             let closeButton = UIBarButtonItem(title: "Закрыть", style: .done, target: self, action: #selector(self.onCloseButtonTouchUpInside(_:)))
             self.navigationItem.rightBarButtonItem = closeButton
         }
+        
+        self.emptyStateDataSource = self
+        self.emptyStateDelegate = self
     }
     
     fileprivate func fetchPoints() {
@@ -130,10 +136,25 @@ class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStor
     // MARK: - PointsDisplayLogic Methods
     
     func showPoints(sections: [TableViewSection], viewModel: Points.Fetch.ViewModel) {
-        self.datasource.sections = sections
+        self.datasource.sections = []
         self.tableView.reloadData()
+        self.reloadEmptyStateForTableView(self.tableView)
         
         self.totalPointsCountLabel.text = viewModel.totalCount
+    }
+    
+    func showErrorEmptyState(with viewModel: Points.Error.ViewModel) {
+        self.emptyState = EmptyState(title: viewModel.title, buttonTitle: viewModel.buttonTitle, subtitle: viewModel.subtitle, image: UIImage(named: viewModel.imageName))
+        self.reloadEmptyStateForTableView(self.tableView)
+    }
+    
+}
+
+// MARK: - EmptyStateConfigurable
+extension PointsViewController {
+    
+    func didEmptyStateButtonClicked() {
+        self.fetchPoints()
     }
     
 }

@@ -27,6 +27,22 @@ enum Points {
         }
     }
     
+    enum Error {
+        struct Request {
+            
+        }
+        struct Response {
+            let errorMessage: String
+        }
+        
+        struct ViewModel {
+            let title: String
+            let subtitle: String
+            let buttonTitle: String
+            let imageName: String
+        }
+    }
+    
     // MARK -
     
     enum TableView {

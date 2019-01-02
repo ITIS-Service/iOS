@@ -13,7 +13,7 @@ protocol EmptyStateConfigurable: UIEmptyStateDataSource, UIEmptyStateDelegate {
     
     // MARK: - Instance Properties
     
-    var emptyState: EmptyState! { get }
+    var emptyState: EmptyState { get }
     
     // MARK: - Instance Methods
     

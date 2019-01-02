@@ -58,7 +58,7 @@ class CoursesViewController: UIViewController, CoursesDisplayLogic, CoursesDataS
     var router: (NSObjectProtocol & CoursesRoutingLogic & CoursesDataPassing)!
     var dataStore: CoursesDataStore!
     
-    var emptyState: EmptyState! = EmptyState(title: "Курсов не найдено", buttonTitle: "Обновить", image: #imageLiteral(resourceName: "NotFound.pdf"))
+    var emptyState = EmptyState(title: "Курсов не найдено", buttonTitle: "Обновить", image: #imageLiteral(resourceName: "NotFound.pdf"))
     
     // MARK: - Object lifecycle
     

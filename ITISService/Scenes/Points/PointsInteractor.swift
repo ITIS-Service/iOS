@@ -93,7 +93,7 @@ class PointsInteractor: PointsBusinessLogic, PointsDataStore {
             self?.presenter.displayPoints(with: Points.Fetch.Response(total: userPoints.total, points: userPoints.points))
         }) { [weak self] (error) in
             self?.presenter.showActivityIndicator(false)
-            self?.presenter.showAlert(with: error)
+            self?.presenter.didFetchPointsFailed(with: Points.Error.Response(errorMessage: error.message))
         }
     }
     

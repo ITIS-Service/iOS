@@ -14,13 +14,14 @@ import UIKit
 
 protocol PointsPresentationLogic: LoaderPresentationLogic, ErrorMessagePrentationLogic {
     func displayPoints(with response: Points.Fetch.Response)
+    func didFetchPointsFailed(with response: Points.Error.Response)
 }
 
 class PointsPresenter: PointsPresentationLogic {
     
     // MARK: - Instance Properties
     
-    weak var viewController: PointsDisplayLogic?
+    weak var viewController: PointsDisplayLogic!
     
     weak var loaderDislpayViewController: LoaderDisplayLogic! {
         return self.viewController
@@ -43,5 +44,11 @@ class PointsPresenter: PointsPresentationLogic {
         let section = DefaultTableViewSection(items: tableViewItems)
         
         self.viewController?.showPoints(sections: [section], viewModel: Points.Fetch.ViewModel(totalCount: totalCount))
+    }
+    
+    func didFetchPointsFailed(with response: Points.Error.Response) {
+        let viewModel = Points.Error.ViewModel(title: "Ошибка", subtitle: response.errorMessage, buttonTitle: "Обновить", imageName: "Error")
+        
+        self.viewController.showErrorEmptyState(with: viewModel)
     }
 }
