@@ -136,7 +136,7 @@ class PointsViewController: UIViewController, PointsDisplayLogic, PointsDataStor
     // MARK: - PointsDisplayLogic Methods
     
     func showPoints(sections: [TableViewSection], viewModel: Points.Fetch.ViewModel) {
-        self.datasource.sections = []
+        self.datasource.sections = sections
         self.tableView.reloadData()
         self.reloadEmptyStateForTableView(self.tableView)
         

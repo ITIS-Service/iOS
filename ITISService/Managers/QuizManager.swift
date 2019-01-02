@@ -13,7 +13,11 @@ class QuizManager {
     static let shared = QuizManager()
     var buffer = [Int: Int]()
     var currentNumber = 0
-    var questions = [QuizQuestion]()
+    var questions = [QuizQuestion]() {
+        didSet {
+            self.reset()
+        }
+    }
     
     func writeAnswer(at index: Int) {
         let currentQuestion = self.questions[currentNumber - 1]
@@ -30,6 +34,11 @@ class QuizManager {
     
     func hasNextQuestion() -> Bool {
         return questions.count - 1 >= currentNumber
+    }
+    
+    func reset() {
+        self.buffer = [Int: Int]()
+        self.currentNumber = 0
     }
     
 }
