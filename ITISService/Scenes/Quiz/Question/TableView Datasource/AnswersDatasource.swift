@@ -26,9 +26,4 @@ class AnswersDatasource: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         onTap?(indexPath)
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66;
-    }
-    
 }

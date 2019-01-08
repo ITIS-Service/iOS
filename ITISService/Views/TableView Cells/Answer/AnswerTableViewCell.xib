@@ -21,19 +21,29 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cZw-wz-hUw">
                         <rect key="frame" x="0.0" y="8" width="320" height="49.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                        <state key="normal" title="Java">
+                        <state key="normal">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
                             <action selector="onAnswerButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eJa-sO-f1C"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Java" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuE-tc-5ib">
+                        <rect key="frame" x="16" y="16" width="288" height="33.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="cZw-wz-hUw" secondAttribute="bottom" constant="8" id="7We-kW-31Z"/>
+                    <constraint firstAttribute="trailing" secondItem="JuE-tc-5ib" secondAttribute="trailing" constant="16" id="MXz-Q6-hR5"/>
                     <constraint firstItem="cZw-wz-hUw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WDV-ET-LRA"/>
+                    <constraint firstItem="JuE-tc-5ib" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fzp-8c-3XS"/>
+                    <constraint firstItem="JuE-tc-5ib" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="kIA-oK-AUb"/>
                     <constraint firstAttribute="trailing" secondItem="cZw-wz-hUw" secondAttribute="trailing" id="n4h-3u-4wG"/>
+                    <constraint firstAttribute="bottom" secondItem="JuE-tc-5ib" secondAttribute="bottom" constant="16" id="nX0-2p-hbY"/>
                     <constraint firstItem="cZw-wz-hUw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rQZ-Kt-ibS"/>
                 </constraints>
             </tableViewCellContentView>
@@ -41,6 +51,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="answerButton" destination="cZw-wz-hUw" id="Ygh-R0-uUR"/>
+                <outlet property="answerLabel" destination="JuE-tc-5ib" id="Y1s-TZ-c1v"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="149.32533733133434"/>
         </tableViewCell>

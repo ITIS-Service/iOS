@@ -16,6 +16,7 @@ enum Colors {
     static let barBackground = UIColor(red: 42, green: 42, blue: 42)
     
     static let white = UIColor(red: 255, green: 255, blue: 255)
+    static let black = UIColor.black
     
     static let orange = UIColor(red: 249, green: 84, blue: 0)
     static let red = UIColor.red

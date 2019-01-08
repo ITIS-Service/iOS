@@ -14,7 +14,8 @@ protocol AnswerTableViewCellDelegate: class {
 
 class AnswerTableViewCell: UITableViewCell, Configurable {
     
-    @IBOutlet weak var answerButton: UIButton!
+    @IBOutlet fileprivate weak var answerButton: UIButton!
+    @IBOutlet fileprivate weak var answerLabel: UILabel!
     
     typealias T = Question.AnswersTableView.Model
     var model: Question.AnswersTableView.Model?
@@ -35,12 +36,12 @@ class AnswerTableViewCell: UITableViewCell, Configurable {
     
     func configure(with model: Question.AnswersTableView.Model) {
         self.model = model
-        self.answerButton.setTitle(model.answerTitle, for: .normal)
+        self.answerLabel.text = model.answerTitle
     }
     
     @IBAction func onAnswerButtonClick(_ sender: UIButton) {
         sender.backgroundColor = .white
-        sender.setTitleColor(.black, for: .normal)
+        self.answerLabel.textColor = Colors.black
         self.delegate?.didAnswerButtonClicked(sender, at: self.model!.index)
     }
     
