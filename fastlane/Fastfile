@@ -1,0 +1,38 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+  desc "Send a build to Fabric for our Beta testers"
+  lane :beta do
+  	# ensure_git_status_clean
+
+  	# app_version = get_version_number(xcodeproj: "ITISService.xcodeproj")
+  	# ensure_git_branch(branch: 'release/#{app_version}')
+
+  	cert
+  	sigh
+  	increment_build_number
+  	gym(scheme: "ITISService Production", export_method: "development")
+  	crashlytics(api_token: "81c234a8769c0d8c6c53c1e66313d1e3c58c5bc2",
+  				build_secret: "1f3a7845af81be70d777d1b2cb95291f24734cc6a2147cff557ea300e20ccedd")
+  end
+end
