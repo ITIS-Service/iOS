@@ -1,10 +1,5 @@
-#language: objective-c #1
-#osx_image: xcode10.1 #2
-#xcode_workspace: ITISService.xcworkspace #3
-#xcode_scheme: ITISService Production #4
-#xcode_sdk: iphonesimulator12.1 #5
-
-language: objective-c
-script:
-  - xctool -workspace ITISService.xcworkspace -scheme "ITISService Production" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool test -workspace ITISService.xcworkspace -scheme "ITISService Production" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+language: objective-c #1
+osx_image: xcode10.1 #2
+xcode_workspace: ITISService.xcworkspace #3
+xcode_scheme: ITISService Production #4
+xcode_sdk: iphonesimulator12.1 #5
