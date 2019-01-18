@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIScreen {
+public extension UIScreen {
     
     public static func isIphone5Screen() -> Bool {
         return UIScreen.main.nativeBounds.height == 1136

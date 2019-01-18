@@ -38,6 +38,16 @@
                ReferencedContainer = "container:ITISService.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CBA8EC5921F1C3D2006FCD36"
+               BuildableName = "ITISServiceTests.xctest"
+               BlueprintName = "ITISServiceTests"
+               ReferencedContainer = "container:ITISService.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

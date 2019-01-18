@@ -54,8 +54,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     
     // MARK: -
     
-    var interactor: LoginBusinessLogic?
-    var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
+    var interactor: LoginBusinessLogic!
+    var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)!
     
     // MARK: - Object lifecycle
 
@@ -84,17 +84,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
-    }
-  
-    // MARK: - Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-          let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-          if let router = router, router.responds(to: selector) {
-            router.perform(selector, with: segue)
-          }
-        }
     }
     
     // MARK: - Instance Methods
@@ -131,11 +120,11 @@ class LoginViewController: UIViewController, LoginDisplayLogic {
     // MARK: - LoginDisplayLogic
     
     func openCoursesScreen() {
-        self.performSegue(withIdentifier: Segues.finishLogin, sender: nil)
+        self.router.openCourseScreen()
     }
     
     func openStartQuizScreen() {
-        self.performSegue(withIdentifier: Segues.showStartQuiz, sender: nil)
+        self.router.openStartQuizScreen()
     }
     
     func showError(with viewModel: Login.SignIn.ViewModel) {

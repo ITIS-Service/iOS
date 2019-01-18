@@ -133,17 +133,13 @@
 		CB833B3B21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */; };
 		CB833B3F21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */; };
 		CB833B4021CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */; };
+		CBA8EC5D21F1C3D3006FCD36 /* ITISServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8EC5C21F1C3D3006FCD36 /* ITISServiceTests.swift */; };
+		CBA8EC6721F1C40F006FCD36 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA8EC6621F1C40F006FCD36 /* LoginViewControllerTests.swift */; };
 		CBA9339C21D5294800EF7F94 /* PointTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9339B21D5294800EF7F94 /* PointTranslator.swift */; };
 		CBA9339E21D5297800EF7F94 /* CoreDataPointTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9339D21D5297800EF7F94 /* CoreDataPointTranslator.swift */; };
 		CBC221FE21C3710A008E7586 /* DeviceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */; };
 		CBC2220021C37366008E7586 /* DeviceNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */; };
 		CBC2220321C38178008E7586 /* UIDevice + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2220221C38178008E7586 /* UIDevice + Extension.swift */; };
-		CBC2220D21C3AB29008E7586 /* ITISServiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2220C21C3AB29008E7586 /* ITISServiceUITests.swift */; };
-		CBC2221721C3AC56008E7586 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2221621C3AC56008E7586 /* AppManager.swift */; };
-		CBC2221A21C3AD0C008E7586 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2221921C3AD0C008E7586 /* LoginHelper.swift */; };
-		CBC2221C21C3AD24008E7586 /* HelperBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2221B21C3AD24008E7586 /* HelperBase.swift */; };
-		CBC2221E21C3AE2D008E7586 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2221D21C3AE2D008E7586 /* TestBase.swift */; };
-		CBC2222121C3AED2008E7586 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2222021C3AED2008E7586 /* UserData.swift */; };
 		CBC9D83721D655CB00D765A7 /* EmptyStateConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC9D83621D655CB00D765A7 /* EmptyStateConfigurable.swift */; };
 		CBD7931621BB9B0C002F958E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931521BB9B0C002F958E /* User.swift */; };
 		CBD7931921BB9C08002F958E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7931821BB9C08002F958E /* Group.swift */; };
@@ -222,7 +218,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CBC2220F21C3AB29008E7586 /* PBXContainerItemProxy */ = {
+		CBA8EC5F21F1C3D3006FCD36 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB5F412D2179A00C0058293F /* Project object */;
 			proxyType = 1;
@@ -363,20 +359,16 @@
 		CB833B3A21CAAD2400DEAE52 /* NotificationSettingsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsDatasource.swift; sourceTree = "<group>"; };
 		CB833B3D21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewCell.swift; sourceTree = "<group>"; };
 		CB833B3E21CAAE2F00DEAE52 /* NotificationSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSettingTableViewCell.xib; sourceTree = "<group>"; };
+		CBA8EC5A21F1C3D2006FCD36 /* ITISServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITISServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBA8EC5C21F1C3D3006FCD36 /* ITISServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITISServiceTests.swift; sourceTree = "<group>"; };
+		CBA8EC5E21F1C3D3006FCD36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBA8EC6621F1C40F006FCD36 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		CBA9339B21D5294800EF7F94 /* PointTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTranslator.swift; sourceTree = "<group>"; };
 		CBA9339D21D5297800EF7F94 /* CoreDataPointTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPointTranslator.swift; sourceTree = "<group>"; };
 		CBC221FD21C3710A008E7586 /* DeviceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceEndPoint.swift; sourceTree = "<group>"; };
 		CBC221FF21C37366008E7586 /* DeviceNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNetworkManager.swift; sourceTree = "<group>"; };
 		CBC2220121C376FD008E7586 /* ITISService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ITISService.entitlements; sourceTree = "<group>"; };
 		CBC2220221C38178008E7586 /* UIDevice + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice + Extension.swift"; sourceTree = "<group>"; };
-		CBC2220A21C3AB29008E7586 /* ITISServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITISServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBC2220C21C3AB29008E7586 /* ITISServiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITISServiceUITests.swift; sourceTree = "<group>"; };
-		CBC2220E21C3AB29008E7586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBC2221621C3AC56008E7586 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		CBC2221921C3AD0C008E7586 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
-		CBC2221B21C3AD24008E7586 /* HelperBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperBase.swift; sourceTree = "<group>"; };
-		CBC2221D21C3AE2D008E7586 /* TestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
-		CBC2222021C3AED2008E7586 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		CBC9D83621D655CB00D765A7 /* EmptyStateConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateConfigurable.swift; sourceTree = "<group>"; };
 		CBD7931521BB9B0C002F958E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBD7931821BB9C08002F958E /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -464,7 +456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBC2220721C3AB29008E7586 /* Frameworks */ = {
+		CBA8EC5721F1C3D2006FCD36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -962,7 +954,7 @@
 			isa = PBXGroup;
 			children = (
 				CB5F41372179A00C0058293F /* ITISService */,
-				CBC2220B21C3AB29008E7586 /* ITISServiceUITests */,
+				CBA8EC5B21F1C3D3006FCD36 /* ITISServiceTests */,
 				CB5F41362179A00C0058293F /* Products */,
 				6A88C15CD0BEF3D7EBD0DFBE /* Pods */,
 				389369C1FCF465B1955FB67A /* Frameworks */,
@@ -973,7 +965,7 @@
 			isa = PBXGroup;
 			children = (
 				CB5F41352179A00C0058293F /* ITISService.app */,
-				CBC2220A21C3AB29008E7586 /* ITISServiceUITests.xctest */,
+				CBA8EC5A21F1C3D2006FCD36 /* ITISServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1076,58 +1068,30 @@
 			path = NotificationSetting;
 			sourceTree = "<group>";
 		};
-		CBC2220B21C3AB29008E7586 /* ITISServiceUITests */ = {
+		CBA8EC5B21F1C3D3006FCD36 /* ITISServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				CBC2221421C3AB78008E7586 /* Base */,
-				CBC2221821C3ACDE008E7586 /* Helpers */,
-				CBC2221521C3AC2A008E7586 /* Managers */,
-				CBC2221F21C3AEBC008E7586 /* Models */,
-				CBC2222221C3AEF3008E7586 /* Tests */,
-				CBC2220E21C3AB29008E7586 /* Info.plist */,
+				CBA8EC6421F1C3F8006FCD36 /* Scenes */,
+				CBA8EC5C21F1C3D3006FCD36 /* ITISServiceTests.swift */,
+				CBA8EC5E21F1C3D3006FCD36 /* Info.plist */,
 			);
-			path = ITISServiceUITests;
+			path = ITISServiceTests;
 			sourceTree = "<group>";
 		};
-		CBC2221421C3AB78008E7586 /* Base */ = {
+		CBA8EC6421F1C3F8006FCD36 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CBC2221D21C3AE2D008E7586 /* TestBase.swift */,
+				CBA8EC6521F1C3FF006FCD36 /* Login */,
 			);
-			path = Base;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
-		CBC2221521C3AC2A008E7586 /* Managers */ = {
+		CBA8EC6521F1C3FF006FCD36 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CBC2221621C3AC56008E7586 /* AppManager.swift */,
+				CBA8EC6621F1C40F006FCD36 /* LoginViewControllerTests.swift */,
 			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		CBC2221821C3ACDE008E7586 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				CBC2221921C3AD0C008E7586 /* LoginHelper.swift */,
-				CBC2221B21C3AD24008E7586 /* HelperBase.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		CBC2221F21C3AEBC008E7586 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CBC2222021C3AED2008E7586 /* UserData.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CBC2222221C3AEF3008E7586 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CBC2220C21C3AB29008E7586 /* ITISServiceUITests.swift */,
-			);
-			path = Tests;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		CBC9D83521D655AD00D765A7 /* EmptyState */ = {
@@ -1428,23 +1392,23 @@
 			productReference = CB5F41352179A00C0058293F /* ITISService.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CBC2220921C3AB29008E7586 /* ITISServiceUITests */ = {
+		CBA8EC5921F1C3D2006FCD36 /* ITISServiceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBC2221321C3AB29008E7586 /* Build configuration list for PBXNativeTarget "ITISServiceUITests" */;
+			buildConfigurationList = CBA8EC6321F1C3D3006FCD36 /* Build configuration list for PBXNativeTarget "ITISServiceTests" */;
 			buildPhases = (
-				CBC2220621C3AB29008E7586 /* Sources */,
-				CBC2220721C3AB29008E7586 /* Frameworks */,
-				CBC2220821C3AB29008E7586 /* Resources */,
+				CBA8EC5621F1C3D2006FCD36 /* Sources */,
+				CBA8EC5721F1C3D2006FCD36 /* Frameworks */,
+				CBA8EC5821F1C3D2006FCD36 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CBC2221021C3AB29008E7586 /* PBXTargetDependency */,
+				CBA8EC6021F1C3D3006FCD36 /* PBXTargetDependency */,
 			);
-			name = ITISServiceUITests;
-			productName = ITISServiceUITests;
-			productReference = CBC2220A21C3AB29008E7586 /* ITISServiceUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = ITISServiceTests;
+			productName = ITISServiceTests;
+			productReference = CBA8EC5A21F1C3D2006FCD36 /* ITISServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1467,7 +1431,7 @@
 							};
 						};
 					};
-					CBC2220921C3AB29008E7586 = {
+					CBA8EC5921F1C3D2006FCD36 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = CB5F41342179A00C0058293F;
 					};
@@ -1487,7 +1451,7 @@
 			projectRoot = "";
 			targets = (
 				CB5F41342179A00C0058293F /* ITISService */,
-				CBC2220921C3AB29008E7586 /* ITISServiceUITests */,
+				CBA8EC5921F1C3D2006FCD36 /* ITISServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1520,7 +1484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBC2220821C3AB29008E7586 /* Resources */ = {
+		CBA8EC5821F1C3D2006FCD36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1791,26 +1755,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBC2220621C3AB29008E7586 /* Sources */ = {
+		CBA8EC5621F1C3D2006FCD36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC2222121C3AED2008E7586 /* UserData.swift in Sources */,
-				CBC2220D21C3AB29008E7586 /* ITISServiceUITests.swift in Sources */,
-				CBC2221721C3AC56008E7586 /* AppManager.swift in Sources */,
-				CBC2221C21C3AD24008E7586 /* HelperBase.swift in Sources */,
-				CBC2221A21C3AD0C008E7586 /* LoginHelper.swift in Sources */,
-				CBC2221E21C3AE2D008E7586 /* TestBase.swift in Sources */,
+				CBA8EC6721F1C40F006FCD36 /* LoginViewControllerTests.swift in Sources */,
+				CBA8EC5D21F1C3D3006FCD36 /* ITISServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CBC2221021C3AB29008E7586 /* PBXTargetDependency */ = {
+		CBA8EC6021F1C3D3006FCD36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB5F41342179A00C0058293F /* ITISService */;
-			targetProxy = CBC2220F21C3AB29008E7586 /* PBXContainerItemProxy */;
+			targetProxy = CBA8EC5F21F1C3D3006FCD36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1990,43 +1950,45 @@
 			};
 			name = Release;
 		};
-		CBC2221121C3AB29008E7586 /* Debug */ = {
+		CBA8EC6121F1C3D3006FCD36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W56K4E4L5F;
-				INFOPLIST_FILE = ITISServiceUITests/Info.plist;
+				INFOPLIST_FILE = ITISServiceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISServiceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ITISService;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ITISService.app/ITISService";
 			};
 			name = Debug;
 		};
-		CBC2221221C3AB29008E7586 /* Release */ = {
+		CBA8EC6221F1C3D3006FCD36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W56K4E4L5F;
-				INFOPLIST_FILE = ITISServiceUITests/Info.plist;
+				INFOPLIST_FILE = ITISServiceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISServiceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timbaev.ITISServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ITISService;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ITISService.app/ITISService";
 			};
 			name = Release;
 		};
@@ -2051,11 +2013,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBC2221321C3AB29008E7586 /* Build configuration list for PBXNativeTarget "ITISServiceUITests" */ = {
+		CBA8EC6321F1C3D3006FCD36 /* Build configuration list for PBXNativeTarget "ITISServiceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CBC2221121C3AB29008E7586 /* Debug */,
-				CBC2221221C3AB29008E7586 /* Release */,
+				CBA8EC6121F1C3D3006FCD36 /* Debug */,
+				CBA8EC6221F1C3D3006FCD36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -13,7 +13,8 @@
 import UIKit
 
 @objc protocol LoginRoutingLogic {
-
+    func openCourseScreen()
+    func openStartQuizScreen()
 }
 
 protocol LoginDataPassing {
@@ -22,9 +23,28 @@ protocol LoginDataPassing {
 
 class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing {
     
+    // MARK: - Nested Types
+    
+    fileprivate enum Segues {
+        
+        // MARK: - Type Properties
+        
+        static let finishLogin = "FinishLogin"
+        static let showStartQuiz = "ShowStartQuiz"
+    }
+    
     // MARK: - Instance Properties
     
     weak var viewController: LoginViewController!
     var dataStore: LoginDataStore!
     
+    // MARK: - Instance Methods
+    
+    func openCourseScreen() {
+        self.viewController.performSegue(withIdentifier: Segues.finishLogin, sender: self.viewController)
+    }
+    
+    func openStartQuizScreen() {
+        self.viewController.performSegue(withIdentifier: Segues.showStartQuiz, sender: self.viewController)
+    }
 }
